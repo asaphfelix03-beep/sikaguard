@@ -113,7 +113,8 @@ Sérialisation `skops` (jamais `pickle`) avec liste de types de confiance explic
 ### 5.1 Bibliothèque
 ```python
 from sikaguard import analyze, Analyzer
-r = analyze("...")            # Result (dataclass) ; r.to_dict()
+
+r = analyze("...")  # Result (dataclass) ; r.to_dict()
 Analyzer(threshold_high=0.9, threshold_low=0.3).analyze_batch([...])  # noms anglais pour les devs
 ```
 Dépendances : scikit-learn, numpy, scipy, skops. Python ≥ 3.10. Modèle chargé paresseusement une fois. CLI : `sikaguard "texte"`, `--json`, `-f fichier`.

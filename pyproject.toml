@@ -99,3 +99,8 @@ files = ["src/sikaguard"]
 [[tool.mypy.overrides]]
 module = ["sklearn.*", "skops.*", "scipy.*"]
 ignore_missing_imports = true
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src"]
