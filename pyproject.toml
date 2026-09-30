@@ -92,7 +92,7 @@ ignore = ["RUF001", "RUF002", "RUF003"]  # French text and deliberate homoglyph 
 "src/sikaguard_lab/**" = ["S311"]
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"  # numpy>=2.3 stubs need 3.12 syntax; runtime 3.10 is covered by CI
 strict = true
 files = ["src/sikaguard"]
 

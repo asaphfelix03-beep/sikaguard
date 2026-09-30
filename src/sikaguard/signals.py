@@ -55,9 +55,7 @@ _CODE_WORDS = (
 _CODE_REQUEST_RES = (
     re.compile(rf"\b{_SEND_VERBS}\b[^.]{{0,40}}\b{_CODE_WORDS}\b"),
     re.compile(rf"\b{_TYPE_VERBS}\b[^.]{{0,15}}\b(?:votre|ton|vos|tes)\s+{_CODE_WORDS}\b"),
-    re.compile(
-        rf"\b{_CODE_WORDS}\b[^.]{{0,30}}\b(?:au|a|par sms|par whatsapp)\b[^.]{{0,15}}<tel>"
-    ),
+    re.compile(rf"\b{_CODE_WORDS}\b[^.]{{0,30}}\b(?:au|a|par sms|par whatsapp)\b[^.]{{0,15}}<tel>"),
 )
 _NEGATION_RE = re.compile(
     r"\bjamais\b|\ba personne\b|\bne\s+(?:le\s+|la\s+|les\s+)?(?!oubli)\w+\s+pas\b"
