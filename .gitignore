@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+
+# Private raw data (provenance of social-media sources is never published)
+data/raw/*
+!data/raw/README.md
+
+# Gradio
+.gradio/
+flagged/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
