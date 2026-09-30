@@ -29,6 +29,8 @@ _HOMOGLYPHS = str.maketrans(
         "Ν": "N", "Ο": "O", "Ρ": "P", "Τ": "T", "Υ": "Y", "Χ": "X", "Ζ": "Z",
         # Latin look-alikes
         "ı": "i", "ȷ": "j",
+        # Typographic apostrophes and quotes
+        "’": "'", "‘": "'", "ʼ": "'",
     }
 )  # fmt: skip
 

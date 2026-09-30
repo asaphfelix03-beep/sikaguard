@@ -22,6 +22,7 @@ CASES = [
     ("écrire à jean.kone@gmail.com", "ecrire a <email>"),
     ("<TEL> <NOM>", "<tel> <nom>"),
     ("  trop   d'espaces \n ici ", "trop d'espaces ici"),
+    ("l’argent", "l'argent"),  # typographic apostrophe
     ("𝐎𝐑𝐀𝐍𝐆𝐄", "orange"),  # mathematical bold, handled by NFKC
     ("ＷＡＶＥ", "wave"),  # full-width
 ]
