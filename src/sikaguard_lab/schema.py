@@ -1,0 +1,127 @@
+"""Dataset schema and validation."""
+
+from __future__ import annotations
+
+import csv
+import re
+from collections.abc import Iterable, Mapping, Sequence
+from pathlib import Path
+
+from sikaguard.pii import has_phone_number, url_spans
+from sikaguard.result import LEGIT_CATEGORIES, SCAM_CATEGORIES
+
+LABELS = ("arnaque", "legitime")
+CATEGORIES_BY_LABEL = {"arnaque": SCAM_CATEGORIES, "legitime": LEGIT_CATEGORIES}
+OPERATORS = ("orange", "mtn", "moov", "wave", "banque", "autre", "aucun")
+COUNTRIES = ("CI", "SN", "BF", "ML", "BJ", "TG", "CM", "NE", "GN", "FR", "XX")
+SOURCE_TYPES = (
+    "operateur",
+    "autorite",
+    "presse",
+    "reseau_social",
+    "corpus_recherche",
+    "amorcage",
+)
+CONFIDENCE = ("haute", "moyenne")
+BOOLEANS = ("true", "false")
+SPLITS = ("train", "test")
+MAX_TEXT_LEN = 1000
+
+RAW_COLUMNS = (
+    "text",
+    "label",
+    "category",
+    "operateur_cible",
+    "pays",
+    "source_type",
+    "date_observee",
+    "derive_de_modele",
+    "confiance_annotation",
+)
+COLUMNS = ("id", *RAW_COLUMNS, "group_id", "split")
+
+_DATE_RE = re.compile(r"(?:\d{4}-(?:0[1-9]|1[0-2]))?")
+_EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    """Read a UTF-8 CSV file into a list of dicts (all values are strings)."""
+    with path.open(encoding="utf-8", newline="") as fh:
+        return [dict(row) for row in csv.DictReader(fh)]
+
+
+def write_csv(path: Path, rows: Iterable[Mapping[str, object]], columns: Sequence[str]) -> None:
+    """Write rows to a UTF-8 CSV with LF line endings and a fixed column order."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=list(columns), lineterminator="\n")
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({c: row.get(c, "") for c in columns})
+
+
+def _url_not_defanged(text: str) -> bool:
+    return any("[.]" not in text[s:e] for s, e in url_spans(text))
+
+
+def _check_row(row: Mapping[str, str], line: int, processed: bool) -> list[str]:
+    errors: list[str] = []
+
+    def err(msg: str) -> None:
+        errors.append(f"ligne {line}: {msg}")
+
+    text = row.get("text", "")
+    label = row.get("label", "")
+    if not text.strip():
+        err("texte vide")
+    if len(text) > MAX_TEXT_LEN:
+        err(f"texte trop long ({len(text)} > {MAX_TEXT_LEN})")
+    if has_phone_number(text):
+        err("numéro de téléphone non masqué (utiliser <TEL>)")
+    if _EMAIL_RE.search(text):
+        err("adresse e-mail non masquée (utiliser <EMAIL>)")
+    if _url_not_defanged(text):
+        err("lien non désamorcé (utiliser hxxp:// et [.])")
+    if label not in LABELS:
+        err(f"label invalide: {label!r}")
+    elif row.get("category") not in CATEGORIES_BY_LABEL[label]:
+        err(f"catégorie {row.get('category')!r} incompatible avec le label {label!r}")
+    checks = (
+        ("operateur_cible", OPERATORS),
+        ("pays", COUNTRIES),
+        ("source_type", SOURCE_TYPES),
+        ("derive_de_modele", BOOLEANS),
+        ("confiance_annotation", CONFIDENCE),
+    )
+    for column, allowed in checks:
+        if row.get(column) not in allowed:
+            err(f"{column} invalide: {row.get(column)!r}")
+    if not _DATE_RE.fullmatch(row.get("date_observee", "")):
+        err(f"date_observee invalide: {row.get('date_observee')!r} (attendu AAAA-MM ou vide)")
+    if processed:
+        if row.get("split") not in SPLITS:
+            err(f"split invalide: {row.get('split')!r}")
+        if not row.get("group_id", "").isdigit():
+            err(f"group_id invalide: {row.get('group_id')!r}")
+    return errors
+
+
+def validate_rows(rows: Sequence[Mapping[str, str]], *, processed: bool = False) -> list[str]:
+    """Return human-readable validation errors (empty list when the data is valid).
+
+    Line numbers refer to the CSV file (the header is line 1).
+    """
+    expected = COLUMNS if processed else RAW_COLUMNS
+    if not rows:
+        return ["aucune ligne"]
+    missing = [c for c in expected if c not in rows[0]]
+    if missing:
+        return [f"colonnes manquantes: {missing}"]
+    errors: list[str] = []
+    for i, row in enumerate(rows, start=2):
+        errors.extend(_check_row(row, i, processed))
+    if processed:
+        ids = [row["id"] for row in rows]
+        if len(set(ids)) != len(ids):
+            errors.append("identifiants dupliqués")
+    return errors
