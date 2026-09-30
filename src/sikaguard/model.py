@@ -141,7 +141,9 @@ def save_model(
         training_data=training_data,
     )
     (directory / MANIFEST_FILE).write_text(
-        json.dumps(manifest.to_dict(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(manifest.to_dict(), indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     return manifest
 
