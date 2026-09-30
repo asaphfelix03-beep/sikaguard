@@ -32,7 +32,7 @@ _HOMOGLYPHS = str.maketrans(
     }
 )  # fmt: skip
 
-_LEET = str.maketrans({"0": "o", "1": "i", "3": "e", "4": "a", "5": "s", "7": "t", "@": "a", "$": "s"})
+_LEET = str.maketrans("013457@$", "oieastas")
 _LEET_CHARS = frozenset("013457@$")
 _RUN_RE = re.compile(r"[a-z0-9@$]+")
 _UNIT_SUFFIX_RE = re.compile(r"\d+[a-z]{1,4}")  # 25000f, 24h, 1ere, 5g
