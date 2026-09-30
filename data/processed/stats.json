@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0.dev0",
+  "n_rows": 407,
+  "n_exact_duplicates_removed": 0,
+  "n_groups": 407,
+  "n_multi_row_groups": 0,
+  "by_label": {
+    "arnaque": 177,
+    "legitime": 230
+  },
+  "by_category": {
+    "autre_arnaque": 25,
+    "faux_gain": 30,
+    "faux_transfert": 30,
+    "investissement_emploi": 30,
+    "notification_transaction": 70,
+    "otp": 40,
+    "personnel": 75,
+    "phishing_lien": 30,
+    "promo_operateur": 45,
+    "usurpation_operateur": 32
+  },
+  "by_source_type": {
+    "amorcage": 407
+  },
+  "by_country": {
+    "BF": 23,
+    "BJ": 24,
+    "CI": 236,
+    "CM": 18,
+    "ML": 13,
+    "SN": 65,
+    "TG": 11,
+    "XX": 17
+  },
+  "by_split_label": {
+    "train": {
+      "arnaque": 141,
+      "legitime": 184
+    },
+    "test": {
+      "arnaque": 36,
+      "legitime": 46
+    }
+  }
+}

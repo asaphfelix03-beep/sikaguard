@@ -1,0 +1,408 @@
+text,label,category,operateur_cible,pays,source_type,date_observee,derive_de_modele,confiance_annotation
+"Bonsoir, je viens de vous envoyer 25 000 F par erreur sur votre Orange Money. SVP renvoyez-les moi, c'est l'argent de l'hôpital de mon enfant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute
+"Orange Money: Vous avez reçu 75.000F de <NOM>. Solde: 75.450F. ID: <REF>. Svp c'est une erreur, renvoyez au <TEL>",arnaque,faux_transfert,orange,CI,amorcage,,true,haute
+"Frère c'est une erreur, j'ai fait un dépôt de 10000 sur ton numéro au lieu de celui de ma femme. Renvoie stp, Dieu va te bénir",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"Bonjour madame, j'ai envoyé 15 000 F sur votre Wave par erreur. Je vous en prie retournez-les moi, je suis un étudiant.",arnaque,faux_transfert,wave,SN,amorcage,,true,haute
+"Slt, un transfert de 30000F est parti sur ton compte MoMo par erreur. Fais le retour vite stp je dois payer le loyer",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute
+"Mr bonsoir, c'est le caissier de la boutique, j'ai fait un dépôt de 45 000 FCFA par mégarde sur votre numéro. Merci de renvoyer au <TEL>",arnaque,faux_transfert,orange,BF,amorcage,,true,haute
+"Bonjour, vous avez reçu 20 000 FCFA par erreur de ma part. Veuillez les renvoyer en tapant *144*1*1* suivi de mon numéro et du montant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute
+"Tantie pardon, j'ai envoyé 5000 sur ton numéro par erreur, c'était pour ma maman. Renvoie moi ça stp",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"MTN MoMo: vous avez reçu 100.000 FCFA de <NOM>. Transaction annulée par l'expéditeur, veuillez retourner le montant au <TEL> sous 24h pour éviter le blocage",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute
+"Bonsoir, je me suis trompé de numéro en envoyant 35 000 F pour les frais de scolarité de ma fille. Aidez-moi à les récupérer svp, renvoyez sur ce numéro",arnaque,faux_transfert,orange,SN,amorcage,,true,haute
+"Salam, j'ai envoyé 12500 F sur ton Wave par erreur. Tu peux me les renvoyer ? Barké",arnaque,faux_transfert,wave,SN,amorcage,,true,haute
+Mon frère un dépôt de 60000F a été fait par erreur sur ton Moov Money. Je t'en supplie fais le retour au <TEL>,arnaque,faux_transfert,moov,BJ,amorcage,,true,haute
+"Bonjour, erreur de transfert: 18 000 FCFA envoyés sur votre compte Flooz. Merci de me les rendre au plus vite, le client attend",arnaque,faux_transfert,moov,TG,amorcage,,true,haute
+"Allo c'est moi qui t'ai appelé tout à l'heure, l'argent que j'ai envoyé par erreur 40 000 là, renvoie ça vite on va se comprendre",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"Bjr, j'ai transféré 25.000 FCFA par erreur à votre numéro. Veuillez me retourner ça, je vous laisse 2000 pour vous",arnaque,faux_transfert,orange,CI,amorcage,,true,haute
+Vous avez recu un transfert de 80 000 FCFA. Ce transfert est une erreur de l'expediteur. Contactez-le au <TEL> pour le rembourser immediatement.,arnaque,faux_transfert,mtn,CM,amorcage,,true,haute
+"Maman pardon j'ai mis 10 000 sur ton numéro à la place du mien, renvoie ça sur mon nouveau numéro <TEL>",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"Bonsoir monsieur, un dépôt de 150 000 F a été effectué sur votre compte par erreur par notre agent. Veuillez renvoyer la somme sinon votre compte sera suspendu",arnaque,faux_transfert,orange,ML,amorcage,,true,haute
+"Svp frère j'ai fait une erreur de numéro, 22.500F sont partis chez toi. C'est l'argent des médicaments de mon papa, renvoie stp",arnaque,faux_transfert,orange,BF,amorcage,,true,haute
+"Bonjour, par erreur j'ai envoyé 7500F sur votre numéro Wave au lieu de mon fournisseur. Renvoyez s'il vous plaît",arnaque,faux_transfert,wave,CI,amorcage,,true,haute
+"C'est urgent, j'ai envoyé 50000 par erreur, c'était pour payer la caution. Renvoie ça sur <TEL> je t'en prie",arnaque,faux_transfert,aucun,CM,amorcage,,true,haute
+"Bonjour ma sœur, désolée de te déranger, 20 000 F sont arrivés sur ton compte par erreur. Fais le retour et garde 1000 pour ta peine",arnaque,faux_transfert,orange,SN,amorcage,,true,haute
+"Transfert reçu 65.000 FCFA de <NOM> <TEL>. Solde 65 500 FCFA. Erreur de l'expéditeur, merci de retourner la somme au plus vite",arnaque,faux_transfert,orange,CI,amorcage,,true,haute
+"Mon cher j'ai rechargé ton compte de 30 000 F par erreur, fais le retrait chez l'agent le plus proche et envoie moi le code de retrait",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"Bonjour, je vous ai envoyé 45 000 FCFA par erreur. Mon patron va me tuer. Renvoyez vite svp",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute
+"Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ?",arnaque,faux_transfert,orange,ML,amorcage,,true,haute
+"Bonsoir, vous avez reçu 10 000 FCFA de ma part par erreur. Merci de faire le retour avant 18h",arnaque,faux_transfert,wave,SN,amorcage,,true,haute
+"Salut, erreur de manip, j'ai envoyé 90 000 F sur ton Orange Money. Retourne ça stp, c'est pour mes marchandises",arnaque,faux_transfert,orange,BF,amorcage,,true,haute
+"Pardon monsieur c'est la dame du marché, j'ai envoyé 5 500 F sur votre numéro sans faire exprès. Renvoyez moi ça",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute
+"Bonjour, j'ai effectué un transfert de 27 000 FCFA sur votre compte MTN par erreur. Merci de bien vouloir le renvoyer au même numéro. Que Dieu vous bénisse",arnaque,faux_transfert,mtn,BJ,amorcage,,true,haute
+"Orange Money: Cher client, votre compte sera suspendu dans 24h pour mise à jour. Envoyez votre code secret au <TEL> pour le maintenir actif.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Service Client MTN: suite à une anomalie, votre compte MoMo est bloqué. Appelez le <TEL> pour le débloquer avec votre code PIN.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute
+"WAVE INFO: votre compte a été signalé. Pour éviter sa fermeture, confirmez votre code secret en répondant à ce message.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute
+"Cher abonné, votre puce sera désactivée ce soir suite au nouveau recensement. Composez #144*8# puis entrez votre code secret pour confirmer.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Bonjour, ici le service technique Orange. Vous allez recevoir un code par SMS, donnez-le nous pour finaliser la mise à jour de votre compte.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Moov Money: Votre compte présente une anomalie. Pour le réactiver, envoyez votre code PIN par SMS au <TEL>. Service gratuit.",arnaque,usurpation_operateur,moov,BJ,amorcage,,true,haute
+"Agent Orange Money: nous avons détecté une transaction suspecte de 250 000 F sur votre compte. Pour l'annuler, communiquez-nous votre code secret au <TEL>",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute
+MTN: Votre SIM sera bloquée pour non-identification. Rappelez le <TEL> et munissez-vous de votre code MoMo pour régulariser.,arnaque,usurpation_operateur,mtn,CM,amorcage,,true,haute
+"ORANGE: Votre compte Orange Money a été piraté. Pour sécuriser votre argent, rappelez notre cellule au <TEL> et donnez votre code PIN à l'agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Chère cliente, votre compte Wave passe au statut Premium. Pour activer, communiquez le code reçu par SMS à notre conseiller au <TEL>.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute
+"Service clientèle Moov: suite à la maintenance, veuillez confirmer votre identité en envoyant votre mot de passe Moov Money à ce numéro",arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute
+MTN MoMo: Votre compte est suspendu pour activité suspecte. Contactez immédiatement notre service fraude au <TEL> avec votre code secret,arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute
+"Bonjour c'est l'agence Orange de Cocody. Un colis de téléphone vous attend, donnez-nous le code de validation que vous allez recevoir.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Votre compte Wave sera clôturé dans 2h. Pour le conserver, appelez notre conseiller au <TEL> et suivez ses instructions.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute
+"Ecobank: Votre carte bancaire a été bloquée. Pour la réactiver, communiquez votre code PIN au <TEL>.",arnaque,usurpation_operateur,banque,CI,amorcage,,true,haute
+Orange Money Mali: mise à jour obligatoire. Envoyez OUI suivi de votre code secret au <TEL> pour continuer à utiliser votre compte.,arnaque,usurpation_operateur,orange,ML,amorcage,,true,haute
+"Bonjour, service client MTN. Votre bonus de fidélité de 50 000 F est en attente. Tapez *126# puis votre code PIN pour le recevoir.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute
+"ALERTE: tentative de connexion à votre compte Orange Money depuis un autre téléphone. Si ce n'est pas vous, rappelez le <TEL> et confirmez votre code.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret.",arnaque,usurpation_operateur,moov,BF,amorcage,,true,haute
+SERVICE ORANGE: Votre numéro a été sélectionné pour la migration 5G. Envoyez le code à 4 chiffres que vous allez recevoir au <TEL> pour activer.,arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Wave: Suite à une erreur système, votre solde a été gelé. Appelez-nous vite au <TEL> pour le débloquer.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute
+"Bonjour, je suis agent de MTN MoMo. Nous faisons une vérification des comptes. Donnez-moi le code que vous venez de recevoir pour valider.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute
+"UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>.",arnaque,usurpation_operateur,banque,CM,amorcage,,true,haute
+"Orange Money: Nous remboursons les frais de transfert du mois. Pour recevoir, composez #144# puis entrez votre code secret et le montant 25000.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Cher client, vous avez été débité par erreur de 10 000 F. Pour le remboursement, notre agent va vous appeler, veuillez lui communiquer le code reçu.",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute
+"Direction Commerciale MTN: votre compte Mobile Money présente un solde négatif. Régularisez en appelant le <TEL> sous 48h, sinon fermeture définitive.",arnaque,usurpation_operateur,mtn,BJ,amorcage,,true,haute
+Flooz: Votre compte Moov Money sera désactivé demain. Mettez à jour vos informations en envoyant votre PIN au <TEL>.,arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute
+"Bonjour, service anti-fraude Wave. Un transfert suspect est en cours sur votre compte. Communiquez-nous rapidement le code reçu pour le bloquer.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute
+"Orange: Votre abonnement internet a été renouvelé par erreur. Pour être remboursé, appelez le <TEL> et donnez votre code Orange Money.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Chère abonnée, votre puce MTN n'est pas enregistrée. Elle sera coupée à minuit. Rappelez vite le <TEL>",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute
+"Service Client Wave: nous vous offrons 5000 F de bonus. Pour le recevoir, confirmez votre code secret au conseiller qui va vous appeler.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute
+"Cher client Orange Money, votre compte a été crédité de 100 000 F de dédommagement. Pour valider, transmettez votre code secret à notre agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute
+"Félicitations! Votre numéro a gagné 500 000 FCFA à la tombola Orange. Pour retirer votre gain, envoyez 5000 F de frais de dossier au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute
+MTN PROMO: Vous êtes l'heureux gagnant d'un iPhone et de 200 000 F. Appelez le <TEL> pour les modalités de livraison.,arnaque,faux_gain,mtn,CI,amorcage,,true,haute
+Bravo! Vous avez été tiré au sort pour le jeu Wave Anniversaire. Gain: 1 000 000 FCFA. Payez les frais d'activation de 10 000 F pour le recevoir.,arnaque,faux_gain,wave,SN,amorcage,,true,haute
+"Cher client, votre numéro a été sélectionné pour recevoir une moto neuve. Frais de livraison: 25 000 F à envoyer au <TEL>.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute
+FELICITATIONS!!! VOUS AVEZ GAGNE 750.000 FCFA AU GRAND JEU MOOV. CONTACTEZ LE <TEL> AVANT 18H,arnaque,faux_gain,moov,BJ,amorcage,,true,haute
+Loterie Nationale: votre numéro est gagnant du tirage de ce mois. Montant: 2 500 000 F. Frais d'enregistrement: 15 000 F.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+"Orange vous offre 50 000 F de crédit pour votre fidélité. Pour activer, envoyez 2000 F de frais au <TEL>.",arnaque,faux_gain,orange,SN,amorcage,,true,haute
+Vous êtes l'un des 10 gagnants du concours d'une grande marque de boisson. Réclamez votre prix de 300 000 F en appelant le <TEL>.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+Salut! Tu as gagné un bon d'achat de 100 000 F. Clique ici pour le récupérer: hxxp://bon-achat-ci[.]xyz,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+"Cher abonné, grâce à votre fidélité vous gagnez un smartphone Samsung. Payez seulement les frais de transport de 7500 F.",arnaque,faux_gain,aucun,CM,amorcage,,true,haute
+Heureux élu! Votre numéro a été tiré lors du grand tirage de fin d'année. Vous remportez 5 000 000 F. Appelez vite notre huissier au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+"Wave vous remercie: 25 000 F offerts aux 1000 premiers clients. Pour débloquer, envoyez 1000 F de frais de validation au <TEL>",arnaque,faux_gain,wave,CI,amorcage,,true,haute
+Promo spéciale: votre carte SIM a gagné 20Go et 100 000 F. Composez #144# et suivez les étapes pour payer la TVA de 3500 F,arnaque,faux_gain,orange,CI,amorcage,,true,haute
+Félicitation vous avez gagné une somme de 850 000f au jeu MTN Kilo Kilo appelez ce numéro pour rentrer en possession de votre gain,arnaque,faux_gain,mtn,CI,amorcage,,true,haute
+"Bonjour, vous avez remporté un voyage à La Mecque tous frais payés. Envoyez 50 000 F pour les frais de visa au <TEL>.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute
+"Votre numéro a gagné le jackpot du jour: 1.500.000 FCFA. Pour la libération du gain, payez 12 500 F de frais de douane.",arnaque,faux_gain,aucun,ML,amorcage,,true,haute
+GAGNANT: Moov Africa vous offre une télévision écran plat. Livraison sous 48h après paiement de 10 000 F.,arnaque,faux_gain,moov,BF,amorcage,,true,haute
+"Félicitations, vous faites partie des gagnants de la promo Orange Money Transférez et gagnez. Gain: 400 000 F. Contactez le service des lots au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute
+"Vous avez gagné 3 sacs de riz et 150 000 F à la tombola de la Tabaski! Pour le retrait, envoyez vos frais de dossier de 5000 F.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute
+"Tu es le grand gagnant de notre jeu concours Facebook! 😍 Ton lot de 200 000 F t'attend, envoie 3000 F pour l'activation",arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+BONNE NOUVELLE: votre numéro figure parmi les 50 gagnants de la loterie MTN. Montant: 600 000 F. Appelez le <TEL> immédiatement.,arnaque,faux_gain,mtn,CM,amorcage,,true,haute
+"Cher client, vous avez gagné un bonus exceptionnel de 75 000 F. Pour le recevoir sur votre compte, confirmez votre code secret.",arnaque,faux_gain,orange,CI,amorcage,,true,haute
+Une fondation vous a sélectionné pour une aide de 1 000 000 F. Frais de traitement du dossier: 20 000 F au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+Vous avez gagné un scooter au tirage au sort de la foire. Envoyez 15 000 F pour l'immatriculation et la livraison.,arnaque,faux_gain,aucun,TG,amorcage,,true,haute
+"Wave Sénégal: tirage spécial fête de l'indépendance, vous gagnez 350 000 F. Retirez en suivant ce lien hxxps://wave-gain[.]online/retrait",arnaque,faux_gain,wave,SN,amorcage,,true,haute
+"Félicitations Madame, vous êtes gagnante d'un frigo et de 100 000 F. Contactez notre agent au <TEL> pour la livraison à domicile.",arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+"Votre numéro a été choisi par ordinateur, vous gagnez 250 000 F offerts par le Ministère. Frais d'enregistrement 5 000 F.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute
+Orange Mali: vous êtes le gagnant du jeu Sama Kalo. Gain 500 000 FCFA. Appelez ce numéro pour réclamer votre lot.,arnaque,faux_gain,orange,ML,amorcage,,true,haute
+Salut toi! Grâce à ta participation tu as gagné un iPhone. Réponds OUI et paie les frais de livraison de 9900 F,arnaque,faux_gain,aucun,CI,amorcage,,true,haute
+"Cadeau de fin d'année: MTN offre 50 000 F à ses meilleurs clients. Pour recevoir le vôtre, envoyez 2 500 F de frais d'activation au <TEL>",arnaque,faux_gain,mtn,BJ,amorcage,,true,haute
+Orange Money: Votre compte a été suspendu. Réactivez-le ici: hxxp://orange-money-ci[.]xyz/login,arnaque,phishing_lien,orange,CI,amorcage,,true,haute
+Votre colis est bloqué au centre de tri. Réglez les frais de livraison sur hxxps://colis-ci-livraison[.]top/suivi,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Wave: activité inhabituelle détectée. Vérifiez votre compte: bit[.]ly/wave-verif,arnaque,phishing_lien,wave,SN,amorcage,,true,haute
+MTN MoMo: votre compte expire aujourd'hui. Mettez-le à jour sur hxxp://mtn-momo-update[.]site,arnaque,phishing_lien,mtn,CI,amorcage,,true,haute
+Votre compte WhatsApp sera désactivé. Confirmez votre numéro ici: hxxps://whatsapp-verification[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Ecobank: une connexion suspecte a été détectée. Sécurisez votre compte: hxxp://41[.]202[.]77[.]10/ecobank,arnaque,phishing_lien,banque,CI,amorcage,,true,haute
+Vous avez droit à un remboursement de 35 000 F. Cliquez sur tinyurl[.]com/rembours-ci pour le recevoir,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Moov Money: votre solde est bloqué. Débloquez-le en vous connectant sur hxxp://moov-money-benin[.]info,arnaque,phishing_lien,moov,BJ,amorcage,,true,haute
+"Cher client, votre carte bancaire expire. Renouvelez-la en ligne sur hxxps://sgci-carte[.]online avant demain.",arnaque,phishing_lien,banque,CI,amorcage,,true,haute
+Aide sociale 2026: l'Etat verse 50 000 F à chaque famille. Inscrivez-vous: hxxp://aide-gouv-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Votre compte Facebook va être supprimé pour violation des règles. Faites appel ici: hxxps://fb-support-center[.]live,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Orange: Votre facture internet est impayée. Réglez maintenant pour éviter la coupure: cutt[.]ly/orange-facture,arnaque,phishing_lien,orange,SN,amorcage,,true,haute
+"Wave: recevez 10 000 F de cashback, connectez-vous sur hxxps://wave-cashback-sn[.]shop",arnaque,phishing_lien,wave,SN,amorcage,,true,haute
+MTN: vous avez 3 messages vocaux en attente. Écoutez-les ici: hxxp://mtn-messagerie[.]buzz/ecoute,arnaque,phishing_lien,mtn,CM,amorcage,,true,haute
+Votre inscription au concours de la fonction publique est incomplète. Complétez sur hxxp://concours-fp-ci[.]online,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Bourse d'études 2026-2027: dernier délai aujourd'hui. Postulez ici: bit[.]ly/bourse-afrique,arnaque,phishing_lien,aucun,BF,amorcage,,true,haute
+Alerte sécurité: votre compte Orange Money sera fermé. Vérifiez vos informations: hxxps://0range-money[.]com/verif,arnaque,phishing_lien,orange,CI,amorcage,,true,haute
+Livraison: votre commande n° <REF> est en attente de paiement. Payez ici: hxxp://boutique-paiement[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Votre ligne sera suspendue demain. Mettez à jour votre identification sur hxxp://identification-sim-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+"Chère cliente, un virement de 150 000 F vous attend. Validez-le sur hxxps://virement-express[.]top",arnaque,phishing_lien,banque,SN,amorcage,,true,haute
+Moov Africa: gagnez 5Go gratuits en remplissant ce formulaire rapide: hxxp://moov-bonus-5go[.]site,arnaque,phishing_lien,moov,BF,amorcage,,true,haute
+Votre compte Wave présente une erreur. Cliquez ici pour la corriger avant sa suspension: hxxps://wave-support[.]icu,arnaque,phishing_lien,wave,CI,amorcage,,true,haute
+Les impôts vous doivent un remboursement de 42 000 F. Réclamez-le avant vendredi: rb[.]gy/impots-rembourse,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Votre banque: veuillez confirmer vos coordonnées pour éviter le blocage de votre carte: hxxp://nsia-securite[.]info,arnaque,phishing_lien,banque,CI,amorcage,,true,haute
+"Dernière chance! Ta vidéo a été signalée, connecte-toi pour la voir: hxxps://video-privee[.]live/voir",arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+"MTN MoMo: pour continuer à utiliser vos services, validez votre compte ici hxxp://momo-validation-bj[.]xyz sous 24h",arnaque,phishing_lien,mtn,BJ,amorcage,,true,haute
+Votre abonnement TV a expiré. Réabonnez-vous avec 50% de réduction ici: hxxp://reabonnement-promo[.]shop,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Recrutement police 2026: inscription en ligne gratuite sur hxxp://recrutement-police-ci[.]online avant la clôture,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute
+Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om,arnaque,phishing_lien,orange,CI,amorcage,,true,haute
+ALERTE Orange Money: 3 tentatives de connexion échouées. Protégez votre compte: hxxps://orangemoney-securite[.]click/pin,arnaque,phishing_lien,orange,CI,amorcage,,true,haute
+Doublez votre argent en 72h! Investissez 50 000 F et recevez 100 000 F. Contactez notre gestionnaire sur WhatsApp au <TEL>.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Opportunité: gagnez 25 000 F par jour depuis votre téléphone, sans diplôme. Inscription 5000 F. Infos au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Recrutement urgent: une société minière recrute 50 agents, salaire 350 000 F. Frais de dossier 15 000 F à envoyer au <TEL>.",arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute
+Placement sûr: 30% d'intérêts par semaine garantis avec notre plateforme crypto. Rejoignez-nous: hxxps://crypto-gain-afrique[.]xyz,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Offre d'emploi: hôtesse d'accueil à Dubaï, billet et visa pris en charge. Envoyez 50 000 F pour la réservation.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Trading Forex: 200 000 F investis = 1 000 000 F en un mois. Places limitées, contactez vite le <TEL>",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute
+"Bonjour, votre CV a été retenu pour un poste de chauffeur à la mairie. Payez 10 000 F de frais de visite médicale au <TEL>.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Tontine digitale: cotisez 10 000 F et recevez 80 000 F en 15 jours. Parrainez 2 personnes pour débloquer vos gains.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Devenez riche avec le bitcoin! Notre robot trading génère des bénéfices automatiques. Dépôt minimum 25 000 F.,arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute
+Stage rémunéré 150 000 F/mois dans une ONG internationale. Inscription 7500 F. Places limitées.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute
+"Mon frère, j'ai trouvé une affaire: tu mets 100 000 et on te rembourse 300 000 dans 10 jours. Moi-même j'ai déjà gagné, appelle vite",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Recrutement de 200 jeunes dans les forces de défense. Frais d'inscription 25 000 F au <TEL>. Dernier délai vendredi.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute
+Travail à domicile: aimez des vidéos et gagnez 15 000 F par jour. Activation du compte: 5000 F.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Investissement agricole: achetez une part de 50 000 F et recevez 20% chaque mois pendant un an. Garantie 100%.,arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute
+Visa Canada garanti avec contrat de travail. Frais de procédure 150 000 F. Contactez le cabinet au <TEL>,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Salut! Je gagne 500 000 F par mois grâce à cette application. Inscris-toi avec mon lien et dépose 10 000 F: bit[.]ly/argent-facile,arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute
+"Une entreprise étrangère recrute des manutentionnaires, salaire 200 000 F. Envoyez 8000 F pour la carte de travail.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Multipliez votre capital par 5 en 30 jours avec notre programme d'investissement. Rendement garanti. Appelez le <TEL>,arnaque,investissement_emploi,aucun,TG,amorcage,,true,haute
+"Emploi: agents de saisie en ligne, 3 heures par jour, 120 000 F par mois. Kit de démarrage 12 000 F à payer.",arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute
+"Bonne nouvelle, vous êtes présélectionné pour la bourse d'excellence. Versez 30 000 F de frais de traitement pour finaliser.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute
+Achetez des actions de notre société minière d'or et doublez votre mise en 2 mois. Minimum 50 000 F.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute
+"Crypto-monnaie: le nouveau jeton qui va x10 cette semaine. Investis maintenant, contacte le coach au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Offre spéciale: prêt de 2 000 000 F sans garantie, remboursable en 5 ans. Frais de dossier 35 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Recrutement dans une grande banque: 15 postes de conseillers. Envoyez 10 000 F pour le test écrit au <TEL>.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute
+Rejoins le groupe VIP paris sportifs: 95% de gains garantis. Abonnement 20 000 F le mois.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Votre profil a été retenu pour travailler comme nounou en Europe. Billet et logement offerts, frais de dossier 75 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Placement immobilier: investissez 250 000 F aujourd'hui, touchez 50 000 F de loyer chaque mois à vie.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute
+"Mon cousin travaille à la douane, il peut te faire recruter. Il faut juste 100 000 F pour le dossier, c'est sûr à 100%",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+Gagnez de l'argent en ligne: 1 clic = 500 F. Retrait dès 10 000 F. Inscription payante 3000 F sur hxxp://clic-argent[.]site,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Les inscriptions pour le programme d'aide aux jeunes entrepreneurs sont ouvertes. Financement de 5 000 000 F, frais de dossier 20 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute
+"Maman c'est moi, mon téléphone est tombé dans l'eau. J'écris avec le numéro d'un ami. Envoie-moi vite 20 000 F, je suis bloqué.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Grand marabout voyant médium, retour de l'être aimé, chance aux jeux, protection. Résultats en 3 jours. Appelez le <TEL>",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Papa c'est moi, j'ai eu un accident à moto, je suis à l'hôpital. Envoie 50 000 F sur ce numéro pour les soins, c'est urgent",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute
+"Bonjour, j'ai changé de numéro. Enregistre celui-ci et supprime l'ancien. Au fait, tu peux m'aider avec 15 000 F ?",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Police Nationale: vous êtes convoqué pour une affaire vous concernant. Pour éviter la garde à vue, payez l'amende de 50 000 F au <TEL>.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+J'ai des vidéos compromettantes de toi. Envoie 100 000 F dans 24h ou je les publie sur Facebook.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Bonjour, je suis le propriétaire de la maison que vous avez visitée. Envoyez 3 mois de caution par Wave pour réserver avant les autres.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute
+"Tonton c'est moi <NOM>, je suis en voyage et on m'a volé mon sac. Envoie-moi 30 000 F pour le transport, je te rembourse dès mon retour",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Voyant africain puissant: je règle tous vos problèmes d'argent, de mariage et de travail. Paiement après résultat. <TEL>",arnaque,autre_arnaque,aucun,BJ,amorcage,,true,haute
+"Votre enfant a été arrêté par la police. Envoyez 75 000 F pour sa libération immédiate au <TEL>, ne prévenez personne.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Salut c'est ton ami de Facebook, je t'envoie un colis avec des dollars et des cadeaux. Paie juste les frais de douane de 45 000 F.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+Je suis une veuve malade et je veux léguer ma fortune de 500 millions à une personne honnête. Contactez mon avocat au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Bonsoir, votre numéro a été utilisé pour une fraude. Pour éviter des poursuites, contactez l'inspecteur au <TEL> et payez les frais d'enquête.",arnaque,autre_arnaque,aucun,CM,amorcage,,true,haute
+"Vends iPhone neuf à 150 000 F seulement, livraison après paiement du transport de 10 000 F par Wave.",arnaque,autre_arnaque,wave,CI,amorcage,,true,haute
+"Ma sœur c'est moi, je suis à la gare et mon porte-monnaie est perdu. Fais-moi un transfert de 10 000 sur ce numéro stp",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+Envoie ce message à 20 personnes et tu recevras 5000 F de crédit gratuit. Sinon ton numéro sera bloqué dans 48h.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Bonjour, je vous ai vu sur Facebook, je suis un homme d'affaires et je veux vous épouser. Envoyez 25 000 F pour mon billet d'avion.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute
+"Cher fidèle, le pasteur a prié pour vous. Pour recevoir la bénédiction financière, semez 10 000 F au <TEL> aujourd'hui.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+Anti-coupure: payez votre facture d'électricité avec 50% de réduction en passant par notre agent au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Location de voiture pas chère, payez l'acompte de 40 000 F par Orange Money et la voiture vous est livrée.",arnaque,autre_arnaque,orange,CI,amorcage,,true,haute
+"Bébé c'est moi, j'ai un problème urgent, fais moi un dépôt de 25 000 sur ce numéro, je t'explique après",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute
+"Bonjour madame, votre fils a eu un malaise à l'école. Envoyez 20 000 F pour les premiers soins au numéro de l'infirmier <TEL>.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute
+"Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute
+Le cabinet du ministre vous informe que vous êtes retenu pour un marché public. Versez 200 000 F de frais de soumission.,arnaque,autre_arnaque,aucun,BF,amorcage,,true,haute
+"Tu m'as appelé? Rappelle-moi vite au <TEL> c'est important, je ne peux pas te joindre sur ce numéro",arnaque,autre_arnaque,aucun,CI,amorcage,,true,moyenne
+Transfert de 10000 FCFA vers <TEL> reussi. Frais: 100 FCFA. Nouveau solde: 45250 FCFA. Trans ID: <REF>. Orange Money ne vous demandera jamais votre code secret.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Vous avez recu 15000 FCFA de <NOM> (<TEL>). Nouveau solde: 27800 FCFA. ID transaction: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Vous avez reçu 5 000F de <NOM>. Nouveau solde: 12 350F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+Flooz: Depot de 20000 FCFA effectue par l'agent <NOM>. Solde: 32500 FCFA. Ref <REF>,legitime,notification_transaction,moov,TG,amorcage,,true,haute
+Votre compte a été débité de 25 000 XOF le 29/09/2026 (retrait GAB). Solde disponible: 180 500 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute
+Paiement de 12 500 FCFA pour votre facture d'électricité effectué avec succès. Réf: <REF>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute
+Achat de credit de 1000 FCFA pour <TEL> reussi. Nouveau solde Orange Money: 8450 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Retrait de 50000 FCFA chez l'agent <NOM> effectue. Frais: 500 FCFA. Nouveau solde: 3200 FCFA. Trans ID: <REF>,legitime,notification_transaction,orange,BF,amorcage,,true,haute
+Votre transaction de 5000 FCFA vers <TEL> a echoue. Votre compte n'a pas ete debite.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Votre compte Orange Money est bloque apres 3 saisies erronees du code secret. Rendez-vous en agence avec votre piece d'identite pour le debloquer.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Paiement marchand de 3500F chez <NOM> réussi. Nouveau solde: 21 400F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+MoMo: Vous avez envoyé 7500 FCFA à <NOM> <TEL>. Frais 75 FCFA. Solde 10 925 FCFA. Ne partagez jamais votre code PIN.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute
+Transfert de 25 000 F vers <NOM> réussi. Frais 250 F. Solde 3 460 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Vous avez recu 100000 FCFA de <NOM>. Solde disponible: 102500 FCFA. Ref: <REF>,legitime,notification_transaction,orange,ML,amorcage,,true,haute
+Depot de 30 000 FCFA effectue sur votre compte Moov Money. Nouveau solde 34 750 FCFA.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute
+Paiement des frais de scolarité: 75 000 FCFA réglés à l'établissement <NOM>. Réf <REF>.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Votre retrait de 20 000 F a été effectué. Solde: 5 850 F. Merci d'utiliser Wave.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+Transfert international de 50 000 FCFA reçu de <NOM>. Solde: 61 200 FCFA.,legitime,notification_transaction,orange,SN,amorcage,,true,haute
+Votre facture d'eau de 8 750 FCFA a été payée. Référence: <REF>.,legitime,notification_transaction,moov,BF,amorcage,,true,haute
+Achat de forfait internet 2Go à 1000 FCFA réussi via votre compte MoMo. Solde: 4 300 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute
+Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Vous avez payé 6 000 FCFA pour votre abonnement TV. Réf <REF>. Validité: 30 jours.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Votre compte a été débité de 15 000 XOF par prélèvement pour votre assurance. Solde: 95 200 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute
+T-Money: Vous avez recu 12000 FCFA de <TEL>. Solde: 14650 FCFA.,legitime,notification_transaction,autre,TG,amorcage,,true,haute
+Free Money: transfert de 3000 F vers <TEL> effectué. Solde: 9 800 F.,legitime,notification_transaction,autre,SN,amorcage,,true,haute
+Retrait de 10 000 FCFA effectué au guichet. Frais 100 FCFA. Nouveau solde 1 520 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Vous avez reçu 2 500F de <NOM>. Nouveau solde: 2 590F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Orange Money: Paiement de 45 000 FCFA à <NOM> effectué. Solde: 12 310 FCFA. Ne communiquez jamais votre code secret.,legitime,notification_transaction,orange,CM,amorcage,,true,haute
+Votre virement de 200 000 XOF vers le compte de <NOM> a été exécuté.,legitime,notification_transaction,banque,BJ,amorcage,,true,haute
+Transfert de 5000 F vers <TEL> réussi. Solde 750 F. Pensez à recharger votre compte.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Vous avez recu 40000 FCFA de <NOM>. Motif: loyer octobre. Solde: 43100 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+"Votre carte a été utilisée pour un paiement de 18 900 XOF chez un commerçant le 30/09/2026 à 12:14. Si ce n'est pas vous, contactez votre agence.",legitime,notification_transaction,banque,CI,amorcage,,true,haute
+Opération réussie: dépôt de 60 000 FCFA. Nouveau solde Moov Money: 71 250 FCFA.,legitime,notification_transaction,moov,TG,amorcage,,true,haute
+Paiement de 3 000 F au taxi <NOM> réussi. Solde 14 200 F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+Le transfert de 8 000 FCFA de <NOM> a été annulé à sa demande. Votre solde est inchangé: 22 000 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Recharge de 500 FCFA effectuée pour votre numéro. Bonus: 100 FCFA. Solde principal: 612 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Votre prêt de 25 000 FCFA a été remboursé intégralement. Merci pour votre confiance.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Cotisation tontine: 10 000 F envoyés à <NOM>. Solde: 3 450 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+"Vous avez recu 7500 FCFA de <NOM>. Nouveau solde 7890 FCFA. Trans ID <REF>. Orange Money, votre argent en toute sécurité.",legitime,notification_transaction,orange,BF,amorcage,,true,haute
+MoMo: Paiement de facture CIE de 22 300 FCFA réussi. ID: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Votre compte épargne a été crédité des intérêts trimestriels: 4 250 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute
+Depot de 5000 FCFA recu de l'agent <NOM>. Solde: 5320 FCFA. Ref: <REF>,legitime,notification_transaction,moov,BF,amorcage,,true,haute
+Vous avez envoyé 12 000F à <NOM>. Frais: 120F. Nouveau solde: 830F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+Achat d'électricité prépayée: 10 000 FCFA. Code de recharge compteur: <CODE>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+"Vous avez recu 250000 FCFA de <NOM>. Solde: 262000 FCFA. Pour votre sécurité, ne partagez jamais votre PIN.",legitime,notification_transaction,orange,SN,amorcage,,true,haute
+Votre abonnement mensuel de 2 500 FCFA a été renouvelé. Prochain renouvellement le 30/10/2026.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Transfert Orange Money vers compte bancaire de 100 000 FCFA effectué. Délai: 24h.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Votre compte a été crédité de 75 000 XOF (bourse d'études). Solde: 76 900 XOF.,legitime,notification_transaction,banque,BF,amorcage,,true,haute
+Paiement en ligne de 9 900 FCFA effectué sur votre compte Wave.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Retrait de 15000 FCFA effectue. Frais: 150 FCFA. Nouveau solde: 2310 FCFA. Merci de votre fidelite.,legitime,notification_transaction,moov,CI,amorcage,,true,haute
+Vous avez recu 20 000 FCFA de <NOM> via MTN MoMo. Solde: 20 450 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute
+Votre transfert de 35 000 FCFA est en attente de confirmation du destinataire.,legitime,notification_transaction,orange,ML,amorcage,,true,haute
+Le paiement de 1 500 F pour votre ticket de bus a été effectué. Bon voyage!,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+"Votre compte Mobile Money a été bloqué temporairement à votre demande. Pour le réactiver, présentez-vous en agence.",legitime,notification_transaction,mtn,BJ,amorcage,,true,haute
+Transfert de 50 000 FCFA reçu. Expéditeur: <NOM>. Solde: 50 210 FCFA. Ref <REF>.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute
+Achat de pass internet 10Go (5000 FCFA) réussi. Validité 30 jours.,legitime,notification_transaction,orange,SN,amorcage,,true,haute
+Vous avez payé 2 000 FCFA à la pharmacie <NOM>. Solde restant: 6 800 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Votre compte a été débité de 3 500 XOF (frais de tenue de compte trimestriels).,legitime,notification_transaction,banque,CI,amorcage,,true,haute
+Vous avez recu 5000 FCFA de <NOM>. Nouveau solde: 5100 FCFA.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute
+Remboursement de frais: 500 FCFA recrédités sur votre compte suite à une erreur de facturation.,legitime,notification_transaction,orange,CI,amorcage,,true,haute
+Paiement de votre commande de 14 500 FCFA confirmé. Livraison prévue demain.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Transfert de 30000 FCFA vers <TEL> reussi. Frais: 300 FCFA. Solde: 1240 FCFA.,legitime,notification_transaction,orange,ML,amorcage,,true,haute
+Vous avez retiré 25 000 FCFA au distributeur. Solde: 131 000 FCFA.,legitime,notification_transaction,banque,CM,amorcage,,true,haute
+Votre paiement de 4 000 F pour l'inscription au club a été reçu. Merci.,legitime,notification_transaction,wave,SN,amorcage,,true,haute
+Dépôt de 100 000 FCFA effectué sur votre compte par <NOM>. Solde: 108 900 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute
+Votre souscription au forfait appels 500 FCFA est active jusqu'à minuit.,legitime,notification_transaction,moov,CI,amorcage,,true,haute
+Envoi réussi: 6 500 FCFA à <NOM>. Solde: 3 100 FCFA.,legitime,notification_transaction,orange,TG,amorcage,,true,haute
+Réception de 17 000 FCFA de <NOM>. Motif: participation mariage. Solde 18 250 FCFA.,legitime,notification_transaction,wave,CI,amorcage,,true,haute
+Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé.,legitime,notification_transaction,banque,CI,amorcage,,true,haute
+Votre code de vérification WhatsApp est <CODE>. Ne partagez pas ce code.,legitime,otp,aucun,XX,amorcage,,true,haute
+"<#> Votre code Wave est <CODE>. Ne le communiquez à personne, même à un agent Wave.",legitime,otp,wave,SN,amorcage,,true,haute
+Code de confirmation: <CODE>. Valable 5 minutes.,legitime,otp,aucun,XX,amorcage,,true,haute
+Utilisez le code <CODE> pour vous connecter à votre compte Facebook.,legitime,otp,aucun,XX,amorcage,,true,haute
+Votre mot de passe temporaire est <CODE>. Changez-le à la première connexion.,legitime,otp,aucun,XX,amorcage,,true,haute
+G-<CODE> est votre code de validation Google.,legitime,otp,aucun,XX,amorcage,,true,haute
+Ecobank: votre OTP pour la transaction de 25 000 XOF est <CODE>. Ne le communiquez jamais.,legitime,otp,banque,CI,amorcage,,true,haute
+<CODE> est votre code de connexion à l'application Max it. Ne le partagez avec personne.,legitime,otp,orange,CI,amorcage,,true,haute
+Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes.,legitime,otp,mtn,CI,amorcage,,true,haute
+"Code d'activation de votre compte: <CODE>. Si vous n'avez pas fait cette demande, ignorez ce message.",legitime,otp,aucun,XX,amorcage,,true,haute
+Votre code de vérification Telegram: <CODE>. Ne donnez ce code à personne.,legitime,otp,aucun,XX,amorcage,,true,haute
+"Pour finaliser votre inscription, entrez le code <CODE> dans l'application.",legitime,otp,aucun,XX,amorcage,,true,haute
+Votre code de retrait est <CODE>. Présentez-le à l'agent avec votre pièce d'identité.,legitime,otp,orange,SN,amorcage,,true,haute
+<#> <CODE> est votre code de sécurité. Nous ne vous appellerons jamais pour le demander.,legitime,otp,aucun,XX,amorcage,,true,haute
+"Banque: code de validation de votre virement de 150 000 XOF: <CODE>. Si vous n'êtes pas à l'origine de cette opération, appelez votre agence.",legitime,otp,banque,SN,amorcage,,true,haute
+Votre code de confirmation Jumia est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute
+Code PIN provisoire de votre nouvelle carte: <CODE>. Modifiez-le au premier retrait.,legitime,otp,banque,CI,amorcage,,true,haute
+Moov Money: votre code de validation est <CODE>. Ne le communiquez jamais à un tiers.,legitime,otp,moov,BJ,amorcage,,true,haute
+Votre code de connexion Instagram est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute
+Code de vérification: <CODE>. Utilisez-le pour réinitialiser votre mot de passe.,legitime,otp,aucun,XX,amorcage,,true,haute
+Votre code Glovo est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute
+<CODE> est votre code de confirmation Yango. Ne le partagez pas.,legitime,otp,aucun,CI,amorcage,,true,haute
+Wave: votre code de connexion est <CODE>. Wave ne vous demandera jamais ce code par téléphone.,legitime,otp,wave,CI,amorcage,,true,haute
+Code OTP: <CODE> pour le paiement de 12 000 XOF chez un marchand en ligne.,legitime,otp,banque,CM,amorcage,,true,haute
+Votre code de vérification pour le portail des examens est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute
+Votre code de livraison est <CODE>. Donnez-le au livreur uniquement à la réception du colis.,legitime,otp,aucun,CI,amorcage,,true,haute
+"Orange: code de validation de votre changement de SIM: <CODE>. Si vous n'avez rien demandé, contactez le service client en agence.",legitime,otp,orange,CI,amorcage,,true,haute
+Votre code d'accès au Wi-Fi de l'hôtel est <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute
+MTN: votre code de réinitialisation du PIN MoMo est <CODE>. Aucun agent ne vous le demandera.,legitime,otp,mtn,CM,amorcage,,true,haute
+Utilisez <CODE> pour vérifier votre numéro sur Signal.,legitime,otp,aucun,XX,amorcage,,true,haute
+Votre code de connexion à la banque en ligne est <CODE>. Valable 2 minutes.,legitime,otp,banque,BJ,amorcage,,true,haute
+Code de sécurité Microsoft: <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute
+Votre code de confirmation de rendez-vous est <CODE>. A présenter à l'accueil.,legitime,otp,aucun,CI,amorcage,,true,haute
+<#> Votre code est <CODE>. Merci d'utiliser notre service.,legitime,otp,aucun,XX,amorcage,,true,haute
+Code de validation de votre inscription à la mutuelle: <CODE>.,legitime,otp,aucun,BF,amorcage,,true,haute
+Votre code TikTok est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute
+"Pour sécuriser votre compte Orange Money, votre nouveau code secret a bien été enregistré. Ne le communiquez jamais.",legitime,otp,orange,ML,amorcage,,true,haute
+Votre code de validation Uber est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute
+Code de confirmation de votre réservation de billet: <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute
+Votre code de vérification LinkedIn est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute
+Orange: Profitez de 3Go à 1000F valables 7 jours. Tapez #111# ou passez par l'application.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+MTN: Votre forfait internet est épuisé. Rechargez pour continuer à naviguer. Composez *133#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours.,legitime,promo_operateur,orange,SN,amorcage,,true,haute
+Jeu MTN: envoyez JEU au 7575 et tentez de gagner des smartphones. SMS 100F. Règlement sur mtn[.]ci,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Orange: maintenance réseau cette nuit de 1h à 4h dans votre zone. Désolés pour la gêne occasionnée.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Wave: nouveau! Payez vos factures d'eau sans frais dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute
+Votre forfait 5Go expire dans 24h. Renouvelez-le en composant #144#.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Joyeuse fête de l'indépendance! Orange vous offre 500 Mo gratuits aujourd'hui.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Moov Africa: les appels vers tous les réseaux à 50F la minute ce weekend.,legitime,promo_operateur,moov,BF,amorcage,,true,haute
+MTN vous remercie pour votre fidélité: 10 ans avec nous! Profitez de 20% de remise sur les pass internet ce mois-ci.,legitime,promo_operateur,mtn,CM,amorcage,,true,haute
+Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre.,legitime,promo_operateur,orange,SN,amorcage,,true,haute
+"Wave: 1% seulement pour vos transferts, et les dépôts et retraits restent gratuits.",legitime,promo_operateur,wave,CI,amorcage,,true,haute
+Nouveau: consultez votre solde Moov Money gratuitement en tapant *155#.,legitime,promo_operateur,moov,BJ,amorcage,,true,haute
+Pass Nuit: 2Go de minuit à 6h pour 200F. Composez *133*1#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Orange: votre recharge de 5000F vous donne droit à 1Go offert. Il est déjà disponible.,legitime,promo_operateur,orange,ML,amorcage,,true,haute
+Participez au grand jeu de Noël Orange: chaque recharge de 1000F vous donne une chance de gagner une voiture. Règlement disponible en agence.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+"Info MTN: pour éviter la suspension de votre ligne, pensez à mettre à jour votre identification en agence avec votre pièce d'identité avant le 31 décembre.",legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Moov: votre crédit est presque épuisé. Rechargez maintenant et bénéficiez de 50% de bonus.,legitime,promo_operateur,moov,TG,amorcage,,true,haute
+"Orange: téléchargez l'application Max it et gérez votre compte, vos forfaits et votre argent au même endroit.",legitime,promo_operateur,orange,CI,amorcage,,true,haute
+MTN MoMo: payez vos achats chez les marchands agréés et recevez 2% de cashback sur votre compte.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Wave: votre application a été mise à jour. Découvrez les nouvelles fonctionnalités depuis l'accueil.,legitime,promo_operateur,wave,SN,amorcage,,true,haute
+"Orange: rappel, Orange ne vous appellera jamais pour demander votre code secret. Signalez tout appel suspect en agence.",legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Promo rentrée: forfait étudiant 10Go à 2500F par mois. Offre valable jusqu'au 31 octobre.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Moov Africa: votre nouvelle offre Illimix est activée. Profitez de vos appels et SMS illimités vers Moov.,legitime,promo_operateur,moov,CI,amorcage,,true,haute
+MTN: le réseau 4G+ est disponible dans votre quartier. Profitez d'un internet plus rapide.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute
+Orange Money: la carte Visa prépayée est disponible en agence. Payez partout dans le monde.,legitime,promo_operateur,orange,SN,amorcage,,true,haute
+Bonne fête de Tabaski! Profitez de 30% de bonus sur toutes vos recharges jusqu'à dimanche.,legitime,promo_operateur,orange,SN,amorcage,,true,haute
+"Votre forfait appels a été renouvelé automatiquement. Pour désactiver le renouvellement, tapez #144#.",legitime,promo_operateur,orange,CI,amorcage,,true,haute
+MTN: gagnez des minutes gratuites en parrainant un ami. Il suffit qu'il achète son premier pass.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Service client Orange: votre réclamation a été traitée. Merci de votre patience.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Free: profitez d'internet illimité le dimanche pour 500F. Tapez #150#.,legitime,promo_operateur,autre,SN,amorcage,,true,haute
+Wave: les transferts vers le Mali sont maintenant disponibles dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute
+Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Moov Money: retirez sans frais chez tous nos agents partenaires ce mois-ci.,legitime,promo_operateur,moov,BF,amorcage,,true,haute
+MTN: votre numéro a bien été porté vers notre réseau. Bienvenue chez MTN!,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Orange: bénéficiez de la 5G sans changer de forfait si votre téléphone est compatible.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+"Wave: pour votre sécurité, activez le verrouillage de l'application dans les paramètres.",legitime,promo_operateur,wave,CI,amorcage,,true,haute
+Pass WhatsApp illimité 7 jours à 300F. Tapez *133*6#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute
+Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+"MTN: souscription à MTN Music réussie. 100F par semaine. Pour vous désabonner, envoyez STOP au 8000.",legitime,promo_operateur,mtn,CM,amorcage,,true,haute
+Moov: coupure de service prévue dimanche de 2h à 5h pour amélioration du réseau.,legitime,promo_operateur,moov,TG,amorcage,,true,haute
+Orange Money: votre plafond de transaction a été relevé suite à la vérification de votre identité.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+Joyeux anniversaire! Orange vous offre 1Go valable 24h pour fêter ça.,legitime,promo_operateur,orange,CI,amorcage,,true,haute
+MTN: vous avez utilisé 80% de votre forfait internet.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute
+Wave: nouvelle agence ouverte à Plateau. Horaires: 8h-18h du lundi au samedi.,legitime,promo_operateur,wave,CI,amorcage,,true,haute
+"Stp envoie-moi 2000 pour le taxi, je te rembourse demain",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Maman j'ai reçu l'argent, merci beaucoup. Je t'appelle ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tonton on dit quoi? La famille va bien?,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Je suis devant la porte, viens ouvrir",legitime,personnel,aucun,CI,amorcage,,true,haute
+Le match c'est à quelle heure ce soir?,legitime,personnel,aucun,SN,amorcage,,true,haute
+Réunion des parents d'élèves samedi à 10h à l'école,legitime,personnel,aucun,CI,amorcage,,true,haute
+N'oublie pas d'acheter le pain en rentrant,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Joyeux anniversaire ma chérie, que Dieu te bénisse et te garde",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu as vu les résultats du bac? Ta cousine a eu mention!,legitime,personnel,aucun,BF,amorcage,,true,haute
+"Bonne arrivée, tu es bien rentré?",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Appelle-moi quand tu es libre, c'est urgent",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Le mariage de <NOM> c'est le 12, tu viens avec nous?",legitime,personnel,aucun,SN,amorcage,,true,haute
+"J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Je t'ai envoyé 15 000 pour le marché, confirme quand tu reçois",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Chérie j'arrive dans 30 minutes, il y a embouteillage",legitime,personnel,aucun,CI,amorcage,,true,haute
+La coupure de courant est finie chez vous?,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Mon vié on dit quoi, c'est comment? On se voit au maquis ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Ya fohi, tout est calé pour demain",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Papa est rentré de l'hôpital, il va beaucoup mieux, merci pour vos prières",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu peux passer récupérer les enfants à l'école à 16h30? Je suis encore au bureau,legitime,personnel,aucun,SN,amorcage,,true,haute
+"Merci pour hier, c'était super sympa",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Le cours de demain est annulé, le prof est malade",legitime,personnel,aucun,BJ,amorcage,,true,haute
+"J'ai oublié mon chargeur chez toi, je passe le prendre demain",legitime,personnel,aucun,CI,amorcage,,true,haute
+On se retrouve au rond-point à 18h,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Maman dit de t'appeler, elle n'arrive pas à te joindre",legitime,personnel,aucun,CI,amorcage,,true,haute
+Bonne fête de Tabaski à toi et à toute la famille!,legitime,personnel,aucun,SN,amorcage,,true,haute
+Tu as fini le devoir de maths? Envoie-moi une photo de l'exercice 3 stp,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Je suis malade aujourd'hui, je ne pourrai pas venir au travail",legitime,personnel,aucun,CI,amorcage,,true,haute
+Frère tu peux me prêter 5000 jusqu'à la fin du mois? Je te rembourse le 30,legitime,personnel,aucun,CI,amorcage,,true,haute
+"C'est bon j'ai reçu les 5000, merci frère",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Le plombier vient demain à 9h, il faut quelqu'un à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Dors bien, à demain",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu m'envoies l'adresse de la boutique? Je veux y aller cet après-midi,legitime,personnel,aucun,SN,amorcage,,true,haute
+"Les invitations sont prêtes, passe les récupérer chez moi",legitime,personnel,aucun,CI,amorcage,,true,haute
+"J'ai raté le car, je prends le prochain à 15h",legitime,personnel,aucun,BF,amorcage,,true,haute
+"Grand-mère demande de tes nouvelles, appelle-la dimanche",legitime,personnel,aucun,ML,amorcage,,true,haute
+"Le gâteau est super bon, merci ma sœur!",legitime,personnel,aucun,CI,amorcage,,true,haute
+Félicitations pour ton nouveau travail! On va fêter ça,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Félicitations pour le bébé, que Dieu le garde! On passe vous voir ce weekend",legitime,personnel,aucun,SN,amorcage,,true,haute
+"URGENT: la réunion est avancée à 14h, préviens les autres",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu as mon livre de physique? J'en ai besoin pour réviser,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Je t'ai envoyé la vidéo sur WhatsApp, regarde c'est trop drôle",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Maman envoie-moi 10 000 pour les fournitures scolaires stp, la liste est longue",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Ok pas de souci, je te fais le transfert ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute
+Le mécanicien dit que la voiture sera prête jeudi,legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu viens à l'église dimanche? Il y a la fête des moissons,legitime,personnel,aucun,CI,amorcage,,true,haute
+Qui a pris la clé de la moto? Je dois sortir,legitime,personnel,aucun,BF,amorcage,,true,haute
+On a gagné le match 3-1!! Quelle soirée!,legitime,personnel,aucun,CI,amorcage,,true,haute
+"J'ai déposé ton colis chez le voisin, récupère-le quand tu rentres",legitime,personnel,aucun,SN,amorcage,,true,haute
+"Pense à payer la facture d'électricité avant vendredi, sinon ils vont couper",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Stp rappelle-moi, j'ai essayé de te joindre trois fois",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Je vais au marché, tu veux quelque chose?",legitime,personnel,aucun,CI,amorcage,,true,haute
+Le docteur a dit de continuer le traitement pendant une semaine,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Bravo pour ta soutenance, on est fiers de toi!",legitime,personnel,aucun,BJ,amorcage,,true,haute
+La réunion de famille est reportée au mois prochain,legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu peux me déposer à l'aéroport samedi matin?,legitime,personnel,aucun,SN,amorcage,,true,haute
+"J'ai perdu mon téléphone hier, c'est mon nouveau numéro, enregistre-le",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Mon compte Orange Money est bloqué, je dois aller en agence demain matin",legitime,personnel,orange,CI,amorcage,,true,haute
+Ton argent est arrivé? Je t'ai fait le Wave il y a une heure,legitime,personnel,wave,SN,amorcage,,true,haute
+"Merci de m'avoir aidé pour le déménagement, je te dois un repas",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Le prix du sac de riz a encore augmenté, 18 500 maintenant",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu as reçu le message de la banque pour le prêt?,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Ma sœur, ne réponds pas aux gens qui te demandent ton code Orange Money, c'est des escrocs",legitime,personnel,orange,CI,amorcage,,true,haute
+"Attention, il y a des faux agents qui appellent pour demander les codes. Ne donne rien",legitime,personnel,aucun,CI,amorcage,,true,haute
+Chéri n'oublie pas le rendez-vous chez le pédiatre à 11h,legitime,personnel,aucun,CI,amorcage,,true,haute
+"Il pleut beaucoup ici, reste à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute
+"J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain",legitime,personnel,aucun,CI,amorcage,,true,haute
+"La cérémonie commence à 16h, habillez-vous en blanc",legitime,personnel,aucun,SN,amorcage,,true,haute
+"Bien reçu, merci pour l'info",legitime,personnel,aucun,CI,amorcage,,true,haute
+Tu peux m'envoyer le numéro de l'électricien?,legitime,personnel,aucun,CI,amorcage,,true,haute
+On va cotiser 5000 chacun pour le cadeau de mariage de <NOM>,legitime,personnel,aucun,CI,amorcage,,true,haute
+"C'est moi qui ai payé le transport hier, tu me dois 1500",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Le patron a validé ton congé, tu peux partir lundi",legitime,personnel,aucun,CI,amorcage,,true,haute
+"Salut, je suis en réunion, je te rappelle après",legitime,personnel,aucun,CI,amorcage,,true,haute
+Paix à son âme. Les obsèques auront lieu samedi au village,legitime,personnel,aucun,CI,amorcage,,true,haute

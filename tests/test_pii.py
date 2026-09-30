@@ -44,6 +44,10 @@ def test_mask_phones_masks_west_african_numbers(text: str) -> None:
         "Montant 10 000 000 francs",
         "Rendez-vous le 12/05/2025 a 14h",
         "Nouveau solde 125.000 F",
+        "Bourse d'etudes 2026-2027: dernier delai",
+        "Annee scolaire 2025 / 2026",
+        "Paiement du 30-09-2026 confirme",
+        "Echeance au 30.09.2026",
     ],
 )
 def test_mask_phones_keeps_amounts_and_dates(text: str) -> None:

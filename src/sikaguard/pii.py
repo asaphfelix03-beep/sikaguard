@@ -108,6 +108,8 @@ _CURRENCY_AFTER_RE = re.compile(
     r"\s*(?:fcfa|cfa|xof|francs?\b|frs?\b|f\b|€|euros?\b|eur\b)", re.IGNORECASE
 )
 _THOUSANDS_RE = re.compile(r"[1-9]\d{0,2}(?:([ .])\d{3})(?:\1\d{3})*")
+_YEAR_RANGE_RE = re.compile(r"(?:19|20)\d{2}\s?[-/]\s?(?:19|20)\d{2}")
+_DATE_RE = re.compile(r"\d{1,2}([-./])\d{1,2}\1(?:19|20)\d{2}")
 
 
 def _is_phone(text: str, match: re.Match[str]) -> bool:
@@ -116,6 +118,9 @@ def _is_phone(text: str, match: re.Match[str]) -> bool:
     if not 8 <= digits <= 15:
         return False
     if _CURRENCY_AFTER_RE.match(text, match.end()):
+        return False
+    # "2026-2027" (school year) and "30-09-2026" (date) are not phone numbers.
+    if _YEAR_RANGE_RE.fullmatch(candidate) or _DATE_RE.fullmatch(candidate):
         return False
     # "10 000 000" / "10.000.000" is an amount written with thousands separators.
     return not _THOUSANDS_RE.fullmatch(candidate)
