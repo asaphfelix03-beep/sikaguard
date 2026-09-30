@@ -85,3 +85,29 @@ def test_result_to_dict_is_json_serializable() -> None:
 
 def test_advice_covers_every_scam_category_and_verdict() -> None:
     assert set(SCAM_CATEGORIES) | {"suspect", "legitime"} == set(ADVICE)
+
+
+@pytest.mark.parametrize(
+    ("term", "expected"),
+    [
+        ("code secret", True),
+        ("secret au", True),
+        ("au", False),
+        ("000 f", False),
+        ("sur ton", False),
+        ("renvoie", True),
+        ("2go", False),
+    ],
+)
+def test_is_informative(term: str, expected: bool) -> None:
+    from sikaguard.explain import is_informative
+
+    assert is_informative(term) is expected
+
+
+def test_top_terms_are_not_redundant(tiny_pipeline: Pipeline) -> None:
+    terms = top_terms(tiny_pipeline, SCAMS[0], toward=1, k=5)
+    for i, a in enumerate(terms):
+        for b in terms[i + 1 :]:
+            assert not set(a.split()) <= set(b.split())
+            assert not set(b.split()) <= set(a.split())

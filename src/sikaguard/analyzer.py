@@ -14,7 +14,7 @@ import numpy as np
 from sikaguard.explain import signal_weights, top_terms
 from sikaguard.model import LoadedModel, load_model
 from sikaguard.result import ADVICE, SCAM_CATEGORIES, Reason, Result, Verdict
-from sikaguard.signals import SIGNAL_MESSAGES, detect_signals
+from sikaguard.signals import CONTEXT_SIGNALS, SIGNAL_MESSAGES, detect_signals
 
 __all__ = ["MODEL_DIR_ENV", "Analyzer", "analyze", "get_default_analyzer"]
 
@@ -146,7 +146,11 @@ class Analyzer:
                 if verdict == "suspect"
                 else ADVICE.get(category, ADVICE[fallback])
             )
-            signals = [c for c in detect_signals(text) if self._weights.get(c, 0.0) > 0]
+            signals = [
+                c
+                for c in detect_signals(text)
+                if c not in CONTEXT_SIGNALS and self._weights.get(c, 0.0) > 0
+            ]
             signals.sort(key=lambda c: -self._weights[c])
             reasons.extend(Reason(c, SIGNAL_MESSAGES[c]) for c in signals[:_MAX_SIGNAL_REASONS])
             terms = top_terms(self._model.binary, text, toward=1, k=_MAX_TERMS)

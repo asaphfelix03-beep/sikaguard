@@ -66,8 +66,40 @@ def _unleet_run(match: re.Match[str]) -> str:
     return run.translate(_LEET)
 
 
+#: Words used to re-split letters that were spaced out across several words
+#: ("c o d e s e c r e t" -> "codesecret" -> "code secret").
+_SEGMENT_LEXICON = frozenset(
+    """
+    code secret pin mot de passe otp orange money mtn momo moov wave flooz compte bloque
+    bloquer suspendu urgent envoyez envoie envoyer envoi gagne gagner gagnant felicitations
+    frais cliquez clique lien votre ton vos au le la les un une par erreur renvoyez renvoie
+    service client numero argent cadeau bonus tombola retrait transfert depot solde
+    verification confirmer confirmez activer debloquer gratuit offre promo payez payer vite
+    appelez appelle contactez whatsapp ici maintenant
+    """.split()  # noqa: SIM905 - a word list reads better than quoted strings
+)
+_MAX_WORD = max(len(w) for w in _SEGMENT_LEXICON)
+
+
+def _segment(joined: str) -> str | None:
+    """Split ``joined`` into the fewest lexicon words, or ``None`` if impossible."""
+    best: list[list[str] | None] = [[]] + [None] * len(joined)
+    for end in range(1, len(joined) + 1):
+        for start in range(max(0, end - _MAX_WORD), end):
+            prefix = best[start]
+            word = joined[start:end]
+            if prefix is not None and word in _SEGMENT_LEXICON:
+                candidate = [*prefix, word]
+                current = best[end]
+                if current is None or len(candidate) < len(current):
+                    best[end] = candidate
+    words = best[-1]
+    return " ".join(words) if words else None
+
+
 def _join_spaced_letters(match: re.Match[str]) -> str:
-    return _SPACED_SEP_RE.sub("", match.group(0))
+    joined = _SPACED_SEP_RE.sub("", match.group(0))
+    return _segment(joined) or joined
 
 
 def normalize(text: str, *, enabled: bool = True) -> str:

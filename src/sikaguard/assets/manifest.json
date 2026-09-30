@@ -1,0 +1,20 @@
+{
+  "model_version": "0.1.0.dev0",
+  "dataset_version": "0.1.0.dev0",
+  "sklearn_version": "1.8.0",
+  "skops_version": "0.16.0",
+  "threshold_high": 0.4214627662695767,
+  "threshold_low": 0.16076254329289297,
+  "sha256": "e1677863e4912fa08d9d854db8c7fe7a7fb8b9f4fb7b3ef7cc5b4685b0a27373",
+  "categories": [
+    "autre_arnaque",
+    "faux_gain",
+    "faux_transfert",
+    "investissement_emploi",
+    "phishing_lien",
+    "usurpation_operateur"
+  ],
+  "created_at": "2026-09-30T18:35:37+00:00",
+  "not_for_production": true,
+  "training_data": "seed dataset (amorçage): hand-written SMS, not real collected data"
+}

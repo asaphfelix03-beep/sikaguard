@@ -85,7 +85,7 @@ Chaque signal : `code`, fonction de détection sur texte normalisé, message FR.
 ### 4.3 Modèle à deux étages (`model.py`)
 - **Étage 1** (binaire) : `FeatureUnion` [TF-IDF caractères `char_wb` 2–5, TF-IDF mots 1–2, vecteur des signaux] → `LogisticRegression(class_weight="balanced")`.
 - **Étage 2** (catégorie) : même extraction → régression logistique multinomiale, entraînée sur les arnaques uniquement ; appelée si verdict ≠ `legitime`.
-- **Verdict à trois niveaux** : `arnaque` si score ≥ `seuil_haut`, `legitime` si score < `seuil_bas`, sinon `suspect`. Seuils choisis par validation croisée sur le train (précision ≥ 95 % pour `seuil_haut`, rappel ≥ 95 % pour `seuil_bas`).
+- **Verdict à trois niveaux** : `arnaque` si score ≥ `seuil_haut`, `legitime` si score < `seuil_bas`, sinon `suspect`. Seuils choisis par validation croisée sur le train (précision ≥ 95 % pour `seuil_haut`, rappel ≥ 98 % pour `seuil_bas` — amendé le 2026-09-30 : à 95 % les deux seuils se confondaient et la zone `suspect` disparaissait).
 
 ### 4.4 Explicabilité
 `reasons` = signaux déclenchés (messages rédigés) + jusqu'à 3 n-grammes dont la contribution (coef × valeur) pousse vers le verdict, message « Formulation proche d'arnaques connues : « … » ».

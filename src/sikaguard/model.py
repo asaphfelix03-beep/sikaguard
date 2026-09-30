@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import warnings
+import zipfile
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -126,7 +127,12 @@ def save_model(
     """Serialize both pipelines with skops and write ``manifest.json``."""
     directory.mkdir(parents=True, exist_ok=True)
     model_path = directory / MODEL_FILE
-    sio.dump({"binary": binary, "category": category}, model_path)
+    sio.dump(
+        {"binary": binary, "category": category},
+        model_path,
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    )
     manifest = Manifest(
         model_version=model_version,
         dataset_version=dataset_version,

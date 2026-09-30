@@ -8,6 +8,9 @@ CASES = [
     ("Оrange", "orange"),  # Cyrillic capital O
     ("Моnеy", "money"),  # Cyrillic М, о, е
     ("c o d e", "code"),
+    ("c o d e s e c r e t", "code secret"),  # letters spaced across two words
+    ("o r a n g e m o n e y", "orange money"),
+    ("x y z w", "xyzw"),  # unknown words are simply joined
     ("S.V.P envoyez", "svp envoyez"),
     ("URGEEEENT!!!!", "urgeent!!"),
     ("Félicitations", "felicitations"),

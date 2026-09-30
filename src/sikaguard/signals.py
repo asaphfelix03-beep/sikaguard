@@ -13,7 +13,7 @@ from sikaguard.normalize import normalize
 from sikaguard.pii import find_urls
 from sikaguard.urls import UrlInfo, inspect_url
 
-__all__ = ["SIGNAL_CODES", "SIGNAL_MESSAGES", "detect_signals"]
+__all__ = ["CONTEXT_SIGNALS", "SIGNAL_CODES", "SIGNAL_MESSAGES", "detect_signals"]
 
 SIGNAL_MESSAGES: dict[str, str] = {
     "demande_code_secret": (
@@ -40,6 +40,9 @@ SIGNAL_MESSAGES: dict[str, str] = {
 
 #: Canonical order of the signals (also the order of the model's signal features).
 SIGNAL_CODES: tuple[str, ...] = tuple(SIGNAL_MESSAGES)
+
+#: Context signals: useful features, but not red flags to show as reasons.
+CONTEXT_SIGNALS = frozenset({"lien_present", "mention_operateur", "montant_present"})
 
 # ----------------------------------------------------------------- vocabulary
 
