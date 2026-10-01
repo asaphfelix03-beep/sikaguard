@@ -3,13 +3,13 @@
 #   docker build -t sikaguard-api .
 #   docker run --rm -p 8000:8000 sikaguard-api
 
-FROM python:3.12-slim AS build
+FROM python:3.14-slim AS build
 WORKDIR /src
 COPY pyproject.toml README.md LICENSE ./
 COPY src/sikaguard ./src/sikaguard
 RUN pip install --no-cache-dir build==1.* && python -m build --wheel --outdir /dist
 
-FROM python:3.12-slim
+FROM python:3.14-slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
