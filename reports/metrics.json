@@ -1,0 +1,331 @@
+{
+  "model_version": "0.1.0.dev0",
+  "dataset_version": "0.1.0.dev0",
+  "not_for_production": true,
+  "n_train": 325,
+  "n_test": 82,
+  "benchmark": {
+    "B0 majority class": {
+      "cv_average_precision": 0.4314,
+      "test_average_precision": 0.439,
+      "test_average_precision_ci95": [
+        0.3293,
+        0.5488
+      ],
+      "test_f1_default_decision": 0.0,
+      "test_recall_at_precision_95": 0.0
+    },
+    "B1 rules only": {
+      "cv_average_precision": 0.8853,
+      "test_average_precision": 0.8925,
+      "test_average_precision_ci95": [
+        0.8015,
+        0.9708
+      ],
+      "test_f1_default_decision": 0.9167,
+      "test_recall_at_precision_95": 0.1111
+    },
+    "B2 naive Bayes (words)": {
+      "cv_average_precision": 0.9722,
+      "test_average_precision": 0.9821,
+      "test_average_precision_ci95": [
+        0.9519,
+        0.999
+      ],
+      "test_f1_default_decision": 0.8642,
+      "test_recall_at_precision_95": 0.8889
+    },
+    "B3 linear SVM": {
+      "cv_average_precision": 0.9846,
+      "test_average_precision": 0.9759,
+      "test_average_precision_ci95": [
+        0.9426,
+        0.9958
+      ],
+      "test_f1_default_decision": 0.9014,
+      "test_recall_at_precision_95": 0.8333
+    },
+    "B4 sikaguard (retained)": {
+      "cv_average_precision": 0.9829,
+      "test_average_precision": 0.9726,
+      "test_average_precision_ci95": [
+        0.9348,
+        0.9946
+      ],
+      "test_f1_default_decision": 0.9014,
+      "test_recall_at_precision_95": 0.8056
+    }
+  },
+  "operating_point": {
+    "threshold_high": 0.4215,
+    "threshold_low": 0.1608,
+    "precision_of_arnaque_verdict": 0.8889,
+    "recall_arnaque_verdict": 0.8889,
+    "recall_arnaque_or_suspect": 0.9167,
+    "legit_flagged_arnaque": 0.087,
+    "legit_flagged_suspect_or_arnaque": 0.1522,
+    "confusion": {
+      "arnaque": {
+        "arnaque": 32,
+        "legitime": 3,
+        "suspect": 1
+      },
+      "legitime": {
+        "legitime": 39,
+        "arnaque": 4,
+        "suspect": 3
+      }
+    }
+  },
+  "recall_at_precision_95_ci95": [
+    0.6316,
+    0.9762
+  ],
+  "hard_legit": {
+    "n": 22,
+    "false_positive_rate": 0.1364,
+    "flagged_suspect_or_arnaque": 0.1364
+  },
+  "per_category": {
+    "autre_arnaque": {
+      "label": "arnaque",
+      "n": 5,
+      "detected": 0.8
+    },
+    "faux_gain": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 1.0
+    },
+    "faux_transfert": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 0.8333
+    },
+    "investissement_emploi": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 1.0
+    },
+    "notification_transaction": {
+      "label": "legitime",
+      "n": 14,
+      "flagged": 0.1429
+    },
+    "otp": {
+      "label": "legitime",
+      "n": 8,
+      "flagged": 0.125
+    },
+    "personnel": {
+      "label": "legitime",
+      "n": 15,
+      "flagged": 0.1333
+    },
+    "phishing_lien": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 1.0
+    },
+    "promo_operateur": {
+      "label": "legitime",
+      "n": 9,
+      "flagged": 0.2222
+    },
+    "usurpation_operateur": {
+      "label": "arnaque",
+      "n": 7,
+      "detected": 0.8571
+    }
+  },
+  "per_source": {
+    "source_type=amorcage": {
+      "n": 82,
+      "average_precision": 0.9726
+    },
+    "pays=BF": {
+      "n": 8,
+      "average_precision": 1.0
+    },
+    "pays=BJ": {
+      "n": 3,
+      "average_precision": 1.0
+    },
+    "pays=CI": {
+      "n": 45,
+      "average_precision": 0.982
+    },
+    "pays=CM": {
+      "n": 1
+    },
+    "pays=ML": {
+      "n": 4,
+      "average_precision": 1.0
+    },
+    "pays=SN": {
+      "n": 15,
+      "average_precision": 1.0
+    },
+    "pays=TG": {
+      "n": 2,
+      "average_precision": 1.0
+    },
+    "pays=XX": {
+      "n": 4
+    }
+  },
+  "category_model": {
+    "n": 36,
+    "accuracy": 0.8889,
+    "macro_f1": 0.8885
+  },
+  "robustness": {
+    "original": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.8889
+    },
+    "leetspeak": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.7778
+    },
+    "homoglyphs": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.6111
+    },
+    "spaced_letters": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.8611
+    },
+    "zero_width": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.8889
+    },
+    "emojis": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.8611
+    },
+    "strip_accents": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.9167
+    },
+    "upper": {
+      "with_normalization": 0.9167,
+      "without_normalization": 0.8889
+    }
+  },
+  "objectives": {
+    "test_average_precision": {
+      "target": 0.95,
+      "achieved": 0.9726,
+      "met": true
+    },
+    "recall_at_precision_95": {
+      "target": 0.9,
+      "achieved": 0.8056,
+      "met": false
+    },
+    "hard_legit_false_positive_rate": {
+      "target": 0.05,
+      "achieved": 0.1364,
+      "met": false
+    },
+    "min_detection_under_perturbation": {
+      "target": 0.85,
+      "achieved": 0.9167,
+      "met": true
+    }
+  },
+  "errors": [
+    {
+      "id": "sg-00026",
+      "label": "arnaque",
+      "category": "faux_transfert",
+      "verdict": "legitime",
+      "score": 0.1171,
+      "text": "Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ?"
+    },
+    {
+      "id": "sg-00049",
+      "label": "arnaque",
+      "category": "usurpation_operateur",
+      "verdict": "suspect",
+      "score": 0.1954,
+      "text": "Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret."
+    },
+    {
+      "id": "sg-00053",
+      "label": "arnaque",
+      "category": "usurpation_operateur",
+      "verdict": "legitime",
+      "score": 0.1199,
+      "text": "UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>."
+    },
+    {
+      "id": "sg-00175",
+      "label": "arnaque",
+      "category": "autre_arnaque",
+      "verdict": "legitime",
+      "score": 0.1305,
+      "text": "Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête."
+    },
+    {
+      "id": "sg-00199",
+      "label": "legitime",
+      "category": "notification_transaction",
+      "verdict": "arnaque",
+      "score": 0.7495,
+      "text": "Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09."
+    },
+    {
+      "id": "sg-00247",
+      "label": "legitime",
+      "category": "notification_transaction",
+      "verdict": "arnaque",
+      "score": 0.58,
+      "text": "Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé."
+    },
+    {
+      "id": "sg-00256",
+      "label": "legitime",
+      "category": "otp",
+      "verdict": "arnaque",
+      "score": 0.8147,
+      "text": "Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes."
+    },
+    {
+      "id": "sg-00320",
+      "label": "legitime",
+      "category": "promo_operateur",
+      "verdict": "suspect",
+      "score": 0.2503,
+      "text": "Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money."
+    },
+    {
+      "id": "sg-00326",
+      "label": "legitime",
+      "category": "promo_operateur",
+      "verdict": "suspect",
+      "score": 0.4068,
+      "text": "Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci"
+    },
+    {
+      "id": "sg-00345",
+      "label": "legitime",
+      "category": "personnel",
+      "verdict": "suspect",
+      "score": 0.3274,
+      "text": "J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie"
+    },
+    {
+      "id": "sg-00399",
+      "label": "legitime",
+      "category": "personnel",
+      "verdict": "arnaque",
+      "score": 0.4605,
+      "text": "J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain"
+    }
+  ],
+  "notes": [
+    "Run 2 (2026-10-01). The first run revealed a code bug: links written with Cyrillic look-alike letters escaped link detection (homoglyphs row: 80.6 %). Look-alike letters are now folded before link detection, and such links are flagged as homograph attacks. No retraining was needed (the dataset has no look-alike letters): every test-split metric is identical to run 1; only the robustness rows were re-measured."
+  ]
+}

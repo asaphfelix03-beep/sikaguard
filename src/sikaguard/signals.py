@@ -8,9 +8,10 @@ from __future__ import annotations
 
 import re
 from collections.abc import Callable
+from dataclasses import replace
 
-from sikaguard.normalize import normalize
-from sikaguard.pii import find_urls
+from sikaguard.normalize import fold_characters, normalize
+from sikaguard.pii import find_urls, url_spans
 from sikaguard.urls import UrlInfo, inspect_url
 
 __all__ = ["CONTEXT_SIGNALS", "SIGNAL_CODES", "SIGNAL_MESSAGES", "detect_signals"]
@@ -157,11 +158,28 @@ if tuple(_CHECKS) != SIGNAL_CODES:  # pragma: no cover - import-time consistency
     raise RuntimeError("signal checks and SIGNAL_CODES are out of sync")
 
 
+def _links(text: str) -> list[UrlInfo]:
+    """Links of ``text``, found after folding look-alike letters.
+
+    A link whose letters had to be folded (``hххр://оrange...`` with Cyrillic
+    letters) is a homograph attack and is marked as such.
+    """
+    raw = fold_characters(text, homoglyphs=False)
+    folded = fold_characters(text)
+    links = []
+    for start, end in url_spans(folded):
+        info = inspect_url(folded[start:end])
+        if raw[start:end] != folded[start:end]:
+            info = replace(info, homograph=True)
+        links.append(info)
+    return links
+
+
 def detect_signals(text: str, *, use_normalization: bool = True) -> list[str]:
     """Return the codes of the signals present in ``text``, in :data:`SIGNAL_CODES` order.
 
     ``use_normalization=False`` only lower-cases the text (ablation study).
     """
     norm = normalize(text, enabled=use_normalization)
-    urls = [inspect_url(u) for u in find_urls(text)]
+    urls = _links(text) if use_normalization else [inspect_url(u) for u in find_urls(text)]
     return [code for code, check in _CHECKS.items() if check(text, norm, urls)]

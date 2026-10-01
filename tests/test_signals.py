@@ -130,3 +130,16 @@ def test_signals_without_normalization_miss_evasion() -> None:
     assert "demande_code_secret" not in detect_signals(
         "Envoyez votre c0de s3cret", use_normalization=False
     )
+
+
+def test_link_written_with_cyrillic_letters_is_detected_and_suspect() -> None:
+    found = detect_signals("Payez ici: hххр://boutique-paiement[.]click")
+    assert "lien_present" in found
+    assert "lien_suspect" in found
+
+
+def test_homograph_of_a_plain_domain_is_suspect() -> None:
+    plain = detect_signals("Infos sur www.orange.ci")
+    homograph = detect_signals("Infos sur www.оrange.ci")  # Cyrillic o
+    assert "lien_suspect" not in plain
+    assert "lien_suspect" in homograph

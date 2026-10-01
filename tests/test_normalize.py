@@ -21,6 +21,7 @@ CASES = [
     ("promo2025 24h 5G", "promo2025 24h 5g"),
     ("appelez +225 0708091011", "appelez <tel>"),
     ("Cliquez hxxps://bit[.]ly/x", "cliquez <url>"),
+    ("Payez ici: hххр://faux[.]click", "payez ici: <url>"),  # Cyrillic link
     ("Votre code est 483920", "votre code est <code>"),
     ("écrire à jean.kone@gmail.com", "ecrire a <email>"),
     ("<TEL> <NOM>", "<tel> <nom>"),

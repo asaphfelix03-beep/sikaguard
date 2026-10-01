@@ -46,11 +46,18 @@ class UrlInfo:
     is_punycode: bool
     suspicious_tld: bool
     brand_lookalike: bool
+    homograph: bool = False  #: the link was written with look-alike (e.g. Cyrillic) letters
 
     @property
     def is_suspect(self) -> bool:
-        """True for IP hosts, punycode, unusual TLDs or brand look-alike domains."""
-        return self.is_ip or self.is_punycode or self.suspicious_tld or self.brand_lookalike
+        """True for IP hosts, punycode, unusual TLDs, brand look-alikes or homographs."""
+        return (
+            self.is_ip
+            or self.is_punycode
+            or self.suspicious_tld
+            or self.brand_lookalike
+            or self.homograph
+        )
 
 
 def _host(url: str) -> str:

@@ -13,7 +13,7 @@ import unicodedata
 
 from sikaguard import pii
 
-__all__ = ["normalize"]
+__all__ = ["fold_characters", "normalize"]
 
 _HOMOGLYPHS = str.maketrans(
     {
@@ -102,6 +102,17 @@ def _join_spaced_letters(match: re.Match[str]) -> str:
     return _segment(joined) or joined
 
 
+def fold_characters(text: str, *, homoglyphs: bool = True) -> str:
+    """NFKC, drop invisible characters and emojis, map look-alike letters to Latin.
+
+    Case is preserved. The homoglyph mapping is one character to one character,
+    so ``fold_characters(t)`` and ``fold_characters(t, homoglyphs=False)`` have
+    the same length and aligned positions.
+    """
+    text = _drop_invisible_and_symbols(unicodedata.normalize("NFKC", text))
+    return text.translate(_HOMOGLYPHS) if homoglyphs else text
+
+
 def normalize(text: str, *, enabled: bool = True) -> str:
     """Return the canonical form of ``text`` used by the model.
 
@@ -110,14 +121,15 @@ def normalize(text: str, *, enabled: bool = True) -> str:
     """
     if not enabled:
         return text.lower()
-    text = unicodedata.normalize("NFKC", text)
-    text = _drop_invisible_and_symbols(text)
+    # Look-alike letters are folded *before* link detection, otherwise a link
+    # written with Cyrillic letters ("hххр://...") would escape <url> masking.
+    text = fold_characters(text)
     text = pii.mask_emails(text)
     text = pii.mask_urls(text)
     text = pii.mask_refs(text)
     text = pii.mask_codes(text)
     text = pii.mask_phones(text)
-    text = text.translate(_HOMOGLYPHS).lower()
+    text = text.lower()
     text = _strip_accents(text)
     text = _RUN_RE.sub(_unleet_run, text)
     text = _SPACED_LETTERS_RE.sub(_join_spaced_letters, text)
