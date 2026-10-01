@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/asaphfelix03-beep/sikaguard/actions/workflows/ci.yml/badge.svg)](https://github.com/asaphfelix03-beep/sikaguard/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![Status: alpha](https://img.shields.io/badge/status-alpha%20(seed%20model)-orange.svg)
 
 *[Lire en français](README.fr.md)*

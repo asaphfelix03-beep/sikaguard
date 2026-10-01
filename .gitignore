@@ -30,3 +30,6 @@ Thumbs.db
 
 # Third-party corpora (downloaded, not redistributed as-is)
 data/external/
+
+# Local tooling
+.claude/
