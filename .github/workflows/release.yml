@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write   # PyPI Trusted Publishing (OIDC): no API token stored anywhere
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install build && python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  image:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          image=ghcr.io/${{ github.repository_owner }}/sikaguard-api
+          docker build -t "$image:${GITHUB_REF_NAME#v}" -t "$image:latest" .
+          docker push --all-tags "$image"
+
+  github-release:
+    runs-on: ubuntu-latest
+    needs: [pypi, image]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the release with the model fingerprint
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(python -c "import json; print(json.load(open('src/sikaguard/assets/manifest.json'))['sha256'])")
+          gh release create "$GITHUB_REF_NAME" --generate-notes \
+             --notes "Model SHA-256: \`$sha\`" src/sikaguard/assets/manifest.json

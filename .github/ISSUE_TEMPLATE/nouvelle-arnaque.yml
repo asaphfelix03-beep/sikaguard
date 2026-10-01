@@ -1,0 +1,61 @@
+name: "Signaler une arnaque SMS"
+description: "Partagez un SMS d'arnaque (anonymisé) pour enrichir le jeu de données ouvert."
+title: "[arnaque] "
+labels: ["données", "nouvelle-arnaque"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Avant d'envoyer, **retirez toute information personnelle** :
+        remplacez les numéros par `<TEL>`, les noms par `<NOM>`, les codes par `<CODE>`
+        et les références de transaction par `<REF>`. Ce formulaire est public.
+  - type: textarea
+    id: texte
+    attributes:
+      label: Texte du SMS (anonymisé)
+      placeholder: "Cher client, votre compte sera bloqué. Envoyez votre code secret au <TEL>"
+    validations:
+      required: true
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Type d'arnaque (si vous savez)
+      options:
+        - faux transfert « par erreur »
+        - faux service client / usurpation d'opérateur
+        - faux gain, tombola, cadeau
+        - lien piégé (phishing)
+        - faux investissement ou faux emploi
+        - autre / je ne sais pas
+  - type: dropdown
+    id: operateur
+    attributes:
+      label: Opérateur ou service imité
+      options: [Orange, MTN, Moov, Wave, une banque, autre, aucun]
+  - type: dropdown
+    id: pays
+    attributes:
+      label: Pays
+      options: ["Côte d'Ivoire", Sénégal, Burkina Faso, Mali, Bénin, Togo, Cameroun, autre]
+  - type: input
+    id: date
+    attributes:
+      label: Mois de réception (AAAA-MM)
+      placeholder: "2026-09"
+  - type: dropdown
+    id: confirmation
+    attributes:
+      label: Comment savez-vous que c'est une arnaque ?
+      options:
+        - j'ai été victime ou quelqu'un de mon entourage
+        - alerte officielle (opérateur, police, presse)
+        - c'est évident d'après le message
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Confirmation
+      options:
+        - label: J'ai retiré les numéros, noms et codes, et j'accepte que ce texte soit publié sous licence CC BY 4.0.
+          required: true

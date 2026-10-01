@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Vulnérabilité de sécurité
+    url: https://github.com/asaphfelix03-beep/sikaguard/security/advisories/new
+    about: Ne publiez pas une faille dans une issue publique ; utilisez un signalement privé.

@@ -1,0 +1,4 @@
+# Hugging Face Space dependencies.
+# Until sikaguard is on PyPI, install it from GitHub:
+sikaguard @ git+https://github.com/asaphfelix03-beep/sikaguard
+gradio>=6

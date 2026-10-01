@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use sikaguard or its dataset, please cite it as below."
+title: "sikaguard: explainable detection of French-language SMS and Mobile Money scams"
+type: software
+authors:
+  - family-names: Ojewumi
+    given-names: Asaph Felix
+version: 0.1.0.dev0
+date-released: 2026-09-30
+license: MIT
+repository-code: "https://github.com/asaphfelix03-beep/sikaguard"
+keywords:
+  - scam detection
+  - smishing
+  - mobile money
+  - West Africa
+  - French
+  - explainable machine learning
+  - adversarial robustness
