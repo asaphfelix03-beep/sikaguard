@@ -28,7 +28,9 @@ __all__ = ["MAX_BATCH", "MAX_TEXT_LENGTH", "app", "create_app"]
 MAX_TEXT_LENGTH = 1000
 MAX_BATCH = 100
 
-logger = logging.getLogger("sikaguard.api")
+# A child of uvicorn's error logger: under uvicorn the lines use its handler and
+# level (visible by default); elsewhere they propagate to the root logger as usual.
+logger = logging.getLogger("uvicorn.error.sikaguard")
 
 
 def _not_blank(value: str) -> str:
