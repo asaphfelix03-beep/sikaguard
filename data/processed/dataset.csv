@@ -1,408 +1,603 @@
-id,text,label,category,operateur_cible,pays,source_type,date_observee,derive_de_modele,confiance_annotation,group_id,split
-sg-00001,"Bonsoir, je viens de vous envoyer 25 000 F par erreur sur votre Orange Money. SVP renvoyez-les moi, c'est l'argent de l'hôpital de mon enfant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,0,train
-sg-00002,"Orange Money: Vous avez reçu 75.000F de <NOM>. Solde: 75.450F. ID: <REF>. Svp c'est une erreur, renvoyez au <TEL>",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,1,train
-sg-00003,"Frère c'est une erreur, j'ai fait un dépôt de 10000 sur ton numéro au lieu de celui de ma femme. Renvoie stp, Dieu va te bénir",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,2,train
-sg-00004,"Bonjour madame, j'ai envoyé 15 000 F sur votre Wave par erreur. Je vous en prie retournez-les moi, je suis un étudiant.",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,3,train
-sg-00005,"Slt, un transfert de 30000F est parti sur ton compte MoMo par erreur. Fais le retour vite stp je dois payer le loyer",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,4,train
-sg-00006,"Mr bonsoir, c'est le caissier de la boutique, j'ai fait un dépôt de 45 000 FCFA par mégarde sur votre numéro. Merci de renvoyer au <TEL>",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,5,train
-sg-00007,"Bonjour, vous avez reçu 20 000 FCFA par erreur de ma part. Veuillez les renvoyer en tapant *144*1*1* suivi de mon numéro et du montant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,6,train
-sg-00008,"Tantie pardon, j'ai envoyé 5000 sur ton numéro par erreur, c'était pour ma maman. Renvoie moi ça stp",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,7,train
-sg-00009,"MTN MoMo: vous avez reçu 100.000 FCFA de <NOM>. Transaction annulée par l'expéditeur, veuillez retourner le montant au <TEL> sous 24h pour éviter le blocage",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,8,train
-sg-00010,"Bonsoir, je me suis trompé de numéro en envoyant 35 000 F pour les frais de scolarité de ma fille. Aidez-moi à les récupérer svp, renvoyez sur ce numéro",arnaque,faux_transfert,orange,SN,amorcage,,true,haute,9,train
-sg-00011,"Salam, j'ai envoyé 12500 F sur ton Wave par erreur. Tu peux me les renvoyer ? Barké",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,10,train
-sg-00012,Mon frère un dépôt de 60000F a été fait par erreur sur ton Moov Money. Je t'en supplie fais le retour au <TEL>,arnaque,faux_transfert,moov,BJ,amorcage,,true,haute,11,train
-sg-00013,"Bonjour, erreur de transfert: 18 000 FCFA envoyés sur votre compte Flooz. Merci de me les rendre au plus vite, le client attend",arnaque,faux_transfert,moov,TG,amorcage,,true,haute,12,test
-sg-00014,"Allo c'est moi qui t'ai appelé tout à l'heure, l'argent que j'ai envoyé par erreur 40 000 là, renvoie ça vite on va se comprendre",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,13,test
-sg-00015,"Bjr, j'ai transféré 25.000 FCFA par erreur à votre numéro. Veuillez me retourner ça, je vous laisse 2000 pour vous",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,14,train
-sg-00016,Vous avez recu un transfert de 80 000 FCFA. Ce transfert est une erreur de l'expediteur. Contactez-le au <TEL> pour le rembourser immediatement.,arnaque,faux_transfert,mtn,CM,amorcage,,true,haute,15,train
-sg-00017,"Maman pardon j'ai mis 10 000 sur ton numéro à la place du mien, renvoie ça sur mon nouveau numéro <TEL>",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,16,train
-sg-00018,"Bonsoir monsieur, un dépôt de 150 000 F a été effectué sur votre compte par erreur par notre agent. Veuillez renvoyer la somme sinon votre compte sera suspendu",arnaque,faux_transfert,orange,ML,amorcage,,true,haute,17,test
-sg-00019,"Svp frère j'ai fait une erreur de numéro, 22.500F sont partis chez toi. C'est l'argent des médicaments de mon papa, renvoie stp",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,18,test
-sg-00020,"Bonjour, par erreur j'ai envoyé 7500F sur votre numéro Wave au lieu de mon fournisseur. Renvoyez s'il vous plaît",arnaque,faux_transfert,wave,CI,amorcage,,true,haute,19,train
-sg-00021,"C'est urgent, j'ai envoyé 50000 par erreur, c'était pour payer la caution. Renvoie ça sur <TEL> je t'en prie",arnaque,faux_transfert,aucun,CM,amorcage,,true,haute,20,train
-sg-00022,"Bonjour ma sœur, désolée de te déranger, 20 000 F sont arrivés sur ton compte par erreur. Fais le retour et garde 1000 pour ta peine",arnaque,faux_transfert,orange,SN,amorcage,,true,haute,21,train
-sg-00023,"Transfert reçu 65.000 FCFA de <NOM> <TEL>. Solde 65 500 FCFA. Erreur de l'expéditeur, merci de retourner la somme au plus vite",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,22,train
-sg-00024,"Mon cher j'ai rechargé ton compte de 30 000 F par erreur, fais le retrait chez l'agent le plus proche et envoie moi le code de retrait",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,23,test
-sg-00025,"Bonjour, je vous ai envoyé 45 000 FCFA par erreur. Mon patron va me tuer. Renvoyez vite svp",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,24,train
-sg-00026,"Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ?",arnaque,faux_transfert,orange,ML,amorcage,,true,haute,25,test
-sg-00027,"Bonsoir, vous avez reçu 10 000 FCFA de ma part par erreur. Merci de faire le retour avant 18h",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,26,train
-sg-00028,"Salut, erreur de manip, j'ai envoyé 90 000 F sur ton Orange Money. Retourne ça stp, c'est pour mes marchandises",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,27,train
-sg-00029,"Pardon monsieur c'est la dame du marché, j'ai envoyé 5 500 F sur votre numéro sans faire exprès. Renvoyez moi ça",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,28,train
-sg-00030,"Bonjour, j'ai effectué un transfert de 27 000 FCFA sur votre compte MTN par erreur. Merci de bien vouloir le renvoyer au même numéro. Que Dieu vous bénisse",arnaque,faux_transfert,mtn,BJ,amorcage,,true,haute,29,train
-sg-00031,"Orange Money: Cher client, votre compte sera suspendu dans 24h pour mise à jour. Envoyez votre code secret au <TEL> pour le maintenir actif.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,30,train
-sg-00032,"Service Client MTN: suite à une anomalie, votre compte MoMo est bloqué. Appelez le <TEL> pour le débloquer avec votre code PIN.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,31,test
-sg-00033,"WAVE INFO: votre compte a été signalé. Pour éviter sa fermeture, confirmez votre code secret en répondant à ce message.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,32,train
-sg-00034,"Cher abonné, votre puce sera désactivée ce soir suite au nouveau recensement. Composez #144*8# puis entrez votre code secret pour confirmer.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,33,train
-sg-00035,"Bonjour, ici le service technique Orange. Vous allez recevoir un code par SMS, donnez-le nous pour finaliser la mise à jour de votre compte.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,34,train
-sg-00036,"Moov Money: Votre compte présente une anomalie. Pour le réactiver, envoyez votre code PIN par SMS au <TEL>. Service gratuit.",arnaque,usurpation_operateur,moov,BJ,amorcage,,true,haute,35,train
-sg-00037,"Agent Orange Money: nous avons détecté une transaction suspecte de 250 000 F sur votre compte. Pour l'annuler, communiquez-nous votre code secret au <TEL>",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute,36,test
-sg-00038,MTN: Votre SIM sera bloquée pour non-identification. Rappelez le <TEL> et munissez-vous de votre code MoMo pour régulariser.,arnaque,usurpation_operateur,mtn,CM,amorcage,,true,haute,37,train
-sg-00039,"ORANGE: Votre compte Orange Money a été piraté. Pour sécuriser votre argent, rappelez notre cellule au <TEL> et donnez votre code PIN à l'agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,38,train
-sg-00040,"Chère cliente, votre compte Wave passe au statut Premium. Pour activer, communiquez le code reçu par SMS à notre conseiller au <TEL>.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,39,train
-sg-00041,"Service clientèle Moov: suite à la maintenance, veuillez confirmer votre identité en envoyant votre mot de passe Moov Money à ce numéro",arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute,40,train
-sg-00042,MTN MoMo: Votre compte est suspendu pour activité suspecte. Contactez immédiatement notre service fraude au <TEL> avec votre code secret,arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,41,test
-sg-00043,"Bonjour c'est l'agence Orange de Cocody. Un colis de téléphone vous attend, donnez-nous le code de validation que vous allez recevoir.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,42,train
-sg-00044,"Votre compte Wave sera clôturé dans 2h. Pour le conserver, appelez notre conseiller au <TEL> et suivez ses instructions.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute,43,train
-sg-00045,"Ecobank: Votre carte bancaire a été bloquée. Pour la réactiver, communiquez votre code PIN au <TEL>.",arnaque,usurpation_operateur,banque,CI,amorcage,,true,haute,44,train
-sg-00046,Orange Money Mali: mise à jour obligatoire. Envoyez OUI suivi de votre code secret au <TEL> pour continuer à utiliser votre compte.,arnaque,usurpation_operateur,orange,ML,amorcage,,true,haute,45,train
-sg-00047,"Bonjour, service client MTN. Votre bonus de fidélité de 50 000 F est en attente. Tapez *126# puis votre code PIN pour le recevoir.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,46,train
-sg-00048,"ALERTE: tentative de connexion à votre compte Orange Money depuis un autre téléphone. Si ce n'est pas vous, rappelez le <TEL> et confirmez votre code.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,47,test
-sg-00049,"Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret.",arnaque,usurpation_operateur,moov,BF,amorcage,,true,haute,48,test
-sg-00050,SERVICE ORANGE: Votre numéro a été sélectionné pour la migration 5G. Envoyez le code à 4 chiffres que vous allez recevoir au <TEL> pour activer.,arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,49,train
-sg-00051,"Wave: Suite à une erreur système, votre solde a été gelé. Appelez-nous vite au <TEL> pour le débloquer.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,50,train
-sg-00052,"Bonjour, je suis agent de MTN MoMo. Nous faisons une vérification des comptes. Donnez-moi le code que vous venez de recevoir pour valider.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,51,train
-sg-00053,"UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>.",arnaque,usurpation_operateur,banque,CM,amorcage,,true,haute,52,test
-sg-00054,"Orange Money: Nous remboursons les frais de transfert du mois. Pour recevoir, composez #144# puis entrez votre code secret et le montant 25000.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,53,train
-sg-00055,"Cher client, vous avez été débité par erreur de 10 000 F. Pour le remboursement, notre agent va vous appeler, veuillez lui communiquer le code reçu.",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute,54,train
-sg-00056,"Direction Commerciale MTN: votre compte Mobile Money présente un solde négatif. Régularisez en appelant le <TEL> sous 48h, sinon fermeture définitive.",arnaque,usurpation_operateur,mtn,BJ,amorcage,,true,haute,55,test
-sg-00057,Flooz: Votre compte Moov Money sera désactivé demain. Mettez à jour vos informations en envoyant votre PIN au <TEL>.,arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute,56,train
-sg-00058,"Bonjour, service anti-fraude Wave. Un transfert suspect est en cours sur votre compte. Communiquez-nous rapidement le code reçu pour le bloquer.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute,57,train
-sg-00059,"Orange: Votre abonnement internet a été renouvelé par erreur. Pour être remboursé, appelez le <TEL> et donnez votre code Orange Money.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,58,train
-sg-00060,"Chère abonnée, votre puce MTN n'est pas enregistrée. Elle sera coupée à minuit. Rappelez vite le <TEL>",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,59,train
-sg-00061,"Service Client Wave: nous vous offrons 5000 F de bonus. Pour le recevoir, confirmez votre code secret au conseiller qui va vous appeler.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,60,train
-sg-00062,"Cher client Orange Money, votre compte a été crédité de 100 000 F de dédommagement. Pour valider, transmettez votre code secret à notre agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,61,train
-sg-00063,"Félicitations! Votre numéro a gagné 500 000 FCFA à la tombola Orange. Pour retirer votre gain, envoyez 5000 F de frais de dossier au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,62,train
-sg-00064,MTN PROMO: Vous êtes l'heureux gagnant d'un iPhone et de 200 000 F. Appelez le <TEL> pour les modalités de livraison.,arnaque,faux_gain,mtn,CI,amorcage,,true,haute,63,train
-sg-00065,Bravo! Vous avez été tiré au sort pour le jeu Wave Anniversaire. Gain: 1 000 000 FCFA. Payez les frais d'activation de 10 000 F pour le recevoir.,arnaque,faux_gain,wave,SN,amorcage,,true,haute,64,train
-sg-00066,"Cher client, votre numéro a été sélectionné pour recevoir une moto neuve. Frais de livraison: 25 000 F à envoyer au <TEL>.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute,65,test
-sg-00067,FELICITATIONS!!! VOUS AVEZ GAGNE 750.000 FCFA AU GRAND JEU MOOV. CONTACTEZ LE <TEL> AVANT 18H,arnaque,faux_gain,moov,BJ,amorcage,,true,haute,66,train
-sg-00068,Loterie Nationale: votre numéro est gagnant du tirage de ce mois. Montant: 2 500 000 F. Frais d'enregistrement: 15 000 F.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,67,test
-sg-00069,"Orange vous offre 50 000 F de crédit pour votre fidélité. Pour activer, envoyez 2000 F de frais au <TEL>.",arnaque,faux_gain,orange,SN,amorcage,,true,haute,68,train
-sg-00070,Vous êtes l'un des 10 gagnants du concours d'une grande marque de boisson. Réclamez votre prix de 300 000 F en appelant le <TEL>.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,69,train
-sg-00071,Salut! Tu as gagné un bon d'achat de 100 000 F. Clique ici pour le récupérer: hxxp://bon-achat-ci[.]xyz,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,70,test
-sg-00072,"Cher abonné, grâce à votre fidélité vous gagnez un smartphone Samsung. Payez seulement les frais de transport de 7500 F.",arnaque,faux_gain,aucun,CM,amorcage,,true,haute,71,train
-sg-00073,Heureux élu! Votre numéro a été tiré lors du grand tirage de fin d'année. Vous remportez 5 000 000 F. Appelez vite notre huissier au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,72,train
-sg-00074,"Wave vous remercie: 25 000 F offerts aux 1000 premiers clients. Pour débloquer, envoyez 1000 F de frais de validation au <TEL>",arnaque,faux_gain,wave,CI,amorcage,,true,haute,73,test
-sg-00075,Promo spéciale: votre carte SIM a gagné 20Go et 100 000 F. Composez #144# et suivez les étapes pour payer la TVA de 3500 F,arnaque,faux_gain,orange,CI,amorcage,,true,haute,74,train
-sg-00076,Félicitation vous avez gagné une somme de 850 000f au jeu MTN Kilo Kilo appelez ce numéro pour rentrer en possession de votre gain,arnaque,faux_gain,mtn,CI,amorcage,,true,haute,75,train
-sg-00077,"Bonjour, vous avez remporté un voyage à La Mecque tous frais payés. Envoyez 50 000 F pour les frais de visa au <TEL>.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute,76,train
-sg-00078,"Votre numéro a gagné le jackpot du jour: 1.500.000 FCFA. Pour la libération du gain, payez 12 500 F de frais de douane.",arnaque,faux_gain,aucun,ML,amorcage,,true,haute,77,train
-sg-00079,GAGNANT: Moov Africa vous offre une télévision écran plat. Livraison sous 48h après paiement de 10 000 F.,arnaque,faux_gain,moov,BF,amorcage,,true,haute,78,train
-sg-00080,"Félicitations, vous faites partie des gagnants de la promo Orange Money Transférez et gagnez. Gain: 400 000 F. Contactez le service des lots au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,79,train
-sg-00081,"Vous avez gagné 3 sacs de riz et 150 000 F à la tombola de la Tabaski! Pour le retrait, envoyez vos frais de dossier de 5000 F.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute,80,test
-sg-00082,"Tu es le grand gagnant de notre jeu concours Facebook! 😍 Ton lot de 200 000 F t'attend, envoie 3000 F pour l'activation",arnaque,faux_gain,aucun,CI,amorcage,,true,haute,81,train
-sg-00083,BONNE NOUVELLE: votre numéro figure parmi les 50 gagnants de la loterie MTN. Montant: 600 000 F. Appelez le <TEL> immédiatement.,arnaque,faux_gain,mtn,CM,amorcage,,true,haute,82,train
-sg-00084,"Cher client, vous avez gagné un bonus exceptionnel de 75 000 F. Pour le recevoir sur votre compte, confirmez votre code secret.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,83,train
-sg-00085,Une fondation vous a sélectionné pour une aide de 1 000 000 F. Frais de traitement du dossier: 20 000 F au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,84,train
-sg-00086,Vous avez gagné un scooter au tirage au sort de la foire. Envoyez 15 000 F pour l'immatriculation et la livraison.,arnaque,faux_gain,aucun,TG,amorcage,,true,haute,85,train
-sg-00087,"Wave Sénégal: tirage spécial fête de l'indépendance, vous gagnez 350 000 F. Retirez en suivant ce lien hxxps://wave-gain[.]online/retrait",arnaque,faux_gain,wave,SN,amorcage,,true,haute,86,train
-sg-00088,"Félicitations Madame, vous êtes gagnante d'un frigo et de 100 000 F. Contactez notre agent au <TEL> pour la livraison à domicile.",arnaque,faux_gain,aucun,CI,amorcage,,true,haute,87,train
-sg-00089,"Votre numéro a été choisi par ordinateur, vous gagnez 250 000 F offerts par le Ministère. Frais d'enregistrement 5 000 F.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute,88,train
-sg-00090,Orange Mali: vous êtes le gagnant du jeu Sama Kalo. Gain 500 000 FCFA. Appelez ce numéro pour réclamer votre lot.,arnaque,faux_gain,orange,ML,amorcage,,true,haute,89,test
-sg-00091,Salut toi! Grâce à ta participation tu as gagné un iPhone. Réponds OUI et paie les frais de livraison de 9900 F,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,90,train
-sg-00092,"Cadeau de fin d'année: MTN offre 50 000 F à ses meilleurs clients. Pour recevoir le vôtre, envoyez 2 500 F de frais d'activation au <TEL>",arnaque,faux_gain,mtn,BJ,amorcage,,true,haute,91,train
-sg-00093,Orange Money: Votre compte a été suspendu. Réactivez-le ici: hxxp://orange-money-ci[.]xyz/login,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,92,train
-sg-00094,Votre colis est bloqué au centre de tri. Réglez les frais de livraison sur hxxps://colis-ci-livraison[.]top/suivi,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,93,train
-sg-00095,Wave: activité inhabituelle détectée. Vérifiez votre compte: bit[.]ly/wave-verif,arnaque,phishing_lien,wave,SN,amorcage,,true,haute,94,test
-sg-00096,MTN MoMo: votre compte expire aujourd'hui. Mettez-le à jour sur hxxp://mtn-momo-update[.]site,arnaque,phishing_lien,mtn,CI,amorcage,,true,haute,95,test
-sg-00097,Votre compte WhatsApp sera désactivé. Confirmez votre numéro ici: hxxps://whatsapp-verification[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,96,train
-sg-00098,Ecobank: une connexion suspecte a été détectée. Sécurisez votre compte: hxxp://41[.]202[.]77[.]10/ecobank,arnaque,phishing_lien,banque,CI,amorcage,,true,haute,97,train
-sg-00099,Vous avez droit à un remboursement de 35 000 F. Cliquez sur tinyurl[.]com/rembours-ci pour le recevoir,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,98,train
-sg-00100,Moov Money: votre solde est bloqué. Débloquez-le en vous connectant sur hxxp://moov-money-benin[.]info,arnaque,phishing_lien,moov,BJ,amorcage,,true,haute,99,train
-sg-00101,"Cher client, votre carte bancaire expire. Renouvelez-la en ligne sur hxxps://sgci-carte[.]online avant demain.",arnaque,phishing_lien,banque,CI,amorcage,,true,haute,100,train
-sg-00102,Aide sociale 2026: l'Etat verse 50 000 F à chaque famille. Inscrivez-vous: hxxp://aide-gouv-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,101,train
-sg-00103,Votre compte Facebook va être supprimé pour violation des règles. Faites appel ici: hxxps://fb-support-center[.]live,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,102,train
-sg-00104,Orange: Votre facture internet est impayée. Réglez maintenant pour éviter la coupure: cutt[.]ly/orange-facture,arnaque,phishing_lien,orange,SN,amorcage,,true,haute,103,train
-sg-00105,"Wave: recevez 10 000 F de cashback, connectez-vous sur hxxps://wave-cashback-sn[.]shop",arnaque,phishing_lien,wave,SN,amorcage,,true,haute,104,train
-sg-00106,MTN: vous avez 3 messages vocaux en attente. Écoutez-les ici: hxxp://mtn-messagerie[.]buzz/ecoute,arnaque,phishing_lien,mtn,CM,amorcage,,true,haute,105,train
-sg-00107,Votre inscription au concours de la fonction publique est incomplète. Complétez sur hxxp://concours-fp-ci[.]online,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,106,test
-sg-00108,Bourse d'études 2026-2027: dernier délai aujourd'hui. Postulez ici: bit[.]ly/bourse-afrique,arnaque,phishing_lien,aucun,BF,amorcage,,true,haute,107,train
-sg-00109,Alerte sécurité: votre compte Orange Money sera fermé. Vérifiez vos informations: hxxps://0range-money[.]com/verif,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,108,train
-sg-00110,Livraison: votre commande n° <REF> est en attente de paiement. Payez ici: hxxp://boutique-paiement[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,109,test
-sg-00111,Votre ligne sera suspendue demain. Mettez à jour votre identification sur hxxp://identification-sim-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,110,train
-sg-00112,"Chère cliente, un virement de 150 000 F vous attend. Validez-le sur hxxps://virement-express[.]top",arnaque,phishing_lien,banque,SN,amorcage,,true,haute,111,train
-sg-00113,Moov Africa: gagnez 5Go gratuits en remplissant ce formulaire rapide: hxxp://moov-bonus-5go[.]site,arnaque,phishing_lien,moov,BF,amorcage,,true,haute,112,train
-sg-00114,Votre compte Wave présente une erreur. Cliquez ici pour la corriger avant sa suspension: hxxps://wave-support[.]icu,arnaque,phishing_lien,wave,CI,amorcage,,true,haute,113,test
-sg-00115,Les impôts vous doivent un remboursement de 42 000 F. Réclamez-le avant vendredi: rb[.]gy/impots-rembourse,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,114,train
-sg-00116,Votre banque: veuillez confirmer vos coordonnées pour éviter le blocage de votre carte: hxxp://nsia-securite[.]info,arnaque,phishing_lien,banque,CI,amorcage,,true,haute,115,test
-sg-00117,"Dernière chance! Ta vidéo a été signalée, connecte-toi pour la voir: hxxps://video-privee[.]live/voir",arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,116,train
-sg-00118,"MTN MoMo: pour continuer à utiliser vos services, validez votre compte ici hxxp://momo-validation-bj[.]xyz sous 24h",arnaque,phishing_lien,mtn,BJ,amorcage,,true,haute,117,train
-sg-00119,Votre abonnement TV a expiré. Réabonnez-vous avec 50% de réduction ici: hxxp://reabonnement-promo[.]shop,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,118,train
-sg-00120,Recrutement police 2026: inscription en ligne gratuite sur hxxp://recrutement-police-ci[.]online avant la clôture,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,119,train
-sg-00121,Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,120,train
-sg-00122,ALERTE Orange Money: 3 tentatives de connexion échouées. Protégez votre compte: hxxps://orangemoney-securite[.]click/pin,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,121,train
-sg-00123,Doublez votre argent en 72h! Investissez 50 000 F et recevez 100 000 F. Contactez notre gestionnaire sur WhatsApp au <TEL>.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,122,train
-sg-00124,"Opportunité: gagnez 25 000 F par jour depuis votre téléphone, sans diplôme. Inscription 5000 F. Infos au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,123,train
-sg-00125,"Recrutement urgent: une société minière recrute 50 agents, salaire 350 000 F. Frais de dossier 15 000 F à envoyer au <TEL>.",arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute,124,train
-sg-00126,Placement sûr: 30% d'intérêts par semaine garantis avec notre plateforme crypto. Rejoignez-nous: hxxps://crypto-gain-afrique[.]xyz,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,125,train
-sg-00127,"Offre d'emploi: hôtesse d'accueil à Dubaï, billet et visa pris en charge. Envoyez 50 000 F pour la réservation.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,126,train
-sg-00128,"Trading Forex: 200 000 F investis = 1 000 000 F en un mois. Places limitées, contactez vite le <TEL>",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,127,train
-sg-00129,"Bonjour, votre CV a été retenu pour un poste de chauffeur à la mairie. Payez 10 000 F de frais de visite médicale au <TEL>.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,128,train
-sg-00130,Tontine digitale: cotisez 10 000 F et recevez 80 000 F en 15 jours. Parrainez 2 personnes pour débloquer vos gains.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,129,test
-sg-00131,Devenez riche avec le bitcoin! Notre robot trading génère des bénéfices automatiques. Dépôt minimum 25 000 F.,arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute,130,train
-sg-00132,Stage rémunéré 150 000 F/mois dans une ONG internationale. Inscription 7500 F. Places limitées.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute,131,train
-sg-00133,"Mon frère, j'ai trouvé une affaire: tu mets 100 000 et on te rembourse 300 000 dans 10 jours. Moi-même j'ai déjà gagné, appelle vite",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,132,train
-sg-00134,Recrutement de 200 jeunes dans les forces de défense. Frais d'inscription 25 000 F au <TEL>. Dernier délai vendredi.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute,133,train
-sg-00135,Travail à domicile: aimez des vidéos et gagnez 15 000 F par jour. Activation du compte: 5000 F.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,134,train
-sg-00136,Investissement agricole: achetez une part de 50 000 F et recevez 20% chaque mois pendant un an. Garantie 100%.,arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute,135,test
-sg-00137,Visa Canada garanti avec contrat de travail. Frais de procédure 150 000 F. Contactez le cabinet au <TEL>,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,136,train
-sg-00138,Salut! Je gagne 500 000 F par mois grâce à cette application. Inscris-toi avec mon lien et dépose 10 000 F: bit[.]ly/argent-facile,arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,137,test
-sg-00139,"Une entreprise étrangère recrute des manutentionnaires, salaire 200 000 F. Envoyez 8000 F pour la carte de travail.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,138,train
-sg-00140,Multipliez votre capital par 5 en 30 jours avec notre programme d'investissement. Rendement garanti. Appelez le <TEL>,arnaque,investissement_emploi,aucun,TG,amorcage,,true,haute,139,train
-sg-00141,"Emploi: agents de saisie en ligne, 3 heures par jour, 120 000 F par mois. Kit de démarrage 12 000 F à payer.",arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute,140,train
-sg-00142,"Bonne nouvelle, vous êtes présélectionné pour la bourse d'excellence. Versez 30 000 F de frais de traitement pour finaliser.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,141,train
-sg-00143,Achetez des actions de notre société minière d'or et doublez votre mise en 2 mois. Minimum 50 000 F.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute,142,train
-sg-00144,"Crypto-monnaie: le nouveau jeton qui va x10 cette semaine. Investis maintenant, contacte le coach au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,143,test
-sg-00145,"Offre spéciale: prêt de 2 000 000 F sans garantie, remboursable en 5 ans. Frais de dossier 35 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,144,train
-sg-00146,Recrutement dans une grande banque: 15 postes de conseillers. Envoyez 10 000 F pour le test écrit au <TEL>.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute,145,test
-sg-00147,Rejoins le groupe VIP paris sportifs: 95% de gains garantis. Abonnement 20 000 F le mois.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,146,train
-sg-00148,"Votre profil a été retenu pour travailler comme nounou en Europe. Billet et logement offerts, frais de dossier 75 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,147,train
-sg-00149,"Placement immobilier: investissez 250 000 F aujourd'hui, touchez 50 000 F de loyer chaque mois à vie.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,148,train
-sg-00150,"Mon cousin travaille à la douane, il peut te faire recruter. Il faut juste 100 000 F pour le dossier, c'est sûr à 100%",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,149,test
-sg-00151,Gagnez de l'argent en ligne: 1 clic = 500 F. Retrait dès 10 000 F. Inscription payante 3000 F sur hxxp://clic-argent[.]site,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,150,train
-sg-00152,"Les inscriptions pour le programme d'aide aux jeunes entrepreneurs sont ouvertes. Financement de 5 000 000 F, frais de dossier 20 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,151,train
-sg-00153,"Maman c'est moi, mon téléphone est tombé dans l'eau. J'écris avec le numéro d'un ami. Envoie-moi vite 20 000 F, je suis bloqué.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,152,train
-sg-00154,"Grand marabout voyant médium, retour de l'être aimé, chance aux jeux, protection. Résultats en 3 jours. Appelez le <TEL>",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,153,train
-sg-00155,"Papa c'est moi, j'ai eu un accident à moto, je suis à l'hôpital. Envoie 50 000 F sur ce numéro pour les soins, c'est urgent",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,154,train
-sg-00156,"Bonjour, j'ai changé de numéro. Enregistre celui-ci et supprime l'ancien. Au fait, tu peux m'aider avec 15 000 F ?",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,155,train
-sg-00157,"Police Nationale: vous êtes convoqué pour une affaire vous concernant. Pour éviter la garde à vue, payez l'amende de 50 000 F au <TEL>.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,156,train
-sg-00158,J'ai des vidéos compromettantes de toi. Envoie 100 000 F dans 24h ou je les publie sur Facebook.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,157,train
-sg-00159,"Bonjour, je suis le propriétaire de la maison que vous avez visitée. Envoyez 3 mois de caution par Wave pour réserver avant les autres.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute,158,train
-sg-00160,"Tonton c'est moi <NOM>, je suis en voyage et on m'a volé mon sac. Envoie-moi 30 000 F pour le transport, je te rembourse dès mon retour",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,159,train
-sg-00161,"Voyant africain puissant: je règle tous vos problèmes d'argent, de mariage et de travail. Paiement après résultat. <TEL>",arnaque,autre_arnaque,aucun,BJ,amorcage,,true,haute,160,train
-sg-00162,"Votre enfant a été arrêté par la police. Envoyez 75 000 F pour sa libération immédiate au <TEL>, ne prévenez personne.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,161,train
-sg-00163,"Salut c'est ton ami de Facebook, je t'envoie un colis avec des dollars et des cadeaux. Paie juste les frais de douane de 45 000 F.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,162,test
-sg-00164,Je suis une veuve malade et je veux léguer ma fortune de 500 millions à une personne honnête. Contactez mon avocat au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,163,train
-sg-00165,"Bonsoir, votre numéro a été utilisé pour une fraude. Pour éviter des poursuites, contactez l'inspecteur au <TEL> et payez les frais d'enquête.",arnaque,autre_arnaque,aucun,CM,amorcage,,true,haute,164,train
-sg-00166,"Vends iPhone neuf à 150 000 F seulement, livraison après paiement du transport de 10 000 F par Wave.",arnaque,autre_arnaque,wave,CI,amorcage,,true,haute,165,train
-sg-00167,"Ma sœur c'est moi, je suis à la gare et mon porte-monnaie est perdu. Fais-moi un transfert de 10 000 sur ce numéro stp",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,166,train
-sg-00168,Envoie ce message à 20 personnes et tu recevras 5000 F de crédit gratuit. Sinon ton numéro sera bloqué dans 48h.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,167,test
-sg-00169,"Bonjour, je vous ai vu sur Facebook, je suis un homme d'affaires et je veux vous épouser. Envoyez 25 000 F pour mon billet d'avion.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,168,test
-sg-00170,"Cher fidèle, le pasteur a prié pour vous. Pour recevoir la bénédiction financière, semez 10 000 F au <TEL> aujourd'hui.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,169,train
-sg-00171,Anti-coupure: payez votre facture d'électricité avec 50% de réduction en passant par notre agent au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,170,train
-sg-00172,"Location de voiture pas chère, payez l'acompte de 40 000 F par Orange Money et la voiture vous est livrée.",arnaque,autre_arnaque,orange,CI,amorcage,,true,haute,171,train
-sg-00173,"Bébé c'est moi, j'ai un problème urgent, fais moi un dépôt de 25 000 sur ce numéro, je t'explique après",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,172,train
-sg-00174,"Bonjour madame, votre fils a eu un malaise à l'école. Envoyez 20 000 F pour les premiers soins au numéro de l'infirmier <TEL>.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,173,train
-sg-00175,"Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute,174,test
-sg-00176,Le cabinet du ministre vous informe que vous êtes retenu pour un marché public. Versez 200 000 F de frais de soumission.,arnaque,autre_arnaque,aucun,BF,amorcage,,true,haute,175,train
-sg-00177,"Tu m'as appelé? Rappelle-moi vite au <TEL> c'est important, je ne peux pas te joindre sur ce numéro",arnaque,autre_arnaque,aucun,CI,amorcage,,true,moyenne,176,test
-sg-00178,Transfert de 10000 FCFA vers <TEL> reussi. Frais: 100 FCFA. Nouveau solde: 45250 FCFA. Trans ID: <REF>. Orange Money ne vous demandera jamais votre code secret.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,177,train
-sg-00179,Vous avez recu 15000 FCFA de <NOM> (<TEL>). Nouveau solde: 27800 FCFA. ID transaction: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,178,train
-sg-00180,Vous avez reçu 5 000F de <NOM>. Nouveau solde: 12 350F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,179,train
-sg-00181,Flooz: Depot de 20000 FCFA effectue par l'agent <NOM>. Solde: 32500 FCFA. Ref <REF>,legitime,notification_transaction,moov,TG,amorcage,,true,haute,180,train
-sg-00182,Votre compte a été débité de 25 000 XOF le 29/09/2026 (retrait GAB). Solde disponible: 180 500 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,181,train
-sg-00183,Paiement de 12 500 FCFA pour votre facture d'électricité effectué avec succès. Réf: <REF>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,182,train
-sg-00184,Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute,183,train
-sg-00185,Achat de credit de 1000 FCFA pour <TEL> reussi. Nouveau solde Orange Money: 8450 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,184,test
-sg-00186,Retrait de 50000 FCFA chez l'agent <NOM> effectue. Frais: 500 FCFA. Nouveau solde: 3200 FCFA. Trans ID: <REF>,legitime,notification_transaction,orange,BF,amorcage,,true,haute,185,test
-sg-00187,Votre transaction de 5000 FCFA vers <TEL> a echoue. Votre compte n'a pas ete debite.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,186,train
-sg-00188,Votre compte Orange Money est bloque apres 3 saisies erronees du code secret. Rendez-vous en agence avec votre piece d'identite pour le debloquer.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,187,train
-sg-00189,Paiement marchand de 3500F chez <NOM> réussi. Nouveau solde: 21 400F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,188,test
-sg-00190,MoMo: Vous avez envoyé 7500 FCFA à <NOM> <TEL>. Frais 75 FCFA. Solde 10 925 FCFA. Ne partagez jamais votre code PIN.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,189,train
-sg-00191,Transfert de 25 000 F vers <NOM> réussi. Frais 250 F. Solde 3 460 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,190,test
-sg-00192,Vous avez recu 100000 FCFA de <NOM>. Solde disponible: 102500 FCFA. Ref: <REF>,legitime,notification_transaction,orange,ML,amorcage,,true,haute,191,train
-sg-00193,Depot de 30 000 FCFA effectue sur votre compte Moov Money. Nouveau solde 34 750 FCFA.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute,192,train
-sg-00194,Paiement des frais de scolarité: 75 000 FCFA réglés à l'établissement <NOM>. Réf <REF>.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,193,train
-sg-00195,Votre retrait de 20 000 F a été effectué. Solde: 5 850 F. Merci d'utiliser Wave.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,194,train
-sg-00196,Transfert international de 50 000 FCFA reçu de <NOM>. Solde: 61 200 FCFA.,legitime,notification_transaction,orange,SN,amorcage,,true,haute,195,train
-sg-00197,Votre facture d'eau de 8 750 FCFA a été payée. Référence: <REF>.,legitime,notification_transaction,moov,BF,amorcage,,true,haute,196,train
-sg-00198,Achat de forfait internet 2Go à 1000 FCFA réussi via votre compte MoMo. Solde: 4 300 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute,197,train
-sg-00199,Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,198,test
-sg-00200,Vous avez payé 6 000 FCFA pour votre abonnement TV. Réf <REF>. Validité: 30 jours.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,199,test
-sg-00201,Votre compte a été débité de 15 000 XOF par prélèvement pour votre assurance. Solde: 95 200 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,200,test
-sg-00202,T-Money: Vous avez recu 12000 FCFA de <TEL>. Solde: 14650 FCFA.,legitime,notification_transaction,autre,TG,amorcage,,true,haute,201,train
-sg-00203,Free Money: transfert de 3000 F vers <TEL> effectué. Solde: 9 800 F.,legitime,notification_transaction,autre,SN,amorcage,,true,haute,202,train
-sg-00204,Retrait de 10 000 FCFA effectué au guichet. Frais 100 FCFA. Nouveau solde 1 520 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,203,train
-sg-00205,Vous avez reçu 2 500F de <NOM>. Nouveau solde: 2 590F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,204,train
-sg-00206,Orange Money: Paiement de 45 000 FCFA à <NOM> effectué. Solde: 12 310 FCFA. Ne communiquez jamais votre code secret.,legitime,notification_transaction,orange,CM,amorcage,,true,haute,205,train
-sg-00207,Votre virement de 200 000 XOF vers le compte de <NOM> a été exécuté.,legitime,notification_transaction,banque,BJ,amorcage,,true,haute,206,train
-sg-00208,Transfert de 5000 F vers <TEL> réussi. Solde 750 F. Pensez à recharger votre compte.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,207,train
-sg-00209,Vous avez recu 40000 FCFA de <NOM>. Motif: loyer octobre. Solde: 43100 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,208,train
-sg-00210,"Votre carte a été utilisée pour un paiement de 18 900 XOF chez un commerçant le 30/09/2026 à 12:14. Si ce n'est pas vous, contactez votre agence.",legitime,notification_transaction,banque,CI,amorcage,,true,haute,209,train
-sg-00211,Opération réussie: dépôt de 60 000 FCFA. Nouveau solde Moov Money: 71 250 FCFA.,legitime,notification_transaction,moov,TG,amorcage,,true,haute,210,test
-sg-00212,Paiement de 3 000 F au taxi <NOM> réussi. Solde 14 200 F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,211,test
-sg-00213,Le transfert de 8 000 FCFA de <NOM> a été annulé à sa demande. Votre solde est inchangé: 22 000 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,212,test
-sg-00214,Recharge de 500 FCFA effectuée pour votre numéro. Bonus: 100 FCFA. Solde principal: 612 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,213,train
-sg-00215,Votre prêt de 25 000 FCFA a été remboursé intégralement. Merci pour votre confiance.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,214,train
-sg-00216,Cotisation tontine: 10 000 F envoyés à <NOM>. Solde: 3 450 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,215,train
-sg-00217,"Vous avez recu 7500 FCFA de <NOM>. Nouveau solde 7890 FCFA. Trans ID <REF>. Orange Money, votre argent en toute sécurité.",legitime,notification_transaction,orange,BF,amorcage,,true,haute,216,train
-sg-00218,MoMo: Paiement de facture CIE de 22 300 FCFA réussi. ID: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,217,train
-sg-00219,Votre compte épargne a été crédité des intérêts trimestriels: 4 250 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute,218,train
-sg-00220,Depot de 5000 FCFA recu de l'agent <NOM>. Solde: 5320 FCFA. Ref: <REF>,legitime,notification_transaction,moov,BF,amorcage,,true,haute,219,test
-sg-00221,Vous avez envoyé 12 000F à <NOM>. Frais: 120F. Nouveau solde: 830F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,220,train
-sg-00222,Achat d'électricité prépayée: 10 000 FCFA. Code de recharge compteur: <CODE>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,221,train
-sg-00223,"Vous avez recu 250000 FCFA de <NOM>. Solde: 262000 FCFA. Pour votre sécurité, ne partagez jamais votre PIN.",legitime,notification_transaction,orange,SN,amorcage,,true,haute,222,train
-sg-00224,Votre abonnement mensuel de 2 500 FCFA a été renouvelé. Prochain renouvellement le 30/10/2026.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,223,train
-sg-00225,Transfert Orange Money vers compte bancaire de 100 000 FCFA effectué. Délai: 24h.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,224,train
-sg-00226,Votre compte a été crédité de 75 000 XOF (bourse d'études). Solde: 76 900 XOF.,legitime,notification_transaction,banque,BF,amorcage,,true,haute,225,test
-sg-00227,Paiement en ligne de 9 900 FCFA effectué sur votre compte Wave.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,226,test
-sg-00228,Retrait de 15000 FCFA effectue. Frais: 150 FCFA. Nouveau solde: 2310 FCFA. Merci de votre fidelite.,legitime,notification_transaction,moov,CI,amorcage,,true,haute,227,train
-sg-00229,Vous avez recu 20 000 FCFA de <NOM> via MTN MoMo. Solde: 20 450 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute,228,train
-sg-00230,Votre transfert de 35 000 FCFA est en attente de confirmation du destinataire.,legitime,notification_transaction,orange,ML,amorcage,,true,haute,229,train
-sg-00231,Le paiement de 1 500 F pour votre ticket de bus a été effectué. Bon voyage!,legitime,notification_transaction,wave,SN,amorcage,,true,haute,230,train
-sg-00232,"Votre compte Mobile Money a été bloqué temporairement à votre demande. Pour le réactiver, présentez-vous en agence.",legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,231,train
-sg-00233,Transfert de 50 000 FCFA reçu. Expéditeur: <NOM>. Solde: 50 210 FCFA. Ref <REF>.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute,232,train
-sg-00234,Achat de pass internet 10Go (5000 FCFA) réussi. Validité 30 jours.,legitime,notification_transaction,orange,SN,amorcage,,true,haute,233,train
-sg-00235,Vous avez payé 2 000 FCFA à la pharmacie <NOM>. Solde restant: 6 800 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,234,train
-sg-00236,Votre compte a été débité de 3 500 XOF (frais de tenue de compte trimestriels).,legitime,notification_transaction,banque,CI,amorcage,,true,haute,235,train
-sg-00237,Vous avez recu 5000 FCFA de <NOM>. Nouveau solde: 5100 FCFA.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,236,train
-sg-00238,Remboursement de frais: 500 FCFA recrédités sur votre compte suite à une erreur de facturation.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,237,train
-sg-00239,Paiement de votre commande de 14 500 FCFA confirmé. Livraison prévue demain.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,238,train
-sg-00240,Transfert de 30000 FCFA vers <TEL> reussi. Frais: 300 FCFA. Solde: 1240 FCFA.,legitime,notification_transaction,orange,ML,amorcage,,true,haute,239,train
-sg-00241,Vous avez retiré 25 000 FCFA au distributeur. Solde: 131 000 FCFA.,legitime,notification_transaction,banque,CM,amorcage,,true,haute,240,train
-sg-00242,Votre paiement de 4 000 F pour l'inscription au club a été reçu. Merci.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,241,train
-sg-00243,Dépôt de 100 000 FCFA effectué sur votre compte par <NOM>. Solde: 108 900 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,242,train
-sg-00244,Votre souscription au forfait appels 500 FCFA est active jusqu'à minuit.,legitime,notification_transaction,moov,CI,amorcage,,true,haute,243,train
-sg-00245,Envoi réussi: 6 500 FCFA à <NOM>. Solde: 3 100 FCFA.,legitime,notification_transaction,orange,TG,amorcage,,true,haute,244,train
-sg-00246,Réception de 17 000 FCFA de <NOM>. Motif: participation mariage. Solde 18 250 FCFA.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,245,train
-sg-00247,Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,246,test
-sg-00248,Votre code de vérification WhatsApp est <CODE>. Ne partagez pas ce code.,legitime,otp,aucun,XX,amorcage,,true,haute,247,train
-sg-00249,"<#> Votre code Wave est <CODE>. Ne le communiquez à personne, même à un agent Wave.",legitime,otp,wave,SN,amorcage,,true,haute,248,test
-sg-00250,Code de confirmation: <CODE>. Valable 5 minutes.,legitime,otp,aucun,XX,amorcage,,true,haute,249,train
-sg-00251,Utilisez le code <CODE> pour vous connecter à votre compte Facebook.,legitime,otp,aucun,XX,amorcage,,true,haute,250,train
-sg-00252,Votre mot de passe temporaire est <CODE>. Changez-le à la première connexion.,legitime,otp,aucun,XX,amorcage,,true,haute,251,train
-sg-00253,G-<CODE> est votre code de validation Google.,legitime,otp,aucun,XX,amorcage,,true,haute,252,train
-sg-00254,Ecobank: votre OTP pour la transaction de 25 000 XOF est <CODE>. Ne le communiquez jamais.,legitime,otp,banque,CI,amorcage,,true,haute,253,train
-sg-00255,<CODE> est votre code de connexion à l'application Max it. Ne le partagez avec personne.,legitime,otp,orange,CI,amorcage,,true,haute,254,train
-sg-00256,Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes.,legitime,otp,mtn,CI,amorcage,,true,haute,255,test
-sg-00257,"Code d'activation de votre compte: <CODE>. Si vous n'avez pas fait cette demande, ignorez ce message.",legitime,otp,aucun,XX,amorcage,,true,haute,256,test
-sg-00258,Votre code de vérification Telegram: <CODE>. Ne donnez ce code à personne.,legitime,otp,aucun,XX,amorcage,,true,haute,257,train
-sg-00259,"Pour finaliser votre inscription, entrez le code <CODE> dans l'application.",legitime,otp,aucun,XX,amorcage,,true,haute,258,train
-sg-00260,Votre code de retrait est <CODE>. Présentez-le à l'agent avec votre pièce d'identité.,legitime,otp,orange,SN,amorcage,,true,haute,259,test
-sg-00261,<#> <CODE> est votre code de sécurité. Nous ne vous appellerons jamais pour le demander.,legitime,otp,aucun,XX,amorcage,,true,haute,260,train
-sg-00262,"Banque: code de validation de votre virement de 150 000 XOF: <CODE>. Si vous n'êtes pas à l'origine de cette opération, appelez votre agence.",legitime,otp,banque,SN,amorcage,,true,haute,261,train
-sg-00263,Votre code de confirmation Jumia est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,262,train
-sg-00264,Code PIN provisoire de votre nouvelle carte: <CODE>. Modifiez-le au premier retrait.,legitime,otp,banque,CI,amorcage,,true,haute,263,train
-sg-00265,Moov Money: votre code de validation est <CODE>. Ne le communiquez jamais à un tiers.,legitime,otp,moov,BJ,amorcage,,true,haute,264,train
-sg-00266,Votre code de connexion Instagram est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,265,test
-sg-00267,Code de vérification: <CODE>. Utilisez-le pour réinitialiser votre mot de passe.,legitime,otp,aucun,XX,amorcage,,true,haute,266,train
-sg-00268,Votre code Glovo est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,267,train
-sg-00269,<CODE> est votre code de confirmation Yango. Ne le partagez pas.,legitime,otp,aucun,CI,amorcage,,true,haute,268,train
-sg-00270,Wave: votre code de connexion est <CODE>. Wave ne vous demandera jamais ce code par téléphone.,legitime,otp,wave,CI,amorcage,,true,haute,269,train
-sg-00271,Code OTP: <CODE> pour le paiement de 12 000 XOF chez un marchand en ligne.,legitime,otp,banque,CM,amorcage,,true,haute,270,train
-sg-00272,Votre code de vérification pour le portail des examens est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,271,train
-sg-00273,Votre code de livraison est <CODE>. Donnez-le au livreur uniquement à la réception du colis.,legitime,otp,aucun,CI,amorcage,,true,haute,272,train
-sg-00274,"Orange: code de validation de votre changement de SIM: <CODE>. Si vous n'avez rien demandé, contactez le service client en agence.",legitime,otp,orange,CI,amorcage,,true,haute,273,train
-sg-00275,Votre code d'accès au Wi-Fi de l'hôtel est <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute,274,test
-sg-00276,MTN: votre code de réinitialisation du PIN MoMo est <CODE>. Aucun agent ne vous le demandera.,legitime,otp,mtn,CM,amorcage,,true,haute,275,train
-sg-00277,Utilisez <CODE> pour vérifier votre numéro sur Signal.,legitime,otp,aucun,XX,amorcage,,true,haute,276,test
-sg-00278,Votre code de connexion à la banque en ligne est <CODE>. Valable 2 minutes.,legitime,otp,banque,BJ,amorcage,,true,haute,277,train
-sg-00279,Code de sécurité Microsoft: <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,278,train
-sg-00280,Votre code de confirmation de rendez-vous est <CODE>. A présenter à l'accueil.,legitime,otp,aucun,CI,amorcage,,true,haute,279,train
-sg-00281,<#> Votre code est <CODE>. Merci d'utiliser notre service.,legitime,otp,aucun,XX,amorcage,,true,haute,280,test
-sg-00282,Code de validation de votre inscription à la mutuelle: <CODE>.,legitime,otp,aucun,BF,amorcage,,true,haute,281,train
-sg-00283,Votre code TikTok est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,282,train
-sg-00284,"Pour sécuriser votre compte Orange Money, votre nouveau code secret a bien été enregistré. Ne le communiquez jamais.",legitime,otp,orange,ML,amorcage,,true,haute,283,train
-sg-00285,Votre code de validation Uber est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,284,train
-sg-00286,Code de confirmation de votre réservation de billet: <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute,285,train
-sg-00287,Votre code de vérification LinkedIn est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,286,train
-sg-00288,Orange: Profitez de 3Go à 1000F valables 7 jours. Tapez #111# ou passez par l'application.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,287,train
-sg-00289,MTN: Votre forfait internet est épuisé. Rechargez pour continuer à naviguer. Composez *133#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,288,test
-sg-00290,Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,289,train
-sg-00291,Jeu MTN: envoyez JEU au 7575 et tentez de gagner des smartphones. SMS 100F. Règlement sur mtn[.]ci,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,290,train
-sg-00292,Orange: maintenance réseau cette nuit de 1h à 4h dans votre zone. Désolés pour la gêne occasionnée.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,291,train
-sg-00293,Wave: nouveau! Payez vos factures d'eau sans frais dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,292,train
-sg-00294,Votre forfait 5Go expire dans 24h. Renouvelez-le en composant #144#.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,293,train
-sg-00295,Joyeuse fête de l'indépendance! Orange vous offre 500 Mo gratuits aujourd'hui.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,294,train
-sg-00296,Moov Africa: les appels vers tous les réseaux à 50F la minute ce weekend.,legitime,promo_operateur,moov,BF,amorcage,,true,haute,295,train
-sg-00297,MTN vous remercie pour votre fidélité: 10 ans avec nous! Profitez de 20% de remise sur les pass internet ce mois-ci.,legitime,promo_operateur,mtn,CM,amorcage,,true,haute,296,train
-sg-00298,Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,297,train
-sg-00299,"Wave: 1% seulement pour vos transferts, et les dépôts et retraits restent gratuits.",legitime,promo_operateur,wave,CI,amorcage,,true,haute,298,test
-sg-00300,Nouveau: consultez votre solde Moov Money gratuitement en tapant *155#.,legitime,promo_operateur,moov,BJ,amorcage,,true,haute,299,test
-sg-00301,Pass Nuit: 2Go de minuit à 6h pour 200F. Composez *133*1#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,300,train
-sg-00302,Orange: votre recharge de 5000F vous donne droit à 1Go offert. Il est déjà disponible.,legitime,promo_operateur,orange,ML,amorcage,,true,haute,301,train
-sg-00303,Participez au grand jeu de Noël Orange: chaque recharge de 1000F vous donne une chance de gagner une voiture. Règlement disponible en agence.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,302,train
-sg-00304,"Info MTN: pour éviter la suspension de votre ligne, pensez à mettre à jour votre identification en agence avec votre pièce d'identité avant le 31 décembre.",legitime,promo_operateur,mtn,CI,amorcage,,true,haute,303,train
-sg-00305,Moov: votre crédit est presque épuisé. Rechargez maintenant et bénéficiez de 50% de bonus.,legitime,promo_operateur,moov,TG,amorcage,,true,haute,304,train
-sg-00306,"Orange: téléchargez l'application Max it et gérez votre compte, vos forfaits et votre argent au même endroit.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,305,train
-sg-00307,MTN MoMo: payez vos achats chez les marchands agréés et recevez 2% de cashback sur votre compte.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,306,train
-sg-00308,Wave: votre application a été mise à jour. Découvrez les nouvelles fonctionnalités depuis l'accueil.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,307,train
-sg-00309,"Orange: rappel, Orange ne vous appellera jamais pour demander votre code secret. Signalez tout appel suspect en agence.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,308,train
-sg-00310,Promo rentrée: forfait étudiant 10Go à 2500F par mois. Offre valable jusqu'au 31 octobre.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,309,train
-sg-00311,Moov Africa: votre nouvelle offre Illimix est activée. Profitez de vos appels et SMS illimités vers Moov.,legitime,promo_operateur,moov,CI,amorcage,,true,haute,310,train
-sg-00312,MTN: le réseau 4G+ est disponible dans votre quartier. Profitez d'un internet plus rapide.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute,311,train
-sg-00313,Orange Money: la carte Visa prépayée est disponible en agence. Payez partout dans le monde.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,312,test
-sg-00314,Bonne fête de Tabaski! Profitez de 30% de bonus sur toutes vos recharges jusqu'à dimanche.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,313,train
-sg-00315,"Votre forfait appels a été renouvelé automatiquement. Pour désactiver le renouvellement, tapez #144#.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,314,train
-sg-00316,MTN: gagnez des minutes gratuites en parrainant un ami. Il suffit qu'il achète son premier pass.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,315,train
-sg-00317,Service client Orange: votre réclamation a été traitée. Merci de votre patience.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,316,train
-sg-00318,Free: profitez d'internet illimité le dimanche pour 500F. Tapez #150#.,legitime,promo_operateur,autre,SN,amorcage,,true,haute,317,train
-sg-00319,Wave: les transferts vers le Mali sont maintenant disponibles dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,318,train
-sg-00320,Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,319,test
-sg-00321,Moov Money: retirez sans frais chez tous nos agents partenaires ce mois-ci.,legitime,promo_operateur,moov,BF,amorcage,,true,haute,320,train
-sg-00322,MTN: votre numéro a bien été porté vers notre réseau. Bienvenue chez MTN!,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,321,train
-sg-00323,Orange: bénéficiez de la 5G sans changer de forfait si votre téléphone est compatible.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,322,test
-sg-00324,"Wave: pour votre sécurité, activez le verrouillage de l'application dans les paramètres.",legitime,promo_operateur,wave,CI,amorcage,,true,haute,323,train
-sg-00325,Pass WhatsApp illimité 7 jours à 300F. Tapez *133*6#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,324,test
-sg-00326,Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci,legitime,promo_operateur,orange,CI,amorcage,,true,haute,325,test
-sg-00327,"MTN: souscription à MTN Music réussie. 100F par semaine. Pour vous désabonner, envoyez STOP au 8000.",legitime,promo_operateur,mtn,CM,amorcage,,true,haute,326,train
-sg-00328,Moov: coupure de service prévue dimanche de 2h à 5h pour amélioration du réseau.,legitime,promo_operateur,moov,TG,amorcage,,true,haute,327,train
-sg-00329,Orange Money: votre plafond de transaction a été relevé suite à la vérification de votre identité.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,328,test
-sg-00330,Joyeux anniversaire! Orange vous offre 1Go valable 24h pour fêter ça.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,329,train
-sg-00331,MTN: vous avez utilisé 80% de votre forfait internet.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute,330,train
-sg-00332,Wave: nouvelle agence ouverte à Plateau. Horaires: 8h-18h du lundi au samedi.,legitime,promo_operateur,wave,CI,amorcage,,true,haute,331,train
-sg-00333,"Stp envoie-moi 2000 pour le taxi, je te rembourse demain",legitime,personnel,aucun,CI,amorcage,,true,haute,332,train
-sg-00334,"Maman j'ai reçu l'argent, merci beaucoup. Je t'appelle ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,333,test
-sg-00335,Tonton on dit quoi? La famille va bien?,legitime,personnel,aucun,CI,amorcage,,true,haute,334,train
-sg-00336,"Je suis devant la porte, viens ouvrir",legitime,personnel,aucun,CI,amorcage,,true,haute,335,train
-sg-00337,Le match c'est à quelle heure ce soir?,legitime,personnel,aucun,SN,amorcage,,true,haute,336,test
-sg-00338,Réunion des parents d'élèves samedi à 10h à l'école,legitime,personnel,aucun,CI,amorcage,,true,haute,337,train
-sg-00339,N'oublie pas d'acheter le pain en rentrant,legitime,personnel,aucun,CI,amorcage,,true,haute,338,train
-sg-00340,"Joyeux anniversaire ma chérie, que Dieu te bénisse et te garde",legitime,personnel,aucun,CI,amorcage,,true,haute,339,train
-sg-00341,Tu as vu les résultats du bac? Ta cousine a eu mention!,legitime,personnel,aucun,BF,amorcage,,true,haute,340,train
-sg-00342,"Bonne arrivée, tu es bien rentré?",legitime,personnel,aucun,CI,amorcage,,true,haute,341,test
-sg-00343,"Appelle-moi quand tu es libre, c'est urgent",legitime,personnel,aucun,CI,amorcage,,true,haute,342,train
-sg-00344,"Le mariage de <NOM> c'est le 12, tu viens avec nous?",legitime,personnel,aucun,SN,amorcage,,true,haute,343,train
-sg-00345,"J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie",legitime,personnel,aucun,CI,amorcage,,true,haute,344,test
-sg-00346,"Je t'ai envoyé 15 000 pour le marché, confirme quand tu reçois",legitime,personnel,aucun,CI,amorcage,,true,haute,345,train
-sg-00347,"Chérie j'arrive dans 30 minutes, il y a embouteillage",legitime,personnel,aucun,CI,amorcage,,true,haute,346,train
-sg-00348,La coupure de courant est finie chez vous?,legitime,personnel,aucun,CI,amorcage,,true,haute,347,train
-sg-00349,"Mon vié on dit quoi, c'est comment? On se voit au maquis ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,348,train
-sg-00350,"Ya fohi, tout est calé pour demain",legitime,personnel,aucun,CI,amorcage,,true,haute,349,train
-sg-00351,"Papa est rentré de l'hôpital, il va beaucoup mieux, merci pour vos prières",legitime,personnel,aucun,CI,amorcage,,true,haute,350,train
-sg-00352,Tu peux passer récupérer les enfants à l'école à 16h30? Je suis encore au bureau,legitime,personnel,aucun,SN,amorcage,,true,haute,351,test
-sg-00353,"Merci pour hier, c'était super sympa",legitime,personnel,aucun,CI,amorcage,,true,haute,352,train
-sg-00354,"Le cours de demain est annulé, le prof est malade",legitime,personnel,aucun,BJ,amorcage,,true,haute,353,train
-sg-00355,"J'ai oublié mon chargeur chez toi, je passe le prendre demain",legitime,personnel,aucun,CI,amorcage,,true,haute,354,train
-sg-00356,On se retrouve au rond-point à 18h,legitime,personnel,aucun,CI,amorcage,,true,haute,355,train
-sg-00357,"Maman dit de t'appeler, elle n'arrive pas à te joindre",legitime,personnel,aucun,CI,amorcage,,true,haute,356,train
-sg-00358,Bonne fête de Tabaski à toi et à toute la famille!,legitime,personnel,aucun,SN,amorcage,,true,haute,357,train
-sg-00359,Tu as fini le devoir de maths? Envoie-moi une photo de l'exercice 3 stp,legitime,personnel,aucun,CI,amorcage,,true,haute,358,train
-sg-00360,"Je suis malade aujourd'hui, je ne pourrai pas venir au travail",legitime,personnel,aucun,CI,amorcage,,true,haute,359,train
-sg-00361,Frère tu peux me prêter 5000 jusqu'à la fin du mois? Je te rembourse le 30,legitime,personnel,aucun,CI,amorcage,,true,haute,360,train
-sg-00362,"C'est bon j'ai reçu les 5000, merci frère",legitime,personnel,aucun,CI,amorcage,,true,haute,361,train
-sg-00363,"Le plombier vient demain à 9h, il faut quelqu'un à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute,362,train
-sg-00364,"Dors bien, à demain",legitime,personnel,aucun,CI,amorcage,,true,haute,363,train
-sg-00365,Tu m'envoies l'adresse de la boutique? Je veux y aller cet après-midi,legitime,personnel,aucun,SN,amorcage,,true,haute,364,train
-sg-00366,"Les invitations sont prêtes, passe les récupérer chez moi",legitime,personnel,aucun,CI,amorcage,,true,haute,365,train
-sg-00367,"J'ai raté le car, je prends le prochain à 15h",legitime,personnel,aucun,BF,amorcage,,true,haute,366,test
-sg-00368,"Grand-mère demande de tes nouvelles, appelle-la dimanche",legitime,personnel,aucun,ML,amorcage,,true,haute,367,test
-sg-00369,"Le gâteau est super bon, merci ma sœur!",legitime,personnel,aucun,CI,amorcage,,true,haute,368,train
-sg-00370,Félicitations pour ton nouveau travail! On va fêter ça,legitime,personnel,aucun,CI,amorcage,,true,haute,369,train
-sg-00371,"Félicitations pour le bébé, que Dieu le garde! On passe vous voir ce weekend",legitime,personnel,aucun,SN,amorcage,,true,haute,370,train
-sg-00372,"URGENT: la réunion est avancée à 14h, préviens les autres",legitime,personnel,aucun,CI,amorcage,,true,haute,371,train
-sg-00373,Tu as mon livre de physique? J'en ai besoin pour réviser,legitime,personnel,aucun,CI,amorcage,,true,haute,372,test
-sg-00374,"Je t'ai envoyé la vidéo sur WhatsApp, regarde c'est trop drôle",legitime,personnel,aucun,CI,amorcage,,true,haute,373,train
-sg-00375,"Maman envoie-moi 10 000 pour les fournitures scolaires stp, la liste est longue",legitime,personnel,aucun,CI,amorcage,,true,haute,374,train
-sg-00376,"Ok pas de souci, je te fais le transfert ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,375,train
-sg-00377,Le mécanicien dit que la voiture sera prête jeudi,legitime,personnel,aucun,CI,amorcage,,true,haute,376,train
-sg-00378,Tu viens à l'église dimanche? Il y a la fête des moissons,legitime,personnel,aucun,CI,amorcage,,true,haute,377,train
-sg-00379,Qui a pris la clé de la moto? Je dois sortir,legitime,personnel,aucun,BF,amorcage,,true,haute,378,train
-sg-00380,On a gagné le match 3-1!! Quelle soirée!,legitime,personnel,aucun,CI,amorcage,,true,haute,379,train
-sg-00381,"J'ai déposé ton colis chez le voisin, récupère-le quand tu rentres",legitime,personnel,aucun,SN,amorcage,,true,haute,380,train
-sg-00382,"Pense à payer la facture d'électricité avant vendredi, sinon ils vont couper",legitime,personnel,aucun,CI,amorcage,,true,haute,381,train
-sg-00383,"Stp rappelle-moi, j'ai essayé de te joindre trois fois",legitime,personnel,aucun,CI,amorcage,,true,haute,382,train
-sg-00384,"Je vais au marché, tu veux quelque chose?",legitime,personnel,aucun,CI,amorcage,,true,haute,383,train
-sg-00385,Le docteur a dit de continuer le traitement pendant une semaine,legitime,personnel,aucun,CI,amorcage,,true,haute,384,train
-sg-00386,"Bravo pour ta soutenance, on est fiers de toi!",legitime,personnel,aucun,BJ,amorcage,,true,haute,385,train
-sg-00387,La réunion de famille est reportée au mois prochain,legitime,personnel,aucun,CI,amorcage,,true,haute,386,train
-sg-00388,Tu peux me déposer à l'aéroport samedi matin?,legitime,personnel,aucun,SN,amorcage,,true,haute,387,train
-sg-00389,"J'ai perdu mon téléphone hier, c'est mon nouveau numéro, enregistre-le",legitime,personnel,aucun,CI,amorcage,,true,haute,388,train
-sg-00390,"Mon compte Orange Money est bloqué, je dois aller en agence demain matin",legitime,personnel,orange,CI,amorcage,,true,haute,389,train
-sg-00391,Ton argent est arrivé? Je t'ai fait le Wave il y a une heure,legitime,personnel,wave,SN,amorcage,,true,haute,390,train
-sg-00392,"Merci de m'avoir aidé pour le déménagement, je te dois un repas",legitime,personnel,aucun,CI,amorcage,,true,haute,391,test
-sg-00393,"Le prix du sac de riz a encore augmenté, 18 500 maintenant",legitime,personnel,aucun,CI,amorcage,,true,haute,392,test
-sg-00394,Tu as reçu le message de la banque pour le prêt?,legitime,personnel,aucun,CI,amorcage,,true,haute,393,train
-sg-00395,"Ma sœur, ne réponds pas aux gens qui te demandent ton code Orange Money, c'est des escrocs",legitime,personnel,orange,CI,amorcage,,true,haute,394,train
-sg-00396,"Attention, il y a des faux agents qui appellent pour demander les codes. Ne donne rien",legitime,personnel,aucun,CI,amorcage,,true,haute,395,train
-sg-00397,Chéri n'oublie pas le rendez-vous chez le pédiatre à 11h,legitime,personnel,aucun,CI,amorcage,,true,haute,396,train
-sg-00398,"Il pleut beaucoup ici, reste à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute,397,test
-sg-00399,"J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain",legitime,personnel,aucun,CI,amorcage,,true,haute,398,test
-sg-00400,"La cérémonie commence à 16h, habillez-vous en blanc",legitime,personnel,aucun,SN,amorcage,,true,haute,399,test
-sg-00401,"Bien reçu, merci pour l'info",legitime,personnel,aucun,CI,amorcage,,true,haute,400,train
-sg-00402,Tu peux m'envoyer le numéro de l'électricien?,legitime,personnel,aucun,CI,amorcage,,true,haute,401,train
-sg-00403,On va cotiser 5000 chacun pour le cadeau de mariage de <NOM>,legitime,personnel,aucun,CI,amorcage,,true,haute,402,train
-sg-00404,"C'est moi qui ai payé le transport hier, tu me dois 1500",legitime,personnel,aucun,CI,amorcage,,true,haute,403,test
-sg-00405,"Le patron a validé ton congé, tu peux partir lundi",legitime,personnel,aucun,CI,amorcage,,true,haute,404,train
-sg-00406,"Salut, je suis en réunion, je te rappelle après",legitime,personnel,aucun,CI,amorcage,,true,haute,405,test
-sg-00407,Paix à son âme. Les obsèques auront lieu samedi au village,legitime,personnel,aucun,CI,amorcage,,true,haute,406,train
+id,text,label,category,operateur_cible,pays,source_type,date_observee,derive_de_modele,confiance_annotation,campagne,source_ref,group_id,split
+sg-00001,"Bonsoir, je viens de vous envoyer 25 000 F par erreur sur votre Orange Money. SVP renvoyez-les moi, c'est l'argent de l'hôpital de mon enfant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,,,0,train
+sg-00002,"Orange Money: Vous avez reçu 75.000F de <NOM>. Solde: 75.450F. ID: <REF>. Svp c'est une erreur, renvoyez au <TEL>",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,,,1,train
+sg-00003,"Frère c'est une erreur, j'ai fait un dépôt de 10000 sur ton numéro au lieu de celui de ma femme. Renvoie stp, Dieu va te bénir",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,2,test
+sg-00004,"Bonjour madame, j'ai envoyé 15 000 F sur votre Wave par erreur. Je vous en prie retournez-les moi, je suis un étudiant.",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,,,3,train
+sg-00005,"Slt, un transfert de 30000F est parti sur ton compte MoMo par erreur. Fais le retour vite stp je dois payer le loyer",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,,,4,train
+sg-00006,"Mr bonsoir, c'est le caissier de la boutique, j'ai fait un dépôt de 45 000 FCFA par mégarde sur votre numéro. Merci de renvoyer au <TEL>",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,,,5,train
+sg-00007,"Bonjour, vous avez reçu 20 000 FCFA par erreur de ma part. Veuillez les renvoyer en tapant *144*1*1* suivi de mon numéro et du montant.",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,,,6,train
+sg-00008,"Tantie pardon, j'ai envoyé 5000 sur ton numéro par erreur, c'était pour ma maman. Renvoie moi ça stp",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,7,train
+sg-00009,"MTN MoMo: vous avez reçu 100.000 FCFA de <NOM>. Transaction annulée par l'expéditeur, veuillez retourner le montant au <TEL> sous 24h pour éviter le blocage",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,,,8,train
+sg-00010,"Bonsoir, je me suis trompé de numéro en envoyant 35 000 F pour les frais de scolarité de ma fille. Aidez-moi à les récupérer svp, renvoyez sur ce numéro",arnaque,faux_transfert,orange,SN,amorcage,,true,haute,,,9,train
+sg-00011,"Salam, j'ai envoyé 12500 F sur ton Wave par erreur. Tu peux me les renvoyer ? Barké",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,,,10,train
+sg-00012,Mon frère un dépôt de 60000F a été fait par erreur sur ton Moov Money. Je t'en supplie fais le retour au <TEL>,arnaque,faux_transfert,moov,BJ,amorcage,,true,haute,,,11,test
+sg-00013,"Bonjour, erreur de transfert: 18 000 FCFA envoyés sur votre compte Flooz. Merci de me les rendre au plus vite, le client attend",arnaque,faux_transfert,moov,TG,amorcage,,true,haute,,,12,train
+sg-00014,"Allo c'est moi qui t'ai appelé tout à l'heure, l'argent que j'ai envoyé par erreur 40 000 là, renvoie ça vite on va se comprendre",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,13,train
+sg-00015,"Bjr, j'ai transféré 25.000 FCFA par erreur à votre numéro. Veuillez me retourner ça, je vous laisse 2000 pour vous",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,,,14,test
+sg-00016,Vous avez recu un transfert de 80 000 FCFA. Ce transfert est une erreur de l'expediteur. Contactez-le au <TEL> pour le rembourser immediatement.,arnaque,faux_transfert,mtn,CM,amorcage,,true,haute,,,15,train
+sg-00017,"Maman pardon j'ai mis 10 000 sur ton numéro à la place du mien, renvoie ça sur mon nouveau numéro <TEL>",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,16,train
+sg-00018,"Bonsoir monsieur, un dépôt de 150 000 F a été effectué sur votre compte par erreur par notre agent. Veuillez renvoyer la somme sinon votre compte sera suspendu",arnaque,faux_transfert,orange,ML,amorcage,,true,haute,,,17,train
+sg-00019,"Svp frère j'ai fait une erreur de numéro, 22.500F sont partis chez toi. C'est l'argent des médicaments de mon papa, renvoie stp",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,,,18,train
+sg-00020,"Bonjour, par erreur j'ai envoyé 7500F sur votre numéro Wave au lieu de mon fournisseur. Renvoyez s'il vous plaît",arnaque,faux_transfert,wave,CI,amorcage,,true,haute,,,19,train
+sg-00021,"C'est urgent, j'ai envoyé 50000 par erreur, c'était pour payer la caution. Renvoie ça sur <TEL> je t'en prie",arnaque,faux_transfert,aucun,CM,amorcage,,true,haute,,,20,train
+sg-00022,"Bonjour ma sœur, désolée de te déranger, 20 000 F sont arrivés sur ton compte par erreur. Fais le retour et garde 1000 pour ta peine",arnaque,faux_transfert,orange,SN,amorcage,,true,haute,,,21,train
+sg-00023,"Transfert reçu 65.000 FCFA de <NOM> <TEL>. Solde 65 500 FCFA. Erreur de l'expéditeur, merci de retourner la somme au plus vite",arnaque,faux_transfert,orange,CI,amorcage,,true,haute,,,22,train
+sg-00024,"Mon cher j'ai rechargé ton compte de 30 000 F par erreur, fais le retrait chez l'agent le plus proche et envoie moi le code de retrait",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,23,train
+sg-00025,"Bonjour, je vous ai envoyé 45 000 FCFA par erreur. Mon patron va me tuer. Renvoyez vite svp",arnaque,faux_transfert,mtn,CI,amorcage,,true,haute,,,24,test
+sg-00026,"Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ?",arnaque,faux_transfert,orange,ML,amorcage,,true,haute,,,25,train
+sg-00027,"Bonsoir, vous avez reçu 10 000 FCFA de ma part par erreur. Merci de faire le retour avant 18h",arnaque,faux_transfert,wave,SN,amorcage,,true,haute,,,26,train
+sg-00028,"Salut, erreur de manip, j'ai envoyé 90 000 F sur ton Orange Money. Retourne ça stp, c'est pour mes marchandises",arnaque,faux_transfert,orange,BF,amorcage,,true,haute,,,27,train
+sg-00029,"Pardon monsieur c'est la dame du marché, j'ai envoyé 5 500 F sur votre numéro sans faire exprès. Renvoyez moi ça",arnaque,faux_transfert,aucun,CI,amorcage,,true,haute,,,28,train
+sg-00030,"Bonjour, j'ai effectué un transfert de 27 000 FCFA sur votre compte MTN par erreur. Merci de bien vouloir le renvoyer au même numéro. Que Dieu vous bénisse",arnaque,faux_transfert,mtn,BJ,amorcage,,true,haute,,,29,test
+sg-00031,"Orange Money: Cher client, votre compte sera suspendu dans 24h pour mise à jour. Envoyez votre code secret au <TEL> pour le maintenir actif.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,30,train
+sg-00032,"Service Client MTN: suite à une anomalie, votre compte MoMo est bloqué. Appelez le <TEL> pour le débloquer avec votre code PIN.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,,,31,train
+sg-00033,"WAVE INFO: votre compte a été signalé. Pour éviter sa fermeture, confirmez votre code secret en répondant à ce message.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,,,32,train
+sg-00034,"Cher abonné, votre puce sera désactivée ce soir suite au nouveau recensement. Composez #144*8# puis entrez votre code secret pour confirmer.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,33,test
+sg-00035,"Bonjour, ici le service technique Orange. Vous allez recevoir un code par SMS, donnez-le nous pour finaliser la mise à jour de votre compte.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,34,train
+sg-00036,"Moov Money: Votre compte présente une anomalie. Pour le réactiver, envoyez votre code PIN par SMS au <TEL>. Service gratuit.",arnaque,usurpation_operateur,moov,BJ,amorcage,,true,haute,,,35,train
+sg-00037,"Agent Orange Money: nous avons détecté une transaction suspecte de 250 000 F sur votre compte. Pour l'annuler, communiquez-nous votre code secret au <TEL>",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute,,,36,train
+sg-00038,MTN: Votre SIM sera bloquée pour non-identification. Rappelez le <TEL> et munissez-vous de votre code MoMo pour régulariser.,arnaque,usurpation_operateur,mtn,CM,amorcage,,true,haute,,,37,train
+sg-00039,"ORANGE: Votre compte Orange Money a été piraté. Pour sécuriser votre argent, rappelez notre cellule au <TEL> et donnez votre code PIN à l'agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,38,test
+sg-00040,"Chère cliente, votre compte Wave passe au statut Premium. Pour activer, communiquez le code reçu par SMS à notre conseiller au <TEL>.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,,,39,test
+sg-00041,"Service clientèle Moov: suite à la maintenance, veuillez confirmer votre identité en envoyant votre mot de passe Moov Money à ce numéro",arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute,,,40,train
+sg-00042,MTN MoMo: Votre compte est suspendu pour activité suspecte. Contactez immédiatement notre service fraude au <TEL> avec votre code secret,arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,,,41,train
+sg-00043,"Bonjour c'est l'agence Orange de Cocody. Un colis de téléphone vous attend, donnez-nous le code de validation que vous allez recevoir.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,42,train
+sg-00044,"Votre compte Wave sera clôturé dans 2h. Pour le conserver, appelez notre conseiller au <TEL> et suivez ses instructions.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute,,,43,train
+sg-00045,"Ecobank: Votre carte bancaire a été bloquée. Pour la réactiver, communiquez votre code PIN au <TEL>.",arnaque,usurpation_operateur,banque,CI,amorcage,,true,haute,,,44,train
+sg-00046,Orange Money Mali: mise à jour obligatoire. Envoyez OUI suivi de votre code secret au <TEL> pour continuer à utiliser votre compte.,arnaque,usurpation_operateur,orange,ML,amorcage,,true,haute,,,45,train
+sg-00047,"Bonjour, service client MTN. Votre bonus de fidélité de 50 000 F est en attente. Tapez *126# puis votre code PIN pour le recevoir.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,,,46,train
+sg-00048,"ALERTE: tentative de connexion à votre compte Orange Money depuis un autre téléphone. Si ce n'est pas vous, rappelez le <TEL> et confirmez votre code.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,47,train
+sg-00049,"Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret.",arnaque,usurpation_operateur,moov,BF,amorcage,,true,haute,,,48,train
+sg-00050,SERVICE ORANGE: Votre numéro a été sélectionné pour la migration 5G. Envoyez le code à 4 chiffres que vous allez recevoir au <TEL> pour activer.,arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,49,train
+sg-00051,"Wave: Suite à une erreur système, votre solde a été gelé. Appelez-nous vite au <TEL> pour le débloquer.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,,,50,train
+sg-00052,"Bonjour, je suis agent de MTN MoMo. Nous faisons une vérification des comptes. Donnez-moi le code que vous venez de recevoir pour valider.",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,,,51,train
+sg-00053,"UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>.",arnaque,usurpation_operateur,banque,CM,amorcage,,true,haute,,,52,train
+sg-00054,"Orange Money: Nous remboursons les frais de transfert du mois. Pour recevoir, composez #144# puis entrez votre code secret et le montant 25000.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,53,train
+sg-00055,"Cher client, vous avez été débité par erreur de 10 000 F. Pour le remboursement, notre agent va vous appeler, veuillez lui communiquer le code reçu.",arnaque,usurpation_operateur,orange,SN,amorcage,,true,haute,,,54,test
+sg-00056,"Direction Commerciale MTN: votre compte Mobile Money présente un solde négatif. Régularisez en appelant le <TEL> sous 48h, sinon fermeture définitive.",arnaque,usurpation_operateur,mtn,BJ,amorcage,,true,haute,,,55,train
+sg-00057,Flooz: Votre compte Moov Money sera désactivé demain. Mettez à jour vos informations en envoyant votre PIN au <TEL>.,arnaque,usurpation_operateur,moov,TG,amorcage,,true,haute,,,56,test
+sg-00058,"Bonjour, service anti-fraude Wave. Un transfert suspect est en cours sur votre compte. Communiquez-nous rapidement le code reçu pour le bloquer.",arnaque,usurpation_operateur,wave,CI,amorcage,,true,haute,,,57,train
+sg-00059,"Orange: Votre abonnement internet a été renouvelé par erreur. Pour être remboursé, appelez le <TEL> et donnez votre code Orange Money.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,58,train
+sg-00060,"Chère abonnée, votre puce MTN n'est pas enregistrée. Elle sera coupée à minuit. Rappelez vite le <TEL>",arnaque,usurpation_operateur,mtn,CI,amorcage,,true,haute,,,59,train
+sg-00061,"Service Client Wave: nous vous offrons 5000 F de bonus. Pour le recevoir, confirmez votre code secret au conseiller qui va vous appeler.",arnaque,usurpation_operateur,wave,SN,amorcage,,true,haute,,,60,test
+sg-00062,"Cher client Orange Money, votre compte a été crédité de 100 000 F de dédommagement. Pour valider, transmettez votre code secret à notre agent.",arnaque,usurpation_operateur,orange,CI,amorcage,,true,haute,,,61,train
+sg-00063,"Félicitations! Votre numéro a gagné 500 000 FCFA à la tombola Orange. Pour retirer votre gain, envoyez 5000 F de frais de dossier au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,,,62,train
+sg-00064,MTN PROMO: Vous êtes l'heureux gagnant d'un iPhone et de 200 000 F. Appelez le <TEL> pour les modalités de livraison.,arnaque,faux_gain,mtn,CI,amorcage,,true,haute,,,63,train
+sg-00065,Bravo! Vous avez été tiré au sort pour le jeu Wave Anniversaire. Gain: 1 000 000 FCFA. Payez les frais d'activation de 10 000 F pour le recevoir.,arnaque,faux_gain,wave,SN,amorcage,,true,haute,,,64,train
+sg-00066,"Cher client, votre numéro a été sélectionné pour recevoir une moto neuve. Frais de livraison: 25 000 F à envoyer au <TEL>.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute,,,65,train
+sg-00067,FELICITATIONS!!! VOUS AVEZ GAGNE 750.000 FCFA AU GRAND JEU MOOV. CONTACTEZ LE <TEL> AVANT 18H,arnaque,faux_gain,moov,BJ,amorcage,,true,haute,,,66,test
+sg-00068,Loterie Nationale: votre numéro est gagnant du tirage de ce mois. Montant: 2 500 000 F. Frais d'enregistrement: 15 000 F.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,67,train
+sg-00069,"Orange vous offre 50 000 F de crédit pour votre fidélité. Pour activer, envoyez 2000 F de frais au <TEL>.",arnaque,faux_gain,orange,SN,amorcage,,true,haute,,,68,train
+sg-00070,Vous êtes l'un des 10 gagnants du concours d'une grande marque de boisson. Réclamez votre prix de 300 000 F en appelant le <TEL>.,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,69,train
+sg-00071,Salut! Tu as gagné un bon d'achat de 100 000 F. Clique ici pour le récupérer: hxxp://bon-achat-ci[.]xyz,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,70,train
+sg-00072,"Cher abonné, grâce à votre fidélité vous gagnez un smartphone Samsung. Payez seulement les frais de transport de 7500 F.",arnaque,faux_gain,aucun,CM,amorcage,,true,haute,,,71,test
+sg-00073,Heureux élu! Votre numéro a été tiré lors du grand tirage de fin d'année. Vous remportez 5 000 000 F. Appelez vite notre huissier au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,72,test
+sg-00074,"Wave vous remercie: 25 000 F offerts aux 1000 premiers clients. Pour débloquer, envoyez 1000 F de frais de validation au <TEL>",arnaque,faux_gain,wave,CI,amorcage,,true,haute,,,73,train
+sg-00075,Promo spéciale: votre carte SIM a gagné 20Go et 100 000 F. Composez #144# et suivez les étapes pour payer la TVA de 3500 F,arnaque,faux_gain,orange,CI,amorcage,,true,haute,,,74,train
+sg-00076,Félicitation vous avez gagné une somme de 850 000f au jeu MTN Kilo Kilo appelez ce numéro pour rentrer en possession de votre gain,arnaque,faux_gain,mtn,CI,amorcage,,true,haute,,,75,train
+sg-00077,"Bonjour, vous avez remporté un voyage à La Mecque tous frais payés. Envoyez 50 000 F pour les frais de visa au <TEL>.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute,,,76,test
+sg-00078,"Votre numéro a gagné le jackpot du jour: 1.500.000 FCFA. Pour la libération du gain, payez 12 500 F de frais de douane.",arnaque,faux_gain,aucun,ML,amorcage,,true,haute,,,77,train
+sg-00079,GAGNANT: Moov Africa vous offre une télévision écran plat. Livraison sous 48h après paiement de 10 000 F.,arnaque,faux_gain,moov,BF,amorcage,,true,haute,,,78,train
+sg-00080,"Félicitations, vous faites partie des gagnants de la promo Orange Money Transférez et gagnez. Gain: 400 000 F. Contactez le service des lots au <TEL>.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,,,79,train
+sg-00081,"Vous avez gagné 3 sacs de riz et 150 000 F à la tombola de la Tabaski! Pour le retrait, envoyez vos frais de dossier de 5000 F.",arnaque,faux_gain,aucun,SN,amorcage,,true,haute,,,80,train
+sg-00082,"Tu es le grand gagnant de notre jeu concours Facebook! 😍 Ton lot de 200 000 F t'attend, envoie 3000 F pour l'activation",arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,81,train
+sg-00083,BONNE NOUVELLE: votre numéro figure parmi les 50 gagnants de la loterie MTN. Montant: 600 000 F. Appelez le <TEL> immédiatement.,arnaque,faux_gain,mtn,CM,amorcage,,true,haute,,,82,train
+sg-00084,"Cher client, vous avez gagné un bonus exceptionnel de 75 000 F. Pour le recevoir sur votre compte, confirmez votre code secret.",arnaque,faux_gain,orange,CI,amorcage,,true,haute,,,83,train
+sg-00085,Une fondation vous a sélectionné pour une aide de 1 000 000 F. Frais de traitement du dossier: 20 000 F au <TEL>,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,84,train
+sg-00086,Vous avez gagné un scooter au tirage au sort de la foire. Envoyez 15 000 F pour l'immatriculation et la livraison.,arnaque,faux_gain,aucun,TG,amorcage,,true,haute,,,85,train
+sg-00087,"Wave Sénégal: tirage spécial fête de l'indépendance, vous gagnez 350 000 F. Retirez en suivant ce lien hxxps://wave-gain[.]online/retrait",arnaque,faux_gain,wave,SN,amorcage,,true,haute,,,86,train
+sg-00088,"Félicitations Madame, vous êtes gagnante d'un frigo et de 100 000 F. Contactez notre agent au <TEL> pour la livraison à domicile.",arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,87,train
+sg-00089,"Votre numéro a été choisi par ordinateur, vous gagnez 250 000 F offerts par le Ministère. Frais d'enregistrement 5 000 F.",arnaque,faux_gain,aucun,BF,amorcage,,true,haute,,,88,train
+sg-00090,Orange Mali: vous êtes le gagnant du jeu Sama Kalo. Gain 500 000 FCFA. Appelez ce numéro pour réclamer votre lot.,arnaque,faux_gain,orange,ML,amorcage,,true,haute,,,89,train
+sg-00091,Salut toi! Grâce à ta participation tu as gagné un iPhone. Réponds OUI et paie les frais de livraison de 9900 F,arnaque,faux_gain,aucun,CI,amorcage,,true,haute,,,90,train
+sg-00092,"Cadeau de fin d'année: MTN offre 50 000 F à ses meilleurs clients. Pour recevoir le vôtre, envoyez 2 500 F de frais d'activation au <TEL>",arnaque,faux_gain,mtn,BJ,amorcage,,true,haute,,,91,train
+sg-00093,Orange Money: Votre compte a été suspendu. Réactivez-le ici: hxxp://orange-money-ci[.]xyz/login,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,,,92,train
+sg-00094,Votre colis est bloqué au centre de tri. Réglez les frais de livraison sur hxxps://colis-ci-livraison[.]top/suivi,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,93,train
+sg-00095,Wave: activité inhabituelle détectée. Vérifiez votre compte: bit[.]ly/wave-verif,arnaque,phishing_lien,wave,SN,amorcage,,true,haute,,,94,train
+sg-00096,MTN MoMo: votre compte expire aujourd'hui. Mettez-le à jour sur hxxp://mtn-momo-update[.]site,arnaque,phishing_lien,mtn,CI,amorcage,,true,haute,,,95,train
+sg-00097,Votre compte WhatsApp sera désactivé. Confirmez votre numéro ici: hxxps://whatsapp-verification[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,96,train
+sg-00098,Ecobank: une connexion suspecte a été détectée. Sécurisez votre compte: hxxp://41[.]202[.]77[.]10/ecobank,arnaque,phishing_lien,banque,CI,amorcage,,true,haute,,,97,train
+sg-00099,Vous avez droit à un remboursement de 35 000 F. Cliquez sur tinyurl[.]com/rembours-ci pour le recevoir,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,98,train
+sg-00100,Moov Money: votre solde est bloqué. Débloquez-le en vous connectant sur hxxp://moov-money-benin[.]info,arnaque,phishing_lien,moov,BJ,amorcage,,true,haute,,,99,train
+sg-00101,"Cher client, votre carte bancaire expire. Renouvelez-la en ligne sur hxxps://sgci-carte[.]online avant demain.",arnaque,phishing_lien,banque,CI,amorcage,,true,haute,,,100,train
+sg-00102,Aide sociale 2026: l'Etat verse 50 000 F à chaque famille. Inscrivez-vous: hxxp://aide-gouv-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,101,train
+sg-00103,Votre compte Facebook va être supprimé pour violation des règles. Faites appel ici: hxxps://fb-support-center[.]live,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,102,train
+sg-00104,Orange: Votre facture internet est impayée. Réglez maintenant pour éviter la coupure: cutt[.]ly/orange-facture,arnaque,phishing_lien,orange,SN,amorcage,,true,haute,,,103,train
+sg-00105,"Wave: recevez 10 000 F de cashback, connectez-vous sur hxxps://wave-cashback-sn[.]shop",arnaque,phishing_lien,wave,SN,amorcage,,true,haute,,,104,train
+sg-00106,MTN: vous avez 3 messages vocaux en attente. Écoutez-les ici: hxxp://mtn-messagerie[.]buzz/ecoute,arnaque,phishing_lien,mtn,CM,amorcage,,true,haute,,,105,train
+sg-00107,Votre inscription au concours de la fonction publique est incomplète. Complétez sur hxxp://concours-fp-ci[.]online,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,106,train
+sg-00108,Bourse d'études 2026-2027: dernier délai aujourd'hui. Postulez ici: bit[.]ly/bourse-afrique,arnaque,phishing_lien,aucun,BF,amorcage,,true,haute,,,107,train
+sg-00109,Alerte sécurité: votre compte Orange Money sera fermé. Vérifiez vos informations: hxxps://0range-money[.]com/verif,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,,,108,test
+sg-00110,Livraison: votre commande n° <REF> est en attente de paiement. Payez ici: hxxp://boutique-paiement[.]click,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,109,train
+sg-00111,Votre ligne sera suspendue demain. Mettez à jour votre identification sur hxxp://identification-sim-ci[.]xyz,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,110,train
+sg-00112,"Chère cliente, un virement de 150 000 F vous attend. Validez-le sur hxxps://virement-express[.]top",arnaque,phishing_lien,banque,SN,amorcage,,true,haute,,,111,train
+sg-00113,Moov Africa: gagnez 5Go gratuits en remplissant ce formulaire rapide: hxxp://moov-bonus-5go[.]site,arnaque,phishing_lien,moov,BF,amorcage,,true,haute,,,112,train
+sg-00114,Votre compte Wave présente une erreur. Cliquez ici pour la corriger avant sa suspension: hxxps://wave-support[.]icu,arnaque,phishing_lien,wave,CI,amorcage,,true,haute,,,113,train
+sg-00115,Les impôts vous doivent un remboursement de 42 000 F. Réclamez-le avant vendredi: rb[.]gy/impots-rembourse,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,114,train
+sg-00116,Votre banque: veuillez confirmer vos coordonnées pour éviter le blocage de votre carte: hxxp://nsia-securite[.]info,arnaque,phishing_lien,banque,CI,amorcage,,true,haute,,,115,train
+sg-00117,"Dernière chance! Ta vidéo a été signalée, connecte-toi pour la voir: hxxps://video-privee[.]live/voir",arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,116,train
+sg-00118,"MTN MoMo: pour continuer à utiliser vos services, validez votre compte ici hxxp://momo-validation-bj[.]xyz sous 24h",arnaque,phishing_lien,mtn,BJ,amorcage,,true,haute,,,117,train
+sg-00119,Votre abonnement TV a expiré. Réabonnez-vous avec 50% de réduction ici: hxxp://reabonnement-promo[.]shop,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,118,train
+sg-00120,Recrutement police 2026: inscription en ligne gratuite sur hxxp://recrutement-police-ci[.]online avant la clôture,arnaque,phishing_lien,aucun,CI,amorcage,,true,haute,,,119,train
+sg-00121,Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,,,120,test
+sg-00122,ALERTE Orange Money: 3 tentatives de connexion échouées. Protégez votre compte: hxxps://orangemoney-securite[.]click/pin,arnaque,phishing_lien,orange,CI,amorcage,,true,haute,,,121,test
+sg-00123,Doublez votre argent en 72h! Investissez 50 000 F et recevez 100 000 F. Contactez notre gestionnaire sur WhatsApp au <TEL>.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,122,test
+sg-00124,"Opportunité: gagnez 25 000 F par jour depuis votre téléphone, sans diplôme. Inscription 5000 F. Infos au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,123,test
+sg-00125,"Recrutement urgent: une société minière recrute 50 agents, salaire 350 000 F. Frais de dossier 15 000 F à envoyer au <TEL>.",arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute,,,124,train
+sg-00126,Placement sûr: 30% d'intérêts par semaine garantis avec notre plateforme crypto. Rejoignez-nous: hxxps://crypto-gain-afrique[.]xyz,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,125,train
+sg-00127,"Offre d'emploi: hôtesse d'accueil à Dubaï, billet et visa pris en charge. Envoyez 50 000 F pour la réservation.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,126,train
+sg-00128,"Trading Forex: 200 000 F investis = 1 000 000 F en un mois. Places limitées, contactez vite le <TEL>",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,,,127,train
+sg-00129,"Bonjour, votre CV a été retenu pour un poste de chauffeur à la mairie. Payez 10 000 F de frais de visite médicale au <TEL>.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,128,train
+sg-00130,Tontine digitale: cotisez 10 000 F et recevez 80 000 F en 15 jours. Parrainez 2 personnes pour débloquer vos gains.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,129,train
+sg-00131,Devenez riche avec le bitcoin! Notre robot trading génère des bénéfices automatiques. Dépôt minimum 25 000 F.,arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute,,,130,train
+sg-00132,Stage rémunéré 150 000 F/mois dans une ONG internationale. Inscription 7500 F. Places limitées.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute,,,131,train
+sg-00133,"Mon frère, j'ai trouvé une affaire: tu mets 100 000 et on te rembourse 300 000 dans 10 jours. Moi-même j'ai déjà gagné, appelle vite",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,132,test
+sg-00134,Recrutement de 200 jeunes dans les forces de défense. Frais d'inscription 25 000 F au <TEL>. Dernier délai vendredi.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute,,,133,train
+sg-00135,Travail à domicile: aimez des vidéos et gagnez 15 000 F par jour. Activation du compte: 5000 F.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,134,test
+sg-00136,Investissement agricole: achetez une part de 50 000 F et recevez 20% chaque mois pendant un an. Garantie 100%.,arnaque,investissement_emploi,aucun,BF,amorcage,,true,haute,,,135,train
+sg-00137,Visa Canada garanti avec contrat de travail. Frais de procédure 150 000 F. Contactez le cabinet au <TEL>,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,136,train
+sg-00138,Salut! Je gagne 500 000 F par mois grâce à cette application. Inscris-toi avec mon lien et dépose 10 000 F: bit[.]ly/argent-facile,arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,,,137,train
+sg-00139,"Une entreprise étrangère recrute des manutentionnaires, salaire 200 000 F. Envoyez 8000 F pour la carte de travail.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,138,train
+sg-00140,Multipliez votre capital par 5 en 30 jours avec notre programme d'investissement. Rendement garanti. Appelez le <TEL>,arnaque,investissement_emploi,aucun,TG,amorcage,,true,haute,,,139,test
+sg-00141,"Emploi: agents de saisie en ligne, 3 heures par jour, 120 000 F par mois. Kit de démarrage 12 000 F à payer.",arnaque,investissement_emploi,aucun,CM,amorcage,,true,haute,,,140,train
+sg-00142,"Bonne nouvelle, vous êtes présélectionné pour la bourse d'excellence. Versez 30 000 F de frais de traitement pour finaliser.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,,,141,train
+sg-00143,Achetez des actions de notre société minière d'or et doublez votre mise en 2 mois. Minimum 50 000 F.,arnaque,investissement_emploi,aucun,ML,amorcage,,true,haute,,,142,train
+sg-00144,"Crypto-monnaie: le nouveau jeton qui va x10 cette semaine. Investis maintenant, contacte le coach au <TEL>",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,143,train
+sg-00145,"Offre spéciale: prêt de 2 000 000 F sans garantie, remboursable en 5 ans. Frais de dossier 35 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,144,train
+sg-00146,Recrutement dans une grande banque: 15 postes de conseillers. Envoyez 10 000 F pour le test écrit au <TEL>.,arnaque,investissement_emploi,aucun,BJ,amorcage,,true,haute,,,145,train
+sg-00147,Rejoins le groupe VIP paris sportifs: 95% de gains garantis. Abonnement 20 000 F le mois.,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,146,train
+sg-00148,"Votre profil a été retenu pour travailler comme nounou en Europe. Billet et logement offerts, frais de dossier 75 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,147,train
+sg-00149,"Placement immobilier: investissez 250 000 F aujourd'hui, touchez 50 000 F de loyer chaque mois à vie.",arnaque,investissement_emploi,aucun,SN,amorcage,,true,haute,,,148,train
+sg-00150,"Mon cousin travaille à la douane, il peut te faire recruter. Il faut juste 100 000 F pour le dossier, c'est sûr à 100%",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,149,train
+sg-00151,Gagnez de l'argent en ligne: 1 clic = 500 F. Retrait dès 10 000 F. Inscription payante 3000 F sur hxxp://clic-argent[.]site,arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,150,train
+sg-00152,"Les inscriptions pour le programme d'aide aux jeunes entrepreneurs sont ouvertes. Financement de 5 000 000 F, frais de dossier 20 000 F.",arnaque,investissement_emploi,aucun,CI,amorcage,,true,haute,,,151,train
+sg-00153,"Maman c'est moi, mon téléphone est tombé dans l'eau. J'écris avec le numéro d'un ami. Envoie-moi vite 20 000 F, je suis bloqué.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,152,test
+sg-00154,"Grand marabout voyant médium, retour de l'être aimé, chance aux jeux, protection. Résultats en 3 jours. Appelez le <TEL>",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,153,train
+sg-00155,"Papa c'est moi, j'ai eu un accident à moto, je suis à l'hôpital. Envoie 50 000 F sur ce numéro pour les soins, c'est urgent",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,,,154,train
+sg-00156,"Bonjour, j'ai changé de numéro. Enregistre celui-ci et supprime l'ancien. Au fait, tu peux m'aider avec 15 000 F ?",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,155,test
+sg-00157,"Police Nationale: vous êtes convoqué pour une affaire vous concernant. Pour éviter la garde à vue, payez l'amende de 50 000 F au <TEL>.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,156,train
+sg-00158,J'ai des vidéos compromettantes de toi. Envoie 100 000 F dans 24h ou je les publie sur Facebook.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,157,train
+sg-00159,"Bonjour, je suis le propriétaire de la maison que vous avez visitée. Envoyez 3 mois de caution par Wave pour réserver avant les autres.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute,,,158,test
+sg-00160,"Tonton c'est moi <NOM>, je suis en voyage et on m'a volé mon sac. Envoie-moi 30 000 F pour le transport, je te rembourse dès mon retour",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,159,train
+sg-00161,"Voyant africain puissant: je règle tous vos problèmes d'argent, de mariage et de travail. Paiement après résultat. <TEL>",arnaque,autre_arnaque,aucun,BJ,amorcage,,true,haute,,,160,train
+sg-00162,"Votre enfant a été arrêté par la police. Envoyez 75 000 F pour sa libération immédiate au <TEL>, ne prévenez personne.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,161,train
+sg-00163,"Salut c'est ton ami de Facebook, je t'envoie un colis avec des dollars et des cadeaux. Paie juste les frais de douane de 45 000 F.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,162,train
+sg-00164,Je suis une veuve malade et je veux léguer ma fortune de 500 millions à une personne honnête. Contactez mon avocat au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,163,test
+sg-00165,"Bonsoir, votre numéro a été utilisé pour une fraude. Pour éviter des poursuites, contactez l'inspecteur au <TEL> et payez les frais d'enquête.",arnaque,autre_arnaque,aucun,CM,amorcage,,true,haute,,,164,train
+sg-00166,"Vends iPhone neuf à 150 000 F seulement, livraison après paiement du transport de 10 000 F par Wave.",arnaque,autre_arnaque,wave,CI,amorcage,,true,haute,,,165,train
+sg-00167,"Ma sœur c'est moi, je suis à la gare et mon porte-monnaie est perdu. Fais-moi un transfert de 10 000 sur ce numéro stp",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,166,test
+sg-00168,Envoie ce message à 20 personnes et tu recevras 5000 F de crédit gratuit. Sinon ton numéro sera bloqué dans 48h.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,167,train
+sg-00169,"Bonjour, je vous ai vu sur Facebook, je suis un homme d'affaires et je veux vous épouser. Envoyez 25 000 F pour mon billet d'avion.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,,,168,train
+sg-00170,"Cher fidèle, le pasteur a prié pour vous. Pour recevoir la bénédiction financière, semez 10 000 F au <TEL> aujourd'hui.",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,169,train
+sg-00171,Anti-coupure: payez votre facture d'électricité avec 50% de réduction en passant par notre agent au <TEL>.,arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,170,train
+sg-00172,"Location de voiture pas chère, payez l'acompte de 40 000 F par Orange Money et la voiture vous est livrée.",arnaque,autre_arnaque,orange,CI,amorcage,,true,haute,,,171,train
+sg-00173,"Bébé c'est moi, j'ai un problème urgent, fais moi un dépôt de 25 000 sur ce numéro, je t'explique après",arnaque,autre_arnaque,aucun,CI,amorcage,,true,haute,,,172,train
+sg-00174,"Bonjour madame, votre fils a eu un malaise à l'école. Envoyez 20 000 F pour les premiers soins au numéro de l'infirmier <TEL>.",arnaque,autre_arnaque,aucun,SN,amorcage,,true,haute,,,173,test
+sg-00175,"Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête.",arnaque,autre_arnaque,wave,SN,amorcage,,true,haute,,,174,train
+sg-00176,Le cabinet du ministre vous informe que vous êtes retenu pour un marché public. Versez 200 000 F de frais de soumission.,arnaque,autre_arnaque,aucun,BF,amorcage,,true,haute,,,175,train
+sg-00177,"Tu m'as appelé? Rappelle-moi vite au <TEL> c'est important, je ne peux pas te joindre sur ce numéro",arnaque,autre_arnaque,aucun,CI,amorcage,,true,moyenne,,,176,train
+sg-00178,Transfert de 10000 FCFA vers <TEL> reussi. Frais: 100 FCFA. Nouveau solde: 45250 FCFA. Trans ID: <REF>. Orange Money ne vous demandera jamais votre code secret.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,177,train
+sg-00179,Vous avez recu 15000 FCFA de <NOM> (<TEL>). Nouveau solde: 27800 FCFA. ID transaction: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,178,train
+sg-00180,Vous avez reçu 5 000F de <NOM>. Nouveau solde: 12 350F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,179,train
+sg-00181,Flooz: Depot de 20000 FCFA effectue par l'agent <NOM>. Solde: 32500 FCFA. Ref <REF>,legitime,notification_transaction,moov,TG,amorcage,,true,haute,,,180,train
+sg-00182,Votre compte a été débité de 25 000 XOF le 29/09/2026 (retrait GAB). Solde disponible: 180 500 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,,,181,test
+sg-00183,Paiement de 12 500 FCFA pour votre facture d'électricité effectué avec succès. Réf: <REF>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,182,train
+sg-00184,Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute,,,183,test
+sg-00185,Achat de credit de 1000 FCFA pour <TEL> reussi. Nouveau solde Orange Money: 8450 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,184,train
+sg-00186,Retrait de 50000 FCFA chez l'agent <NOM> effectue. Frais: 500 FCFA. Nouveau solde: 3200 FCFA. Trans ID: <REF>,legitime,notification_transaction,orange,BF,amorcage,,true,haute,,,185,train
+sg-00187,Votre transaction de 5000 FCFA vers <TEL> a echoue. Votre compte n'a pas ete debite.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,186,test
+sg-00188,Votre compte Orange Money est bloque apres 3 saisies erronees du code secret. Rendez-vous en agence avec votre piece d'identite pour le debloquer.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,187,train
+sg-00189,Paiement marchand de 3500F chez <NOM> réussi. Nouveau solde: 21 400F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,188,train
+sg-00190,MoMo: Vous avez envoyé 7500 FCFA à <NOM> <TEL>. Frais 75 FCFA. Solde 10 925 FCFA. Ne partagez jamais votre code PIN.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,,,189,train
+sg-00191,Transfert de 25 000 F vers <NOM> réussi. Frais 250 F. Solde 3 460 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,190,train
+sg-00192,Vous avez recu 100000 FCFA de <NOM>. Solde disponible: 102500 FCFA. Ref: <REF>,legitime,notification_transaction,orange,ML,amorcage,,true,haute,,,191,train
+sg-00193,Depot de 30 000 FCFA effectue sur votre compte Moov Money. Nouveau solde 34 750 FCFA.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute,,,192,train
+sg-00194,Paiement des frais de scolarité: 75 000 FCFA réglés à l'établissement <NOM>. Réf <REF>.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,193,train
+sg-00195,Votre retrait de 20 000 F a été effectué. Solde: 5 850 F. Merci d'utiliser Wave.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,194,train
+sg-00196,Transfert international de 50 000 FCFA reçu de <NOM>. Solde: 61 200 FCFA.,legitime,notification_transaction,orange,SN,amorcage,,true,haute,,,195,train
+sg-00197,Votre facture d'eau de 8 750 FCFA a été payée. Référence: <REF>.,legitime,notification_transaction,moov,BF,amorcage,,true,haute,,,196,test
+sg-00198,Achat de forfait internet 2Go à 1000 FCFA réussi via votre compte MoMo. Solde: 4 300 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute,,,197,train
+sg-00199,Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,198,train
+sg-00200,Vous avez payé 6 000 FCFA pour votre abonnement TV. Réf <REF>. Validité: 30 jours.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,199,train
+sg-00201,Votre compte a été débité de 15 000 XOF par prélèvement pour votre assurance. Solde: 95 200 XOF.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,,,200,train
+sg-00202,T-Money: Vous avez recu 12000 FCFA de <TEL>. Solde: 14650 FCFA.,legitime,notification_transaction,autre,TG,amorcage,,true,haute,,,201,train
+sg-00203,Free Money: transfert de 3000 F vers <TEL> effectué. Solde: 9 800 F.,legitime,notification_transaction,autre,SN,amorcage,,true,haute,,,202,train
+sg-00204,Retrait de 10 000 FCFA effectué au guichet. Frais 100 FCFA. Nouveau solde 1 520 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,203,train
+sg-00205,Vous avez reçu 2 500F de <NOM>. Nouveau solde: 2 590F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,204,train
+sg-00206,Orange Money: Paiement de 45 000 FCFA à <NOM> effectué. Solde: 12 310 FCFA. Ne communiquez jamais votre code secret.,legitime,notification_transaction,orange,CM,amorcage,,true,haute,,,205,train
+sg-00207,Votre virement de 200 000 XOF vers le compte de <NOM> a été exécuté.,legitime,notification_transaction,banque,BJ,amorcage,,true,haute,,,206,train
+sg-00208,Transfert de 5000 F vers <TEL> réussi. Solde 750 F. Pensez à recharger votre compte.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,207,test
+sg-00209,Vous avez recu 40000 FCFA de <NOM>. Motif: loyer octobre. Solde: 43100 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,208,test
+sg-00210,"Votre carte a été utilisée pour un paiement de 18 900 XOF chez un commerçant le 30/09/2026 à 12:14. Si ce n'est pas vous, contactez votre agence.",legitime,notification_transaction,banque,CI,amorcage,,true,haute,,,209,test
+sg-00211,Opération réussie: dépôt de 60 000 FCFA. Nouveau solde Moov Money: 71 250 FCFA.,legitime,notification_transaction,moov,TG,amorcage,,true,haute,,,210,train
+sg-00212,Paiement de 3 000 F au taxi <NOM> réussi. Solde 14 200 F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,211,train
+sg-00213,Le transfert de 8 000 FCFA de <NOM> a été annulé à sa demande. Votre solde est inchangé: 22 000 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,212,train
+sg-00214,Recharge de 500 FCFA effectuée pour votre numéro. Bonus: 100 FCFA. Solde principal: 612 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,213,train
+sg-00215,Votre prêt de 25 000 FCFA a été remboursé intégralement. Merci pour votre confiance.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,214,train
+sg-00216,Cotisation tontine: 10 000 F envoyés à <NOM>. Solde: 3 450 F.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,215,test
+sg-00217,"Vous avez recu 7500 FCFA de <NOM>. Nouveau solde 7890 FCFA. Trans ID <REF>. Orange Money, votre argent en toute sécurité.",legitime,notification_transaction,orange,BF,amorcage,,true,haute,,,216,train
+sg-00218,MoMo: Paiement de facture CIE de 22 300 FCFA réussi. ID: <REF>.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,217,train
+sg-00219,Votre compte épargne a été crédité des intérêts trimestriels: 4 250 XOF.,legitime,notification_transaction,banque,SN,amorcage,,true,haute,,,218,train
+sg-00220,Depot de 5000 FCFA recu de l'agent <NOM>. Solde: 5320 FCFA. Ref: <REF>,legitime,notification_transaction,moov,BF,amorcage,,true,haute,,,219,train
+sg-00221,Vous avez envoyé 12 000F à <NOM>. Frais: 120F. Nouveau solde: 830F.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,220,train
+sg-00222,Achat d'électricité prépayée: 10 000 FCFA. Code de recharge compteur: <CODE>. Merci.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,221,train
+sg-00223,"Vous avez recu 250000 FCFA de <NOM>. Solde: 262000 FCFA. Pour votre sécurité, ne partagez jamais votre PIN.",legitime,notification_transaction,orange,SN,amorcage,,true,haute,,,222,test
+sg-00224,Votre abonnement mensuel de 2 500 FCFA a été renouvelé. Prochain renouvellement le 30/10/2026.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,223,train
+sg-00225,Transfert Orange Money vers compte bancaire de 100 000 FCFA effectué. Délai: 24h.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,224,test
+sg-00226,Votre compte a été crédité de 75 000 XOF (bourse d'études). Solde: 76 900 XOF.,legitime,notification_transaction,banque,BF,amorcage,,true,haute,,,225,train
+sg-00227,Paiement en ligne de 9 900 FCFA effectué sur votre compte Wave.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,226,train
+sg-00228,Retrait de 15000 FCFA effectue. Frais: 150 FCFA. Nouveau solde: 2310 FCFA. Merci de votre fidelite.,legitime,notification_transaction,moov,CI,amorcage,,true,haute,,,227,train
+sg-00229,Vous avez recu 20 000 FCFA de <NOM> via MTN MoMo. Solde: 20 450 FCFA.,legitime,notification_transaction,mtn,CM,amorcage,,true,haute,,,228,train
+sg-00230,Votre transfert de 35 000 FCFA est en attente de confirmation du destinataire.,legitime,notification_transaction,orange,ML,amorcage,,true,haute,,,229,train
+sg-00231,Le paiement de 1 500 F pour votre ticket de bus a été effectué. Bon voyage!,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,230,train
+sg-00232,"Votre compte Mobile Money a été bloqué temporairement à votre demande. Pour le réactiver, présentez-vous en agence.",legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,,,231,train
+sg-00233,Transfert de 50 000 FCFA reçu. Expéditeur: <NOM>. Solde: 50 210 FCFA. Ref <REF>.,legitime,notification_transaction,moov,BJ,amorcage,,true,haute,,,232,train
+sg-00234,Achat de pass internet 10Go (5000 FCFA) réussi. Validité 30 jours.,legitime,notification_transaction,orange,SN,amorcage,,true,haute,,,233,train
+sg-00235,Vous avez payé 2 000 FCFA à la pharmacie <NOM>. Solde restant: 6 800 FCFA.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,234,test
+sg-00236,Votre compte a été débité de 3 500 XOF (frais de tenue de compte trimestriels).,legitime,notification_transaction,banque,CI,amorcage,,true,haute,,,235,train
+sg-00237,Vous avez recu 5000 FCFA de <NOM>. Nouveau solde: 5100 FCFA.,legitime,notification_transaction,mtn,BJ,amorcage,,true,haute,,,236,train
+sg-00238,Remboursement de frais: 500 FCFA recrédités sur votre compte suite à une erreur de facturation.,legitime,notification_transaction,orange,CI,amorcage,,true,haute,,,237,train
+sg-00239,Paiement de votre commande de 14 500 FCFA confirmé. Livraison prévue demain.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,238,train
+sg-00240,Transfert de 30000 FCFA vers <TEL> reussi. Frais: 300 FCFA. Solde: 1240 FCFA.,legitime,notification_transaction,orange,ML,amorcage,,true,haute,,,239,train
+sg-00241,Vous avez retiré 25 000 FCFA au distributeur. Solde: 131 000 FCFA.,legitime,notification_transaction,banque,CM,amorcage,,true,haute,,,240,train
+sg-00242,Votre paiement de 4 000 F pour l'inscription au club a été reçu. Merci.,legitime,notification_transaction,wave,SN,amorcage,,true,haute,,,241,train
+sg-00243,Dépôt de 100 000 FCFA effectué sur votre compte par <NOM>. Solde: 108 900 FCFA.,legitime,notification_transaction,mtn,CI,amorcage,,true,haute,,,242,train
+sg-00244,Votre souscription au forfait appels 500 FCFA est active jusqu'à minuit.,legitime,notification_transaction,moov,CI,amorcage,,true,haute,,,243,train
+sg-00245,Envoi réussi: 6 500 FCFA à <NOM>. Solde: 3 100 FCFA.,legitime,notification_transaction,orange,TG,amorcage,,true,haute,,,244,train
+sg-00246,Réception de 17 000 FCFA de <NOM>. Motif: participation mariage. Solde 18 250 FCFA.,legitime,notification_transaction,wave,CI,amorcage,,true,haute,,,245,train
+sg-00247,Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé.,legitime,notification_transaction,banque,CI,amorcage,,true,haute,,,246,train
+sg-00248,Votre code de vérification WhatsApp est <CODE>. Ne partagez pas ce code.,legitime,otp,aucun,XX,amorcage,,true,haute,,,247,train
+sg-00249,"<#> Votre code Wave est <CODE>. Ne le communiquez à personne, même à un agent Wave.",legitime,otp,wave,SN,amorcage,,true,haute,,,248,train
+sg-00250,Code de confirmation: <CODE>. Valable 5 minutes.,legitime,otp,aucun,XX,amorcage,,true,haute,,,249,train
+sg-00251,Utilisez le code <CODE> pour vous connecter à votre compte Facebook.,legitime,otp,aucun,XX,amorcage,,true,haute,,,250,train
+sg-00252,Votre mot de passe temporaire est <CODE>. Changez-le à la première connexion.,legitime,otp,aucun,XX,amorcage,,true,haute,,,251,train
+sg-00253,G-<CODE> est votre code de validation Google.,legitime,otp,aucun,XX,amorcage,,true,haute,,,252,train
+sg-00254,Ecobank: votre OTP pour la transaction de 25 000 XOF est <CODE>. Ne le communiquez jamais.,legitime,otp,banque,CI,amorcage,,true,haute,,,253,train
+sg-00255,<CODE> est votre code de connexion à l'application Max it. Ne le partagez avec personne.,legitime,otp,orange,CI,amorcage,,true,haute,,,254,train
+sg-00256,Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes.,legitime,otp,mtn,CI,amorcage,,true,haute,,,255,train
+sg-00257,"Code d'activation de votre compte: <CODE>. Si vous n'avez pas fait cette demande, ignorez ce message.",legitime,otp,aucun,XX,amorcage,,true,haute,,,256,train
+sg-00258,Votre code de vérification Telegram: <CODE>. Ne donnez ce code à personne.,legitime,otp,aucun,XX,amorcage,,true,haute,,,257,test
+sg-00259,"Pour finaliser votre inscription, entrez le code <CODE> dans l'application.",legitime,otp,aucun,XX,amorcage,,true,haute,,,258,train
+sg-00260,Votre code de retrait est <CODE>. Présentez-le à l'agent avec votre pièce d'identité.,legitime,otp,orange,SN,amorcage,,true,haute,,,259,train
+sg-00261,<#> <CODE> est votre code de sécurité. Nous ne vous appellerons jamais pour le demander.,legitime,otp,aucun,XX,amorcage,,true,haute,,,260,train
+sg-00262,"Banque: code de validation de votre virement de 150 000 XOF: <CODE>. Si vous n'êtes pas à l'origine de cette opération, appelez votre agence.",legitime,otp,banque,SN,amorcage,,true,haute,,,261,train
+sg-00263,Votre code de confirmation Jumia est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,,,262,train
+sg-00264,Code PIN provisoire de votre nouvelle carte: <CODE>. Modifiez-le au premier retrait.,legitime,otp,banque,CI,amorcage,,true,haute,,,263,train
+sg-00265,Moov Money: votre code de validation est <CODE>. Ne le communiquez jamais à un tiers.,legitime,otp,moov,BJ,amorcage,,true,haute,,,264,train
+sg-00266,Votre code de connexion Instagram est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,,,265,train
+sg-00267,Code de vérification: <CODE>. Utilisez-le pour réinitialiser votre mot de passe.,legitime,otp,aucun,XX,amorcage,,true,haute,,,266,test
+sg-00268,Votre code Glovo est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,,,267,train
+sg-00269,<CODE> est votre code de confirmation Yango. Ne le partagez pas.,legitime,otp,aucun,CI,amorcage,,true,haute,,,268,train
+sg-00270,Wave: votre code de connexion est <CODE>. Wave ne vous demandera jamais ce code par téléphone.,legitime,otp,wave,CI,amorcage,,true,haute,,,269,train
+sg-00271,Code OTP: <CODE> pour le paiement de 12 000 XOF chez un marchand en ligne.,legitime,otp,banque,CM,amorcage,,true,haute,,,270,train
+sg-00272,Votre code de vérification pour le portail des examens est <CODE>.,legitime,otp,aucun,CI,amorcage,,true,haute,,,271,train
+sg-00273,Votre code de livraison est <CODE>. Donnez-le au livreur uniquement à la réception du colis.,legitime,otp,aucun,CI,amorcage,,true,haute,,,272,test
+sg-00274,"Orange: code de validation de votre changement de SIM: <CODE>. Si vous n'avez rien demandé, contactez le service client en agence.",legitime,otp,orange,CI,amorcage,,true,haute,,,273,train
+sg-00275,Votre code d'accès au Wi-Fi de l'hôtel est <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute,,,274,train
+sg-00276,MTN: votre code de réinitialisation du PIN MoMo est <CODE>. Aucun agent ne vous le demandera.,legitime,otp,mtn,CM,amorcage,,true,haute,,,275,train
+sg-00277,Utilisez <CODE> pour vérifier votre numéro sur Signal.,legitime,otp,aucun,XX,amorcage,,true,haute,,,276,train
+sg-00278,Votre code de connexion à la banque en ligne est <CODE>. Valable 2 minutes.,legitime,otp,banque,BJ,amorcage,,true,haute,,,277,train
+sg-00279,Code de sécurité Microsoft: <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,,,278,test
+sg-00280,Votre code de confirmation de rendez-vous est <CODE>. A présenter à l'accueil.,legitime,otp,aucun,CI,amorcage,,true,haute,,,279,train
+sg-00281,<#> Votre code est <CODE>. Merci d'utiliser notre service.,legitime,otp,aucun,XX,amorcage,,true,haute,,,280,train
+sg-00282,Code de validation de votre inscription à la mutuelle: <CODE>.,legitime,otp,aucun,BF,amorcage,,true,haute,,,281,train
+sg-00283,Votre code TikTok est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,,,282,train
+sg-00284,"Pour sécuriser votre compte Orange Money, votre nouveau code secret a bien été enregistré. Ne le communiquez jamais.",legitime,otp,orange,ML,amorcage,,true,haute,,,283,test
+sg-00285,Votre code de validation Uber est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,,,284,test
+sg-00286,Code de confirmation de votre réservation de billet: <CODE>.,legitime,otp,aucun,SN,amorcage,,true,haute,,,285,train
+sg-00287,Votre code de vérification LinkedIn est <CODE>.,legitime,otp,aucun,XX,amorcage,,true,haute,,,286,train
+sg-00288,Orange: Profitez de 3Go à 1000F valables 7 jours. Tapez #111# ou passez par l'application.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,287,test
+sg-00289,MTN: Votre forfait internet est épuisé. Rechargez pour continuer à naviguer. Composez *133#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,288,train
+sg-00290,Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,,,289,test
+sg-00291,Jeu MTN: envoyez JEU au 7575 et tentez de gagner des smartphones. SMS 100F. Règlement sur mtn[.]ci,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,290,train
+sg-00292,Orange: maintenance réseau cette nuit de 1h à 4h dans votre zone. Désolés pour la gêne occasionnée.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,291,train
+sg-00293,Wave: nouveau! Payez vos factures d'eau sans frais dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,,,292,train
+sg-00294,Votre forfait 5Go expire dans 24h. Renouvelez-le en composant #144#.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,293,train
+sg-00295,Joyeuse fête de l'indépendance! Orange vous offre 500 Mo gratuits aujourd'hui.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,294,train
+sg-00296,Moov Africa: les appels vers tous les réseaux à 50F la minute ce weekend.,legitime,promo_operateur,moov,BF,amorcage,,true,haute,,,295,train
+sg-00297,MTN vous remercie pour votre fidélité: 10 ans avec nous! Profitez de 20% de remise sur les pass internet ce mois-ci.,legitime,promo_operateur,mtn,CM,amorcage,,true,haute,,,296,train
+sg-00298,Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,,,297,test
+sg-00299,"Wave: 1% seulement pour vos transferts, et les dépôts et retraits restent gratuits.",legitime,promo_operateur,wave,CI,amorcage,,true,haute,,,298,train
+sg-00300,Nouveau: consultez votre solde Moov Money gratuitement en tapant *155#.,legitime,promo_operateur,moov,BJ,amorcage,,true,haute,,,299,train
+sg-00301,Pass Nuit: 2Go de minuit à 6h pour 200F. Composez *133*1#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,300,train
+sg-00302,Orange: votre recharge de 5000F vous donne droit à 1Go offert. Il est déjà disponible.,legitime,promo_operateur,orange,ML,amorcage,,true,haute,,,301,test
+sg-00303,Participez au grand jeu de Noël Orange: chaque recharge de 1000F vous donne une chance de gagner une voiture. Règlement disponible en agence.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,302,train
+sg-00304,"Info MTN: pour éviter la suspension de votre ligne, pensez à mettre à jour votre identification en agence avec votre pièce d'identité avant le 31 décembre.",legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,303,train
+sg-00305,Moov: votre crédit est presque épuisé. Rechargez maintenant et bénéficiez de 50% de bonus.,legitime,promo_operateur,moov,TG,amorcage,,true,haute,,,304,train
+sg-00306,"Orange: téléchargez l'application Max it et gérez votre compte, vos forfaits et votre argent au même endroit.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,305,train
+sg-00307,MTN MoMo: payez vos achats chez les marchands agréés et recevez 2% de cashback sur votre compte.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,306,train
+sg-00308,Wave: votre application a été mise à jour. Découvrez les nouvelles fonctionnalités depuis l'accueil.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,,,307,test
+sg-00309,"Orange: rappel, Orange ne vous appellera jamais pour demander votre code secret. Signalez tout appel suspect en agence.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,308,train
+sg-00310,Promo rentrée: forfait étudiant 10Go à 2500F par mois. Offre valable jusqu'au 31 octobre.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,309,train
+sg-00311,Moov Africa: votre nouvelle offre Illimix est activée. Profitez de vos appels et SMS illimités vers Moov.,legitime,promo_operateur,moov,CI,amorcage,,true,haute,,,310,train
+sg-00312,MTN: le réseau 4G+ est disponible dans votre quartier. Profitez d'un internet plus rapide.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute,,,311,train
+sg-00313,Orange Money: la carte Visa prépayée est disponible en agence. Payez partout dans le monde.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,,,312,train
+sg-00314,Bonne fête de Tabaski! Profitez de 30% de bonus sur toutes vos recharges jusqu'à dimanche.,legitime,promo_operateur,orange,SN,amorcage,,true,haute,,,313,test
+sg-00315,"Votre forfait appels a été renouvelé automatiquement. Pour désactiver le renouvellement, tapez #144#.",legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,314,test
+sg-00316,MTN: gagnez des minutes gratuites en parrainant un ami. Il suffit qu'il achète son premier pass.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,315,train
+sg-00317,Service client Orange: votre réclamation a été traitée. Merci de votre patience.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,316,train
+sg-00318,Free: profitez d'internet illimité le dimanche pour 500F. Tapez #150#.,legitime,promo_operateur,autre,SN,amorcage,,true,haute,,,317,train
+sg-00319,Wave: les transferts vers le Mali sont maintenant disponibles dans l'application.,legitime,promo_operateur,wave,SN,amorcage,,true,haute,,,318,train
+sg-00320,Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,319,train
+sg-00321,Moov Money: retirez sans frais chez tous nos agents partenaires ce mois-ci.,legitime,promo_operateur,moov,BF,amorcage,,true,haute,,,320,train
+sg-00322,MTN: votre numéro a bien été porté vers notre réseau. Bienvenue chez MTN!,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,321,train
+sg-00323,Orange: bénéficiez de la 5G sans changer de forfait si votre téléphone est compatible.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,322,train
+sg-00324,"Wave: pour votre sécurité, activez le verrouillage de l'application dans les paramètres.",legitime,promo_operateur,wave,CI,amorcage,,true,haute,,,323,train
+sg-00325,Pass WhatsApp illimité 7 jours à 300F. Tapez *133*6#.,legitime,promo_operateur,mtn,CI,amorcage,,true,haute,,,324,train
+sg-00326,Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,325,train
+sg-00327,"MTN: souscription à MTN Music réussie. 100F par semaine. Pour vous désabonner, envoyez STOP au 8000.",legitime,promo_operateur,mtn,CM,amorcage,,true,haute,,,326,train
+sg-00328,Moov: coupure de service prévue dimanche de 2h à 5h pour amélioration du réseau.,legitime,promo_operateur,moov,TG,amorcage,,true,haute,,,327,test
+sg-00329,Orange Money: votre plafond de transaction a été relevé suite à la vérification de votre identité.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,328,train
+sg-00330,Joyeux anniversaire! Orange vous offre 1Go valable 24h pour fêter ça.,legitime,promo_operateur,orange,CI,amorcage,,true,haute,,,329,train
+sg-00331,MTN: vous avez utilisé 80% de votre forfait internet.,legitime,promo_operateur,mtn,BJ,amorcage,,true,haute,,,330,train
+sg-00332,Wave: nouvelle agence ouverte à Plateau. Horaires: 8h-18h du lundi au samedi.,legitime,promo_operateur,wave,CI,amorcage,,true,haute,,,331,train
+sg-00333,"Stp envoie-moi 2000 pour le taxi, je te rembourse demain",legitime,personnel,aucun,CI,amorcage,,true,haute,,,332,train
+sg-00334,"Maman j'ai reçu l'argent, merci beaucoup. Je t'appelle ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,,,333,train
+sg-00335,Tonton on dit quoi? La famille va bien?,legitime,personnel,aucun,CI,amorcage,,true,haute,,,334,train
+sg-00336,"Je suis devant la porte, viens ouvrir",legitime,personnel,aucun,CI,amorcage,,true,haute,,,335,train
+sg-00337,Le match c'est à quelle heure ce soir?,legitime,personnel,aucun,SN,amorcage,,true,haute,,,336,train
+sg-00338,Réunion des parents d'élèves samedi à 10h à l'école,legitime,personnel,aucun,CI,amorcage,,true,haute,,,337,train
+sg-00339,N'oublie pas d'acheter le pain en rentrant,legitime,personnel,aucun,CI,amorcage,,true,haute,,,338,train
+sg-00340,"Joyeux anniversaire ma chérie, que Dieu te bénisse et te garde",legitime,personnel,aucun,CI,amorcage,,true,haute,,,339,train
+sg-00341,Tu as vu les résultats du bac? Ta cousine a eu mention!,legitime,personnel,aucun,BF,amorcage,,true,haute,,,340,train
+sg-00342,"Bonne arrivée, tu es bien rentré?",legitime,personnel,aucun,CI,amorcage,,true,haute,,,341,train
+sg-00343,"Appelle-moi quand tu es libre, c'est urgent",legitime,personnel,aucun,CI,amorcage,,true,haute,,,342,train
+sg-00344,"Le mariage de <NOM> c'est le 12, tu viens avec nous?",legitime,personnel,aucun,SN,amorcage,,true,haute,,,343,train
+sg-00345,"J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie",legitime,personnel,aucun,CI,amorcage,,true,haute,,,344,train
+sg-00346,"Je t'ai envoyé 15 000 pour le marché, confirme quand tu reçois",legitime,personnel,aucun,CI,amorcage,,true,haute,,,345,train
+sg-00347,"Chérie j'arrive dans 30 minutes, il y a embouteillage",legitime,personnel,aucun,CI,amorcage,,true,haute,,,346,train
+sg-00348,La coupure de courant est finie chez vous?,legitime,personnel,aucun,CI,amorcage,,true,haute,,,347,train
+sg-00349,"Mon vié on dit quoi, c'est comment? On se voit au maquis ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,,,348,train
+sg-00350,"Ya fohi, tout est calé pour demain",legitime,personnel,aucun,CI,amorcage,,true,haute,,,349,train
+sg-00351,"Papa est rentré de l'hôpital, il va beaucoup mieux, merci pour vos prières",legitime,personnel,aucun,CI,amorcage,,true,haute,,,350,train
+sg-00352,Tu peux passer récupérer les enfants à l'école à 16h30? Je suis encore au bureau,legitime,personnel,aucun,SN,amorcage,,true,haute,,,351,train
+sg-00353,"Merci pour hier, c'était super sympa",legitime,personnel,aucun,CI,amorcage,,true,haute,,,352,train
+sg-00354,"Le cours de demain est annulé, le prof est malade",legitime,personnel,aucun,BJ,amorcage,,true,haute,,,353,train
+sg-00355,"J'ai oublié mon chargeur chez toi, je passe le prendre demain",legitime,personnel,aucun,CI,amorcage,,true,haute,,,354,train
+sg-00356,On se retrouve au rond-point à 18h,legitime,personnel,aucun,CI,amorcage,,true,haute,,,355,test
+sg-00357,"Maman dit de t'appeler, elle n'arrive pas à te joindre",legitime,personnel,aucun,CI,amorcage,,true,haute,,,356,train
+sg-00358,Bonne fête de Tabaski à toi et à toute la famille!,legitime,personnel,aucun,SN,amorcage,,true,haute,,,357,train
+sg-00359,Tu as fini le devoir de maths? Envoie-moi une photo de l'exercice 3 stp,legitime,personnel,aucun,CI,amorcage,,true,haute,,,358,test
+sg-00360,"Je suis malade aujourd'hui, je ne pourrai pas venir au travail",legitime,personnel,aucun,CI,amorcage,,true,haute,,,359,train
+sg-00361,Frère tu peux me prêter 5000 jusqu'à la fin du mois? Je te rembourse le 30,legitime,personnel,aucun,CI,amorcage,,true,haute,,,360,test
+sg-00362,"C'est bon j'ai reçu les 5000, merci frère",legitime,personnel,aucun,CI,amorcage,,true,haute,,,361,train
+sg-00363,"Le plombier vient demain à 9h, il faut quelqu'un à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute,,,362,train
+sg-00364,"Dors bien, à demain",legitime,personnel,aucun,CI,amorcage,,true,haute,,,363,train
+sg-00365,Tu m'envoies l'adresse de la boutique? Je veux y aller cet après-midi,legitime,personnel,aucun,SN,amorcage,,true,haute,,,364,train
+sg-00366,"Les invitations sont prêtes, passe les récupérer chez moi",legitime,personnel,aucun,CI,amorcage,,true,haute,,,365,train
+sg-00367,"J'ai raté le car, je prends le prochain à 15h",legitime,personnel,aucun,BF,amorcage,,true,haute,,,366,train
+sg-00368,"Grand-mère demande de tes nouvelles, appelle-la dimanche",legitime,personnel,aucun,ML,amorcage,,true,haute,,,367,train
+sg-00369,"Le gâteau est super bon, merci ma sœur!",legitime,personnel,aucun,CI,amorcage,,true,haute,,,368,test
+sg-00370,Félicitations pour ton nouveau travail! On va fêter ça,legitime,personnel,aucun,CI,amorcage,,true,haute,,,369,train
+sg-00371,"Félicitations pour le bébé, que Dieu le garde! On passe vous voir ce weekend",legitime,personnel,aucun,SN,amorcage,,true,haute,,,370,train
+sg-00372,"URGENT: la réunion est avancée à 14h, préviens les autres",legitime,personnel,aucun,CI,amorcage,,true,haute,,,371,train
+sg-00373,Tu as mon livre de physique? J'en ai besoin pour réviser,legitime,personnel,aucun,CI,amorcage,,true,haute,,,372,train
+sg-00374,"Je t'ai envoyé la vidéo sur WhatsApp, regarde c'est trop drôle",legitime,personnel,aucun,CI,amorcage,,true,haute,,,373,test
+sg-00375,"Maman envoie-moi 10 000 pour les fournitures scolaires stp, la liste est longue",legitime,personnel,aucun,CI,amorcage,,true,haute,,,374,train
+sg-00376,"Ok pas de souci, je te fais le transfert ce soir",legitime,personnel,aucun,CI,amorcage,,true,haute,,,375,train
+sg-00377,Le mécanicien dit que la voiture sera prête jeudi,legitime,personnel,aucun,CI,amorcage,,true,haute,,,376,train
+sg-00378,Tu viens à l'église dimanche? Il y a la fête des moissons,legitime,personnel,aucun,CI,amorcage,,true,haute,,,377,train
+sg-00379,Qui a pris la clé de la moto? Je dois sortir,legitime,personnel,aucun,BF,amorcage,,true,haute,,,378,train
+sg-00380,On a gagné le match 3-1!! Quelle soirée!,legitime,personnel,aucun,CI,amorcage,,true,haute,,,379,train
+sg-00381,"J'ai déposé ton colis chez le voisin, récupère-le quand tu rentres",legitime,personnel,aucun,SN,amorcage,,true,haute,,,380,test
+sg-00382,"Pense à payer la facture d'électricité avant vendredi, sinon ils vont couper",legitime,personnel,aucun,CI,amorcage,,true,haute,,,381,train
+sg-00383,"Stp rappelle-moi, j'ai essayé de te joindre trois fois",legitime,personnel,aucun,CI,amorcage,,true,haute,,,382,train
+sg-00384,"Je vais au marché, tu veux quelque chose?",legitime,personnel,aucun,CI,amorcage,,true,haute,,,383,test
+sg-00385,Le docteur a dit de continuer le traitement pendant une semaine,legitime,personnel,aucun,CI,amorcage,,true,haute,,,384,train
+sg-00386,"Bravo pour ta soutenance, on est fiers de toi!",legitime,personnel,aucun,BJ,amorcage,,true,haute,,,385,train
+sg-00387,La réunion de famille est reportée au mois prochain,legitime,personnel,aucun,CI,amorcage,,true,haute,,,386,train
+sg-00388,Tu peux me déposer à l'aéroport samedi matin?,legitime,personnel,aucun,SN,amorcage,,true,haute,,,387,train
+sg-00389,"J'ai perdu mon téléphone hier, c'est mon nouveau numéro, enregistre-le",legitime,personnel,aucun,CI,amorcage,,true,haute,,,388,train
+sg-00390,"Mon compte Orange Money est bloqué, je dois aller en agence demain matin",legitime,personnel,orange,CI,amorcage,,true,haute,,,389,train
+sg-00391,Ton argent est arrivé? Je t'ai fait le Wave il y a une heure,legitime,personnel,wave,SN,amorcage,,true,haute,,,390,train
+sg-00392,"Merci de m'avoir aidé pour le déménagement, je te dois un repas",legitime,personnel,aucun,CI,amorcage,,true,haute,,,391,train
+sg-00393,"Le prix du sac de riz a encore augmenté, 18 500 maintenant",legitime,personnel,aucun,CI,amorcage,,true,haute,,,392,train
+sg-00394,Tu as reçu le message de la banque pour le prêt?,legitime,personnel,aucun,CI,amorcage,,true,haute,,,393,train
+sg-00395,"Ma sœur, ne réponds pas aux gens qui te demandent ton code Orange Money, c'est des escrocs",legitime,personnel,orange,CI,amorcage,,true,haute,,,394,train
+sg-00396,"Attention, il y a des faux agents qui appellent pour demander les codes. Ne donne rien",legitime,personnel,aucun,CI,amorcage,,true,haute,,,395,train
+sg-00397,Chéri n'oublie pas le rendez-vous chez le pédiatre à 11h,legitime,personnel,aucun,CI,amorcage,,true,haute,,,396,test
+sg-00398,"Il pleut beaucoup ici, reste à la maison",legitime,personnel,aucun,CI,amorcage,,true,haute,,,397,train
+sg-00399,"J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain",legitime,personnel,aucun,CI,amorcage,,true,haute,,,398,train
+sg-00400,"La cérémonie commence à 16h, habillez-vous en blanc",legitime,personnel,aucun,SN,amorcage,,true,haute,,,399,train
+sg-00401,"Bien reçu, merci pour l'info",legitime,personnel,aucun,CI,amorcage,,true,haute,,,400,train
+sg-00402,Tu peux m'envoyer le numéro de l'électricien?,legitime,personnel,aucun,CI,amorcage,,true,haute,,,401,train
+sg-00403,On va cotiser 5000 chacun pour le cadeau de mariage de <NOM>,legitime,personnel,aucun,CI,amorcage,,true,haute,,,402,train
+sg-00404,"C'est moi qui ai payé le transport hier, tu me dois 1500",legitime,personnel,aucun,CI,amorcage,,true,haute,,,403,train
+sg-00405,"Le patron a validé ton congé, tu peux partir lundi",legitime,personnel,aucun,CI,amorcage,,true,haute,,,404,train
+sg-00406,"Salut, je suis en réunion, je te rappelle après",legitime,personnel,aucun,CI,amorcage,,true,haute,,,405,train
+sg-00407,Paix à son âme. Les obsèques auront lieu samedi au village,legitime,personnel,aucun,CI,amorcage,,true,haute,,,406,test
+sg-00408,"je pense que je vais me couper les cheveux, genre vraiment cours... t'en pense quoi?",legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,407,test
+sg-00409,"Ya pas de conversation, donc rien a relancer! :)",legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,408,train
+sg-00410,Non et non y avait marron ou ton violet j'ai hésité j'ai pris marron. Et marque c'est guess Je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,409,train
+sg-00411,Je ne sais pas pour la cles.. ça donne officiellement ton niveau à la personne qui t'embauche ou à qui tu donnes un dossier. Pour le ciep ils disent que c'est un + je ne sais pas la différence avec le toefle.. Le toefle est peut-etre plus prestigieux et plus universitaire.. Je ne sais pas^^,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,410,train
+sg-00412,Ah bon ben ca va bien gérer alors ! ^.^,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,411,train
+sg-00413,"nn nn mais il est pas allé en cours cet aprem, il était malade hier et la il se sentait pas bien...",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,412,test
+sg-00414,Bonjour <NOM> :DD,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,413,train
+sg-00415,Suis en chemin mais sais pas Quand j'arrive,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,414,train
+sg-00416,Petit restau entre ami ce soir tranquilou???,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,415,train
+sg-00417,Bon je pars de la fac la^^,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,416,train
+sg-00418,Eu cathé pardon?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,417,train
+sg-00419,Ben le truc c'est que je sais pas a quelle heure elle a cours etc. Dis le a <NOM> ;),legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,418,train
+sg-00420,Envoyé J ai une déclaration d amour a te faire,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,419,train
+sg-00421,"mmmm sans signes de vie de ta part, je devine que tu fais dodo :) fais de beaux reves! :) on se voit demain (à 10h....^^) bisous",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,420,train
+sg-00422,"Ah oui, si ca vous permet de changer cest cool ^.^",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,421,train
+sg-00423,Ptdr ! Tu me prends pour qui ?? :) ça va toi ?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,422,train
+sg-00424,Il a meme pas voulu me prendre dans ses bras pour pas que j'imagine des trucs ... Et il m'a meme pas parlé ...,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,423,train
+sg-00425,Mdr ! Ah c'est dc ça :p,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,424,train
+sg-00426,ah bon? me rappelle pas.. ^^,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,425,train
+sg-00427,"Wesh estefunk! Biem ou bien? Les cour c bré ou kwa? ta bich va bien? mwa jprepar mn oral pour mercredi. g trouver UN Taf pour linstant : chofeur du patrn de ma bich ki a perdu sn permi, il a un merko kambrai sa tape",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,426,train
+sg-00428,C'est l'anniversaire de badoit aujourd'hui.,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,427,train
+sg-00429,"Ben <NOM> me l'avait et <NOM> aussi.. Le meme jour les 2 d'ailleurs, tu sais a gambetta la! Non mais pas possible ce gars franchement.. Elle etait cocu aussi? Fais attention a toi.. Couci couca?",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,428,train
+sg-00430,"Lol, c'est ça. Et ça aussi, pire que les smiley ! Le ""c'est ça.."" ! Je le dis au moins 15 fois par jour",legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,429,train
+sg-00431,"Nan ca serait plus soirée film d'horreurs ou entre filles tout simplement ! :p Bah toi, <NOM> et <NOM> :D <3",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,430,train
+sg-00432,"Alors l'hôpital, ça va ?",legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,431,train
+sg-00433,Ti fait quoi de beau ??,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,432,test
+sg-00434,"courage à nous ^^ oui, on va y arriver, il suffit de penser aux vacs!",legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,433,test
+sg-00435,Alors comment ça va ?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,434,test
+sg-00436,Mdr tu peux me remercier alors xD,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,435,train
+sg-00437,Si tu voulai fr une journee on pourrai la fr le dernier dimanche d octobre??,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,436,train
+sg-00438,Ouais mais nan c'est hyper décevant,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,437,train
+sg-00439,Dis a maman que j'arrive a 40-42 a jouy,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,438,test
+sg-00440,Ah ouai jimagine :S et ta pas trouvé un prince charmant ? Alala ouai ! :P vivement que tu revienne :) faudra qu'on se trouve des jours pour se voir :P Bonne soirée à toi aussi !,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,439,train
+sg-00441,Bon. Je vais au dodo. Je te souhaite une bonne nuit (pour quand tu ira te coucher) et tout le tralala. Bisous. A ce week end,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,440,train
+sg-00442,Ouais ! :D . Vers 15h c'est good ? Non amour j'ai juste le bus à prendre . Après Je suis dans le gymnase. Je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,441,train
+sg-00443,Il est É-NORME mon colis !,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,442,test
+sg-00444,ouep ! mais du boulot....,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,443,train
+sg-00445,"Tro pas y a juste ce que je dois faire, j'vais vérifier ça demain quand meme !",legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,444,train
+sg-00446,Ben ty et aller toi aussi,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,445,train
+sg-00447,Ah ok ! Passe lui le bjr :) bonne soirée <3,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,446,test
+sg-00448,^^ en plus c'est juste suggéré... En regardant l'épisode j'ai meme eu le doute^^',legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,447,train
+sg-00449,2h30 jpars à 16h10,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,448,train
+sg-00450,Parce que je voulais essayer de comprendre et de faire le Dm de physique,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,449,train
+sg-00451,Au bout d'un moment le prof de ses a dit il manque <NOM> ? Et la je sais plus qui dit : normal on a controle de maths !,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,450,test
+sg-00452,Ah non j'avais envie d'en faire c'est tout. Le kine m'a dit que j'avais le droit. Toi qu'a eu des béquilles tu devrais comprendre. Bref mais je sais meme pas pj tu me fais tout un truc la pour du VELO. Rien compris pour la fin du texto,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,451,train
+sg-00453,Nn ça va j'ai à nouveau internet ;) et sinon jcherche un peu à cause de l'android mais ça va c'est - pire que ce que jpensais et puis jprofité pr 1 fois que jne paie pas lol,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,452,train
+sg-00454,Passe le num de,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,453,test
+sg-00455,Beh oui jte connais quand Meme xD Je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,454,train
+sg-00456,Tu me raconteras :d,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,455,train
+sg-00457,<ETR> Waii sinn jeijei ya maecha oho,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,456,train
+sg-00458,Il pleut et la ou on est il y à du sable tout est plein d'eau et de sable c'est dégu en plus je suis tranpé :0,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,457,test
+sg-00459,"Ne pas corriger les ref biblio, Zotero s'en occupera à la fin du chapitre. Merci !",legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,458,train
+sg-00460,Alors ma Belle cette jrnee équipier ? Bien ? Ya ki ? Bisous ma belle,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,459,train
+sg-00461,Ils s'engueulent mdr truc de fou....,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,460,train
+sg-00462,"Par contre un mec qui me harcelait et me suivait chez moi le connaissait par coeur, et m'attendais à la fin des cours, une année. Il faisait VRAIMENT peur. Tu sentais qu'c'était juste un petit geek amoureux mais euh... ça tent vers le sociopathe de suivre les gens mdr (c'était 3615 ma vie)",legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,461,train
+sg-00463,Tu te lances dans un film mtnt?! T'es pas fou toi?!!,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,462,train
+sg-00464,Tu peux dire a tes parents qu'ils vont avoir du travail quand vous allez venir la :),legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,463,train
+sg-00465,Annnnw d'accord Beh jarrive dans pas longtemps,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,464,test
+sg-00466,Pour l'anglais j'ai trouve pleins de trucs ! :),legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,465,train
+sg-00467,Ok. <NOM> me raccompagne jusqu'à Jaurès. Je rentre comme toi.,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,466,train
+sg-00468,Bien sur. En + je dois aller chercher les légumes.-_-',legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,467,train
+sg-00469,"Oui bien sur, tout à fait légitime.",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,468,test
+sg-00470,"tkt j'avais l'accent (notre accent!) in the tête, et je vois tout à fait ce que tu veux dire enfin je veux dire voilà quoi (de même ;))",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,469,train
+sg-00471,Tu lui a rep quoi ?,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,470,train
+sg-00472,Merci c gentil :-),legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,471,train
+sg-00473,"J'ai pris le coffret cuisine qu'on avait vu à la fnac pour <NOM>, j'ai ouvert et c'est cool :-) jespere que ça lui plaira",legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,472,train
+sg-00474,Désolé J'étais à la douche .. <3,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,473,train
+sg-00475,Tssssssssss je deteste quon me voit quand jsuis comme ca x),legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,474,train
+sg-00476,Par le pote a <NOM> ?,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,475,train
+sg-00477,Mais qu'est c'que tu racooontes ??,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,476,train
+sg-00478,Tu ne l'as pas fait le patronus au fait?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,477,test
+sg-00479,Et ben ca a du etre vraiment chaud a mon avis demain <NOM> et ? Vont s en prendre plein la tete par <NOM> !!!!,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,478,train
+sg-00480,Pouvez vous repondre au telephone,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,479,train
+sg-00481,"Ah ah joyeux anniversaire ma ptite <NOM>! Sa va tu me rattrape pas encore, tant mieux et toute facon c mieux à ton age crois moi! Bisous profite bien de la journée, et surtout passe une bonne nuit en charmante compagnie jimagine............",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,480,train
+sg-00482,J'ai rajouté mes aimants dans mon sac et ai raccourci les anses. Je vais me coucher. Tu as oublié ta soupe. Bisous,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,481,test
+sg-00483,Ok ok Beh pas par moi non plus lol,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,482,train
+sg-00484,Vous etes en ville?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,483,train
+sg-00485,Oui oui j'ai vu... Plus.le.temps passe plus elle grimpe dans le talon!,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,484,train
+sg-00486,J'ai vu sa tavais les joues frigorifiée !! Tmange ou à midi ?,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,485,train
+sg-00487,"C'est quand meme agréable une journée à la plage, quand il fait 34 degrés...",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,486,train
+sg-00488,"Bah oui :) x) je regarde pas , mais j'ai les yeux ouverts x)",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,487,train
+sg-00489,Weshhh cousine ! Sa spassse bien avec les gens de ou toi,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,488,test
+sg-00490,aye coupe de cheuveux effectué ... Je regarde des sous pull pour <NOM> et je regarderai des bas pour assortir mon cadeau de vaison ;-) le probeleme étant que je n'ai pas les cb ... Alors chéquier et je rembourserai en rentrant hi !!!,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,489,train
+sg-00491,La je crois que tu te moques de moi... Mais j'suis pas sure !,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,490,train
+sg-00492,Qd vs etes chauds passez boire une cannette,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,491,train
+sg-00493,"Tkt, on était en train d'écrire du cour pendant 1heure, a la fin ça devient très chiant et t'as mal au poignet X)",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,492,train
+sg-00494,Le Abercrombie bleu?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,493,train
+sg-00495,Un jour j aimerai bien :'( qui sait peut etre pour mon aniv xD ou avant... Je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,494,train
+sg-00496,Bouuuuuulot hehe,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,495,train
+sg-00497,Nan jpense pas lol,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,496,train
+sg-00498,J'arrive=DD!!<3,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,497,test
+sg-00499,t'es complètemet perché,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,498,test
+sg-00500,Oui :D je suis trop crevé à cause du sport mais ça va sinon :P T'es chez toi ?,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,499,train
+sg-00501,C'est un rugbyman genre baraque ou genre sec ? <>,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,500,train
+sg-00502,On doit réviser quoi en svt pour le controle puisqu'on a pas de leçon ?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,501,train
+sg-00503,Je ne veux pas que tu coupe les ponts avec eux mais met toi un peu à ma place,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,502,train
+sg-00504,When you'll go home you are not allowed to sleep at 1:30 am !,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,503,test
+sg-00505,Écris Français sale Biatch :p ! Nan nan je reste dans cet appart mais tu me feras le plaisir de venir me faire quelques stripteases de temps a autre hein :p,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,504,test
+sg-00506,Ok ... L'histoire a deux balles x),legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,505,train
+sg-00507,Dans quel etat? Lol,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,506,test
+sg-00508,Ok pour la meganight vendredi. J'aurai la tête dans le guidon d'avoir bossé mes pages toute la journée. Et je peux conduire surtout si j'ai pas terminé mon boulot universitaire !,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,507,train
+sg-00509,Ben là je pars mais je ferais les boutiques :),legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,508,train
+sg-00510,En plus comme d'hab elle a du retard.,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,509,train
+sg-00511,Bon ben moins d'un mois alors :-),legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,510,train
+sg-00512,Bonne journée <NOM> bisous!,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,511,test
+sg-00513,Je m'occupe d'aller chercher <NOM> . Elle se préparera à la maison avec <NOM> et moi ...,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,512,test
+sg-00514,Tjs bon pr 10h?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,513,train
+sg-00515,Jme fais chier et ça m énerve. Je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,514,train
+sg-00516,"Mdrrr ah j'ai pensé allez à labelle en plus. Mais vu que jétais à Europa park aujourd'hui, Chu pas sorti. Ta vu le <NOM> ?",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,515,train
+sg-00517,Bien jouer mon pti genie :),legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,516,test
+sg-00518,Mais comment elle peut avoir 20ans et avoir raté deux premières années ??,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,517,train
+sg-00519,Oui mon coeur!! Je t'ai pas repondu parce que ca allait te reprendre des sous... tout va bien? <3 <3,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,518,train
+sg-00520,On mange ensemble ou non?,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,519,train
+sg-00521,diable non! il nous a dit que c'était pas la peine,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,520,train
+sg-00522,La tout de suite je ne peux pas,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,521,train
+sg-00523,Ya la muisique a donf,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,522,train
+sg-00524,:'( je vais pas gagner :'( . A tte bon app je t'aime,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,523,test
+sg-00525,Lign 2 rondlet yaz un post la tu conei pa,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,524,train
+sg-00526,<NOM> ma filè plein d habits pour cet hiver. j ai + besoin de collants laine. Jai pas de monai jsui au boulot ui. Maman es en coupè ptetre kele passera jpense,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,525,test
+sg-00527,Pour deconner que j'ai dit sa ! C'est d'un normal absolu :p,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,526,train
+sg-00528,ouai jai trop dormi en plus alors jss dan la choucroute lol mais fut que jaille car g recu un pantalon de la redoute et il est trop petit...,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,527,test
+sg-00529,"Intéressant rfi, ya un ouragan cet aprem au mexique cote pacifique..",legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,528,train
+sg-00530,Il et tro lai c ga,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,529,train
+sg-00531,Ah lol bah pareil ;) je suis encore dans le chap 1 la,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,530,train
+sg-00532,J suis à albert 1er!,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,531,train
+sg-00533,On a la disponibilité d'avoir un entretien cette aprem à lattes ! ! Vers 15h30 16h ! Mais <NOM> répond pas au téléphone encore lol,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,532,train
+sg-00534,Eh mmais te croque pas le cerveau,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,533,test
+sg-00535,J'espère que ca va mieux avec <NOM> et que tu vas bien tout court et je te fais des bisous. Tu sais que tu peux m'appeler n'importe quand si tu te sens BzzZZzzZZzz. End of transmission.,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,534,train
+sg-00536,Ben <NOM> vient si il peut rentrer. Et toi quoi de prévu?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,535,train
+sg-00537,Mdrr comment sa sa se mérite ?! Mdr je suis pas un toutou !,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,536,train
+sg-00538,J'aime pas les yeux. Ni les bouches. Non en fait l'ironie marche meme pas dans ce cas là,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,537,train
+sg-00539,1h30. Une idée de lieu ?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,538,train
+sg-00540,"Mmm... Pour repondre a ton message d'hier, non je ne fais pas la fete! Encore je la ferai, ca me donnerais une bonne raison d'etre fatigue! Biisoux miss!",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,539,train
+sg-00541,On viebt te chercher dans 15 min ca va?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,540,train
+sg-00542,Mc chicken et double cheese stp. Pas besoin de boisson ni rien.. Merci <3,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,541,train
+sg-00543,Parce qu'il a supprimé plein de photos de nous ..,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,542,train
+sg-00544,Ouais trop drole par contre le nouveau il est drole mais sans plus,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,543,test
+sg-00545,Tu vas bouger a mtp ? :) moi je fais une pause puis après révisions ! Yihou ! Ce weekend fiesta hihi,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,544,train
+sg-00546,Vous invitez qui ? :) moi ?,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,545,train
+sg-00547,Mange les carottes du chaos!!,legitime,personnel,aucun,FR,corpus_recherche,2011-12,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,546,train
+sg-00548,Ah ok ! J'peux pas l'annuler sur internet direct' ?,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,547,test
+sg-00549,Veux pas que t'ailles mal...repose toi,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,548,train
+sg-00550,Mdr ahah ben là je rigolerais !! Mdr pour la blague que vous maviez fais xD,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,549,train
+sg-00551,"3 ?? Là en l'occurrence drøle, physiquement et c'quoi l'autre ?",legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,550,test
+sg-00552,Mdrrr jure ? Comment tu le sais ?,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,551,train
+sg-00553,J'attend rien pour le moment ... Disons que je tiens quand même un peu à toi ... :-) Mais que la situation n'a pas changé ... Alors je préfère garder une certaine distance pour moins d'ambiguité ... Pfff je sais plus !!!,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,552,test
+sg-00554,"Outch ça fait mal ça ! File faire les courses il faut que tu manges !! Je ne trouve pas le temps.. j'ai récupéré mon corpus ce weekend (vu qu'il était chez mes parents) et là entre les cours à assister ceux à revoir, les exos obligatoires et les lectures obligatoires je n'ai pas encore retrouvé ma super organisation.. et là je lis les livres de la BU car sans méthodologie ni théorie je ne peux pas faire mon exposé .. je pense aller voir la prof car je dois le présenter dans une semaine et j'ai tout juste un premier jet de brouillon.. à moins que j'ai un élan d'ingéniosité dans le weekend ! Mdr",legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,553,train
+sg-00555,Elle demande si on mange ensemble !?,legitime,personnel,aucun,FR,corpus_recherche,2011-11,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,554,train
+sg-00556,Ok ça marche !!! Je me sens seule g besoin de réconfort !!,legitime,personnel,aucun,FR,corpus_recherche,2011-09,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,555,train
+sg-00557,Ok ba viens a 18h30 par contre ski est sure c est que si <NOM> decide de faire le travail de fin de semestre en groupe je serais tte seule ou avec une personne qui a les meme disponibilité,legitime,personnel,aucun,FR,corpus_recherche,2011-10,false,haute,,https://hdl.handle.net/11403/comere/cmr-88milsms,556,test
+sg-00558,WAVE: Félicitations! Vous êtes bénéficiaire d'un cadeau de 37 000 FCFA. Recevez-le en remplissant le formulaire: hxxps://wave-cadeau-ci[.]online,arnaque,phishing_lien,wave,CI,autorite,2026-09,true,haute,ci-2026-09-wave-cadeau,https://www.aip.ci/cote-divoire-aip-cybercriminalite-la-plcc-demantele-un-reseau-darnaque-aux-faux-cadeaux-mobile-money/,557,test
+sg-00559,Cadeau Wave 🎁 37.000F offert aux clients fidèles. Entrez votre numéro et votre code secret ici pour valider: hxxp://wave-bonus[.]xyz/ci,arnaque,phishing_lien,wave,CI,autorite,2026-09,true,haute,ci-2026-09-wave-cadeau,https://www.aip.ci/cote-divoire-aip-cybercriminalite-la-plcc-demantele-un-reseau-darnaque-aux-faux-cadeaux-mobile-money/,557,test
+sg-00560,"Bonjour, Wave Côte d'Ivoire vous offre 37000 F pour fêter ses clients. Cliquez vite avant ce soir: bit[.]ly/cadeau-wave-ci",arnaque,phishing_lien,wave,CI,autorite,2026-09,true,haute,ci-2026-09-wave-cadeau,https://www.aip.ci/cote-divoire-aip-cybercriminalite-la-plcc-demantele-un-reseau-darnaque-aux-faux-cadeaux-mobile-money/,557,test
+sg-00561,Vous avez un cadeau Wave de 37 000 FCFA en attente. Confirmez votre compte (numéro + code) pour le recevoir: hxxps://cadeau-wave[.]site,arnaque,phishing_lien,wave,CI,autorite,2026-09,true,haute,ci-2026-09-wave-cadeau,https://www.aip.ci/cote-divoire-aip-cybercriminalite-la-plcc-demantele-un-reseau-darnaque-aux-faux-cadeaux-mobile-money/,557,test
+sg-00562,Offre spéciale Mobile Money: recevez 50 000 F de bonus en installant notre application. Téléchargez ici: hxxp://mobilemoney-bonus[.]top/app.apk,arnaque,phishing_lien,aucun,CI,autorite,2026-08,true,haute,ci-2026-08-lien-apk,https://www.koaci.com/article/2026/08/08/cote-divoire/societe/cote-divoire-larnaque-au-mobile-money-par-liens-frauduleux-se-repand-actuellement-ce-quil-faut-faire-pour-eviter-de-tomber-dans-le-piege_199362.html,558,train
+sg-00563,Profitez de 10Go + 25 000 F offerts! Installez l'appli Mobile Money Plus: hxxps://mm-plus-ci[.]xyz/telecharger,arnaque,phishing_lien,aucun,CI,autorite,2026-08,true,haute,ci-2026-08-lien-apk,https://www.koaci.com/article/2026/08/08/cote-divoire/societe/cote-divoire-larnaque-au-mobile-money-par-liens-frauduleux-se-repand-actuellement-ce-quil-faut-faire-pour-eviter-de-tomber-dans-le-piege_199362.html,558,train
+sg-00564,Nouvelle application officielle pour vos transferts sans frais. Télécharge l'APK ici et active ton compte: hxxp://transfert-gratuit[.]click/apk,arnaque,phishing_lien,aucun,CI,autorite,2026-08,true,haute,ci-2026-08-lien-apk,https://www.koaci.com/article/2026/08/08/cote-divoire/societe/cote-divoire-larnaque-au-mobile-money-par-liens-frauduleux-se-repand-actuellement-ce-quil-faut-faire-pour-eviter-de-tomber-dans-le-piege_199362.html,558,train
+sg-00565,Bonus fidélité 2026 disponible. Installez l'application et entrez votre code pour recevoir votre prime: hxxps://prime-mobile[.]online/app.apk,arnaque,phishing_lien,aucun,CI,autorite,2026-08,true,haute,ci-2026-08-lien-apk,https://www.koaci.com/article/2026/08/08/cote-divoire/societe/cote-divoire-larnaque-au-mobile-money-par-liens-frauduleux-se-repand-actuellement-ce-quil-faut-faire-pour-eviter-de-tomber-dans-le-piege_199362.html,558,train
+sg-00566,Service client Wave: une anomalie a été détectée sur votre compte. Rappelez notre agent au <TEL> pour éviter le blocage de votre portefeuille.,arnaque,usurpation_operateur,wave,CI,autorite,2026-04,true,haute,ci-2026-04-faux-agent-wave,https://www.aip.ci/353937/cote-divoire-aip-la-police-de-san-pedro-met-en-garde-contre-la-recrudescence-des-arnaques-au-mobile-money/,559,train
+sg-00567,"WAVE CI: Bonjour, votre compte doit être vérifié aujourd'hui. Notre agent va vous appeler, suivez ses instructions et confirmez le code reçu.",arnaque,usurpation_operateur,wave,CI,autorite,2026-04,true,haute,ci-2026-04-faux-agent-wave,https://www.aip.ci/353937/cote-divoire-aip-la-police-de-san-pedro-met-en-garde-contre-la-recrudescence-des-arnaques-au-mobile-money/,559,train
+sg-00568,Bonjour c'est le service Wave. Votre solde est temporairement gelé. Appelez vite le <TEL> pour le libérer.,arnaque,usurpation_operateur,wave,CI,autorite,2026-04,true,haute,ci-2026-04-faux-agent-wave,https://www.aip.ci/353937/cote-divoire-aip-la-police-de-san-pedro-met-en-garde-contre-la-recrudescence-des-arnaques-au-mobile-money/,559,train
+sg-00569,"Agent Orange Money: suite à une mise à jour, votre compte sera suspendu. Composez #144# puis le code que je vous donne pour le réactiver.",arnaque,usurpation_operateur,orange,CI,operateur,,true,haute,ci-orange-faux-agent,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,560,train
+sg-00570,"Bonjour, ici Orange Côte d'Ivoire. Pour sécuriser votre compte Orange Money, communiquez-nous le code à 4 chiffres que vous allez recevoir.",arnaque,usurpation_operateur,orange,CI,operateur,,true,haute,ci-orange-faux-agent,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,560,train
+sg-00571,Orange Money: votre compte présente une anomalie. Rappelez le service technique au <TEL> avant 18h.,arnaque,usurpation_operateur,orange,CI,operateur,,true,haute,ci-orange-faux-agent,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,560,train
+sg-00572,"Bonsoir, je suis en difficulté à l'hôpital avec mon enfant, aidez-moi avec 10 000 F sur ce numéro, Dieu vous le rendra",arnaque,autre_arnaque,aucun,CI,operateur,,true,haute,ci-orange-demande-aide,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,561,train
+sg-00573,"Pardon frère, je suis bloqué à la gare d'Adjamé sans argent, fais-moi un dépôt de 5000 sur ce numéro je te rembourse demain",arnaque,autre_arnaque,aucun,CI,operateur,,true,haute,ci-orange-demande-aide,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,561,train
+sg-00574,"Bonjour madame, je vous écris de la part de votre cousin, il a un souci et demande que vous envoyiez 25 000 F sur ce numéro",arnaque,autre_arnaque,aucun,CI,operateur,,true,haute,ci-orange-demande-aide,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,561,train
+sg-00575,"Bonjour, j'ai fait un dépôt de 30 000 F sur votre compte par erreur. Vérifiez votre solde et renvoyez-moi ça svp, c'est l'argent de ma marchandise",arnaque,faux_transfert,aucun,CI,presse,,true,haute,ci-depot-par-erreur,https://cybersecuritymag.africa/mobile-money-et-vacances-la-saison-des-arnaques/,562,train
+sg-00576,"Mon frère, 50 000 sont partis chez toi par erreur. Consulte ton solde et fais le retrait pour me renvoyer, je t'appelle",arnaque,faux_transfert,aucun,CI,presse,,true,haute,ci-depot-par-erreur,https://cybersecuritymag.africa/mobile-money-et-vacances-la-saison-des-arnaques/,562,train
+sg-00577,"Orange Money: Vous avez reçu 45 000 FCFA. Solde: 45 600 FCFA. Message de l'expéditeur: erreur de numéro, merci de renvoyer au <TEL>",arnaque,faux_transfert,aucun,CI,presse,,true,haute,ci-depot-par-erreur,https://cybersecuritymag.africa/mobile-money-et-vacances-la-saison-des-arnaques/,562,train
+sg-00578,"Pardon tantie, le dépôt de 20 000 que j'ai fait c'était pas pour toi. Vérifie et renvoie vite, je suis dans le bus",arnaque,faux_transfert,aucun,CI,presse,,true,haute,ci-depot-par-erreur,https://cybersecuritymag.africa/mobile-money-et-vacances-la-saison-des-arnaques/,562,train
+sg-00579,"Recrutement Aéroport FHB: 386 postes de stagiaires (bagagistes, hôtesses, agents de billetterie). Niveau BEPC/BAC. Dépôt des dossiers à <EMAIL> avant le 22 mai.",arnaque,investissement_emploi,aucun,CI,presse,2026-05,true,haute,ci-2026-05-recrutement-aeroport,https://www.yessouan.ci/Recrutement-aeroport-Felix-Houphouet-Boigny-FHB-d-Abidjan-une-arnaque-circule-en-ligne-la-PLCC-saisie_a8074.html,563,train
+sg-00580,Bonne nouvelle! L'aéroport d'Abidjan recrute des hôtesses au sol et des agents de piste. Stage de 6 mois puis embauche. Envoie ton dossier à <EMAIL>,arnaque,investissement_emploi,aucun,CI,presse,2026-05,true,haute,ci-2026-05-recrutement-aeroport,https://www.yessouan.ci/Recrutement-aeroport-Felix-Houphouet-Boigny-FHB-d-Abidjan-une-arnaque-circule-en-ligne-la-PLCC-saisie_a8074.html,563,train
+sg-00581,"Offre de stage aéroport FHB: places limitées, envoyez CV et pièces à <EMAIL>. Les frais de traitement du dossier vous seront communiqués.",arnaque,investissement_emploi,aucun,CI,presse,2026-05,true,haute,ci-2026-05-recrutement-aeroport,https://www.yessouan.ci/Recrutement-aeroport-Felix-Houphouet-Boigny-FHB-d-Abidjan-une-arnaque-circule-en-ligne-la-PLCC-saisie_a8074.html,563,train
+sg-00582,"Recrutement direct Douanes, Impôts et Trésor 2026: inscriptions ouvertes. Contactez le coordonnateur au <TEL> pour réserver votre place.",arnaque,investissement_emploi,aucun,CI,autorite,2026-09,true,haute,ci-2026-09-recrutement-fonction-publique,https://www.yeclo.com/fonction-publique-cote-divoire-une-fausse-offre-de-recrutement-douanes-impots-tresor-denoncee/,564,test
+sg-00583,"Fonction publique: recrutement direct sans concours aux Douanes. Places limitées, frais de dossier 25 000 F par Mobile Money au <TEL>.",arnaque,investissement_emploi,aucun,CI,autorite,2026-09,true,haute,ci-2026-09-recrutement-fonction-publique,https://www.yeclo.com/fonction-publique-cote-divoire-une-fausse-offre-de-recrutement-douanes-impots-tresor-denoncee/,564,test
+sg-00584,Info: le Trésor recrute 500 agents sur dossier. Envoie ton nom et ta photo sur WhatsApp au <TEL> avant vendredi.,arnaque,investissement_emploi,aucun,CI,autorite,2026-09,true,haute,ci-2026-09-recrutement-fonction-publique,https://www.yeclo.com/fonction-publique-cote-divoire-une-fausse-offre-de-recrutement-douanes-impots-tresor-denoncee/,564,test
+sg-00585,Concours Eaux et Forêts 2026: je peux vous garantir l'admission. Envoyez 150 000 F par Orange Money au <TEL> pour réserver votre place.,arnaque,investissement_emploi,aucun,CI,autorite,2026-03,true,haute,ci-2026-03-concours-eaux-forets,https://www.kaweru.com/politique-societe/2026/03/23/cote-divoire-concours-des-eaux-et-forets-le-ministere-alerte-sur-des-arnaques-en-ligne/,565,train
+sg-00586,"Bonjour, je suis administrateur aux Eaux et Forêts. Inscription spéciale au concours, paiement de 50 000 F par Wave à ce numéro.",arnaque,investissement_emploi,aucun,CI,autorite,2026-03,true,haute,ci-2026-03-concours-eaux-forets,https://www.kaweru.com/politique-societe/2026/03/23/cote-divoire-concours-des-eaux-et-forets-le-ministere-alerte-sur-des-arnaques-en-ligne/,565,train
+sg-00587,Concours Eaux et Forêts: dernier délai pour le paiement des frais d'inscription. Envoyez 20 000 F au <TEL> pour valider votre dossier.,arnaque,investissement_emploi,aucun,CI,autorite,2026-03,true,haute,ci-2026-03-concours-eaux-forets,https://www.kaweru.com/politique-societe/2026/03/23/cote-divoire-concours-des-eaux-et-forets-le-ministere-alerte-sur-des-arnaques-en-ligne/,565,train
+sg-00588,SUNPOWER: investissez dans les panneaux solaires et gagnez 3 000 F par jour. Dépôt minimum 10 000 F par Mobile Money. Gains rapides garantis!,arnaque,investissement_emploi,aucun,CI,autorite,2025-02,true,haute,ci-2025-02-sunpower,https://www.koaci.com/article/2025/02/17/cote-divoire/societe/cote-divoire-fin-de-parcours-pour-les-arnaqueurs-de-la-plateforme-sunpower-la-plcc-met-en-lumiere-lampleur-des-fraudes-en-ligne_184587.html,566,train
+sg-00589,Rejoins SUNPOWER: tu achètes un panneau à 25 000 F et tu reçois 15% chaque semaine. Invite tes amis pour des bonus.,arnaque,investissement_emploi,aucun,CI,autorite,2025-02,true,haute,ci-2025-02-sunpower,https://www.koaci.com/article/2025/02/17/cote-divoire/societe/cote-divoire-fin-de-parcours-pour-les-arnaqueurs-de-la-plateforme-sunpower-la-plcc-met-en-lumiere-lampleur-des-fraudes-en-ligne_184587.html,566,train
+sg-00590,"Placement solaire sans risque: 50 000 F investis = 150 000 F en un mois. Inscris-toi vite, dépôt par Wave ou Orange Money.",arnaque,investissement_emploi,aucun,CI,autorite,2025-02,true,haute,ci-2025-02-sunpower,https://www.koaci.com/article/2025/02/17/cote-divoire/societe/cote-divoire-fin-de-parcours-pour-les-arnaqueurs-de-la-plateforme-sunpower-la-plcc-met-en-lumiere-lampleur-des-fraudes-en-ligne_184587.html,566,train
+sg-00591,"Félicitations, votre compte SUNPOWER est activé. Faites votre premier dépôt pour commencer à recevoir vos gains quotidiens.",arnaque,investissement_emploi,aucun,CI,autorite,2025-02,true,haute,ci-2025-02-sunpower,https://www.koaci.com/article/2025/02/17/cote-divoire/societe/cote-divoire-fin-de-parcours-pour-les-arnaqueurs-de-la-plateforme-sunpower-la-plcc-met-en-lumiere-lampleur-des-fraudes-en-ligne_184587.html,566,train
+sg-00592,"PLCC: votre plainte a été enregistrée. Pour récupérer l'argent perdu, payez les frais de procédure de 15 000 F au <TEL>.",arnaque,autre_arnaque,aucun,CI,autorite,2022-02,true,haute,ci-2022-02-faux-plcc,https://www.koaci.com/article/2022/02/05/cote-divoire/societe/cote-divoire-il-cree-un-compte-denomme-plcc-pour-arnaquer-les-victimes-invitees-a-porter-plainte_157432.html,567,train
+sg-00593,Plateforme de Lutte Contre la Cybercriminalité: nous pouvons régler votre affaire rapidement. Envoyez 20 000 F pour l'ouverture du dossier.,arnaque,autre_arnaque,aucun,CI,autorite,2022-02,true,haute,ci-2022-02-faux-plcc,https://www.koaci.com/article/2022/02/05/cote-divoire/societe/cote-divoire-il-cree-un-compte-denomme-plcc-pour-arnaquer-les-victimes-invitees-a-porter-plainte_157432.html,567,train
+sg-00594,"Bonjour, je suis agent de la PLCC. Votre numéro est cité dans une affaire d'escroquerie. Payez l'amende de 50 000 F pour éviter des poursuites.",arnaque,autre_arnaque,aucun,CI,autorite,2022-02,true,haute,ci-2022-02-faux-plcc,https://www.koaci.com/article/2022/02/05/cote-divoire/societe/cote-divoire-il-cree-un-compte-denomme-plcc-pour-arnaquer-les-victimes-invitees-a-porter-plainte_157432.html,567,train
+sg-00595,Police de la circulation: vous avez une amende forfaitaire impayée. Réglez-la ici pour éviter une majoration: hxxps://amendes-sn[.]click,arnaque,phishing_lien,aucun,SN,autorite,2026-08,true,haute,sn-2026-08-fausses-amendes,https://fr.allafrica.com/stories/202608080106.html,568,train
+sg-00596,Avis de contravention: infraction constatée sur votre véhicule. Paiement en ligne avant 48h: hxxps://amendsc-sn[.]help/sn,arnaque,phishing_lien,aucun,SN,autorite,2026-08,true,haute,sn-2026-08-fausses-amendes,https://fr.allafrica.com/stories/202608080106.html,568,train
+sg-00597,Rappel: amende de circulation non payée. Payez maintenant sur hxxps://amendes-sn[.]click pour éviter la mise en fourrière.,arnaque,phishing_lien,aucun,SN,autorite,2026-08,true,haute,sn-2026-08-fausses-amendes,https://fr.allafrica.com/stories/202608080106.html,568,train
+sg-00598,Fonction publique: les inscriptions aux concours administratifs se font exclusivement sur www[.]fonctionpublique[.]gouv[.]ci. Aucun paiement à un particulier.,legitime,promo_operateur,aucun,CI,autorite,2026-09,true,haute,ci-officiel-fonction-publique,https://www.yeclo.com/fonction-publique-cote-divoire-une-fausse-offre-de-recrutement-douanes-impots-tresor-denoncee/,569,train
+sg-00599,Concours Eaux et Forêts 2026: inscriptions en ligne du 16 mars au 30 avril. Paiement des frais uniquement via TresorPay. Ignorez toute autre sollicitation.,legitime,promo_operateur,aucun,CI,autorite,2026-03,true,haute,ci-officiel-eaux-forets,https://www.kaweru.com/politique-societe/2026/03/23/cote-divoire-concours-des-eaux-et-forets-le-ministere-alerte-sur-des-arnaques-en-ligne/,570,train
+sg-00600,PLCC: le dépôt de plainte est gratuit. Ne payez jamais quelqu'un qui se présente comme agent de la PLCC.,legitime,promo_operateur,aucun,CI,autorite,2022-02,true,haute,ci-officiel-plcc,https://www.koaci.com/article/2022/02/05/cote-divoire/societe/cote-divoire-il-cree-un-compte-denomme-plcc-pour-arnaquer-les-victimes-invitees-a-porter-plainte_157432.html,571,train
+sg-00601,"Orange Money: si vous avez fait un transfert vers un mauvais numéro, demandez vous-même le gel du transfert via Max it ou #144*967#.",legitime,promo_operateur,orange,CI,operateur,,true,haute,ci-officiel-orange-erreur,https://www.orange.ci/fr/assistance-orange-money-erreur-de-transfert.html,572,train
+sg-00602,"Orange Money: ne communiquez jamais votre code secret ni le code OTP à 4 chiffres, même à un agent Orange.",legitime,promo_operateur,orange,CI,operateur,,true,haute,ci-officiel-orange-otp,https://www.orange.ci/fr/assistance-stop-arnaques-orange-money.html,573,test

@@ -5,7 +5,7 @@
 > messages. These numbers validate the pipeline; they are **not** an estimate of
 > real-world performance. Real-data results will replace them in v0.1.0.
 
-Model `0.1.0.dev0` · dataset `0.1.0.dev0` · 325 train / 82 test SMS · split by near-duplicate group, stratified by category · test split opened once.
+Model `0.1.0.dev1` · dataset `0.1.0.dev1` · 498 train / 104 test SMS · split by near-duplicate group, stratified by category · test split opened once.
 
 ## Benchmark
 
@@ -13,28 +13,28 @@ Average precision (area under the precision-recall curve) with 95 % bootstrap CI
 
 | Model | CV AP (train) | Test AP [95 % CI] | Test F1 | Recall @ precision 95 % |
 |---|---|---|---|---|
-| B0 majority class | 0.431 | 0.439 [0.329, 0.549] | 0.000 | 0.0 % |
-| B1 rules only | 0.885 | 0.892 [0.801, 0.971] | 0.917 | 11.1 % |
-| B2 naive Bayes (words) | 0.972 | 0.982 [0.952, 0.999] | 0.864 | 88.9 % |
-| B3 linear SVM | 0.985 | 0.976 [0.943, 0.996] | 0.901 | 83.3 % |
-| B4 sikaguard (retained) | 0.983 | 0.973 [0.935, 0.995] | 0.901 | 80.6 % |
+| B0 majority class | 0.357 | 0.346 [0.250, 0.442] | 0.000 | 0.0 % |
+| B1 rules only | 0.891 | 0.959 [0.901, 1.000] | 0.959 | 55.6 % |
+| B2 naive Bayes (words) | 0.976 | 0.996 [0.986, 1.000] | 0.935 | 94.4 % |
+| B3 linear SVM | 0.987 | 0.997 [0.988, 1.000] | 0.972 | 97.2 % |
+| B4 sikaguard (retained) | 0.985 | 0.997 [0.988, 1.000] | 0.972 | 97.2 % |
 
-Regularization chosen by grouped CV: C = 10.0 (strongest regularization within 0.001 AP of the best).
+Regularization chosen by grouped CV: C = 30.0 (strongest regularization within 0.001 AP of the best).
 
 ## Operating point (three verdicts)
 
-Thresholds chosen on out-of-fold train predictions: `arnaque` if score ≥ 0.421 (precision ≥ 95 %), `legitime` if score < 0.161 (recall ≥ 98 %), `suspect` in between.
+Thresholds chosen on out-of-fold train predictions: `arnaque` if score ≥ 0.493 (precision ≥ 95 %), `legitime` if score < 0.108 (recall ≥ 98 %), `suspect` in between.
 
 | True label \ verdict | arnaque | suspect | legitime |
 |---|---|---|---|
-| arnaque | 32 | 1 | 3 |
-| legitime | 4 | 3 | 39 |
+| arnaque | 35 | 1 | 0 |
+| legitime | 1 | 2 | 65 |
 
-- Precision of the `arnaque` verdict: 88.9 %
-- Scams flagged `arnaque`: 88.9 %; flagged `arnaque` or `suspect`: 91.7 %
-- Legitimate SMS flagged `arnaque`: 8.7 %; `arnaque` or `suspect`: 15.2 %
-- **Hard legitimate SMS** (transaction notifications and OTP codes, n = 22): false-positive rate 13.6 %, flagged suspect or worse 13.6 %
-- Category model on test scams (n = 36): accuracy 88.9 %, macro-F1 0.888
+- Precision of the `arnaque` verdict: 97.2 %
+- Scams flagged `arnaque`: 97.2 %; flagged `arnaque` or `suspect`: 100.0 %
+- Legitimate SMS flagged `arnaque`: 1.5 %; `arnaque` or `suspect`: 4.4 %
+- **Hard legitimate SMS** (transaction notifications and OTP codes, n = 17): false-positive rate 0.0 %, flagged suspect or worse 5.9 %
+- Category model on test scams (n = 36): accuracy 75.0 %, macro-F1 0.738
 
 ![Precision-recall curve](pr_curve.png)
 
@@ -42,16 +42,16 @@ Thresholds chosen on out-of-fold train predictions: `arnaque` if score ≥ 0.421
 
 | Category | Label | n | Detected / flagged |
 |---|---|---|---|
-| autre_arnaque | arnaque | 5 | 80.0 % |
-| faux_gain | arnaque | 6 | 100.0 % |
-| faux_transfert | arnaque | 6 | 83.3 % |
-| investissement_emploi | arnaque | 6 | 100.0 % |
-| notification_transaction | legitime | 14 | 14.3 % |
-| otp | legitime | 8 | 12.5 % |
-| personnel | legitime | 15 | 13.3 % |
-| phishing_lien | arnaque | 6 | 100.0 % |
+| autre_arnaque | arnaque | 6 | 100.0 % |
+| faux_gain | arnaque | 4 | 100.0 % |
+| faux_transfert | arnaque | 5 | 100.0 % |
+| investissement_emploi | arnaque | 8 | 100.0 % |
+| notification_transaction | legitime | 11 | 9.1 % |
+| otp | legitime | 6 | 0.0 % |
+| personnel | legitime | 42 | 0.0 % |
+| phishing_lien | arnaque | 7 | 100.0 % |
 | promo_operateur | legitime | 9 | 22.2 % |
-| usurpation_operateur | arnaque | 7 | 85.7 % |
+| usurpation_operateur | arnaque | 6 | 100.0 % |
 
 ## Adversarial robustness
 
@@ -59,43 +59,63 @@ Share of test scams still flagged (`arnaque` or `suspect`) after each disguise. 
 
 | Disguise | With normalization | Without normalization |
 |---|---|---|
-| original | 91.7 % | 88.9 % |
-| leetspeak | 91.7 % | 77.8 % |
-| homoglyphs | 91.7 % | 61.1 % |
-| spaced_letters | 91.7 % | 86.1 % |
-| zero_width | 91.7 % | 88.9 % |
-| emojis | 91.7 % | 86.1 % |
-| strip_accents | 91.7 % | 91.7 % |
-| upper | 91.7 % | 88.9 % |
+| original | 100.0 % | 100.0 % |
+| leetspeak | 100.0 % | 97.2 % |
+| homoglyphs | 100.0 % | 88.9 % |
+| spaced_letters | 100.0 % | 100.0 % |
+| zero_width | 100.0 % | 100.0 % |
+| emojis | 100.0 % | 100.0 % |
+| strip_accents | 100.0 % | 100.0 % |
+| upper | 100.0 % | 100.0 % |
+
+## Per source (test)
+
+| Source | n | AP | Scams flagged | Legit flagged `arnaque` |
+|---|---|---|---|---|
+| amorcage | 63 | 0.996 | 100.0 % | 2.9 % |
+| autorite | 7 | — | 100.0 % | — |
+| corpus_recherche | 33 | — | — | 0.0 % |
+| operateur | 1 | — | — | 0.0 % |
+
+## Real SMS benchmark (never used for training)
+
+1000 authentic French SMS from the 88milSMS corpus (CC BY 4.0), disjoint from the training sample. Every one is legitimate, so every alert is a false alarm.
+
+- Flagged `arnaque`: **0.6 %** [95 % CI 0.2 %, 1.1 %]
+- Flagged `arnaque` or `suspect`: 1.3 % [95 % CI 0.6 %, 2.0 %]
+
+False alarms (first 10):
+
+- Commercial pour k par k avec des pure conditions de salaire et tout
+- Jalousie mal placée de londres, merci. T'avais prévu ça avec ton pote. Tu voulais pas y aller avec moi comme ça précisément. Puisque t'façons tu te bougeait pas. Maintenant ça ne m'empeche pas de le faire. J'y suis déjà allé, et J'y retournerai pas qu'une fois. Avec toi c'est différent. Et je pense le vouloir meme plus que toi. Donc NON j'ai pas dit à <NOM> déchire ton billet on va à berlin pour pas créer un conflit intergalactique
+- Putain jte jure tu craques toi à me supprimer de facebook tout le temps, ce matin déja on était plus amis donc je t ai renvoyé une demande, t acceptes jvois que t es toujours célibataire alors que t as fais le ménage du reste, écoute me prend pas la tete je t ai pas supprimé une seule fois et quand jte dis de me dire à quelle heure tu viens chez moi tu pourrais prendre la peine de me répondre au moins par facebook tu crois pas?
+- Pr cet hiver a noel je nous ai payé des entrees pr disneyland paris (les deux parcs) et ca fait bcp dargent en tt ^^ surtout que bientot je vais devoir faire un cheque de 500 euros pr les modeles bref heureusement que g des sous de coté ^^ et je tai dit que je te demanderai pas de tt me rembourser parce que cest pas la peine ca me fait plaisir de toffrir des trucs oci ^^
+- Désolé, je fais des courses aux 3F. =/
+- Oui c sur ms bon tu décide un peu de ton emploi du temps au début! Et puis tu peux "moduler" pr les k exceptionnels,^^(oui dsl g pas u le temps de répondre avant maintenant ^^')
 
 ## Pre-registered objectives
 
 | Objective | Target | Achieved | Met |
 |---|---|---|---|
-| test_average_precision | ≥ 0.95 | 0.9726 | yes |
-| recall_at_precision_95 | ≥ 0.9 | 0.8056 | no |
-| hard_legit_false_positive_rate | ≤ 0.05 | 0.1364 | no |
-| min_detection_under_perturbation | ≥ 0.85 | 0.9167 | yes |
+| test_average_precision | ≥ 0.95 | 0.9971 | yes |
+| recall_at_precision_95 | ≥ 0.9 | 0.9722 | yes |
+| hard_legit_false_positive_rate | ≤ 0.05 | 0.0 | yes |
+| min_detection_under_perturbation | ≥ 0.85 | 1.0 | yes |
+| real_sms_false_positive_rate | ≤ 0.05 | 0.006 | yes |
 
 ## Notes
 
-- Run 2 (2026-10-01). The first run revealed a code bug: links written with Cyrillic look-alike letters escaped link detection (homoglyphs row: 80.6 %). Look-alike letters are now folded before link detection, and such links are flagged as homograph attacks. No retraining was needed (the dataset has no look-alike letters): every test-split metric is identical to run 1; only the robustness rows were re-measured.
+- v0.1.0.dev1 protocol: the 0.1.0.dev0 test split was consumed (its errors had been analysed); its 82 rows were forced into train and a new test split was drawn. Caveat: the author of the new rows (88milSMS sampling, campaign reconstructions, signal fixes) had seen the dev0 errors, so these numbers may be slightly optimistic; the real-SMS benchmark is the least biased measurement.
+- Documented-campaign rows (source_type autorite / operateur / presse) are reconstructions of real, dated Côte d'Ivoire and Senegal campaigns; every row of a campaign sits on the same side of the split, so test campaigns were never seen in training.
 
-## All test errors (11)
+## All test errors (4)
 
 | Label | Category | Verdict | Score | SMS |
 |---|---|---|---|---|
-| arnaque | faux_transfert | legitime | 0.12 | Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ? |
-| arnaque | usurpation_operateur | suspect | 0.20 | Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret. |
-| arnaque | usurpation_operateur | legitime | 0.12 | UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>. |
-| arnaque | autre_arnaque | legitime | 0.13 | Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête. |
-| legitime | notification_transaction | arnaque | 0.75 | Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09. |
-| legitime | notification_transaction | arnaque | 0.58 | Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé. |
-| legitime | otp | arnaque | 0.81 | Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes. |
-| legitime | promo_operateur | suspect | 0.25 | Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money. |
-| legitime | promo_operateur | suspect | 0.41 | Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci |
-| legitime | personnel | suspect | 0.33 | J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie |
-| legitime | personnel | arnaque | 0.46 | J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain |
+| arnaque | phishing_lien | suspect | 0.15 | Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om |
+| legitime | notification_transaction | suspect | 0.34 | Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF. |
+| legitime | promo_operateur | suspect | 0.40 | Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours. |
+| legitime | promo_operateur | arnaque | 0.78 | Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre. |
 
 ## Reproduce
 

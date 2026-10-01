@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: Ojewumi
     given-names: Asaph Felix
-version: 0.1.0.dev0
-date-released: 2026-09-30
+version: 0.1.0.dev1
+date-released: 2026-10-01
 license: MIT
 repository-code: "https://github.com/asaphfelix03-beep/sikaguard"
 keywords:

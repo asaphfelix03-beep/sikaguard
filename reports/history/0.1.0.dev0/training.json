@@ -1,0 +1,24 @@
+{
+  "model_version": "0.1.0.dev0",
+  "dataset_version": "0.1.0.dev0",
+  "n_train": 325,
+  "c_grid_average_precision": {
+    "1.0": 0.9788,
+    "4.0": 0.9815,
+    "10.0": 0.9829,
+    "30.0": 0.9834,
+    "100.0": 0.9835
+  },
+  "best_C": 10.0,
+  "threshold_high": 0.4214627662695767,
+  "threshold_low": 0.16076254329289297,
+  "cv_metrics": {
+    "average_precision": 0.9829,
+    "f1_at_0.5": 0.95,
+    "precision_at_high": 0.9504,
+    "recall_at_high": 0.9504,
+    "recall_at_low": 0.9858,
+    "share_suspect": 0.0738
+  },
+  "sha256": "e1677863e4912fa08d9d854db8c7fe7a7fb8b9f4fb7b3ef7cc5b4685b0a27373"
+}

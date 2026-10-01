@@ -50,8 +50,9 @@ et **pourquoi**. Conçu pour les SMS en français d'Afrique de l'Ouest et le Mob
 """
 
 SEED_WARNING = """
-> ⚠️ **Version de démonstration** : le modèle `{version}` est entraîné sur un jeu
-> d'amorçage (SMS rédigés d'après des schémas publics), pas encore sur des SMS réels.
+> ⚠️ **Version de démonstration** : le modèle `{version}` a appris sur de vrais SMS
+> légitimes et sur des reconstitutions de campagnes d'arnaque réelles (Côte d'Ivoire,
+> Sénégal), mais pas encore sur de vrais SMS d'arnaque collectés.
 > Ne l'utilisez pas pour prendre une décision importante.
 """
 

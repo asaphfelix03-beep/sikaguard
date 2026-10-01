@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any
@@ -144,7 +145,11 @@ def train(data_dir: Path, out_dir: Path, reports_dir: Path) -> dict[str, Any]:
     category = build_category_pipeline(C=best_c).fit(
         [r["text"] for r in scam_rows], [r["category"] for r in scam_rows]
     )
-    seed_only = all(r["source_type"] == "amorcage" for r in rows)
+    # Production use requires real collected scams, not only reconstructions.
+    real_scams = sum(
+        1 for r in rows if r["label"] == "arnaque" and r["derive_de_modele"] == "false"
+    )
+    sources = Counter(r["source_type"] for r in rows)
     manifest = save_model(
         binary,
         category,
@@ -153,11 +158,11 @@ def train(data_dir: Path, out_dir: Path, reports_dir: Path) -> dict[str, Any]:
         dataset_version=str(stats["version"]),
         threshold_high=high,
         threshold_low=low,
-        not_for_production=seed_only,
+        not_for_production=real_scams == 0,
         training_data=(
-            "seed dataset (amorçage): hand-written SMS, not real collected data"
-            if seed_only
-            else "sikaguard dataset (train split)"
+            f"{len(rows)} SMS: "
+            + ", ".join(f"{n} {source}" for source, n in sorted(sources.items()))
+            + f"; real collected scams: {real_scams}"
         ),
     )
     report = {

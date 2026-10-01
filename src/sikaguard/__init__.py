@@ -10,6 +10,6 @@ from sikaguard.analyzer import Analyzer, analyze
 from sikaguard.model import ModelIntegrityError
 from sikaguard.result import Reason, Result
 
-__version__ = "0.1.0.dev0"
+__version__ = "0.1.0.dev1"
 
 __all__ = ["Analyzer", "ModelIntegrityError", "Reason", "Result", "__version__", "analyze"]

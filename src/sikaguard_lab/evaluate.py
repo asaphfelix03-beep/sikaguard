@@ -41,11 +41,14 @@ from sikaguard_lab.train import N_FOLDS, SEED, build_binary_pipeline, choose_thr
 
 Metric = Callable[[np.ndarray[Any, Any], np.ndarray[Any, Any]], float]
 HARD_LEGIT = ("notification_transaction", "otp")
+EXTERNAL_FILE = "88milsms_eval.csv"
 OBJECTIVES = {
     "test_average_precision": 0.95,
     "recall_at_precision_95": 0.90,
     "hard_legit_false_positive_rate": 0.05,
     "min_detection_under_perturbation": 0.85,
+    # Pre-registered on 2026-10-01, before any evaluation on real SMS.
+    "real_sms_false_positive_rate": 0.05,
 }
 
 
@@ -79,11 +82,41 @@ def recall_at_precision(y: np.ndarray[Any, Any], s: np.ndarray[Any, Any], target
     return float(recall[ok].max()) if ok.any() else 0.0
 
 
+def proportion_ci(flags: Sequence[bool], *, n: int = 1000, seed: int = 0) -> tuple[float, float]:
+    """95 % percentile bootstrap interval of a proportion."""
+    arr = np.asarray(flags, dtype=float)
+    rng = np.random.default_rng(seed)
+    means = [arr[rng.integers(0, len(arr), len(arr))].mean() for _ in range(n)]
+    return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+
+
+def _external_benchmark(analyzer: Analyzer, path: Path) -> dict[str, Any] | None:
+    """False-positive rate on real legitimate SMS that were never used for training."""
+    if not path.is_file():
+        return None
+    rows = read_csv(path)
+    verdicts = [r.verdict for r in analyzer.analyze_batch([row["text"] for row in rows])]
+    scam = [v == "arnaque" for v in verdicts]
+    alert = [v != "legitime" for v in verdicts]
+    lo, hi = proportion_ci(scam)
+    lo2, hi2 = proportion_ci(alert)
+    flagged = [row["text"] for row, v in zip(rows, verdicts, strict=True) if v == "arnaque"]
+    return {
+        "file": path.name,
+        "n": len(rows),
+        "false_positive_rate": _r(np.mean(scam)),
+        "false_positive_rate_ci95": [_r(lo), _r(hi)],
+        "flagged_suspect_or_arnaque": _r(np.mean(alert)),
+        "flagged_suspect_or_arnaque_ci95": [_r(lo2), _r(hi2)],
+        "examples_flagged_arnaque": flagged[:10],
+    }
+
+
 def _ap(y: np.ndarray[Any, Any], s: np.ndarray[Any, Any]) -> float:
     return float(average_precision_score(y, s))
 
 
-def _r(x: float) -> float:
+def _r(x: Any) -> float:
     return round(float(x), 4)
 
 
@@ -240,7 +273,18 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
             entry: dict[str, Any] = {"n": len(idx)}
             if len(np.unique(te_y[idx])) == 2:
                 entry["average_precision"] = _r(_ap(te_y[idx], scores[idx]))
+            scam_part = [i for i in idx if te_y[i] == 1]
+            legit_part = [i for i in idx if te_y[i] == 0]
+            if scam_part:
+                entry["scams_flagged"] = _r(np.mean([verdicts[i] != "legitime" for i in scam_part]))
+            if legit_part:
+                entry["legit_flagged_arnaque"] = _r(
+                    np.mean([verdicts[i] == "arnaque" for i in legit_part])
+                )
             per_source[f"{column}={value}"] = entry
+
+    # External benchmark: real SMS never used for training ---------------------------
+    external = _external_benchmark(analyzer, data_dir.parent / "eval" / EXTERNAL_FILE)
 
     # Category model --------------------------------------------------------------
     scam_idx = [i for i, r in enumerate(test) if r["label"] == "arnaque"]
@@ -296,6 +340,8 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
         "hard_legit_false_positive_rate": hard_legit["false_positive_rate"],
         "min_detection_under_perturbation": _r(min(perturbed)),
     }
+    if external is not None:
+        achieved["real_sms_false_positive_rate"] = external["false_positive_rate"]
     objectives = {
         key: {
             "target": target,
@@ -303,6 +349,7 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
             "met": achieved[key] <= target if key.endswith("rate") else achieved[key] >= target,
         }
         for key, target in OBJECTIVES.items()
+        if key in achieved
     }
 
     metrics: dict[str, Any] = {
@@ -318,6 +365,7 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
         "per_category": per_category,
         "per_source": per_source,
         "category_model": category_model,
+        "external_real_sms": external,
         "robustness": robustness,
         "objectives": objectives,
         "errors": errors,
@@ -430,6 +478,39 @@ def render_markdown(m: dict[str, Any], stats: dict[str, Any], training: dict[str
         lines.append(
             f"| {name} | {_pct(r['with_normalization'])} | {_pct(r['without_normalization'])} |"
         )
+    lines += [
+        "",
+        "## Per source (test)",
+        "",
+        "| Source | n | AP | Scams flagged | Legit flagged `arnaque` |",
+        "|---|---|---|---|---|",
+    ]
+    for key, e in m["per_source"].items():
+        if not key.startswith("source_type="):
+            continue
+        ap = f"{e['average_precision']:.3f}" if "average_precision" in e else "—"
+        sf = _pct(e["scams_flagged"]) if "scams_flagged" in e else "—"
+        lf = _pct(e["legit_flagged_arnaque"]) if "legit_flagged_arnaque" in e else "—"
+        lines.append(f"| {key.removeprefix('source_type=')} | {e['n']} | {ap} | {sf} | {lf} |")
+    ext = m.get("external_real_sms")
+    if ext:
+        lo, hi = ext["false_positive_rate_ci95"]
+        lo2, hi2 = ext["flagged_suspect_or_arnaque_ci95"]
+        lines += [
+            "",
+            "## Real SMS benchmark (never used for training)",
+            "",
+            f"{ext['n']} authentic French SMS from the 88milSMS corpus (CC BY 4.0), disjoint "
+            "from the training sample. Every one is legitimate, so every alert is a false alarm.",
+            "",
+            f"- Flagged `arnaque`: **{_pct(ext['false_positive_rate'])}** "
+            f"[95 % CI {_pct(lo)}, {_pct(hi)}]",
+            f"- Flagged `arnaque` or `suspect`: {_pct(ext['flagged_suspect_or_arnaque'])} "
+            f"[95 % CI {_pct(lo2)}, {_pct(hi2)}]",
+        ]
+        if ext["examples_flagged_arnaque"]:
+            lines += ["", "False alarms (first 10):", ""]
+            lines += [f"- {t}" for t in ext["examples_flagged_arnaque"]]
     lines += [
         "",
         "## Pre-registered objectives",

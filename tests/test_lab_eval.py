@@ -45,3 +45,10 @@ def test_recall_at_precision() -> None:
     s = np.array([0.1, 0.6, 0.5, 0.8, 0.9])
     assert recall_at_precision(y, s, 1.0) == pytest.approx(2 / 3)
     assert recall_at_precision(y, s, 0.5) == 1.0
+
+
+def test_proportion_ci() -> None:
+    from sikaguard_lab.evaluate import proportion_ci
+
+    low, high = proportion_ci([True] * 10 + [False] * 90, n=300, seed=0)
+    assert 0.0 <= low <= 0.10 <= high <= 0.25

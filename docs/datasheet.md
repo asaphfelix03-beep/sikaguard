@@ -1,4 +1,4 @@
-# Datasheet — sikaguard SMS dataset `0.1.0.dev0`
+# Datasheet — sikaguard SMS dataset `0.1.0.dev1`
 
 Following *Datasheets for Datasets* (Gebru et al., 2021).
 
@@ -14,30 +14,43 @@ Money scams are common. This dataset is a first, documented step toward one.
 
 **What does an instance represent?** One SMS, anonymized, with its labels.
 
-| Version | Rows | Scams | Legitimate | Real collected SMS |
+| Version | Rows | Scams | Legitimate | Real SMS |
 |---|---|---|---|---|
-| `0.1.0.dev0` (seed) | 407 | 177 | 230 | **0** — every row is `source_type=amorcage` |
+| `0.1.0.dev0` | 407 | 177 | 230 | none (seed only) |
+| `0.1.0.dev1` | 602 | 217 | 385 | **150 real legitimate SMS** (88milSMS); scams: seed + reconstructions of 12 documented campaigns |
 
-Scam categories (test split in brackets): `usurpation_operateur` 32 (7),
-`faux_transfert` 30 (6), `faux_gain` 30 (6), `phishing_lien` 30 (6),
-`investissement_emploi` 30 (6), `autre_arnaque` 25 (5).
-Legitimate categories: `personnel` 75 (15), `notification_transaction` 70 (14),
-`promo_operateur` 45 (9), `otp` 40 (8).
+Composition of `0.1.0.dev1` by `source_type`: `amorcage` 407 (hand-written seed),
+`corpus_recherche` 150 (88milSMS, real), `autorite` 30, `operateur` 8, `presse` 7
+(documented campaigns and official notices, see [`data/sources/README.md`](../data/sources/README.md)).
 
-Countries: CI 236, SN 65, BJ 24, BF 23, CM 18, ML 13, TG 11, unknown 17.
+Scam categories (test split in brackets): `investissement_emploi` 43 (8),
+`phishing_lien` 41 (7), `usurpation_operateur` 38 (6), `faux_transfert` 34 (5),
+`autre_arnaque` 31 (6), `faux_gain` 30 (4).
+Legitimate categories: `personnel` 225 (42), `notification_transaction` 70 (11),
+`promo_operateur` 50 (9), `otp` 40 (6).
+
+Countries: CI 278, FR 150, SN 68, BJ 24, BF 23, CM 18, ML 13, TG 11, unknown 17.
+
+An **external benchmark** of 1 000 further real 88milSMS messages
+(`data/eval/88milsms_eval.csv`) is never used for training.
 
 **Fields:** `id`, `text`, `label`, `category`, `operateur_cible`, `pays`,
 `source_type`, `date_observee`, `derive_de_modele`, `confiance_annotation`,
-`group_id`, `split`. Definitions: [annotation guide](annotation_guide.md).
+`campagne` (documented campaign id), `source_ref` (public URL of an official or press
+source, never of a social-media post), `group_id`, `split`. Definitions: [annotation guide](annotation_guide.md).
 
-**Is there a recommended split?** Yes, the `split` column: 325 train / 82 test, made
-by near-duplicate group (character 5-gram Jaccard ≥ 0.8, transitive closure) and
-stratified by category, so variants of one scam never appear on both sides.
+**Is there a recommended split?** Yes, the `split` column: 498 train / 104 test, made
+by group and stratified by category. A group joins near-duplicates (character 5-gram
+Jaccard ≥ 0.8, transitive closure) and all rows of a documented campaign, so variants
+of one scam or campaign never appear on both sides. The rows of the consumed
+`0.1.0.dev0` test split ([`data/history/`](../data/history/)) are forced into train.
 
 **Does it contain personal or sensitive data?** It should not. Phone numbers, names,
 transaction references, codes and e-mails are replaced by `<TEL>`, `<NOM>`, `<REF>`,
 `<CODE>`, `<EMAIL>`; links are defanged (`hxxp`, `[.]`). The build refuses any file
-containing an unmasked phone number, an e-mail or a live link. Seed rows are fictional.
+containing an unmasked phone number, an e-mail or a live link. Seed rows are fictional;
+88milSMS was anonymised by its authors (names and numbers replaced, mapped to `<NOM>`
+and `<TEL>`; messages with other personal tags were excluded).
 
 **Is it self-contained?** Yes.
 
@@ -48,7 +61,18 @@ patterns (operator and authority warnings, press coverage, common knowledge of t
 schemes) and from the usual format of operator notifications. Texts are not copies of
 specific messages. Hard negatives were written on purpose (see the model card).
 
-**Real-data versions (planned).** Collection from public sources only: operator and
+**88milSMS (dev1).** Random sample (seed 2011) of the CC BY 4.0 corpus by Panckhurst
+et al. (2014), filtered (no links, no chain letters, 15–600 characters), imported with
+`python -m sikaguard_lab.import_88milsms`. Bias: France, 2011, mostly students; capped
+at 40 % of the legitimate class.
+
+**Documented campaigns (dev1).** For 12 real, dated campaigns described by the PLCC,
+the police, Orange Côte d'Ivoire or the press, 3–4 SMS were reconstructed to match the
+published description (the sources do not reproduce the SMS verbatim), plus 5
+legitimate official notices. Each row cites its source; facts were extracted, no
+article text is reproduced.
+
+**Real collected scams (planned).** Collection from public sources only: operator and
 authority alerts, press articles, and social-media posts where people report a scam,
 following the inclusion rules of the [annotation guide](annotation_guide.md).
 Detailed provenance of social-media posts stays in a private folder (`data/raw/`,

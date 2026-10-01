@@ -17,15 +17,16 @@ faux emploi.
 >>> for reason in r.reasons: print("-", reason.message)
 - Le message demande un code secret (PIN, OTP, mot de passe). Aucun opérateur ni aucune banque ne le demande jamais.
 - Le message menace de bloquer ou de suspendre votre compte ou votre numéro.
-- Formulation proche d'arnaques connues : « secret au », « code secret », « cher client ».
+- Formulation proche d'arnaques connues : « client », « compte », « code secret ».
 ```
 
-> **Statut : alpha.** Le modèle livré (`0.1.0.dev0`) est entraîné sur un **jeu
-> d'amorçage** : des SMS rédigés à la main d'après des schémas d'arnaque publiquement
-> documentés, pas des SMS réels collectés. Tout le système fonctionne de bout en bout
-> (données, entraînement, évaluation, bibliothèque, API, démo) ; la collecte réelle est
-> la prochaine étape ([feuille de route](ROADMAP.md)). Ne l'utilisez pas pour bloquer
-> des messages automatiquement.
+> **Statut : alpha.** Le modèle livré (`0.1.0.dev1`) est entraîné sur 602 SMS : un jeu
+> d'amorçage rédigé à la main, de **vrais SMS légitimes** (corpus de recherche 88milSMS)
+> et des reconstitutions de **12 campagnes d'arnaque réelles et datées** en Côte d'Ivoire
+> et au Sénégal (PLCC, police, opérateurs, presse). Il n'a pas encore vu de vrais SMS
+> d'arnaque collectés : il reste marqué *not for production*, et cette collecte est la
+> prochaine étape ([feuille de route](ROADMAP.md)). Ne l'utilisez pas pour bloquer des
+> messages automatiquement.
 
 ## Pourquoi
 
@@ -45,8 +46,9 @@ sikaguard apporte deux choses :
 
 - **Trois verdicts** : `arnaque` / `suspect` / `legitime`, avec des seuils réglables.
 - **Type d'arnaque** : six catégories, chacune avec un conseil pratique.
-- **Explications exactes** : signaux d'alerte (« demande un code secret », « crée
-  l'urgence », « lien suspect ») et mots qui ont le plus pesé.
+- **Explications exactes** : 19 signaux d'alerte (« demande un code secret », « crée
+  l'urgence », « lien suspect », « demande d'installer un APK », « dit avoir changé de
+  numéro », « demande le secret »…) et mots qui ont le plus pesé.
 - **Normalisation anti-évasion** : leetspeak (`0range M0ney`), lettres cyrilliques
   déguisées, lettres espacées (`c o d e`), caractères invisibles, émojis dans les mots,
   liens écrits avec des lettres déguisées.
@@ -54,7 +56,8 @@ sikaguard apporte deux choses :
   avant le modèle ; l'API ne journalise jamais le texte des SMS.
 - **Chargement sécurisé du modèle** : `skops` (pas de `pickle`), empreinte SHA-256
   vérifiée, liste blanche de types.
-- **Léger** : modèle de 0,7 Mo, scikit-learn seulement, pas de GPU.
+- **Léger et rapide** : modèle d'environ 1 Mo, scikit-learn seulement, pas de GPU ;
+  4,8 ms en médiane et 9 ms au 95e centile par SMS, 1,6 ms par SMS en lot.
 
 ## Installation et utilisation
 
@@ -70,23 +73,31 @@ En attendant la première publication sur PyPI :
 
 Détails de l'API, de Docker et de la démo : voir le [README anglais](README.md#use).
 
-## Évaluation (données d'amorçage)
+## Évaluation
 
-Sur 407 SMS, avec un découpage par groupe de quasi-doublons, une validation croisée
-groupée et un jeu de test ouvert une seule fois :
+Rapport complet : [`reports/evaluation.md`](reports/evaluation.md) (en anglais).
 
-| Objectif fixé à l'avance | Cible | Résultat | |
+**La mesure la plus importante : 1 000 vrais SMS** (corpus 88milSMS), jamais vus à
+l'entraînement. Tous sont légitimes, donc chaque alerte est une fausse alarme :
+**0,6 %** sont classés `arnaque` (IC 95 % : 0,2 – 1,1 %).
+
+| Objectif fixé à l'avance | Cible | 0.1.0.dev0 | **0.1.0.dev1** |
 |---|---|---|---|
-| Précision moyenne (PR-AUC) | ≥ 0,95 | 0,973 | ✅ |
-| Rappel à 95 % de précision | ≥ 90 % | 80,6 % | ❌ |
-| Faux positifs sur SMS légitimes difficiles | ≤ 5 % | 13,6 % | ❌ |
-| Détection sous le pire déguisement | ≥ 85 % | 91,7 % | ✅ |
+| Précision moyenne (PR-AUC) | ≥ 0,95 | 0,973 ✅ | **0,997** ✅ |
+| Rappel à 95 % de précision | ≥ 90 % | 80,6 % ❌ | **97,2 %** ✅ |
+| Faux positifs sur SMS légitimes difficiles | ≤ 5 % | 13,6 % ❌ | **0 %** ✅ |
+| Détection sous le pire déguisement | ≥ 85 % | 91,7 % ✅ | **100 %** ✅ |
+| Fausses alertes sur 1 000 vrais SMS *(ajouté en dev1)* | ≤ 5 % | — | **0,6 %** ✅ |
 
-Ces chiffres valident le système ; ils **ne mesurent pas** la performance réelle,
-puisque les données sont rédigées à la main. Les objectifs manqués sont analysés dans
-le [rapport complet](reports/evaluation.md) et la [feuille de route](ROADMAP.md) : ils
-n'ont **pas** été « corrigés » en regardant le jeu de test, ce qui rendrait les chiffres
-sans valeur.
+**Protocole** : découpage par groupe (quasi-doublons et campagnes : une campagne de test
+n'est jamais vue à l'entraînement), validation croisée groupée sur l'entraînement
+seulement, jeu de test ouvert une seule fois. Le test de la v0.1.0.dev0, dont les erreurs
+avaient été analysées, a été **consommé** : archivé et forcé en entraînement.
+
+**Lecture honnête** : le jeu de test est presque saturé, car ses arnaques sont rédigées
+ou reconstituées, et de vraies arnaques seront plus difficiles. Le type d'arnaque reste le
+point faible (75 % de bonne catégorie). Le banc d'essai sur vrais SMS est la mesure la
+moins biaisée.
 
 ## Contribuer
 
