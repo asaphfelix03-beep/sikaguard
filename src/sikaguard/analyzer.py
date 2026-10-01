@@ -11,7 +11,7 @@ from typing import Any
 
 import numpy as np
 
-from sikaguard.explain import signal_weights, top_terms
+from sikaguard.explain import LinearExplainer
 from sikaguard.model import LoadedModel, load_model
 from sikaguard.result import ADVICE, SCAM_CATEGORIES, Reason, Result, Verdict
 from sikaguard.signals import CONTEXT_SIGNALS, SIGNAL_MESSAGES, detect_signals
@@ -73,9 +73,11 @@ class Analyzer:
         )
         if self.threshold_low > self.threshold_high:
             raise ValueError("threshold_low must be lower than or equal to threshold_high")
-        classes = list(loaded.binary.named_steps["clf"].classes_)
-        self._scam_index = classes.index(1)
-        self._weights = signal_weights(loaded.binary)
+        # Everything that does not depend on the input is computed once here.
+        self._explainer = LinearExplainer(loaded.binary)
+        self._binary_clf = loaded.binary.named_steps["clf"]
+        self._scam_index = self._explainer.classes.index(1)
+        self._weights = self._explainer.signal_weights
 
     @property
     def model(self) -> LoadedModel:
@@ -110,8 +112,23 @@ class Analyzer:
                 raise ValueError("SMS text must not be empty")
         if not texts:
             return []
-        scores = self._model.binary.predict_proba(list(texts))[:, self._scam_index]
-        return [self._build(text, float(score)) for text, score in zip(texts, scores, strict=True)]
+        texts = list(texts)
+        # One feature extraction per text, shared by the score and the explanation.
+        matrix = self._explainer.features.transform(texts).tocsr()
+        scores = self._binary_clf.predict_proba(matrix)[:, self._scam_index]
+        verdicts = [self._verdict(float(s)) for s in scores]
+        flagged = [i for i, v in enumerate(verdicts) if v != "legitime"]
+        categories: dict[int, tuple[str, float]] = {}
+        if flagged:
+            probas = self._model.category.predict_proba([texts[i] for i in flagged])
+            labels = self._model.category.named_steps["clf"].classes_
+            for i, row in zip(flagged, probas, strict=True):
+                best = int(np.argmax(row))
+                categories[i] = (str(labels[best]), round(float(row[best]), 4))
+        return [
+            self._build(texts[i], float(scores[i]), verdicts[i], matrix[i], categories.get(i))
+            for i in range(len(texts))
+        ]
 
     def _verdict(self, score: float) -> Verdict:
         if score >= self.threshold_high:
@@ -120,14 +137,20 @@ class Analyzer:
             return "legitime"
         return "suspect"
 
-    def _build(self, text: str, score: float) -> Result:
-        verdict = self._verdict(score)
+    def _build(
+        self,
+        text: str,
+        score: float,
+        verdict: Verdict,
+        row: Any,
+        category_info: tuple[str, float] | None,
+    ) -> Result:
         category: str | None = None
         category_score: float | None = None
         reasons: list[Reason] = []
         if verdict == "legitime":
             advice = ADVICE["legitime"]
-            terms = top_terms(self._model.binary, text, toward=-1, k=_MAX_TERMS)
+            terms = self._explainer.top_terms(row, toward=-1, k=_MAX_TERMS)
             if terms:
                 reasons.append(
                     Reason(
@@ -136,15 +159,13 @@ class Analyzer:
                     )
                 )
         else:
-            probas = self._model.category.predict_proba([text])[0]
-            best = int(np.argmax(probas))
-            category = str(self._model.category.named_steps["clf"].classes_[best])
-            category_score = round(float(probas[best]), 4)
+            if category_info is not None:
+                category, category_score = category_info
             fallback = "autre_arnaque" if category in SCAM_CATEGORIES else "suspect"
             advice = (
                 ADVICE["suspect"]
                 if verdict == "suspect"
-                else ADVICE.get(category, ADVICE[fallback])
+                else ADVICE.get(category or fallback, ADVICE[fallback])
             )
             signals = [
                 c
@@ -153,7 +174,7 @@ class Analyzer:
             ]
             signals.sort(key=lambda c: -self._weights[c])
             reasons.extend(Reason(c, SIGNAL_MESSAGES[c]) for c in signals[:_MAX_SIGNAL_REASONS])
-            terms = top_terms(self._model.binary, text, toward=1, k=_MAX_TERMS)
+            terms = self._explainer.top_terms(row, toward=1, k=_MAX_TERMS)
             if terms:
                 reasons.append(
                     Reason(

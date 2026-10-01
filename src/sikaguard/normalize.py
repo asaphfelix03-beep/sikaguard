@@ -8,6 +8,7 @@ same placeholders as the dataset (see :mod:`sikaguard.pii`).
 
 from __future__ import annotations
 
+import functools
 import re
 import unicodedata
 
@@ -117,8 +118,14 @@ def normalize(text: str, *, enabled: bool = True) -> str:
     """Return the canonical form of ``text`` used by the model.
 
     With ``enabled=False`` the text is only lower-cased (used to measure what
-    normalization brings in the robustness evaluation).
+    normalization brings in the robustness evaluation). Results are cached:
+    the same SMS is normalized by several feature blocks.
     """
+    return _normalize_cached(text, enabled)
+
+
+@functools.lru_cache(maxsize=4096)
+def _normalize_cached(text: str, enabled: bool) -> str:
     if not enabled:
         return text.lower()
     # Look-alike letters are folded *before* link detection, otherwise a link

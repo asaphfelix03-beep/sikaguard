@@ -6,6 +6,7 @@ both as model features and as the *reasons* given to the user.
 
 from __future__ import annotations
 
+import functools
 import re
 from collections.abc import Callable
 from dataclasses import replace
@@ -180,6 +181,11 @@ def detect_signals(text: str, *, use_normalization: bool = True) -> list[str]:
 
     ``use_normalization=False`` only lower-cases the text (ablation study).
     """
+    return list(_detect_cached(text, use_normalization))
+
+
+@functools.lru_cache(maxsize=4096)
+def _detect_cached(text: str, use_normalization: bool) -> tuple[str, ...]:
     norm = normalize(text, enabled=use_normalization)
     urls = _links(text) if use_normalization else [inspect_url(u) for u in find_urls(text)]
-    return [code for code, check in _CHECKS.items() if check(text, norm, urls)]
+    return tuple(code for code, check in _CHECKS.items() if check(text, norm, urls))
