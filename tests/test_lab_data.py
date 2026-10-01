@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from sikaguard_lab.build import DATASET_FILE, STATS_FILE, main
+from sikaguard_lab.build import DATASET_FILE, STATS_FILE, build, main, read_consumed
 from sikaguard_lab.dedup import assign_groups, drop_exact_duplicates, jaccard, shingles
 from sikaguard_lab.schema import COLUMNS, RAW_COLUMNS, read_csv, validate_rows, write_csv
 from sikaguard_lab.split import group_stratified_split
@@ -69,7 +69,14 @@ def test_missing_columns_and_empty() -> None:
 
 
 def test_processed_validation() -> None:
-    row = {**raw_row(), "id": "sg-1", "group_id": "x", "split": "dev"}
+    row = {
+        **raw_row(),
+        "campagne": "",
+        "source_ref": "",
+        "id": "sg-1",
+        "group_id": "x",
+        "split": "dev",
+    }
     errors = validate_rows([row, row], processed=True)
     assert any("split invalide" in e for e in errors)
     assert any("group_id invalide" in e for e in errors)
@@ -158,9 +165,7 @@ def test_build_end_to_end(tmp_path: Path) -> None:
     rows.append(rows[0])  # exact duplicate
     write_csv(seed / "seed.csv", rows, RAW_COLUMNS)
     out = tmp_path / "out"
-    assert (
-        main(["--seed-dir", str(seed), "--raw-dir", str(tmp_path / "none"), "--out", str(out)]) == 0
-    )
+    assert main(["--inputs", str(seed), str(tmp_path / "none"), "--out", str(out)]) == 0
     data = read_csv(out / DATASET_FILE)
     assert list(data[0]) == list(COLUMNS)
     assert len(data) == 40
@@ -174,9 +179,89 @@ def test_build_end_to_end(tmp_path: Path) -> None:
 def test_build_rejects_invalid_data(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     seed = tmp_path / "seed"
     write_csv(seed / "bad.csv", [raw_row(text="Appelle le 0708091011")], RAW_COLUMNS)
-    assert main(["--seed-dir", str(seed), "--raw-dir", str(seed), "--out", str(tmp_path)]) == 1
+    assert main(["--inputs", str(seed), "--out", str(tmp_path)]) == 1
     assert "numéro" in capsys.readouterr().err
 
 
 def test_build_without_data(tmp_path: Path) -> None:
-    assert main(["--seed-dir", str(tmp_path / "a"), "--raw-dir", str(tmp_path / "b")]) == 1
+    assert main(["--inputs", str(tmp_path / "a"), str(tmp_path / "b")]) == 1
+
+
+def _pool(n: int = 20) -> list[dict[str, str]]:
+    rows = []
+    for i in range(n):
+        rows.append(raw_row(text=f"Vous avez gagné {i}00000F à la tombola numero {i}, payez"))
+        rows.append(
+            raw_row(
+                text=f"Rendez-vous demain à {i}h chez tonton {'abcdefghijklmnopqrstuvwxyz'[i]}",
+                label="legitime",
+                category="personnel",
+            )
+        )
+    return rows
+
+
+def test_campaign_rows_share_one_group(tmp_path: Path) -> None:
+    rows = _pool()
+    campaign_texts = [
+        "Wave vous offre un cadeau de 37 000 F, cliquez sur le lien",
+        "Cadeau Wave: 37000F offerts aux clients fidèles, remplissez le formulaire",
+        "Recevez votre bonus Wave de 37 000 francs en confirmant votre numéro",
+    ]
+    for text in campaign_texts:
+        rows.append(raw_row(text=text, category="phishing_lien", campagne="ci-2026-09-wave-cadeau"))
+    write_csv(tmp_path / "in" / "x.csv", rows, (*RAW_COLUMNS, "campagne"))
+    build([tmp_path / "in"], tmp_path / "out", version="t")
+    data = read_csv(tmp_path / "out" / DATASET_FILE)
+    campaign = [r for r in data if r["campagne"] == "ci-2026-09-wave-cadeau"]
+    assert len({r["group_id"] for r in campaign}) == 1
+    assert len({r["split"] for r in campaign}) == 1
+
+
+def test_consumed_test_rows_are_forced_into_train(tmp_path: Path) -> None:
+    write_csv(tmp_path / "in" / "x.csv", _pool(), RAW_COLUMNS)
+    first = build([tmp_path / "in"], tmp_path / "v1", version="v1")
+    old_test = [r for r in read_csv(tmp_path / "v1" / DATASET_FILE) if r["split"] == "test"]
+    assert old_test
+    write_csv(tmp_path / "old_test.csv", old_test, COLUMNS)
+    consumed = read_consumed(tmp_path / "old_test.csv")
+    stats = build([tmp_path / "in"], tmp_path / "v2", version="v2", consumed=consumed)
+    new = {r["text"]: r["split"] for r in read_csv(tmp_path / "v2" / DATASET_FILE)}
+    assert all(new[r["text"]] == "train" for r in old_test)
+    assert stats["n_consumed_rows_forced_to_train"] == len(old_test)
+    assert first["n_rows"] == stats["n_rows"]
+    assert (
+        main(
+            [
+                "--inputs",
+                str(tmp_path / "in"),
+                "--out",
+                str(tmp_path / "v3"),
+                "--consumed",
+                str(tmp_path / "old_test.csv"),
+            ]
+        )
+        == 0
+    )
+
+
+@pytest.mark.parametrize(
+    ("overrides", "message"),
+    [
+        ({"campagne": "Campagne 1"}, "campagne invalide"),
+        ({"source_ref": "pas-une-url"}, "source_ref invalide"),
+        ({"source_ref": "https://exemple.ci/post", "source_type": "reseau_social"}, "interdit"),
+    ],
+)
+def test_optional_column_validation(overrides: dict[str, str], message: str) -> None:
+    errors = validate_rows([raw_row(**overrides)])
+    assert any(message in e for e in errors), errors
+
+
+def test_optional_columns_valid() -> None:
+    row = raw_row(
+        campagne="ci-2026-09-wave-cadeau",
+        source_ref="https://www.aip.ci/article",
+        source_type="autorite",
+    )
+    assert validate_rows([row]) == []

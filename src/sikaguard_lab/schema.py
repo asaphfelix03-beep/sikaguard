@@ -38,9 +38,16 @@ RAW_COLUMNS = (
     "derive_de_modele",
     "confiance_annotation",
 )
-COLUMNS = ("id", *RAW_COLUMNS, "group_id", "split")
+#: Optional raw columns (empty when absent):
+#: ``campagne``  — id of a documented scam campaign; all its rows share one group,
+#:                 so a campaign is never split between train and test;
+#: ``source_ref`` — public URL of an official or press source (never for social media).
+OPTIONAL_COLUMNS = ("campagne", "source_ref")
+COLUMNS = ("id", *RAW_COLUMNS, *OPTIONAL_COLUMNS, "group_id", "split")
 
 _DATE_RE = re.compile(r"(?:\d{4}-(?:0[1-9]|1[0-2]))?")
+_CAMPAIGN_RE = re.compile(r"[a-z0-9_-]*")
+_SOURCE_REF_RE = re.compile(r"(?:https?://\S+)?")
 _EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 
 
@@ -98,6 +105,13 @@ def _check_row(row: Mapping[str, str], line: int, processed: bool) -> list[str]:
             err(f"{column} invalide: {row.get(column)!r}")
     if not _DATE_RE.fullmatch(row.get("date_observee", "")):
         err(f"date_observee invalide: {row.get('date_observee')!r} (attendu AAAA-MM ou vide)")
+    if not _CAMPAIGN_RE.fullmatch(row.get("campagne") or ""):
+        err(f"campagne invalide: {row.get('campagne')!r} (minuscules, chiffres, - et _)")
+    source_ref = row.get("source_ref") or ""
+    if not _SOURCE_REF_RE.fullmatch(source_ref):
+        err(f"source_ref invalide: {source_ref!r} (URL http(s) ou vide)")
+    elif source_ref and row.get("source_type") == "reseau_social":
+        err("source_ref interdit pour un réseau social (provenance privée, voir data/raw)")
     if processed:
         if row.get("split") not in SPLITS:
             err(f"split invalide: {row.get('split')!r}")

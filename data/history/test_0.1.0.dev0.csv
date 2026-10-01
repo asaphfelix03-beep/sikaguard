@@ -1,0 +1,83 @@
+id,text,label,category
+sg-00013,"Bonjour, erreur de transfert: 18 000 FCFA envoyés sur votre compte Flooz. Merci de me les rendre au plus vite, le client attend",arnaque,faux_transfert
+sg-00014,"Allo c'est moi qui t'ai appelé tout à l'heure, l'argent que j'ai envoyé par erreur 40 000 là, renvoie ça vite on va se comprendre",arnaque,faux_transfert
+sg-00018,"Bonsoir monsieur, un dépôt de 150 000 F a été effectué sur votre compte par erreur par notre agent. Veuillez renvoyer la somme sinon votre compte sera suspendu",arnaque,faux_transfert
+sg-00019,"Svp frère j'ai fait une erreur de numéro, 22.500F sont partis chez toi. C'est l'argent des médicaments de mon papa, renvoie stp",arnaque,faux_transfert
+sg-00024,"Mon cher j'ai rechargé ton compte de 30 000 F par erreur, fais le retrait chez l'agent le plus proche et envoie moi le code de retrait",arnaque,faux_transfert
+sg-00026,"Tonton c'est <NOM>, j'ai fait un dépôt de 15000 sur ton compte au lieu de celui de maman. Tu peux lui transférer directement au <TEL> ?",arnaque,faux_transfert
+sg-00032,"Service Client MTN: suite à une anomalie, votre compte MoMo est bloqué. Appelez le <TEL> pour le débloquer avec votre code PIN.",arnaque,usurpation_operateur
+sg-00037,"Agent Orange Money: nous avons détecté une transaction suspecte de 250 000 F sur votre compte. Pour l'annuler, communiquez-nous votre code secret au <TEL>",arnaque,usurpation_operateur
+sg-00042,MTN MoMo: Votre compte est suspendu pour activité suspecte. Contactez immédiatement notre service fraude au <TEL> avec votre code secret,arnaque,usurpation_operateur
+sg-00048,"ALERTE: tentative de connexion à votre compte Orange Money depuis un autre téléphone. Si ce n'est pas vous, rappelez le <TEL> et confirmez votre code.",arnaque,usurpation_operateur
+sg-00049,"Cher client Moov Africa, votre ligne sera suspendue faute d'identification. Répondez avec votre numéro de pièce d'identité et votre code secret.",arnaque,usurpation_operateur
+sg-00053,"UBA: Votre compte bancaire est temporairement suspendu. Pour le réactiver, confirmez vos identifiants au <TEL>.",arnaque,usurpation_operateur
+sg-00056,"Direction Commerciale MTN: votre compte Mobile Money présente un solde négatif. Régularisez en appelant le <TEL> sous 48h, sinon fermeture définitive.",arnaque,usurpation_operateur
+sg-00066,"Cher client, votre numéro a été sélectionné pour recevoir une moto neuve. Frais de livraison: 25 000 F à envoyer au <TEL>.",arnaque,faux_gain
+sg-00068,Loterie Nationale: votre numéro est gagnant du tirage de ce mois. Montant: 2 500 000 F. Frais d'enregistrement: 15 000 F.,arnaque,faux_gain
+sg-00071,Salut! Tu as gagné un bon d'achat de 100 000 F. Clique ici pour le récupérer: hxxp://bon-achat-ci[.]xyz,arnaque,faux_gain
+sg-00074,"Wave vous remercie: 25 000 F offerts aux 1000 premiers clients. Pour débloquer, envoyez 1000 F de frais de validation au <TEL>",arnaque,faux_gain
+sg-00081,"Vous avez gagné 3 sacs de riz et 150 000 F à la tombola de la Tabaski! Pour le retrait, envoyez vos frais de dossier de 5000 F.",arnaque,faux_gain
+sg-00090,Orange Mali: vous êtes le gagnant du jeu Sama Kalo. Gain 500 000 FCFA. Appelez ce numéro pour réclamer votre lot.,arnaque,faux_gain
+sg-00095,Wave: activité inhabituelle détectée. Vérifiez votre compte: bit[.]ly/wave-verif,arnaque,phishing_lien
+sg-00096,MTN MoMo: votre compte expire aujourd'hui. Mettez-le à jour sur hxxp://mtn-momo-update[.]site,arnaque,phishing_lien
+sg-00107,Votre inscription au concours de la fonction publique est incomplète. Complétez sur hxxp://concours-fp-ci[.]online,arnaque,phishing_lien
+sg-00110,Livraison: votre commande n° <REF> est en attente de paiement. Payez ici: hxxp://boutique-paiement[.]click,arnaque,phishing_lien
+sg-00114,Votre compte Wave présente une erreur. Cliquez ici pour la corriger avant sa suspension: hxxps://wave-support[.]icu,arnaque,phishing_lien
+sg-00116,Votre banque: veuillez confirmer vos coordonnées pour éviter le blocage de votre carte: hxxp://nsia-securite[.]info,arnaque,phishing_lien
+sg-00130,Tontine digitale: cotisez 10 000 F et recevez 80 000 F en 15 jours. Parrainez 2 personnes pour débloquer vos gains.,arnaque,investissement_emploi
+sg-00136,Investissement agricole: achetez une part de 50 000 F et recevez 20% chaque mois pendant un an. Garantie 100%.,arnaque,investissement_emploi
+sg-00138,Salut! Je gagne 500 000 F par mois grâce à cette application. Inscris-toi avec mon lien et dépose 10 000 F: bit[.]ly/argent-facile,arnaque,investissement_emploi
+sg-00144,"Crypto-monnaie: le nouveau jeton qui va x10 cette semaine. Investis maintenant, contacte le coach au <TEL>",arnaque,investissement_emploi
+sg-00146,Recrutement dans une grande banque: 15 postes de conseillers. Envoyez 10 000 F pour le test écrit au <TEL>.,arnaque,investissement_emploi
+sg-00150,"Mon cousin travaille à la douane, il peut te faire recruter. Il faut juste 100 000 F pour le dossier, c'est sûr à 100%",arnaque,investissement_emploi
+sg-00163,"Salut c'est ton ami de Facebook, je t'envoie un colis avec des dollars et des cadeaux. Paie juste les frais de douane de 45 000 F.",arnaque,autre_arnaque
+sg-00168,Envoie ce message à 20 personnes et tu recevras 5000 F de crédit gratuit. Sinon ton numéro sera bloqué dans 48h.,arnaque,autre_arnaque
+sg-00169,"Bonjour, je vous ai vu sur Facebook, je suis un homme d'affaires et je veux vous épouser. Envoyez 25 000 F pour mon billet d'avion.",arnaque,autre_arnaque
+sg-00175,"Vente de moutons de Tabaski à moitié prix! Réservez en envoyant 50% par Wave, livraison la veille de la fête.",arnaque,autre_arnaque
+sg-00177,"Tu m'as appelé? Rappelle-moi vite au <TEL> c'est important, je ne peux pas te joindre sur ce numéro",arnaque,autre_arnaque
+sg-00185,Achat de credit de 1000 FCFA pour <TEL> reussi. Nouveau solde Orange Money: 8450 FCFA.,legitime,notification_transaction
+sg-00186,Retrait de 50000 FCFA chez l'agent <NOM> effectue. Frais: 500 FCFA. Nouveau solde: 3200 FCFA. Trans ID: <REF>,legitime,notification_transaction
+sg-00189,Paiement marchand de 3500F chez <NOM> réussi. Nouveau solde: 21 400F.,legitime,notification_transaction
+sg-00191,Transfert de 25 000 F vers <NOM> réussi. Frais 250 F. Solde 3 460 F.,legitime,notification_transaction
+sg-00199,Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction du 28/09.,legitime,notification_transaction
+sg-00200,Vous avez payé 6 000 FCFA pour votre abonnement TV. Réf <REF>. Validité: 30 jours.,legitime,notification_transaction
+sg-00201,Votre compte a été débité de 15 000 XOF par prélèvement pour votre assurance. Solde: 95 200 XOF.,legitime,notification_transaction
+sg-00211,Opération réussie: dépôt de 60 000 FCFA. Nouveau solde Moov Money: 71 250 FCFA.,legitime,notification_transaction
+sg-00212,Paiement de 3 000 F au taxi <NOM> réussi. Solde 14 200 F.,legitime,notification_transaction
+sg-00213,Le transfert de 8 000 FCFA de <NOM> a été annulé à sa demande. Votre solde est inchangé: 22 000 FCFA.,legitime,notification_transaction
+sg-00220,Depot de 5000 FCFA recu de l'agent <NOM>. Solde: 5320 FCFA. Ref: <REF>,legitime,notification_transaction
+sg-00226,Votre compte a été crédité de 75 000 XOF (bourse d'études). Solde: 76 900 XOF.,legitime,notification_transaction
+sg-00227,Paiement en ligne de 9 900 FCFA effectué sur votre compte Wave.,legitime,notification_transaction
+sg-00247,Votre compte a été crédité de 45 000 XOF. Motif: remboursement assurance santé.,legitime,notification_transaction
+sg-00249,"<#> Votre code Wave est <CODE>. Ne le communiquez à personne, même à un agent Wave.",legitime,otp
+sg-00256,Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes.,legitime,otp
+sg-00257,"Code d'activation de votre compte: <CODE>. Si vous n'avez pas fait cette demande, ignorez ce message.",legitime,otp
+sg-00260,Votre code de retrait est <CODE>. Présentez-le à l'agent avec votre pièce d'identité.,legitime,otp
+sg-00266,Votre code de connexion Instagram est <CODE>.,legitime,otp
+sg-00275,Votre code d'accès au Wi-Fi de l'hôtel est <CODE>.,legitime,otp
+sg-00277,Utilisez <CODE> pour vérifier votre numéro sur Signal.,legitime,otp
+sg-00281,<#> Votre code est <CODE>. Merci d'utiliser notre service.,legitime,otp
+sg-00289,MTN: Votre forfait internet est épuisé. Rechargez pour continuer à naviguer. Composez *133#.,legitime,promo_operateur
+sg-00299,"Wave: 1% seulement pour vos transferts, et les dépôts et retraits restent gratuits.",legitime,promo_operateur
+sg-00300,Nouveau: consultez votre solde Moov Money gratuitement en tapant *155#.,legitime,promo_operateur
+sg-00313,Orange Money: la carte Visa prépayée est disponible en agence. Payez partout dans le monde.,legitime,promo_operateur
+sg-00320,Orange: votre facture fixe du mois de septembre est disponible. Montant: 15 400 FCFA. Payez-la avec Orange Money.,legitime,promo_operateur
+sg-00323,Orange: bénéficiez de la 5G sans changer de forfait si votre téléphone est compatible.,legitime,promo_operateur
+sg-00325,Pass WhatsApp illimité 7 jours à 300F. Tapez *133*6#.,legitime,promo_operateur
+sg-00326,Orange: découvrez nos nouveaux points de vente près de chez vous sur notre site orange[.]ci,legitime,promo_operateur
+sg-00329,Orange Money: votre plafond de transaction a été relevé suite à la vérification de votre identité.,legitime,promo_operateur
+sg-00334,"Maman j'ai reçu l'argent, merci beaucoup. Je t'appelle ce soir",legitime,personnel
+sg-00337,Le match c'est à quelle heure ce soir?,legitime,personnel
+sg-00342,"Bonne arrivée, tu es bien rentré?",legitime,personnel
+sg-00345,"J'ai fait le dépôt de 10 000 pour la cotisation de la tontine, vérifie",legitime,personnel
+sg-00352,Tu peux passer récupérer les enfants à l'école à 16h30? Je suis encore au bureau,legitime,personnel
+sg-00367,"J'ai raté le car, je prends le prochain à 15h",legitime,personnel
+sg-00368,"Grand-mère demande de tes nouvelles, appelle-la dimanche",legitime,personnel
+sg-00373,Tu as mon livre de physique? J'en ai besoin pour réviser,legitime,personnel
+sg-00392,"Merci de m'avoir aidé pour le déménagement, je te dois un repas",legitime,personnel
+sg-00393,"Le prix du sac de riz a encore augmenté, 18 500 maintenant",legitime,personnel
+sg-00398,"Il pleut beaucoup ici, reste à la maison",legitime,personnel
+sg-00399,"J'ai trouvé une maison à louer à 60 000 par mois, on va visiter demain",legitime,personnel
+sg-00400,"La cérémonie commence à 16h, habillez-vous en blanc",legitime,personnel
+sg-00404,"C'est moi qui ai payé le transport hier, tu me dois 1500",legitime,personnel
+sg-00406,"Salut, je suis en réunion, je te rappelle après",legitime,personnel
