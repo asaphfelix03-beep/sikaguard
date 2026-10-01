@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterable
+from collections.abc import Iterable, Sequence
 from typing import Any
 
 import numpy as np
@@ -14,7 +14,7 @@ from sklearn.pipeline import FeatureUnion, Pipeline
 from sikaguard.normalize import normalize as normalize_text
 from sikaguard.signals import SIGNAL_CODES, detect_signals
 
-__all__ = ["WORD_REGEX", "SignalTransformer", "TextNormalizer", "build_features"]
+__all__ = ["WORD_REGEX", "SignalTransformer", "TextNormalizer", "build_features", "fast_transform"]
 
 #: Placeholders such as ``<tel>`` are kept as single tokens; one-letter words are
 #: kept so that bigrams read naturally ("arrive a").
@@ -82,3 +82,20 @@ def build_features(normalize: bool = True) -> FeatureUnion:
     return FeatureUnion(
         [("chars", chars), ("words", words), ("signals", SignalTransformer(normalize=normalize))]
     )
+
+
+def fast_transform(union: FeatureUnion, texts: Sequence[str]) -> sparse.csr_matrix:
+    """Same matrix as ``union.transform(texts)``, without joblib's dispatch overhead.
+
+    ``FeatureUnion.transform`` goes through ``joblib.Parallel`` even with one job,
+    which costs about 1 ms per call: noticeable when analyzing one SMS at a time.
+    Unions with transformer weights fall back to the standard path.
+    """
+    if union.transformer_weights:
+        return union.transform(list(texts)).tocsr()
+    blocks = [
+        transformer.transform(list(texts))
+        for _, transformer in union.transformer_list
+        if transformer not in ("drop", "passthrough")
+    ]
+    return sparse.hstack(blocks, format="csr")

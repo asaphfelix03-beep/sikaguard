@@ -12,6 +12,7 @@ from typing import Any
 import numpy as np
 
 from sikaguard.explain import LinearExplainer
+from sikaguard.features import fast_transform
 from sikaguard.model import LoadedModel, load_model
 from sikaguard.result import ADVICE, SCAM_CATEGORIES, Reason, Result, Verdict
 from sikaguard.signals import CONTEXT_SIGNALS, SIGNAL_MESSAGES, detect_signals
@@ -114,14 +115,16 @@ class Analyzer:
             return []
         texts = list(texts)
         # One feature extraction per text, shared by the score and the explanation.
-        matrix = self._explainer.features.transform(texts).tocsr()
+        matrix = fast_transform(self._explainer.features, texts)
         scores = self._binary_clf.predict_proba(matrix)[:, self._scam_index]
         verdicts = [self._verdict(float(s)) for s in scores]
         flagged = [i for i, v in enumerate(verdicts) if v != "legitime"]
         categories: dict[int, tuple[str, float]] = {}
         if flagged:
-            probas = self._model.category.predict_proba([texts[i] for i in flagged])
-            labels = self._model.category.named_steps["clf"].classes_
+            category = self._model.category
+            features = fast_transform(category.named_steps["features"], [texts[i] for i in flagged])
+            probas = category.named_steps["clf"].predict_proba(features)
+            labels = category.named_steps["clf"].classes_
             for i, row in zip(flagged, probas, strict=True):
                 best = int(np.argmax(row))
                 categories[i] = (str(labels[best]), round(float(row[best]), 4))

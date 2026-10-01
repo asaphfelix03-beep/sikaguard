@@ -111,3 +111,12 @@ def test_top_terms_are_not_redundant(tiny_pipeline: Pipeline) -> None:
         for b in terms[i + 1 :]:
             assert not set(a.split()) <= set(b.split())
             assert not set(b.split()) <= set(a.split())
+
+
+def test_fast_transform_matches_feature_union(tiny_pipeline: Pipeline) -> None:
+    from sikaguard.features import fast_transform
+
+    union = tiny_pipeline.named_steps["features"]
+    texts = SCAMS + LEGIT + ["Texte jamais vu 🎉 avec <TEL>"]
+    expected = union.transform(texts).toarray()
+    assert (fast_transform(union, texts).toarray() == expected).all()
