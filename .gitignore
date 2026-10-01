@@ -27,3 +27,6 @@ flagged/
 Thumbs.db
 .vscode/
 .idea/
+
+# Third-party corpora (downloaded, not redistributed as-is)
+data/external/
