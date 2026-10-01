@@ -54,6 +54,10 @@ POSITIVE = {
     "contact_numero": "Appelez vite le <TEL> pour retirer",
     "majuscules_excessives": "VOTRE COMPTE EST BLOQUE CONTACTEZ NOUS",
     "montant_present": "Vous avez reçu 25 000 FCFA",
+    "changement_numero": "Maman c'est moi, j'écris avec le numéro d'un ami",
+    "paiement_avance": "Réservez en envoyant 50% par Wave, livraison la veille",
+    "demande_discretion": "Envoyez l'argent et ne prévenez personne",
+    "installation_application": "Installez notre application ici: hxxp://bonus[.]top/app",
 }
 
 NEGATIVE = {
@@ -72,11 +76,15 @@ NEGATIVE = {
     "contact_numero": "Transfert vers <TEL> reussi.",
     "majuscules_excessives": "Bonjour, OK pour demain",
     "montant_present": "Bonjour comment tu vas",
+    "changement_numero": "Je t'appelle ce soir sur ton numéro habituel",
+    "paiement_avance": "Votre code de confirmation de réservation est <CODE>.",
+    "demande_discretion": "Votre code est <CODE>. Ne le partagez avec personne.",
+    "installation_application": "Téléchargez l'application Max it pour gérer votre compte.",
 }
 
 
 def test_every_signal_has_message_and_examples() -> None:
-    assert len(SIGNAL_CODES) == 15
+    assert len(SIGNAL_CODES) == 19
     assert set(SIGNAL_MESSAGES) == set(SIGNAL_CODES)
     assert set(POSITIVE) == set(SIGNAL_CODES)
     assert set(NEGATIVE) == set(SIGNAL_CODES)
@@ -143,3 +151,36 @@ def test_homograph_of_a_plain_domain_is_suspect() -> None:
     homograph = detect_signals("Infos sur www.оrange.ci")  # Cyrillic o
     assert "lien_suspect" not in plain
     assert "lien_suspect" in homograph
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Remboursement de 2 000 F crédité sur votre compte suite à l'échec de la transaction.",
+        "Votre prêt a été remboursé intégralement.",
+    ],
+)
+def test_refund_notifications_are_not_money_requests(text: str) -> None:
+    assert "demande_renvoi_argent" not in detect_signals(text)
+
+
+def test_repay_me_is_a_money_request() -> None:
+    assert "demande_renvoi_argent" in detect_signals("Rembourse-moi les 5000 stp")
+
+
+def test_otp_to_confirm_a_payment_is_not_a_code_request() -> None:
+    text = "Votre code MoMo pour confirmer le paiement est <CODE>. Il expire dans 3 minutes."
+    assert "demande_code_secret" not in detect_signals(text)
+
+
+def test_confirm_your_secret_code_is_a_code_request() -> None:
+    assert "demande_code_secret" in detect_signals("Confirmez votre code secret au service client")
+
+
+def test_apk_is_always_an_install_request() -> None:
+    assert "installation_application" in detect_signals("Télécharge le fichier bonus.apk")
+
+
+def test_app_from_official_store_is_not_flagged() -> None:
+    text = "Installez l'application depuis hxxps://play[.]google[.]com/store/apps"
+    assert "installation_application" not in detect_signals(text)

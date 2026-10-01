@@ -38,6 +38,17 @@ SIGNAL_MESSAGES: dict[str, str] = {
     "contact_numero": "Le message vous demande de contacter un numéro.",
     "majuscules_excessives": "Le message est écrit en majuscules pour attirer l'attention.",
     "montant_present": "Le message mentionne un montant d'argent.",
+    "changement_numero": (
+        "L'expéditeur dit avoir changé de numéro ou écrire depuis le téléphone d'un autre : "
+        "vérifiez son identité par un autre moyen."
+    ),
+    "paiement_avance": (
+        "Le message demande de payer d'avance (acompte, caution, réservation) avant tout service."
+    ),
+    "demande_discretion": "Le message vous demande de garder le secret ou de ne prévenir personne.",
+    "installation_application": (
+        "Le message vous demande d'installer une application hors des magasins officiels."
+    ),
 }
 
 #: Canonical order of the signals (also the order of the model's signal features).
@@ -50,9 +61,11 @@ CONTEXT_SIGNALS = frozenset({"lien_present", "mention_operateur", "montant_prese
 
 _SEND_VERBS = (
     r"(?:envoy\w*|envoi\w*|communiqu\w*|donn\w*|transmet\w*|transmis\w*|indiqu\w*|fourni\w*"
-    r"|partag\w*|renseign\w*|confirm\w*|dict\w*|lis|lisez|lire)"
+    r"|partag\w*|renseign\w*|dict\w*|lis|lisez|lire)"
 )
-_TYPE_VERBS = r"(?:entr\w*|saisi\w*|tap\w*|compos\w*|mets|mettez|mettre)"
+# "confirmer" only counts with a possessive ("confirmez votre code"): an OTP saying
+# "code ... pour confirmer le paiement" is not a request to send the code.
+_TYPE_VERBS = r"(?:entr\w*|saisi\w*|tap\w*|compos\w*|confirm\w*|mets|mettez|mettre)"
 _CODE_WORDS = (
     r"(?:code(?: secret| pin| confidentiel| de retrait| de validation| de confirmation| otp"
     r"| recu)?|pin|mot de passe|mdp|otp)"
@@ -69,7 +82,9 @@ _NEGATION_RE = re.compile(
 _SENTENCE_SPLIT_RE = re.compile(r"[.!?\n;]+")
 
 _MONEY_REQUEST_RE = re.compile(
-    r"\b(?:renvo\w*|retourn\w*|rembours\w*)\b|\bpar erreur\b|\bpar megarde\b"
+    # "rembourse-moi" is a request; "remboursement ... crédité" is a notification.
+    r"\b(?:renvo\w*|retourn\w*)\b|\brembourse[rz]?[- ](?:moi|nous)\b|\bme rembourser\b"
+    r"|\bpar erreur\b|\bpar megarde\b"
     r"|\b(?:envoie|envoies|envoyez|envoyer|transfere|transferez|depose|deposez|fais|faites)"
     r"(?:[- ](?:moi|nous))?\b[^.]{0,30}"
     r"(?:\b\d[\d .]*\s?(?:f|fcfa|cfa|francs?)\b|\bargent\b|\bcredit\b|\bunites\b|\btransfert\b)"
@@ -113,6 +128,24 @@ _CONTACT_RE = re.compile(
     r"\b(?:appel\w*|contact\w*|joign\w*|joindre|whatsapp|ecri\w*|compos\w*|rappel\w*|texto"
     r"|sms au|message au)\b[^.]{0,40}<tel>|<tel>[^.]{0,15}\b(?:whatsapp|appel\w*)\b"
 )
+_NEW_NUMBER_RE = re.compile(
+    r"\b(?:change de numero|nouveau numero|numero d'un ami|telephone d'un ami|j'ecris avec"
+    r"|telephone (?:est )?(?:gate|tombe|vole|perdu|casse))\b"
+)
+_ADVANCE_RE = re.compile(
+    r"\b(?:acompte|caution|avance de|paiement (?:avant|a la commande)|payez d'abord"
+    r"|reservez en (?:envoyant|payant)|frais de reservation|pour reserver|reserver votre place)\b"
+)
+_DISCRETION_RE = re.compile(
+    r"\b(?:ne (?:le )?(?:dites|dis) (?:rien )?a personne|ne prevenez personne|ne previens personne"
+    r"|n'en parle[sz]? a personne|garde[rz]? (?:ca |le )?secret|en toute discretion"
+    r"|confidentiellement|entre nous)\b"
+)
+_APK_RE = re.compile(r"\bapk\b")
+_INSTALL_APP_RE = re.compile(
+    r"\b(?:telecharge|installe)\w* (?:l'|notre |la |cette |une )?(?:appli|application)\b"
+)
+_STORE_HOSTS = frozenset({"play.google.com", "apps.apple.com"})
 _AMOUNT_RE = re.compile(
     r"\b\d[\d .,]*\s?(?:fcfa|cfa|xof|francs?|frs?|f|euros?)\b|\d\s?€|\b\d{1,3}(?:[ .]\d{3})+\b"
 )
@@ -125,6 +158,13 @@ def _asks_for_code(norm: str) -> bool:
         if any(rx.search(sentence) for rx in _CODE_REQUEST_RES):
             return True
     return False
+
+
+def _asks_to_install(norm: str, urls: list[UrlInfo]) -> bool:
+    """An APK, or an app to install from a link that is not an official store."""
+    if _APK_RE.search(norm):
+        return True
+    return bool(_INSTALL_APP_RE.search(norm)) and any(u.host not in _STORE_HOSTS for u in urls)
 
 
 def _uppercase_ratio(raw: str) -> bool:
@@ -154,6 +194,10 @@ _CHECKS: dict[str, _Check] = {
     "contact_numero": lambda raw, norm, urls: bool(_CONTACT_RE.search(norm)),
     "majuscules_excessives": lambda raw, norm, urls: _uppercase_ratio(raw),
     "montant_present": lambda raw, norm, urls: bool(_AMOUNT_RE.search(norm)),
+    "changement_numero": lambda raw, norm, urls: bool(_NEW_NUMBER_RE.search(norm)),
+    "paiement_avance": lambda raw, norm, urls: bool(_ADVANCE_RE.search(norm)),
+    "demande_discretion": lambda raw, norm, urls: bool(_DISCRETION_RE.search(norm)),
+    "installation_application": lambda raw, norm, urls: _asks_to_install(norm, urls),
 }
 if tuple(_CHECKS) != SIGNAL_CODES:  # pragma: no cover - import-time consistency guard
     raise RuntimeError("signal checks and SIGNAL_CODES are out of sync")
