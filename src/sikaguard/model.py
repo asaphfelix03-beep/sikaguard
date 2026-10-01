@@ -13,7 +13,7 @@ import json
 import warnings
 import zipfile
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -142,7 +142,7 @@ def save_model(
         threshold_low=float(threshold_low),
         sha256=sha256_file(model_path),
         categories=tuple(str(c) for c in category.classes_),
-        created_at=datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        created_at=datetime.now(UTC).replace(microsecond=0).isoformat(),
         not_for_production=not_for_production,
         training_data=training_data,
     )
