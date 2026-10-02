@@ -27,7 +27,7 @@ from pathlib import Path
 
 from sikaguard.normalize import normalize
 from sikaguard.pii import anonymize, find_urls, has_phone_number
-from sikaguard_lab.schema import OPTIONAL_COLUMNS, RAW_COLUMNS, validate_rows, write_csv
+from sikaguard_lab.schema import OPTIONAL_COLUMNS, RAW_COLUMNS, read_csv, validate_rows, write_csv
 
 SOURCE_REF = "https://hdl.handle.net/11403/comere/cmr-88milsms"
 PLACEHOLDERS = {
@@ -108,14 +108,23 @@ def _row(text: str, when: str) -> dict[str, str]:
 
 
 def sample(
-    xml_path: Path, n_train: int, n_eval: int, seed: int = 2011
+    xml_path: Path,
+    n_train: int,
+    n_eval: int,
+    seed: int = 2011,
+    exclude: set[str] | None = None,
 ) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    """Two disjoint random samples (deduplicated on the normalized text)."""
+    """Two disjoint random samples (deduplicated on the normalized text).
+
+    ``exclude`` holds normalized texts that must not be drawn (e.g. an existing
+    held-out benchmark that has to stay unchanged).
+    """
+    exclude = exclude or set()
     seen: set[str] = set()
     pool: list[tuple[str, str]] = []
     for text, when in iter_posts(xml_path):
         key = normalize(text)
-        if key in seen or not _keep(text):
+        if key in seen or not _keep(text) or normalize(anonymize(text)) in exclude:
             continue
         seen.add(key)
         pool.append((text, when))
@@ -134,17 +143,26 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--seed", type=int, default=2011)
     parser.add_argument("--train-out", type=Path, default=Path("data/sources/88milsms_sample.csv"))
     parser.add_argument("--eval-out", type=Path, default=Path("data/eval/88milsms_eval.csv"))
+    parser.add_argument(
+        "--exclude",
+        type=Path,
+        action="append",
+        default=[],
+        help="CSV whose texts must not be drawn (repeatable); use it to keep a benchmark fixed",
+    )
     args = parser.parse_args(argv)
-    train, held_out = sample(args.xml, args.n_train, args.n_eval, args.seed)
+    exclude = {normalize(row["text"]) for path in args.exclude for row in read_csv(path)}
+    train, held_out = sample(args.xml, args.n_train, args.n_eval, args.seed, exclude)
     for rows in (train, held_out):
-        errors = validate_rows(rows)
+        errors = validate_rows(rows) if rows else []
         if errors:  # pragma: no cover - anonymize() + filters make this unreachable
             raise ValueError("\n".join(errors[:10]))
     columns = (*RAW_COLUMNS, *OPTIONAL_COLUMNS)
     write_csv(args.train_out, train, columns)
-    write_csv(args.eval_out, held_out, columns)
     print(f"{len(train)} training SMS -> {args.train_out}")
-    print(f"{len(held_out)} held-out SMS -> {args.eval_out}")
+    if args.n_eval:
+        write_csv(args.eval_out, held_out, columns)
+        print(f"{len(held_out)} held-out SMS -> {args.eval_out}")
     return 0
 
 

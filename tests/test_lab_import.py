@@ -71,3 +71,21 @@ def test_main_writes_files(corpus: Path, tmp_path: Path) -> None:
     assert main([*args, "--train-out", str(train_out), "--eval-out", str(eval_out)]) == 0
     assert len(read_csv(train_out)) == 4
     assert len(read_csv(eval_out)) == 6
+
+
+def test_exclude_keeps_a_benchmark_out_of_the_draw(corpus: Path, tmp_path: Path) -> None:
+    _, held_out = sample(corpus, 2, 10, seed=1)
+    excluded = {r["text"] for r in held_out}
+    from sikaguard.normalize import normalize
+
+    train, none = sample(corpus, 8, 0, seed=5, exclude={normalize(t) for t in excluded})
+    assert none == []
+    assert not {r["text"] for r in train} & excluded
+
+
+def test_main_without_eval_keeps_existing_eval_file(corpus: Path, tmp_path: Path) -> None:
+    eval_out = tmp_path / "e.csv"
+    eval_out.write_text("unchanged", encoding="utf-8")
+    args = ["--xml", str(corpus), "--n-train", "3", "--n-eval", "0"]
+    assert main([*args, "--train-out", str(tmp_path / "s.csv"), "--eval-out", str(eval_out)]) == 0
+    assert eval_out.read_text(encoding="utf-8") == "unchanged"
