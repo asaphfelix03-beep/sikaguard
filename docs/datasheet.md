@@ -34,6 +34,14 @@ unknown 537 (IMC'25 reports often lack the country).
 An **external benchmark** of 1 000 further real 88milSMS messages
 (`data/eval/88milsms_eval.csv`) is never used for training.
 
+A second benchmark, **`data/eval/afrique_reel.csv`** (23 rows), holds real West- and
+Central-African messages quoted verbatim: 19 scams (PesaCheck fact-checks and the
+Cameroonian press; columns `canal` and `citation` say whether each is an SMS, a phishing
+page or a social post, and whether it is the whole text or an excerpt) and 4 real Burkina
+Faso Mobile Money notifications (Orange, Moov, Telecel) taken from the tests of an
+MIT-licensed SMS parser. Names, numbers and transaction ids of private persons are masked;
+public figures impersonated by a scam keep their name. Never used for training.
+
 **Fields:** `id`, `text`, `label`, `category`, `operateur_cible`, `pays`,
 `source_type`, `date_observee`, `derive_de_modele`, `confiance_annotation`,
 `campagne` (documented campaign id), `source_ref` (public URL of an official or press
@@ -82,7 +90,7 @@ tags were rewritten so that no tag exists in one class only (names → `<NOM>`, 
 `<TEL>`/`<REF>`, dates → plain dates, links → shortener domain or `<URL>`). Imported with
 `python -m sikaguard_lab.import_imc25`.
 
-**Real West-African scams (planned).** Collection from public sources only: operator and
+**Real West-African scams (training: planned).** Collection from public sources only: operator and
 authority alerts, press articles, and social-media posts where people report a scam,
 following the inclusion rules of the [annotation guide](annotation_guide.md).
 Detailed provenance of social-media posts stays in a private folder (`data/raw/`,

@@ -15,6 +15,13 @@
 - [x] 811 real French scam SMS (IMC'25) with a published human review.
 - [x] Balanced dataset (2 063 SMS, 1 611 real); evaluation on real SMS only.
 
+## Done after 0.1.0.dev2
+
+- [x] First real West/Central-African benchmark (23 messages quoted verbatim, sources on
+      every row): 73.7 % of scams flagged, 2 of 4 real notifications flagged. It is now
+      opened: the next version may train on it only if a new, blind real benchmark
+      replaces it.
+
 ## v0.1.0 — real West-African data (next)
 
 - [ ] Collect ≥ 300 **real** scam SMS from Côte d'Ivoire first (screenshots shared by
@@ -30,6 +37,10 @@
 
 ## Known limitations to address (validated on the next test split)
 
+- Fake operator gifts written like real promotions ("Orange Money – Célébrons
+  l'Assomption ! Recevez 35 000 F CFA"), missed on the real West-African benchmark.
+- Real Mobile Money receipts that end with an operator link (Max it) flagged as phishing:
+  an allow-list of official operator domains in the link signal.
 - Legitimate West-African credits and refunds ("prêt remboursé", "compte crédité")
   flagged after learning from real French refund scams: collect real legitimate
   West-African notifications.

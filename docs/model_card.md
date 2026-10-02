@@ -67,11 +67,25 @@ Source: [`reports/metrics.json`](../reports/metrics.json). 95 % bootstrap interv
 7 of 8 pre-registered objectives are met. The missed one is the false-positive rate on
 hard legitimate West-African notifications.
 
+**Real West- and Central-African messages** (`data/eval/afrique_reel.csv`, never used for
+training, evaluated once with this model; too small for a pre-registered objective):
+
+| Metric | Value |
+|---|---|
+| Real scams flagged `arnaque` or `suspect` (n = 19; CM, GN, BF, CI, BJ, SN, ML) | **73.7 %** [52.6 %, 89.5 %] |
+| Real fake-transfer SMS caught | 0 of 1 |
+| Real Burkina Faso Mobile Money notifications flagged `arnaque` | **2 of 4** |
+
+Most of these scams are texts of phishing pages and social posts quoted by fact-checkers,
+not SMS.
+
 ## Known limitations and failure modes
 
-1. **Geography of the real data.** Real scams come from France, Belgium and Canada.
-   West-African scams in the data are hand-written or reconstructed, so performance on
-   real Ivorian traffic is not yet measured.
+1. **Geography of the real data.** Real training scams come from France, Belgium and
+   Canada; West-African scams in the training data are hand-written or reconstructed. The
+   first real West/Central-African benchmark shows the cost: 73.7 % of scams caught, fake
+   operator gifts that read like real promotions missed, and 2 of 4 real Burkina Faso
+   receipts flagged (one because it ends with a link).
 2. **Legitimate credits and refunds.** Learning from many real French "refund" scams,
    the model can flag legitimate West-African notifications such as "votre prêt a été
    remboursé" or "votre compte a été crédité" (2 of 15 test notifications; a salary

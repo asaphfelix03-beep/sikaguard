@@ -26,8 +26,10 @@ faux emploi.
 > d'amorçage ouest-africain et des reconstitutions de 12 campagnes documentées en Côte
 > d'Ivoire et au Sénégal. Sur de vrais SMS jamais vus, il détecte **99,4 %** des arnaques
 > avec **0,9 %** de fausses alertes. Les vraies arnaques viennent de France, de Belgique et
-> du Canada : tant que de vrais SMS d'arnaque ouest-africains n'ont pas été collectés, le
-> modèle reste marqué *not for production* ([feuille de route](ROADMAP.md)).
+> du Canada. Sur un premier banc de **vrais messages d'Afrique de l'Ouest et du Centre**,
+> il est nettement moins bon : **74 %** des arnaques détectées et 2 vraies notifications
+> Mobile Money sur 4 signalées à tort. Le modèle reste marqué *not for production*
+> ([feuille de route](ROADMAP.md)).
 
 ## Pourquoi
 
@@ -86,6 +88,25 @@ Rapport complet : [`reports/evaluation.md`](reports/evaluation.md) (en anglais).
 | **Fausses alertes sur 1 000 vrais SMS personnels** (banc 88milSMS) | **0,9 %** [0,4 – 1,6 %] |
 | Précision moyenne, vraies arnaques contre vrais SMS personnels | 0,9998 |
 
+**Sur de vrais messages d'Afrique de l'Ouest et du Centre** (premier banc, jamais utilisé
+pour l'entraînement) : 19 arnaques citées mot pour mot par le vérificateur PesaCheck et la
+presse, et 4 vraies notifications Mobile Money du Burkina Faso
+([`data/eval/afrique_reel.csv`](data/eval/), source sur chaque ligne).
+
+| 23 vrais messages (CM 6, GN 5, BF 5, CI 3, BJ 2, SN 1, ML 1) | Résultat [IC 95 %] |
+|---|---|
+| **Arnaques signalées** `arnaque` ou `suspect` (n = 19) | **73,7 %** [52,6 – 89,5 %] |
+| Vrai SMS de faux transfert détecté (MTN Cameroun) | 0 sur 1 |
+| **Vraies notifications signalées** `arnaque` (Orange, Moov, Telecel Burkina) | **2 sur 4** |
+
+Manqués : de faux cadeaux d'opérateur rédigés comme de vraies promotions (« Orange Money –
+Célébrons l'Assomption ! Recevez 35 000 F CFA », « MTN – Célébration Anniversaire », 50 Go
+« gratuits » au Bénin), un faux SMS de crédit Mobile Money, une fausse ministre qui demande
+un « geste social ». La plupart de ces arnaques sont des textes de pages piégées et de
+publications, pas des SMS, et 23 messages donnent des intervalles larges : c'est une
+première mesure honnête, pas un verdict. C'est l'écart que la prochaine version doit
+combler avec de vraies données ouest-africaines.
+
 | Objectif fixé à l'avance | Cible | dev0 | dev1 | **dev2** |
 |---|---|---|---|---|
 | Précision moyenne (test) | ≥ 0,95 | 0,973 ✅ | 0,997 ✅ | **0,999** ✅ |
@@ -102,8 +123,8 @@ jeu de test ouvert une seule fois ; les tests des versions précédentes ont ét
 **Lecture honnête** : les vraies arnaques sont françaises, belges et canadiennes ; les
 arnaques ouest-africaines du jeu restent rédigées ou reconstituées. L'objectif manqué en
 découle : nourri de vraies arnaques françaises au « remboursement », le modèle signale 2
-vraies notifications ouest-africaines sur 15. Le remède, ce sont de vraies notifications
-ouest-africaines, pas un réglage sur le jeu de test.
+notifications ouest-africaines légitimes sur 15 (rédigées). Le remède, ce sont de vraies
+notifications ouest-africaines, pas un réglage sur le jeu de test.
 
 ## Contribuer
 

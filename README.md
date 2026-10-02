@@ -30,8 +30,10 @@ investments and job offers.
 > hand) and 800 real personal SMS (88milSMS corpus), plus a hand-written West-African seed
 > set and reconstructions of 12 documented Ivorian and Senegalese campaigns. On real SMS it
 > never saw, it catches **99.4 %** of scams with **0.9 %** false alarms. The real scams come
-> from France, Belgium and Canada: until real West-African scam SMS are collected, the
-> model stays flagged *not for production* ([roadmap](ROADMAP.md)).
+> from France, Belgium and Canada. On a first benchmark of **real West- and Central-African
+> messages** it is clearly weaker: **74 %** of scams caught and 2 of 4 real Mobile Money
+> notifications flagged ([details](#on-real-west--and-central-african-messages)). The model
+> stays flagged *not for production* ([roadmap](ROADMAP.md)).
 
 ## Why
 
@@ -158,6 +160,28 @@ been read) and forced into train.
 | False alarms on the real personal SMS of the test split (n = 163) | 0.6 % |
 | Average precision, real scams vs real personal SMS | 0.9998 [0.9994, 1.000] |
 
+### On real West- and Central-African messages
+
+No public dataset of real West-African scam SMS exists, so a first benchmark was built
+from messages **quoted word for word** by the fact-checker PesaCheck and the press, and
+from real Burkina Faso Mobile Money notifications published in an MIT-licensed parser
+([`data/eval/afrique_reel.csv`](data/eval/), sources on every row). It is never used for
+training and was evaluated once, with the unchanged `0.1.0.dev2` model.
+
+| 23 real messages (CM 6, GN 5, BF 5, CI 3, BJ 2, SN 1, ML 1) | Result [95 % CI] |
+|---|---|
+| **Scams flagged** `arnaque` or `suspect` (n = 19) | **73.7 %** [52.6 %, 89.5 %] |
+| Real fake-transfer **SMS** caught (MTN Cameroon) | 0 of 1 |
+| **Real notifications flagged** `arnaque` (Orange, Moov, Telecel Burkina) | **2 of 4** |
+
+Missed: fake operator gifts written like real promotions ("Orange Money – Célébrons
+l'Assomption ! Recevez 35 000 F CFA", "MTN – Célébration Anniversaire", 50 GB "free data"
+in Benin), a fake Mobile Money credit SMS, a fake minister asking for a "geste social".
+False alarms: an Orange Money receipt that ends with the real Max it link, and a Telecel
+receipt. Most scams of this benchmark are the text of phishing pages and social posts, not
+SMS, and 23 messages give wide intervals; it is a first honest measure, not a verdict.
+This is the gap the next version has to close with real West-African data.
+
 ### Whole test split (382 SMS)
 
 | Model | Test average precision [95 % CI] | Recall @ precision 95 % |
@@ -192,6 +216,8 @@ each evaluation:
   "refund" and "your account" scams, the model now flags 2 of 15 legitimate West-African
   notifications ("loan repaid", "interest credited"). Real West-African legitimate
   notifications are the fix; they were not tuned on the test split.
+- On real West- and Central-African messages the model is much weaker (see above): it is
+  not ready for West-African traffic yet.
 - The scam *type* is the weakest output (80.5 % accuracy on test scams).
 
 ## Data
@@ -201,6 +227,7 @@ each evaluation:
 | [`data/sources/imc25_french.csv`](data/sources/) | **811 real scam SMS** in French reported by victims (IMC'25, CC BY 4.0), reviewed by hand |
 | [`data/sources/88milsms_sample.csv`](data/sources/) | **800 real personal SMS** (88milSMS, CC BY 4.0) |
 | [`data/eval/88milsms_eval.csv`](data/eval/) | 1 000 other real SMS, never used for training (external benchmark) |
+| [`data/eval/afrique_reel.csv`](data/eval/) | **23 real West/Central-African messages** quoted verbatim (19 scams, 4 Mobile Money notifications), never used for training |
 | [`data/seed/seed_sms.csv`](data/seed/seed_sms.csv) | 407 hand-written West-African SMS (177 scams, 230 legitimate) |
 | [`data/sources/ci_campagnes_documentees.csv`](data/sources/) | 40 reconstructions of 12 dated campaigns (Côte d'Ivoire, Senegal) + 5 official notices, with source URLs |
 | [`data/sources/review/`](data/sources/review/) | human review of IMC'25: 119 excluded texts with their reason, 1 hand correction |

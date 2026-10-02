@@ -22,6 +22,7 @@ SOURCE_TYPES = (
     "presse",
     "reseau_social",
     "corpus_recherche",
+    "depot_open_source",
     "amorcage",
 )
 CONFIDENCE = ("haute", "moyenne")

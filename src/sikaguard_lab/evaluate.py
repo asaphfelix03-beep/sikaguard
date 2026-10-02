@@ -42,6 +42,10 @@ from sikaguard_lab.train import N_FOLDS, SEED, build_binary_pipeline, choose_thr
 Metric = Callable[[np.ndarray[Any, Any], np.ndarray[Any, Any]], float]
 HARD_LEGIT = ("notification_transaction", "otp")
 EXTERNAL_FILE = "88milsms_eval.csv"
+#: Real francophone-African messages quoted verbatim by fact-checkers, the press and
+#: open-source code (never used for training). Too small for a pre-registered objective:
+#: reported with its intervals only.
+AFRICA_FILE = "afrique_reel.csv"
 OBJECTIVES = {
     "test_average_precision": 0.95,
     "recall_at_precision_95": 0.90,
@@ -170,6 +174,48 @@ def _external_benchmark(analyzer: Analyzer, path: Path) -> dict[str, Any] | None
         "flagged_suspect_or_arnaque_ci95": [_r(lo2), _r(hi2)],
         "examples_flagged_arnaque": flagged[:10],
     }
+
+
+def _africa_benchmark(analyzer: Analyzer, path: Path) -> dict[str, Any] | None:
+    """Detection and false alarms on real francophone-African messages never used for training."""
+    if not path.is_file():
+        return None
+    rows = read_csv(path)
+    results = analyzer.analyze_batch([row["text"] for row in rows])
+    scam = [(row, res) for row, res in zip(rows, results, strict=True) if row["label"] == "arnaque"]
+    legit = [
+        (row, res) for row, res in zip(rows, results, strict=True) if row["label"] != "arnaque"
+    ]
+    alert = [res.verdict != "legitime" for _, res in scam]
+    as_scam = [res.verdict == "arnaque" for _, res in scam]
+    false_alarm = [res.verdict == "arnaque" for _, res in legit]
+    out: dict[str, Any] = {
+        "file": path.name,
+        "n_scams": len(scam),
+        "n_legit": len(legit),
+        "countries": dict(Counter(row["pays"] for row in rows).most_common()),
+        "rows": [
+            {
+                "label": row["label"],
+                "pays": row["pays"],
+                "canal": row.get("canal", ""),
+                "verdict": res.verdict,
+                "score": _r(res.score),
+                "text": row["text"],
+            }
+            for row, res in zip(rows, results, strict=True)
+        ],
+    }
+    if scam:
+        out["scams_flagged_arnaque_or_suspect"] = _r(np.mean(alert))
+        out["scams_flagged_arnaque_or_suspect_ci95"] = [_r(v) for v in proportion_ci(alert)]
+        out["scams_flagged_arnaque"] = _r(np.mean(as_scam))
+        sms = [res.verdict != "legitime" for row, res in scam if row.get("canal") == "sms"]
+        if sms:
+            out["sms_scams_flagged"] = f"{sum(sms)}/{len(sms)}"
+    if legit:
+        out["legit_flagged_arnaque"] = f"{sum(false_alarm)}/{len(false_alarm)}"
+    return out
 
 
 def _ap(y: np.ndarray[Any, Any], s: np.ndarray[Any, Any]) -> float:
@@ -352,6 +398,7 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
 
     # External benchmark: real SMS never used for training ---------------------------
     external = _external_benchmark(analyzer, data_dir.parent / "eval" / EXTERNAL_FILE)
+    africa = _africa_benchmark(analyzer, data_dir.parent / "eval" / AFRICA_FILE)
 
     # Category model --------------------------------------------------------------
     scam_idx = [i for i, r in enumerate(test) if r["label"] == "arnaque"]
@@ -439,6 +486,7 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
         "category_model": category_model,
         "real_test": real,
         "external_real_sms": external,
+        "external_real_africa": africa,
         "robustness": robustness,
         "objectives": objectives,
         "errors": errors,
@@ -609,6 +657,43 @@ def render_markdown(m: dict[str, Any], stats: dict[str, Any], training: dict[str
         if ext["examples_flagged_arnaque"]:
             lines += ["", "False alarms (first 10):", ""]
             lines += [f"- {t}" for t in ext["examples_flagged_arnaque"]]
+    afr = m.get("external_real_africa")
+    if afr:
+        countries = ", ".join(f"{k} {v}" for k, v in afr["countries"].items())
+        lines += [
+            "",
+            "## Real West/Central-African benchmark (never used for training)",
+            "",
+            f"{afr['n_scams']} real scam messages quoted verbatim by fact-checkers and the press "
+            f"and {afr['n_legit']} real Mobile Money notifications ({countries}). Most scams are "
+            "the text of phishing pages and social posts, not SMS. Too small for an objective: "
+            "read the intervals.",
+            "",
+        ]
+        if "scams_flagged_arnaque_or_suspect" in afr:
+            lo, hi = afr["scams_flagged_arnaque_or_suspect_ci95"]
+            lines.append(
+                f"- Scams flagged `arnaque` or `suspect`: "
+                f"**{_pct(afr['scams_flagged_arnaque_or_suspect'])}** "
+                f"[95 % CI {_pct(lo)}, {_pct(hi)}]"
+            )
+            if "sms_scams_flagged" in afr:
+                lines.append(f"- of which real scam SMS flagged: {afr['sms_scams_flagged']}")
+        if "legit_flagged_arnaque" in afr:
+            lines.append(
+                f"- Real notifications flagged `arnaque`: **{afr['legit_flagged_arnaque']}**"
+            )
+        lines += [
+            "",
+            "| Label | Country | Channel | Verdict | Score | Message |",
+            "|---|---|---|---|---|---|",
+        ]
+        for row in afr["rows"]:
+            text = " ".join(row["text"].split()).replace("|", "\\|")
+            lines.append(
+                f"| {row['label']} | {row['pays']} | {row['canal']} | {row['verdict']} "
+                f"| {row['score']:.2f} | {text} |"
+            )
     lines += [
         "",
         "## Pre-registered objectives",

@@ -3,6 +3,22 @@
 All notable changes are documented here. Format: [Keep a Changelog](https://keepachangelog.com/),
 versioning: [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **First real West/Central-African benchmark** (`data/eval/afrique_reel.csv`): 19 scam
+  messages quoted verbatim by PesaCheck and the press (Cameroon, Guinea, Burkina Faso,
+  Côte d'Ivoire, Benin, Senegal, Mali) and 4 real Burkina Faso Mobile Money notifications,
+  each with its source. Never used for training; reported by `sikaguard_lab.evaluate`.
+  Result with the unchanged `0.1.0.dev2` model: 73.7 % [52.6, 89.5] of scams flagged,
+  2 of 4 real notifications flagged.
+- Source type `depot_open_source`.
+
+### Fixed
+- Phone masking no longer takes an ISO date followed by a time ("2018-11-23. 10 : 13")
+  for a phone number; a number written after a date is still masked. No training or
+  benchmark text is affected, so the bundled model is unchanged.
+
 ## [0.1.0.dev2] — 2026-10-02
 
 Third pre-release: **real scam SMS**. Still not for production in West Africa (no real
