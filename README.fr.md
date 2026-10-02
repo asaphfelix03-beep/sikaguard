@@ -17,16 +17,17 @@ faux emploi.
 >>> for reason in r.reasons: print("-", reason.message)
 - Le message demande un code secret (PIN, OTP, mot de passe). Aucun opérateur ni aucune banque ne le demande jamais.
 - Le message menace de bloquer ou de suspendre votre compte ou votre numéro.
-- Formulation proche d'arnaques connues : « client », « compte », « code secret ».
+- Formulation proche d'arnaques connues : « client », « compte », « sera bloque ».
 ```
 
-> **Statut : alpha.** Le modèle livré (`0.1.0.dev1`) est entraîné sur 602 SMS : un jeu
-> d'amorçage rédigé à la main, de **vrais SMS légitimes** (corpus de recherche 88milSMS)
-> et des reconstitutions de **12 campagnes d'arnaque réelles et datées** en Côte d'Ivoire
-> et au Sénégal (PLCC, police, opérateurs, presse). Il n'a pas encore vu de vrais SMS
-> d'arnaque collectés : il reste marqué *not for production*, et cette collecte est la
-> prochaine étape ([feuille de route](ROADMAP.md)). Ne l'utilisez pas pour bloquer des
-> messages automatiquement.
+> **Statut : alpha.** Le modèle livré (`0.1.0.dev2`) est entraîné sur 2 063 SMS, dont
+> **1 611 réels** : 811 vrais SMS d'arnaque signalés par des victimes (jeu de recherche
+> IMC'25, relu à la main) et 800 vrais SMS personnels (corpus 88milSMS), plus un jeu
+> d'amorçage ouest-africain et des reconstitutions de 12 campagnes documentées en Côte
+> d'Ivoire et au Sénégal. Sur de vrais SMS jamais vus, il détecte **99,4 %** des arnaques
+> avec **0,9 %** de fausses alertes. Les vraies arnaques viennent de France, de Belgique et
+> du Canada : tant que de vrais SMS d'arnaque ouest-africains n'ont pas été collectés, le
+> modèle reste marqué *not for production* ([feuille de route](ROADMAP.md)).
 
 ## Pourquoi
 
@@ -56,8 +57,8 @@ sikaguard apporte deux choses :
   avant le modèle ; l'API ne journalise jamais le texte des SMS.
 - **Chargement sécurisé du modèle** : `skops` (pas de `pickle`), empreinte SHA-256
   vérifiée, liste blanche de types.
-- **Léger et rapide** : modèle d'environ 1 Mo, scikit-learn seulement, pas de GPU ;
-  4,8 ms en médiane et 9 ms au 95e centile par SMS, 1,6 ms par SMS en lot.
+- **Léger et rapide** : modèle d'environ 2 Mo, scikit-learn seulement, pas de GPU ;
+  1,8 ms en médiane et 3,1 ms au 95e centile par SMS, 0,6 ms par SMS en lot.
 
 ## Installation et utilisation
 
@@ -77,27 +78,32 @@ Détails de l'API, de Docker et de la démo : voir le [README anglais](README.md
 
 Rapport complet : [`reports/evaluation.md`](reports/evaluation.md) (en anglais).
 
-**La mesure la plus importante : 1 000 vrais SMS** (corpus 88milSMS), jamais vus à
-l'entraînement. Tous sont légitimes, donc chaque alerte est une fausse alarme :
-**0,6 %** sont classés `arnaque` (IC 95 % : 0,2 – 1,1 %).
+**Sur de vrais SMS jamais vus à l'entraînement :**
 
-| Objectif fixé à l'avance | Cible | 0.1.0.dev0 | **0.1.0.dev1** |
-|---|---|---|---|
-| Précision moyenne (PR-AUC) | ≥ 0,95 | 0,973 ✅ | **0,997** ✅ |
-| Rappel à 95 % de précision | ≥ 90 % | 80,6 % ❌ | **97,2 %** ✅ |
-| Faux positifs sur SMS légitimes difficiles | ≤ 5 % | 13,6 % ❌ | **0 %** ✅ |
-| Détection sous le pire déguisement | ≥ 85 % | 91,7 % ✅ | **100 %** ✅ |
-| Fausses alertes sur 1 000 vrais SMS *(ajouté en dev1)* | ≤ 5 % | — | **0,6 %** ✅ |
+| | Résultat [IC 95 %] |
+|---|---|
+| **Vraies arnaques détectées** (161 signalements de victimes, IMC'25) | **99,4 %** [98,1 – 100 %] |
+| **Fausses alertes sur 1 000 vrais SMS personnels** (banc 88milSMS) | **0,9 %** [0,4 – 1,6 %] |
+| Précision moyenne, vraies arnaques contre vrais SMS personnels | 0,9998 |
 
-**Protocole** : découpage par groupe (quasi-doublons et campagnes : une campagne de test
-n'est jamais vue à l'entraînement), validation croisée groupée sur l'entraînement
-seulement, jeu de test ouvert une seule fois. Le test de la v0.1.0.dev0, dont les erreurs
-avaient été analysées, a été **consommé** : archivé et forcé en entraînement.
+| Objectif fixé à l'avance | Cible | dev0 | dev1 | **dev2** |
+|---|---|---|---|---|
+| Précision moyenne (test) | ≥ 0,95 | 0,973 ✅ | 0,997 ✅ | **0,999** ✅ |
+| Rappel à 95 % de précision | ≥ 90 % | 80,6 % ❌ | 97,2 % ✅ | **100 %** ✅ |
+| Faux positifs sur notifications et codes légitimes | ≤ 5 % | 13,6 % ❌ | 0 % ✅ | **13,3 %** ❌ |
+| Détection sous le pire déguisement | ≥ 85 % | 91,7 % ✅ | 100 % ✅ | **98,9 %** ✅ |
+| Fausses alertes sur 1 000 vrais SMS | ≤ 5 % | — | 0,6 % ✅ | **0,9 %** ✅ |
+| Vraies arnaques signalées | ≥ 90 % | — | — | **99,4 %** ✅ |
 
-**Lecture honnête** : le jeu de test est presque saturé, car ses arnaques sont rédigées
-ou reconstituées, et de vraies arnaques seront plus difficiles. Le type d'arnaque reste le
-point faible (75 % de bonne catégorie). Le banc d'essai sur vrais SMS est la mesure la
-moins biaisée.
+**Protocole** : découpage par groupe (les variantes d'un même modèle d'arnaque et d'une même
+campagne restent du même côté), validation croisée groupée sur l'entraînement seulement,
+jeu de test ouvert une seule fois ; les tests des versions précédentes ont été consommés.
+
+**Lecture honnête** : les vraies arnaques sont françaises, belges et canadiennes ; les
+arnaques ouest-africaines du jeu restent rédigées ou reconstituées. L'objectif manqué en
+découle : nourri de vraies arnaques françaises au « remboursement », le modèle signale 2
+vraies notifications ouest-africaines sur 15. Le remède, ce sont de vraies notifications
+ouest-africaines, pas un réglage sur le jeu de test.
 
 ## Contribuer
 

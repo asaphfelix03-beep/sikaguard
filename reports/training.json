@@ -1,24 +1,24 @@
 {
-  "model_version": "0.1.0.dev1",
-  "dataset_version": "0.1.0.dev1",
-  "n_train": 498,
+  "model_version": "0.1.0.dev2",
+  "dataset_version": "0.1.0.dev2",
+  "n_train": 1681,
   "c_grid_average_precision": {
-    "1.0": 0.9779,
-    "4.0": 0.9823,
-    "10.0": 0.9838,
-    "30.0": 0.9848,
-    "100.0": 0.9853
+    "1.0": 0.9936,
+    "4.0": 0.9953,
+    "10.0": 0.9958,
+    "30.0": 0.9959,
+    "100.0": 0.9961
   },
-  "best_C": 30.0,
-  "threshold_high": 0.4932729561755749,
-  "threshold_low": 0.10827234321577682,
+  "best_C": 4.0,
+  "threshold_high": 0.31647213708451727,
+  "threshold_low": 0.3052759012674577,
   "cv_metrics": {
-    "average_precision": 0.9848,
-    "f1_at_0.5": 0.9318,
-    "precision_at_high": 0.9535,
-    "recall_at_high": 0.9061,
-    "recall_at_low": 0.9834,
-    "share_suspect": 0.0743
+    "average_precision": 0.9953,
+    "f1_at_0.5": 0.9712,
+    "precision_at_high": 0.9506,
+    "recall_at_high": 0.9881,
+    "recall_at_low": 0.9905,
+    "share_suspect": 0.003
   },
-  "sha256": "cc23d4ac97f853fab9760dd18c4557484723c4004c3a36d8c220f9ad16c5a31c"
+  "sha256": "bb0e072fa169f1b0d85ad4ccacb2a7b89702171fbb705996fb08ae7a044905b7"
 }

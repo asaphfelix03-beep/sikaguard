@@ -3,6 +3,32 @@
 All notable changes are documented here. Format: [Keep a Changelog](https://keepachangelog.com/),
 versioning: [SemVer](https://semver.org/).
 
+## [0.1.0.dev2] — 2026-10-02
+
+Third pre-release: **real scam SMS**. Still not for production in West Africa (no real
+West-African scam SMS yet).
+
+### Added
+- **811 real French scam SMS** from the IMC'25 smishing dataset (CC BY 4.0), imported by
+  `sikaguard_lab.import_imc25`, with a published human review: 119 of 890 unique texts
+  excluded with their reason, 1 re-typed (a real fake Mobile Money credit in FCFA).
+- 800 real personal SMS from 88milSMS for training (the 1 000-SMS benchmark is unchanged,
+  enforced with `--exclude`); balanced dataset of 2 063 SMS.
+- Evaluation on real SMS only (real scams vs real legitimate SMS), per-source table,
+  three new pre-registered objectives, explicit objective directions.
+- Belgium and Canada in the country list; `<URL>` placeholder recognised as a link.
+
+### Results
+- Real scams detected: 99.4 % [98.1, 100]; false alarms on 1 000 real SMS: 0.9 %
+  [0.4, 1.6]; 7 of 8 pre-registered objectives met.
+- Missed: false positives on hard legitimate West-African notifications (13.3 %).
+
+### Changed
+- Low threshold set for 99 % recall (98 % made the `suspect` band disappear), decided on
+  cross-validation before the test split was opened.
+- Link-safety rule of the dataset validator now checks the host only.
+- Latency: 1.8 ms median, 3.1 ms p95 per SMS.
+
 ## [0.1.0.dev1] — 2026-10-01
 
 Second pre-release: first real data, Côte d'Ivoire focus. Still not for production

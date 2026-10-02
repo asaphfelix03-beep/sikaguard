@@ -1,0 +1,328 @@
+{
+  "model_version": "0.1.0.dev1",
+  "dataset_version": "0.1.0.dev1",
+  "not_for_production": true,
+  "n_train": 498,
+  "n_test": 104,
+  "benchmark": {
+    "B0 majority class": {
+      "cv_average_precision": 0.3575,
+      "test_average_precision": 0.3462,
+      "test_average_precision_ci95": [
+        0.25,
+        0.4423
+      ],
+      "test_f1_default_decision": 0.0,
+      "test_recall_at_precision_95": 0.0
+    },
+    "B1 rules only": {
+      "cv_average_precision": 0.8907,
+      "test_average_precision": 0.9593,
+      "test_average_precision_ci95": [
+        0.9015,
+        1.0
+      ],
+      "test_f1_default_decision": 0.9589,
+      "test_recall_at_precision_95": 0.5556
+    },
+    "B2 naive Bayes (words)": {
+      "cv_average_precision": 0.9755,
+      "test_average_precision": 0.9962,
+      "test_average_precision_ci95": [
+        0.9862,
+        1.0
+      ],
+      "test_f1_default_decision": 0.9351,
+      "test_recall_at_precision_95": 0.9444
+    },
+    "B3 linear SVM": {
+      "cv_average_precision": 0.9865,
+      "test_average_precision": 0.9971,
+      "test_average_precision_ci95": [
+        0.988,
+        1.0
+      ],
+      "test_f1_default_decision": 0.9722,
+      "test_recall_at_precision_95": 0.9722
+    },
+    "B4 sikaguard (retained)": {
+      "cv_average_precision": 0.9848,
+      "test_average_precision": 0.9971,
+      "test_average_precision_ci95": [
+        0.988,
+        1.0
+      ],
+      "test_f1_default_decision": 0.9722,
+      "test_recall_at_precision_95": 0.9722
+    }
+  },
+  "operating_point": {
+    "threshold_high": 0.4933,
+    "threshold_low": 0.1083,
+    "precision_of_arnaque_verdict": 0.9722,
+    "recall_arnaque_verdict": 0.9722,
+    "recall_arnaque_or_suspect": 1.0,
+    "legit_flagged_arnaque": 0.0147,
+    "legit_flagged_suspect_or_arnaque": 0.0441,
+    "confusion": {
+      "arnaque": {
+        "arnaque": 35,
+        "suspect": 1
+      },
+      "legitime": {
+        "legitime": 65,
+        "suspect": 2,
+        "arnaque": 1
+      }
+    }
+  },
+  "recall_at_precision_95_ci95": [
+    0.8889,
+    1.0
+  ],
+  "hard_legit": {
+    "n": 17,
+    "false_positive_rate": 0.0,
+    "flagged_suspect_or_arnaque": 0.0588
+  },
+  "per_category": {
+    "autre_arnaque": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 1.0
+    },
+    "faux_gain": {
+      "label": "arnaque",
+      "n": 4,
+      "detected": 1.0
+    },
+    "faux_transfert": {
+      "label": "arnaque",
+      "n": 5,
+      "detected": 1.0
+    },
+    "investissement_emploi": {
+      "label": "arnaque",
+      "n": 8,
+      "detected": 1.0
+    },
+    "notification_transaction": {
+      "label": "legitime",
+      "n": 11,
+      "flagged": 0.0909
+    },
+    "otp": {
+      "label": "legitime",
+      "n": 6,
+      "flagged": 0.0
+    },
+    "personnel": {
+      "label": "legitime",
+      "n": 42,
+      "flagged": 0.0
+    },
+    "phishing_lien": {
+      "label": "arnaque",
+      "n": 7,
+      "detected": 1.0
+    },
+    "promo_operateur": {
+      "label": "legitime",
+      "n": 9,
+      "flagged": 0.2222
+    },
+    "usurpation_operateur": {
+      "label": "arnaque",
+      "n": 6,
+      "detected": 1.0
+    }
+  },
+  "per_source": {
+    "source_type=amorcage": {
+      "n": 63,
+      "average_precision": 0.9956,
+      "scams_flagged": 1.0,
+      "legit_flagged_arnaque": 0.0294
+    },
+    "source_type=autorite": {
+      "n": 7,
+      "scams_flagged": 1.0
+    },
+    "source_type=corpus_recherche": {
+      "n": 33,
+      "legit_flagged_arnaque": 0.0
+    },
+    "source_type=operateur": {
+      "n": 1,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=BF": {
+      "n": 1,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=BJ": {
+      "n": 3,
+      "scams_flagged": 1.0
+    },
+    "pays=CI": {
+      "n": 44,
+      "average_precision": 1.0,
+      "scams_flagged": 1.0,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=CM": {
+      "n": 1,
+      "scams_flagged": 1.0
+    },
+    "pays=FR": {
+      "n": 33,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=ML": {
+      "n": 2,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=SN": {
+      "n": 13,
+      "average_precision": 1.0,
+      "scams_flagged": 1.0,
+      "legit_flagged_arnaque": 0.1429
+    },
+    "pays=TG": {
+      "n": 3,
+      "average_precision": 1.0,
+      "scams_flagged": 1.0,
+      "legit_flagged_arnaque": 0.0
+    },
+    "pays=XX": {
+      "n": 4,
+      "legit_flagged_arnaque": 0.0
+    }
+  },
+  "category_model": {
+    "n": 36,
+    "accuracy": 0.75,
+    "macro_f1": 0.7378
+  },
+  "external_real_sms": {
+    "file": "88milsms_eval.csv",
+    "n": 1000,
+    "false_positive_rate": 0.006,
+    "false_positive_rate_ci95": [
+      0.002,
+      0.011
+    ],
+    "flagged_suspect_or_arnaque": 0.013,
+    "flagged_suspect_or_arnaque_ci95": [
+      0.006,
+      0.02
+    ],
+    "examples_flagged_arnaque": [
+      "Commercial pour k par k avec des pure conditions de salaire et tout",
+      "Jalousie mal placée de londres, merci. T'avais prévu ça avec ton pote. Tu voulais pas y aller avec moi comme ça précisément. Puisque t'façons tu te bougeait pas. Maintenant ça ne m'empeche pas de le faire. J'y suis déjà allé, et J'y retournerai pas qu'une fois. Avec toi c'est différent. Et je pense le vouloir meme plus que toi. Donc NON j'ai pas dit à <NOM> déchire ton billet on va à berlin pour pas créer un conflit intergalactique",
+      "Putain jte jure tu craques toi à me supprimer de facebook tout le temps, ce matin déja on était plus amis donc je t ai renvoyé une demande, t acceptes jvois que t es toujours célibataire alors que t as fais le ménage du reste, écoute me prend pas la tete je t ai pas supprimé une seule fois et quand jte dis de me dire à quelle heure tu viens chez moi tu pourrais prendre la peine de me répondre au moins par facebook tu crois pas?",
+      "Pr cet hiver a noel je nous ai payé des entrees pr disneyland paris (les deux parcs) et ca fait bcp dargent en tt ^^ surtout que bientot je vais devoir faire un cheque de 500 euros pr les modeles bref heureusement que g des sous de coté ^^ et je tai dit que je te demanderai pas de tt me rembourser parce que cest pas la peine ca me fait plaisir de toffrir des trucs oci ^^",
+      "Désolé, je fais des courses aux 3F. =/",
+      "Oui c sur ms bon tu décide un peu de ton emploi du temps au début! Et puis tu peux \"moduler\" pr les k exceptionnels,^^(oui dsl g pas u le temps de répondre avant maintenant ^^')"
+    ]
+  },
+  "robustness": {
+    "original": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    },
+    "leetspeak": {
+      "with_normalization": 1.0,
+      "without_normalization": 0.9722
+    },
+    "homoglyphs": {
+      "with_normalization": 1.0,
+      "without_normalization": 0.8889
+    },
+    "spaced_letters": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    },
+    "zero_width": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    },
+    "emojis": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    },
+    "strip_accents": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    },
+    "upper": {
+      "with_normalization": 1.0,
+      "without_normalization": 1.0
+    }
+  },
+  "objectives": {
+    "test_average_precision": {
+      "target": 0.95,
+      "achieved": 0.9971,
+      "met": true
+    },
+    "recall_at_precision_95": {
+      "target": 0.9,
+      "achieved": 0.9722,
+      "met": true
+    },
+    "hard_legit_false_positive_rate": {
+      "target": 0.05,
+      "achieved": 0.0,
+      "met": true
+    },
+    "min_detection_under_perturbation": {
+      "target": 0.85,
+      "achieved": 1.0,
+      "met": true
+    },
+    "real_sms_false_positive_rate": {
+      "target": 0.05,
+      "achieved": 0.006,
+      "met": true
+    }
+  },
+  "errors": [
+    {
+      "id": "sg-00121",
+      "label": "arnaque",
+      "category": "phishing_lien",
+      "verdict": "suspect",
+      "score": 0.1498,
+      "text": "Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om"
+    },
+    {
+      "id": "sg-00184",
+      "label": "legitime",
+      "category": "notification_transaction",
+      "verdict": "suspect",
+      "score": 0.3442,
+      "text": "Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF."
+    },
+    {
+      "id": "sg-00290",
+      "label": "legitime",
+      "category": "promo_operateur",
+      "verdict": "suspect",
+      "score": 0.3982,
+      "text": "Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours."
+    },
+    {
+      "id": "sg-00298",
+      "label": "legitime",
+      "category": "promo_operateur",
+      "verdict": "arnaque",
+      "score": 0.781,
+      "text": "Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre."
+    }
+  ],
+  "notes": [
+    "v0.1.0.dev1 protocol: the 0.1.0.dev0 test split was consumed (its errors had been analysed); its 82 rows were forced into train and a new test split was drawn. Caveat: the author of the new rows (88milSMS sampling, campaign reconstructions, signal fixes) had seen the dev0 errors, so these numbers may be slightly optimistic; the real-SMS benchmark is the least biased measurement.",
+    "Documented-campaign rows (source_type autorite / operateur / presse) are reconstructions of real, dated Côte d'Ivoire and Senegal campaigns; every row of a campaign sits on the same side of the split, so test campaigns were never seen in training."
+  ]
+}

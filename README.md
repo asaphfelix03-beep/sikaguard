@@ -22,15 +22,16 @@ investments and job offers.
 >>> for reason in r.reasons: print("-", reason.message)
 - Le message demande un code secret (PIN, OTP, mot de passe). Aucun opérateur ni aucune banque ne le demande jamais.
 - Le message menace de bloquer ou de suspendre votre compte ou votre numéro.
-- Formulation proche d'arnaques connues : « client », « compte », « code secret ».
+- Formulation proche d'arnaques connues : « client », « compte », « sera bloque ».
 ```
 
-> **Status: alpha.** The bundled model `0.1.0.dev1` is trained on 602 SMS: a hand-written
-> seed set, **real legitimate SMS** (88milSMS research corpus) and reconstructions of
-> **12 real, dated scam campaigns** documented in Côte d'Ivoire and Senegal (PLCC,
-> police, operators, press). It has not yet seen real collected scam SMS, so it is flagged
-> *not for production*; collecting them is the next milestone ([roadmap](ROADMAP.md)).
-> Do not use it to block messages automatically.
+> **Status: alpha.** The bundled model `0.1.0.dev2` is trained on 2 063 SMS, **1 611 of
+> them real**: 811 real scam SMS reported by victims (IMC'25 research dataset, reviewed by
+> hand) and 800 real personal SMS (88milSMS corpus), plus a hand-written West-African seed
+> set and reconstructions of 12 documented Ivorian and Senegalese campaigns. On real SMS it
+> never saw, it catches **99.4 %** of scams with **0.9 %** false alarms. The real scams come
+> from France, Belgium and Canada: until real West-African scam SMS are collected, the
+> model stays flagged *not for production* ([roadmap](ROADMAP.md)).
 
 ## Why
 
@@ -63,8 +64,8 @@ sikaguard's contribution is twofold:
   the model sees them; the API never logs SMS text.
 - **Secure model loading:** `skops` (no `pickle`), SHA-256 checked against a manifest,
   explicit allow-list of types.
-- **Light and fast:** ~1 MB model, scikit-learn only, no GPU; 4.8 ms median and 9 ms
-  p95 per SMS on a laptop CPU, 1.6 ms per SMS in batches.
+- **Light and fast:** ~2 MB model, scikit-learn only, no GPU; 1.8 ms median and 3.1 ms
+  p95 per SMS on a laptop CPU, 0.6 ms per SMS in batches.
 
 ## Install
 
@@ -137,82 +138,84 @@ the model sees identical placeholders (`<tel>`, `<code>`, `<url>`…) in both.
 
 ## Evaluation
 
-Full report: [`reports/evaluation.md`](reports/evaluation.md) · previous version:
-[`reports/history/0.1.0.dev0/`](reports/history/0.1.0.dev0/evaluation.md).
+Full report: [`reports/evaluation.md`](reports/evaluation.md) · previous versions in
+[`reports/history/`](reports/history/).
 
-**Protocol.** 602 SMS. Split 80/20 **by group**: near-duplicates (character 5-gram
-Jaccard ≥ 0.8) and all rows of a documented campaign share a group, so a test campaign
-is never seen in training. Model selection and thresholds by grouped 5-fold
-cross-validation on train only; test split opened **once**; 95 % bootstrap
-confidence intervals. A test split whose errors have been read is *consumed*: the
-`0.1.0.dev0` test rows were archived and forced into train before drawing a new one.
+**Protocol.** 2 063 SMS (1 028 scams, 1 035 legitimate). Split 80/20 **by group**:
+near-duplicates (character 5-gram Jaccard ≥ 0.8, which joins the many variants of one
+scam template) and all rows of a documented campaign share a group, so no test template
+or campaign is seen in training. Model selection and thresholds by grouped 5-fold
+cross-validation on train only; the test split is opened **once**; 95 % bootstrap
+intervals. The test splits of the two previous versions were *consumed* (their errors had
+been read) and forced into train.
 
-### The measurement that matters most: real SMS
+### On real SMS never seen in training
 
-**1 000 authentic French SMS** from the 88milSMS research corpus, never used for
-training. All of them are legitimate, so every alert is a false alarm:
-
-| | Rate [95 % CI] |
+| | Result [95 % CI] |
 |---|---|
-| Flagged `arnaque` | **0.6 %** [0.2 %, 1.1 %] |
-| Flagged `arnaque` or `suspect` | 1.3 % [0.6 %, 2.0 %] |
+| **Real scams detected** (161 victim reports, IMC'25) | **99.4 %** [98.1 %, 100 %] |
+| **False alarms on 1 000 real personal SMS** (88milSMS benchmark) | **0.9 %** [0.4 %, 1.6 %] |
+| False alarms on the real personal SMS of the test split (n = 163) | 0.6 % |
+| Average precision, real scams vs real personal SMS | 0.9998 [0.9994, 1.000] |
 
-### Test split (104 SMS)
+### Whole test split (382 SMS)
 
 | Model | Test average precision [95 % CI] | Recall @ precision 95 % |
 |---|---|---|
-| Majority class | 0.346 [0.250, 0.442] | 0 % |
-| Rules only | 0.959 [0.902, 1.000] | 56 % |
-| Naive Bayes (words) | 0.996 [0.986, 1.000] | 94 % |
-| Linear SVM | 0.997 [0.988, 1.000] | 97 % |
-| **sikaguard** | **0.997 [0.988, 1.000]** | **97 %** |
+| Majority class | 0.497 [0.448, 0.550] | 0 % |
+| Rules only | 0.676 [0.622, 0.725] | 10 % |
+| Naive Bayes (words) | 0.992 [0.985, 0.997] | 97 % |
+| Linear SVM | 1.000 [0.9995, 1.000] | 100 % |
+| **sikaguard** | **0.999 [0.998, 1.000]** | **100 %** |
 
-Pre-registered objectives (targets fixed before seeing the results):
+6 errors out of 382 (listed in the report). Pre-registered objectives, targets fixed before
+each evaluation:
 
-| Objective | Target | 0.1.0.dev0 | **0.1.0.dev1** |
-|---|---|---|---|
-| Average precision | ≥ 0.95 | 0.973 ✅ | **0.997** ✅ |
-| Recall at 95 % precision | ≥ 90 % | 80.6 % ❌ | **97.2 %** ✅ |
-| False positives on hard legitimate SMS (notifications, OTP) | ≤ 5 % | 13.6 % ❌ | **0 %** ✅ |
-| Detection under the worst of 7 disguises | ≥ 85 % | 91.7 % ✅ | **100 %** ✅ |
-| False positives on 1 000 real SMS *(added for dev1)* | ≤ 5 % | — | **0.6 %** ✅ |
+| Objective | Target | dev0 | dev1 | **dev2** |
+|---|---|---|---|---|
+| Average precision (test) | ≥ 0.95 | 0.973 ✅ | 0.997 ✅ | **0.999** ✅ |
+| Recall at 95 % precision | ≥ 90 % | 80.6 % ❌ | 97.2 % ✅ | **100 %** ✅ |
+| False positives on hard legitimate SMS (notifications, OTP) | ≤ 5 % | 13.6 % ❌ | 0 % ✅ | **13.3 %** ❌ |
+| Detection under the worst of 7 disguises | ≥ 85 % | 91.7 % ✅ | 100 % ✅ | **98.9 %** ✅ |
+| False alarms on 1 000 real SMS | ≤ 5 % | — | 0.6 % ✅ | **0.9 %** ✅ |
+| Average precision on real SMS only | ≥ 0.95 | — | — | **0.9998** ✅ |
+| Real scams flagged `arnaque` or `suspect` | ≥ 90 % | — | — | **99.4 %** ✅ |
+| Real scams flagged `arnaque` | ≥ 85 % | — | — | **99.4 %** ✅ |
 
 **Reading these numbers honestly**
 
-- The test split is close to saturation (AP 0.997): the scams in it are hand-written or
-  reconstructed, and real scams will be harder. The real-SMS benchmark is the least
-  biased number here; real collected scams are the next milestone.
-- The author of the dev1 data and signal fixes had read the dev0 errors, so the dev1
-  test numbers may be slightly optimistic. This is why the dev0 test was consumed and
-  why the report carries a note.
-- Linear SVM and sikaguard tie on this split; sikaguard's model was chosen *before*
-  the evaluation for its exact explanations and its robustness.
-- The scam *type* is the weak point: 75 % accuracy on test scams (macro-F1 0.74), down
-  from 89 %, because test campaigns are new to the model.
-- Robustness: every one of the 7 disguises leaves detection at 100 %; without the
-  normalization module, look-alike letters drop it to 89 %.
+- The real scams are French SMS from France, Belgium and Canada (parcels, fines, health
+  insurance, banks, telecom operators). West-African scams in the data are hand-written or
+  reconstructed, so the near-perfect scores say the model handles real French smishing,
+  not that it is proven on real Ivorian traffic.
+- The missed objective is the price of that mix: learning from hundreds of real French
+  "refund" and "your account" scams, the model now flags 2 of 15 legitimate West-African
+  notifications ("loan repaid", "interest credited"). Real West-African legitimate
+  notifications are the fix; they were not tuned on the test split.
+- The scam *type* is the weakest output (80.5 % accuracy on test scams).
 
 ## Data
 
 | File | Content |
 |---|---|
-| [`data/seed/seed_sms.csv`](data/seed/seed_sms.csv) | 407 hand-written seed SMS (177 scams, 230 legitimate) |
-| [`data/sources/88milsms_sample.csv`](data/sources/) | 150 **real** legitimate SMS (88milSMS, CC BY 4.0) |
-| [`data/sources/ci_campagnes_documentees.csv`](data/sources/) | 40 reconstructions of 12 real, dated scam campaigns (Côte d'Ivoire, Senegal) + 5 official notices, with source URLs |
-| [`data/eval/88milsms_eval.csv`](data/eval/) | 1 000 real SMS kept out of training (external benchmark) |
+| [`data/sources/imc25_french.csv`](data/sources/) | **811 real scam SMS** in French reported by victims (IMC'25, CC BY 4.0), reviewed by hand |
+| [`data/sources/88milsms_sample.csv`](data/sources/) | **800 real personal SMS** (88milSMS, CC BY 4.0) |
+| [`data/eval/88milsms_eval.csv`](data/eval/) | 1 000 other real SMS, never used for training (external benchmark) |
+| [`data/seed/seed_sms.csv`](data/seed/seed_sms.csv) | 407 hand-written West-African SMS (177 scams, 230 legitimate) |
+| [`data/sources/ci_campagnes_documentees.csv`](data/sources/) | 40 reconstructions of 12 dated campaigns (Côte d'Ivoire, Senegal) + 5 official notices, with source URLs |
+| [`data/sources/review/`](data/sources/review/) | human review of IMC'25: 119 excluded texts with their reason, 1 hand correction |
 | [`data/history/`](data/history/) | consumed test splits |
 | [`data/processed/`](data/processed/) | validated, de-duplicated, grouped and split dataset + statistics |
-| [`docs/annotation_guide.md`](docs/annotation_guide.md) | taxonomy, inclusion rules, anonymization (in French) |
-| [`docs/datasheet.md`](docs/datasheet.md) · [`docs/model_card.md`](docs/model_card.md) | datasheet and model card |
+| [`docs/`](docs/) | annotation guide (French), datasheet, model card |
 
-Rebuild everything (the 88milSMS archive is downloaded once from Ortolang, see
+Rebuild everything (the two research corpora are downloaded once, see
 [`data/sources/README.md`](data/sources/README.md)):
 
 ```bash
-python -m sikaguard_lab.import_88milsms                                  # real SMS samples
-python -m sikaguard_lab.build --consumed data/history/test_0.1.0.dev0.csv
-python -m sikaguard_lab.train                                            # grouped CV, thresholds
-python -m sikaguard_lab.evaluate                                         # benchmark, CIs, robustness
+python -m sikaguard_lab.import_imc25        # real scams + human-review decisions
+python -m sikaguard_lab.import_88milsms --n-train 800 --n-eval 0 --exclude data/eval/88milsms_eval.csv
+python -m sikaguard_lab.build --consumed data/history/test_0.1.0.dev0.csv --consumed data/history/test_0.1.0.dev1.csv
+python -m sikaguard_lab.train && python -m sikaguard_lab.evaluate
 ```
 
 ## Contributing
@@ -228,7 +231,7 @@ If you use the dataset or the model, please cite it ([CITATION.cff](CITATION.cff
 
 ```
 Ojewumi, A. F. (2026). sikaguard: explainable detection of French-language SMS and
-Mobile Money scams (version 0.1.0.dev1) [Computer software].
+Mobile Money scams (version 0.1.0.dev2) [Computer software].
 https://github.com/asaphfelix03-beep/sikaguard
 ```
 

@@ -1,0 +1,105 @@
+id,text,label,category
+sg-00003,"Frère c'est une erreur, j'ai fait un dépôt de 10000 sur ton numéro au lieu de celui de ma femme. Renvoie stp, Dieu va te bénir",arnaque,faux_transfert
+sg-00012,Mon frère un dépôt de 60000F a été fait par erreur sur ton Moov Money. Je t'en supplie fais le retour au <TEL>,arnaque,faux_transfert
+sg-00015,"Bjr, j'ai transféré 25.000 FCFA par erreur à votre numéro. Veuillez me retourner ça, je vous laisse 2000 pour vous",arnaque,faux_transfert
+sg-00025,"Bonjour, je vous ai envoyé 45 000 FCFA par erreur. Mon patron va me tuer. Renvoyez vite svp",arnaque,faux_transfert
+sg-00030,"Bonjour, j'ai effectué un transfert de 27 000 FCFA sur votre compte MTN par erreur. Merci de bien vouloir le renvoyer au même numéro. Que Dieu vous bénisse",arnaque,faux_transfert
+sg-00034,"Cher abonné, votre puce sera désactivée ce soir suite au nouveau recensement. Composez #144*8# puis entrez votre code secret pour confirmer.",arnaque,usurpation_operateur
+sg-00039,"ORANGE: Votre compte Orange Money a été piraté. Pour sécuriser votre argent, rappelez notre cellule au <TEL> et donnez votre code PIN à l'agent.",arnaque,usurpation_operateur
+sg-00040,"Chère cliente, votre compte Wave passe au statut Premium. Pour activer, communiquez le code reçu par SMS à notre conseiller au <TEL>.",arnaque,usurpation_operateur
+sg-00055,"Cher client, vous avez été débité par erreur de 10 000 F. Pour le remboursement, notre agent va vous appeler, veuillez lui communiquer le code reçu.",arnaque,usurpation_operateur
+sg-00057,Flooz: Votre compte Moov Money sera désactivé demain. Mettez à jour vos informations en envoyant votre PIN au <TEL>.,arnaque,usurpation_operateur
+sg-00061,"Service Client Wave: nous vous offrons 5000 F de bonus. Pour le recevoir, confirmez votre code secret au conseiller qui va vous appeler.",arnaque,usurpation_operateur
+sg-00067,FELICITATIONS!!! VOUS AVEZ GAGNE 750.000 FCFA AU GRAND JEU MOOV. CONTACTEZ LE <TEL> AVANT 18H,arnaque,faux_gain
+sg-00072,"Cher abonné, grâce à votre fidélité vous gagnez un smartphone Samsung. Payez seulement les frais de transport de 7500 F.",arnaque,faux_gain
+sg-00073,Heureux élu! Votre numéro a été tiré lors du grand tirage de fin d'année. Vous remportez 5 000 000 F. Appelez vite notre huissier au <TEL>,arnaque,faux_gain
+sg-00077,"Bonjour, vous avez remporté un voyage à La Mecque tous frais payés. Envoyez 50 000 F pour les frais de visa au <TEL>.",arnaque,faux_gain
+sg-00109,Alerte sécurité: votre compte Orange Money sera fermé. Vérifiez vos informations: hxxps://0range-money[.]com/verif,arnaque,phishing_lien
+sg-00121,Votre compte a été crédité de 20 000 F. Consultez le détail: s[.]id/credit-om,arnaque,phishing_lien
+sg-00122,ALERTE Orange Money: 3 tentatives de connexion échouées. Protégez votre compte: hxxps://orangemoney-securite[.]click/pin,arnaque,phishing_lien
+sg-00123,Doublez votre argent en 72h! Investissez 50 000 F et recevez 100 000 F. Contactez notre gestionnaire sur WhatsApp au <TEL>.,arnaque,investissement_emploi
+sg-00124,"Opportunité: gagnez 25 000 F par jour depuis votre téléphone, sans diplôme. Inscription 5000 F. Infos au <TEL>",arnaque,investissement_emploi
+sg-00133,"Mon frère, j'ai trouvé une affaire: tu mets 100 000 et on te rembourse 300 000 dans 10 jours. Moi-même j'ai déjà gagné, appelle vite",arnaque,investissement_emploi
+sg-00135,Travail à domicile: aimez des vidéos et gagnez 15 000 F par jour. Activation du compte: 5000 F.,arnaque,investissement_emploi
+sg-00140,Multipliez votre capital par 5 en 30 jours avec notre programme d'investissement. Rendement garanti. Appelez le <TEL>,arnaque,investissement_emploi
+sg-00153,"Maman c'est moi, mon téléphone est tombé dans l'eau. J'écris avec le numéro d'un ami. Envoie-moi vite 20 000 F, je suis bloqué.",arnaque,autre_arnaque
+sg-00156,"Bonjour, j'ai changé de numéro. Enregistre celui-ci et supprime l'ancien. Au fait, tu peux m'aider avec 15 000 F ?",arnaque,autre_arnaque
+sg-00159,"Bonjour, je suis le propriétaire de la maison que vous avez visitée. Envoyez 3 mois de caution par Wave pour réserver avant les autres.",arnaque,autre_arnaque
+sg-00164,Je suis une veuve malade et je veux léguer ma fortune de 500 millions à une personne honnête. Contactez mon avocat au <TEL>.,arnaque,autre_arnaque
+sg-00167,"Ma sœur c'est moi, je suis à la gare et mon porte-monnaie est perdu. Fais-moi un transfert de 10 000 sur ce numéro stp",arnaque,autre_arnaque
+sg-00174,"Bonjour madame, votre fils a eu un malaise à l'école. Envoyez 20 000 F pour les premiers soins au numéro de l'infirmier <TEL>.",arnaque,autre_arnaque
+sg-00182,Votre compte a été débité de 25 000 XOF le 29/09/2026 (retrait GAB). Solde disponible: 180 500 XOF.,legitime,notification_transaction
+sg-00184,Votre compte a été crédité de 350 000 XOF (VIREMENT SALAIRE SEPT). Solde: 412 000 XOF.,legitime,notification_transaction
+sg-00187,Votre transaction de 5000 FCFA vers <TEL> a echoue. Votre compte n'a pas ete debite.,legitime,notification_transaction
+sg-00197,Votre facture d'eau de 8 750 FCFA a été payée. Référence: <REF>.,legitime,notification_transaction
+sg-00208,Transfert de 5000 F vers <TEL> réussi. Solde 750 F. Pensez à recharger votre compte.,legitime,notification_transaction
+sg-00209,Vous avez recu 40000 FCFA de <NOM>. Motif: loyer octobre. Solde: 43100 FCFA.,legitime,notification_transaction
+sg-00210,"Votre carte a été utilisée pour un paiement de 18 900 XOF chez un commerçant le 30/09/2026 à 12:14. Si ce n'est pas vous, contactez votre agence.",legitime,notification_transaction
+sg-00216,Cotisation tontine: 10 000 F envoyés à <NOM>. Solde: 3 450 F.,legitime,notification_transaction
+sg-00223,"Vous avez recu 250000 FCFA de <NOM>. Solde: 262000 FCFA. Pour votre sécurité, ne partagez jamais votre PIN.",legitime,notification_transaction
+sg-00225,Transfert Orange Money vers compte bancaire de 100 000 FCFA effectué. Délai: 24h.,legitime,notification_transaction
+sg-00235,Vous avez payé 2 000 FCFA à la pharmacie <NOM>. Solde restant: 6 800 FCFA.,legitime,notification_transaction
+sg-00258,Votre code de vérification Telegram: <CODE>. Ne donnez ce code à personne.,legitime,otp
+sg-00267,Code de vérification: <CODE>. Utilisez-le pour réinitialiser votre mot de passe.,legitime,otp
+sg-00273,Votre code de livraison est <CODE>. Donnez-le au livreur uniquement à la réception du colis.,legitime,otp
+sg-00279,Code de sécurité Microsoft: <CODE>.,legitime,otp
+sg-00284,"Pour sécuriser votre compte Orange Money, votre nouveau code secret a bien été enregistré. Ne le communiquez jamais.",legitime,otp
+sg-00285,Votre code de validation Uber est <CODE>.,legitime,otp
+sg-00288,Orange: Profitez de 3Go à 1000F valables 7 jours. Tapez #111# ou passez par l'application.,legitime,promo_operateur
+sg-00290,Bonus: rechargez 2000F aujourd'hui et recevez 100% de bonus d'appel valable 3 jours.,legitime,promo_operateur
+sg-00298,Orange Money: envoyez de l'argent vers la Côte d'Ivoire à moitié prix jusqu'au 15 octobre.,legitime,promo_operateur
+sg-00302,Orange: votre recharge de 5000F vous donne droit à 1Go offert. Il est déjà disponible.,legitime,promo_operateur
+sg-00308,Wave: votre application a été mise à jour. Découvrez les nouvelles fonctionnalités depuis l'accueil.,legitime,promo_operateur
+sg-00314,Bonne fête de Tabaski! Profitez de 30% de bonus sur toutes vos recharges jusqu'à dimanche.,legitime,promo_operateur
+sg-00315,"Votre forfait appels a été renouvelé automatiquement. Pour désactiver le renouvellement, tapez #144#.",legitime,promo_operateur
+sg-00328,Moov: coupure de service prévue dimanche de 2h à 5h pour amélioration du réseau.,legitime,promo_operateur
+sg-00356,On se retrouve au rond-point à 18h,legitime,personnel
+sg-00359,Tu as fini le devoir de maths? Envoie-moi une photo de l'exercice 3 stp,legitime,personnel
+sg-00361,Frère tu peux me prêter 5000 jusqu'à la fin du mois? Je te rembourse le 30,legitime,personnel
+sg-00369,"Le gâteau est super bon, merci ma sœur!",legitime,personnel
+sg-00374,"Je t'ai envoyé la vidéo sur WhatsApp, regarde c'est trop drôle",legitime,personnel
+sg-00381,"J'ai déposé ton colis chez le voisin, récupère-le quand tu rentres",legitime,personnel
+sg-00384,"Je vais au marché, tu veux quelque chose?",legitime,personnel
+sg-00397,Chéri n'oublie pas le rendez-vous chez le pédiatre à 11h,legitime,personnel
+sg-00407,Paix à son âme. Les obsèques auront lieu samedi au village,legitime,personnel
+sg-00408,"je pense que je vais me couper les cheveux, genre vraiment cours... t'en pense quoi?",legitime,personnel
+sg-00413,"nn nn mais il est pas allé en cours cet aprem, il était malade hier et la il se sentait pas bien...",legitime,personnel
+sg-00433,Ti fait quoi de beau ??,legitime,personnel
+sg-00434,"courage à nous ^^ oui, on va y arriver, il suffit de penser aux vacs!",legitime,personnel
+sg-00435,Alors comment ça va ?,legitime,personnel
+sg-00439,Dis a maman que j'arrive a 40-42 a jouy,legitime,personnel
+sg-00443,Il est É-NORME mon colis !,legitime,personnel
+sg-00447,Ah ok ! Passe lui le bjr :) bonne soirée <3,legitime,personnel
+sg-00451,Au bout d'un moment le prof de ses a dit il manque <NOM> ? Et la je sais plus qui dit : normal on a controle de maths !,legitime,personnel
+sg-00454,Passe le num de,legitime,personnel
+sg-00458,Il pleut et la ou on est il y à du sable tout est plein d'eau et de sable c'est dégu en plus je suis tranpé :0,legitime,personnel
+sg-00465,Annnnw d'accord Beh jarrive dans pas longtemps,legitime,personnel
+sg-00469,"Oui bien sur, tout à fait légitime.",legitime,personnel
+sg-00478,Tu ne l'as pas fait le patronus au fait?,legitime,personnel
+sg-00482,J'ai rajouté mes aimants dans mon sac et ai raccourci les anses. Je vais me coucher. Tu as oublié ta soupe. Bisous,legitime,personnel
+sg-00489,Weshhh cousine ! Sa spassse bien avec les gens de ou toi,legitime,personnel
+sg-00498,J'arrive=DD!!<3,legitime,personnel
+sg-00499,t'es complètemet perché,legitime,personnel
+sg-00504,When you'll go home you are not allowed to sleep at 1:30 am !,legitime,personnel
+sg-00505,Écris Français sale Biatch :p ! Nan nan je reste dans cet appart mais tu me feras le plaisir de venir me faire quelques stripteases de temps a autre hein :p,legitime,personnel
+sg-00507,Dans quel etat? Lol,legitime,personnel
+sg-00512,Bonne journée <NOM> bisous!,legitime,personnel
+sg-00513,Je m'occupe d'aller chercher <NOM> . Elle se préparera à la maison avec <NOM> et moi ...,legitime,personnel
+sg-00517,Bien jouer mon pti genie :),legitime,personnel
+sg-00524,:'( je vais pas gagner :'( . A tte bon app je t'aime,legitime,personnel
+sg-00526,<NOM> ma filè plein d habits pour cet hiver. j ai + besoin de collants laine. Jai pas de monai jsui au boulot ui. Maman es en coupè ptetre kele passera jpense,legitime,personnel
+sg-00528,ouai jai trop dormi en plus alors jss dan la choucroute lol mais fut que jaille car g recu un pantalon de la redoute et il est trop petit...,legitime,personnel
+sg-00534,Eh mmais te croque pas le cerveau,legitime,personnel
+sg-00544,Ouais trop drole par contre le nouveau il est drole mais sans plus,legitime,personnel
+sg-00548,Ah ok ! J'peux pas l'annuler sur internet direct' ?,legitime,personnel
+sg-00551,"3 ?? Là en l'occurrence drøle, physiquement et c'quoi l'autre ?",legitime,personnel
+sg-00553,J'attend rien pour le moment ... Disons que je tiens quand même un peu à toi ... :-) Mais que la situation n'a pas changé ... Alors je préfère garder une certaine distance pour moins d'ambiguité ... Pfff je sais plus !!!,legitime,personnel
+sg-00557,Ok ba viens a 18h30 par contre ski est sure c est que si <NOM> decide de faire le travail de fin de semestre en groupe je serais tte seule ou avec une personne qui a les meme disponibilité,legitime,personnel
+sg-00558,WAVE: Félicitations! Vous êtes bénéficiaire d'un cadeau de 37 000 FCFA. Recevez-le en remplissant le formulaire: hxxps://wave-cadeau-ci[.]online,arnaque,phishing_lien
+sg-00559,Cadeau Wave 🎁 37.000F offert aux clients fidèles. Entrez votre numéro et votre code secret ici pour valider: hxxp://wave-bonus[.]xyz/ci,arnaque,phishing_lien
+sg-00560,"Bonjour, Wave Côte d'Ivoire vous offre 37000 F pour fêter ses clients. Cliquez vite avant ce soir: bit[.]ly/cadeau-wave-ci",arnaque,phishing_lien
+sg-00561,Vous avez un cadeau Wave de 37 000 FCFA en attente. Confirmez votre compte (numéro + code) pour le recevoir: hxxps://cadeau-wave[.]site,arnaque,phishing_lien
+sg-00582,"Recrutement direct Douanes, Impôts et Trésor 2026: inscriptions ouvertes. Contactez le coordonnateur au <TEL> pour réserver votre place.",arnaque,investissement_emploi
+sg-00583,"Fonction publique: recrutement direct sans concours aux Douanes. Places limitées, frais de dossier 25 000 F par Mobile Money au <TEL>.",arnaque,investissement_emploi
+sg-00584,Info: le Trésor recrute 500 agents sur dossier. Envoie ton nom et ta photo sur WhatsApp au <TEL> avant vendredi.,arnaque,investissement_emploi
+sg-00602,"Orange Money: ne communiquez jamais votre code secret ni le code OTP à 4 chiffres, même à un agent Orange.",legitime,promo_operateur

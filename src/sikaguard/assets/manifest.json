@@ -1,11 +1,11 @@
 {
-  "model_version": "0.1.0.dev1",
-  "dataset_version": "0.1.0.dev1",
+  "model_version": "0.1.0.dev2",
+  "dataset_version": "0.1.0.dev2",
   "sklearn_version": "1.8.0",
   "skops_version": "0.16.0",
-  "threshold_high": 0.4932729561755749,
-  "threshold_low": 0.10827234321577682,
-  "sha256": "cc23d4ac97f853fab9760dd18c4557484723c4004c3a36d8c220f9ad16c5a31c",
+  "threshold_high": 0.31647213708451727,
+  "threshold_low": 0.3052759012674577,
+  "sha256": "bb0e072fa169f1b0d85ad4ccacb2a7b89702171fbb705996fb08ae7a044905b7",
   "categories": [
     "autre_arnaque",
     "faux_gain",
@@ -14,7 +14,7 @@
     "phishing_lien",
     "usurpation_operateur"
   ],
-  "created_at": "2026-10-01T10:04:39+00:00",
+  "created_at": "2026-10-02T03:14:53+00:00",
   "not_for_production": true,
-  "training_data": "498 SMS: 344 amorcage, 23 autorite, 117 corpus_recherche, 7 operateur, 7 presse; real collected scams: 0"
+  "training_data": "1681 SMS: 352 amorcage, 27 autorite, 1287 corpus_recherche, 8 operateur, 7 presse; real collected scams: 650 (West Africa: 0)"
 }

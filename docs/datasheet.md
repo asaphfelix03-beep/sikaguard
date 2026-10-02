@@ -1,4 +1,4 @@
-# Datasheet — sikaguard SMS dataset `0.1.0.dev1`
+# Datasheet — sikaguard SMS dataset `0.1.0.dev2`
 
 Following *Datasheets for Datasets* (Gebru et al., 2021).
 
@@ -17,19 +17,19 @@ Money scams are common. This dataset is a first, documented step toward one.
 | Version | Rows | Scams | Legitimate | Real SMS |
 |---|---|---|---|---|
 | `0.1.0.dev0` | 407 | 177 | 230 | none (seed only) |
-| `0.1.0.dev1` | 602 | 217 | 385 | **150 real legitimate SMS** (88milSMS); scams: seed + reconstructions of 12 documented campaigns |
+| `0.1.0.dev1` | 602 | 217 | 385 | 150 real legitimate SMS |
+| `0.1.0.dev2` | 2 063 | 1 028 | 1 035 | **811 real scams + 800 real legitimate SMS** |
 
-Composition of `0.1.0.dev1` by `source_type`: `amorcage` 407 (hand-written seed),
-`corpus_recherche` 150 (88milSMS, real), `autorite` 30, `operateur` 8, `presse` 7
-(documented campaigns and official notices, see [`data/sources/README.md`](../data/sources/README.md)).
+Composition of `0.1.0.dev2` by origin: IMC'25 real scams 811, 88milSMS real personal SMS
+800, hand-written seed 407, documented-campaign reconstructions and official notices 45.
 
-Scam categories (test split in brackets): `investissement_emploi` 43 (8),
-`phishing_lien` 41 (7), `usurpation_operateur` 38 (6), `faux_transfert` 34 (5),
-`autre_arnaque` 31 (6), `faux_gain` 30 (4).
-Legitimate categories: `personnel` 225 (42), `notification_transaction` 70 (11),
-`promo_operateur` 50 (9), `otp` 40 (6).
+Categories (test split in brackets): `phishing_lien` 397 (77), `autre_arnaque` 283 (54),
+`usurpation_operateur` 240 (45), `investissement_emploi` 43 (5), `faux_transfert` 35 (5),
+`faux_gain` 30 (4); `personnel` 875 (170), `notification_transaction` 70 (9),
+`promo_operateur` 50 (7), `otp` 40 (6).
 
-Countries: CI 278, FR 150, SN 68, BJ 24, BF 23, CM 18, ML 13, TG 11, unknown 17.
+Countries: FR 1 059, CI 278, SN 68, BJ 24, BF 23, CM 18, BE 16, CA 16, ML 13, TG 11,
+unknown 537 (IMC'25 reports often lack the country).
 
 An **external benchmark** of 1 000 further real 88milSMS messages
 (`data/eval/88milsms_eval.csv`) is never used for training.
@@ -39,11 +39,12 @@ An **external benchmark** of 1 000 further real 88milSMS messages
 `campagne` (documented campaign id), `source_ref` (public URL of an official or press
 source, never of a social-media post), `group_id`, `split`. Definitions: [annotation guide](annotation_guide.md).
 
-**Is there a recommended split?** Yes, the `split` column: 498 train / 104 test, made
+**Is there a recommended split?** Yes, the `split` column: 1 681 train / 382 test, made
 by group and stratified by category. A group joins near-duplicates (character 5-gram
 Jaccard ≥ 0.8, transitive closure) and all rows of a documented campaign, so variants
 of one scam or campaign never appear on both sides. The rows of the consumed
-`0.1.0.dev0` test split ([`data/history/`](../data/history/)) are forced into train.
+`0.1.0.dev0` and `0.1.0.dev1` test splits ([`data/history/`](../data/history/)) are forced
+into train.
 
 **Does it contain personal or sensitive data?** It should not. Phone numbers, names,
 transaction references, codes and e-mails are replaced by `<TEL>`, `<NOM>`, `<REF>`,
@@ -72,7 +73,16 @@ published description (the sources do not reproduce the SMS verbatim), plus 5
 legitimate official notices. Each row cites its source; facts were extracted, no
 article text is reproduced.
 
-**Real collected scams (planned).** Collection from public sources only: operator and
+**IMC'25 (dev2).** French subset (1 163 rows, 890 unique texts) of the labeled
+smishing dataset of Agarwal et al. (ACM IMC 2025, CC BY 4.0), made of SMS that victims
+reported publicly. Every unique text was read by the author; 119 were excluded (53
+legitimate, 26 ambiguous, 18 advertising or political, 9 replies of the French 33700
+service, 8 fragments, 5 not in French) and 1 was re-typed by hand. The corpus' Presidio
+tags were rewritten so that no tag exists in one class only (names → `<NOM>`, numbers →
+`<TEL>`/`<REF>`, dates → plain dates, links → shortener domain or `<URL>`). Imported with
+`python -m sikaguard_lab.import_imc25`.
+
+**Real West-African scams (planned).** Collection from public sources only: operator and
 authority alerts, press articles, and social-media posts where people report a scam,
 following the inclusion rules of the [annotation guide](annotation_guide.md).
 Detailed provenance of social-media posts stays in a private folder (`data/raw/`,

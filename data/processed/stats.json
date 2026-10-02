@@ -1,68 +1,69 @@
 {
-  "version": "0.1.0.dev1",
-  "n_rows": 602,
+  "version": "0.1.0.dev2",
+  "n_rows": 2063,
   "n_exact_duplicates_removed": 0,
-  "n_groups": 574,
-  "n_multi_row_groups": 12,
+  "n_groups": 1791,
+  "n_multi_row_groups": 119,
   "n_campaigns": 17,
-  "n_consumed_rows_forced_to_train": 82,
+  "n_consumed_rows_forced_to_train": 155,
   "by_label": {
-    "arnaque": 217,
-    "legitime": 385
+    "arnaque": 1028,
+    "legitime": 1035
   },
   "by_category": {
-    "autre_arnaque": 31,
+    "autre_arnaque": 283,
     "faux_gain": 30,
-    "faux_transfert": 34,
+    "faux_transfert": 35,
     "investissement_emploi": 43,
     "notification_transaction": 70,
     "otp": 40,
-    "personnel": 225,
-    "phishing_lien": 41,
+    "personnel": 875,
+    "phishing_lien": 397,
     "promo_operateur": 50,
-    "usurpation_operateur": 38
+    "usurpation_operateur": 240
   },
   "by_source_type": {
     "amorcage": 407,
     "autorite": 30,
-    "corpus_recherche": 150,
+    "corpus_recherche": 1611,
     "operateur": 8,
     "presse": 7
   },
   "by_country": {
+    "BE": 16,
     "BF": 23,
     "BJ": 24,
+    "CA": 16,
     "CI": 278,
     "CM": 18,
-    "FR": 150,
+    "FR": 1059,
     "ML": 13,
     "SN": 68,
     "TG": 11,
-    "XX": 17
+    "XX": 537
   },
   "by_split_label": {
     "train": {
-      "arnaque": 181,
-      "legitime": 317
+      "arnaque": 838,
+      "legitime": 843
     },
     "test": {
-      "arnaque": 36,
-      "legitime": 68
+      "arnaque": 190,
+      "legitime": 192
     }
   },
   "by_split_source_type": {
     "train": {
-      "amorcage": 344,
-      "autorite": 23,
-      "corpus_recherche": 117,
-      "operateur": 7,
+      "amorcage": 352,
+      "autorite": 27,
+      "corpus_recherche": 1287,
+      "operateur": 8,
       "presse": 7
     },
     "test": {
-      "amorcage": 63,
-      "autorite": 7,
-      "corpus_recherche": 33,
-      "operateur": 1
+      "amorcage": 55,
+      "autorite": 3,
+      "corpus_recherche": 324
     }
   }
 }

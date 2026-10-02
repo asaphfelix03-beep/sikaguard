@@ -10,7 +10,12 @@
       (refunds, "code … pour confirmer").
 - [x] Latency below 10 ms p95 per SMS.
 
-## v0.1.0 — real collected scams (next)
+## Done in 0.1.0.dev2
+
+- [x] 811 real French scam SMS (IMC'25) with a published human review.
+- [x] Balanced dataset (2 063 SMS, 1 611 real); evaluation on real SMS only.
+
+## v0.1.0 — real West-African data (next)
 
 - [ ] Collect ≥ 300 **real** scam SMS from Côte d'Ivoire first (screenshots shared by
       victims, PLCC and operator alerts), following the
@@ -25,8 +30,12 @@
 
 ## Known limitations to address (validated on the next test split)
 
-- Scam *type* on unseen campaigns (75 % accuracy): more examples per category, and a
-  category model that can say "unknown".
+- Legitimate West-African credits and refunds ("prêt remboursé", "compte crédité")
+  flagged after learning from real French refund scams: collect real legitimate
+  West-African notifications.
+- Scam *type* (80.5 % accuracy): more examples per category, and a category model that
+  can say "unknown".
+- Marketplace scams that move the conversation to e-mail, without a link.
 - Secrecy requests in less common forms ("ne dis rien à papa").
 - A dedicated signal for fake-authority threats (fake PLCC agent, fake fines, "arrestation").
 - Commercial operator promotions occasionally flagged.
