@@ -152,7 +152,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inputs", type=Path, nargs="+", default=list(DEFAULT_INPUTS))
     parser.add_argument("--out", type=Path, default=Path("data/processed"))
-    parser.add_argument("--version", default="0.1.0.dev1")
+    parser.add_argument("--version", default="0.1.0.dev2")
     parser.add_argument("--random-seed", type=int, default=42)
     parser.add_argument(
         "--consumed",

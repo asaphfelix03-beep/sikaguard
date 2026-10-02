@@ -49,7 +49,32 @@ OBJECTIVES = {
     "min_detection_under_perturbation": 0.85,
     # Pre-registered on 2026-10-01, before any evaluation on real SMS.
     "real_sms_false_positive_rate": 0.05,
+    # Pre-registered on 2026-10-02, before the first evaluation on real scam SMS.
+    "real_test_average_precision": 0.95,
+    "real_scam_detection_rate": 0.90,
+    "real_scam_arnaque_rate": 0.85,
 }
+
+LOWER_IS_BETTER = frozenset({"hard_legit_false_positive_rate", "real_sms_false_positive_rate"})
+
+REAL_SCAM_SOURCE = "reportsmishing"  # IMC'25: real scam SMS reported by users
+REAL_LEGIT_SOURCE = "88milsms"  # 88milSMS: real personal SMS
+
+
+def source_name(row: dict[str, str]) -> str:
+    """Human-readable origin of a dataset row."""
+    if REAL_SCAM_SOURCE in row.get("source_ref", ""):
+        return "IMC'25 (real scam SMS)"
+    if REAL_LEGIT_SOURCE in row.get("source_ref", ""):
+        return "88milSMS (real legitimate SMS)"
+    if row.get("campagne"):
+        return "documented campaigns (CI/SN)"
+    return "seed (hand-written)"
+
+
+def _is_real(row: dict[str, str]) -> bool:
+    ref = row.get("source_ref", "")
+    return REAL_SCAM_SOURCE in ref or REAL_LEGIT_SOURCE in ref
 
 
 # ----------------------------------------------------------------- statistics
@@ -88,6 +113,41 @@ def proportion_ci(flags: Sequence[bool], *, n: int = 1000, seed: int = 0) -> tup
     rng = np.random.default_rng(seed)
     means = [arr[rng.integers(0, len(arr), len(arr))].mean() for _ in range(n)]
     return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+
+
+def _real_only(
+    test: list[dict[str, str]],
+    y: np.ndarray[Any, Any],
+    scores: np.ndarray[Any, Any],
+    verdicts: list[str],
+) -> dict[str, Any] | None:
+    """Metrics on the real rows of the test split (real scams vs real legitimate SMS)."""
+    idx = np.array([i for i, r in enumerate(test) if _is_real(r)], dtype=int)
+    if len(idx) == 0 or len(np.unique(y[idx])) < 2:
+        return None
+    ry, rs = y[idx], scores[idx]
+    scam = [i for i in idx if y[i] == 1]
+    legit = [i for i in idx if y[i] == 0]
+    alert = [verdicts[i] != "legitime" for i in scam]
+    as_scam = [verdicts[i] == "arnaque" for i in scam]
+    false_alarm = [verdicts[i] == "arnaque" for i in legit]
+    ap_lo, ap, ap_hi = bootstrap_ci(_ap, ry, rs)
+    rec_lo, rec, rec_hi = bootstrap_ci(lambda a, b: recall_at_precision(a, b, 0.95), ry, rs)
+    missed = [test[i]["text"] for i in scam if verdicts[i] == "legitime"]
+    return {
+        "n_scams": len(scam),
+        "n_legit": len(legit),
+        "average_precision": _r(ap),
+        "average_precision_ci95": [_r(ap_lo), _r(ap_hi)],
+        "recall_at_precision_95": _r(rec),
+        "recall_at_precision_95_ci95": [_r(rec_lo), _r(rec_hi)],
+        "scams_flagged_arnaque_or_suspect": _r(np.mean(alert)),
+        "scams_flagged_arnaque_or_suspect_ci95": [_r(v) for v in proportion_ci(alert)],
+        "scams_flagged_arnaque": _r(np.mean(as_scam)),
+        "scams_flagged_arnaque_ci95": [_r(v) for v in proportion_ci(as_scam)],
+        "legit_flagged_arnaque": _r(np.mean(false_alarm)),
+        "missed_scams": missed[:15],
+    }
 
 
 def _external_benchmark(analyzer: Analyzer, path: Path) -> dict[str, Any] | None:
@@ -267,9 +327,13 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
             key: _r(np.mean([verdicts[i] != "legitime" for i in idx])),
         }
     per_source: dict[str, dict[str, Any]] = {}
-    for column in ("source_type", "pays"):
-        for value in sorted({r[column] for r in test}):
-            idx = np.array([i for i, r in enumerate(test) if r[column] == value])
+    keys = {
+        "source": [source_name(r) for r in test],
+        "pays": [r["pays"] for r in test],
+    }
+    for column, values in keys.items():
+        for value in sorted(set(values)):
+            idx = np.array([i for i, v in enumerate(values) if v == value])
             entry: dict[str, Any] = {"n": len(idx)}
             if len(np.unique(te_y[idx])) == 2:
                 entry["average_precision"] = _r(_ap(te_y[idx], scores[idx]))
@@ -282,6 +346,9 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
                     np.mean([verdicts[i] == "arnaque" for i in legit_part])
                 )
             per_source[f"{column}={value}"] = entry
+
+    # Real SMS only: real scams vs real legitimate messages of the test split -------------
+    real = _real_only(test, te_y, scores, verdicts)
 
     # External benchmark: real SMS never used for training ---------------------------
     external = _external_benchmark(analyzer, data_dir.parent / "eval" / EXTERNAL_FILE)
@@ -342,11 +409,16 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
     }
     if external is not None:
         achieved["real_sms_false_positive_rate"] = external["false_positive_rate"]
+    if real is not None:
+        achieved["real_test_average_precision"] = real["average_precision"]
+        achieved["real_scam_detection_rate"] = real["scams_flagged_arnaque_or_suspect"]
+        achieved["real_scam_arnaque_rate"] = real["scams_flagged_arnaque"]
     objectives = {
         key: {
             "target": target,
             "achieved": achieved[key],
-            "met": achieved[key] <= target if key.endswith("rate") else achieved[key] >= target,
+            "lower_is_better": key in LOWER_IS_BETTER,
+            "met": achieved[key] <= target if key in LOWER_IS_BETTER else achieved[key] >= target,
         }
         for key, target in OBJECTIVES.items()
         if key in achieved
@@ -365,6 +437,7 @@ def evaluate(data_dir: Path, reports_dir: Path, notes: Sequence[str] = ()) -> di
         "per_category": per_category,
         "per_source": per_source,
         "category_model": category_model,
+        "real_test": real,
         "external_real_sms": external,
         "robustness": robustness,
         "objectives": objectives,
@@ -429,7 +502,7 @@ def render_markdown(m: dict[str, Any], stats: dict[str, Any], training: dict[str
         "",
         f"Thresholds chosen on out-of-fold train predictions: `arnaque` if score ≥ "
         f"{op['threshold_high']:.3f} (precision ≥ 95 %), `legitime` if score < "
-        f"{op['threshold_low']:.3f} (recall ≥ 98 %), `suspect` in between.",
+        f"{op['threshold_low']:.3f} (recall ≥ 99 %), `suspect` in between.",
         "",
         "| True label \\ verdict | arnaque | suspect | legitime |",
         "|---|---|---|---|",
@@ -486,12 +559,37 @@ def render_markdown(m: dict[str, Any], stats: dict[str, Any], training: dict[str
         "|---|---|---|---|---|",
     ]
     for key, e in m["per_source"].items():
-        if not key.startswith("source_type="):
+        if not key.startswith("source="):
             continue
         ap = f"{e['average_precision']:.3f}" if "average_precision" in e else "—"
         sf = _pct(e["scams_flagged"]) if "scams_flagged" in e else "—"
         lf = _pct(e["legit_flagged_arnaque"]) if "legit_flagged_arnaque" in e else "—"
-        lines.append(f"| {key.removeprefix('source_type=')} | {e['n']} | {ap} | {sf} | {lf} |")
+        lines.append(f"| {key.removeprefix('source=')} | {e['n']} | {ap} | {sf} | {lf} |")
+    real = m.get("real_test")
+    if real:
+        lo, hi = real["average_precision_ci95"]
+        r_lo, r_hi = real["recall_at_precision_95_ci95"]
+        a_lo, a_hi = real["scams_flagged_arnaque_or_suspect_ci95"]
+        s_lo, s_hi = real["scams_flagged_arnaque_ci95"]
+        lines += [
+            "",
+            "## Real SMS only (test split)",
+            "",
+            f"Real scam SMS reported by victims (IMC'25, n = {real['n_scams']}) against real "
+            f"legitimate SMS (88milSMS, n = {real['n_legit']}), all never seen in training.",
+            "",
+            f"- Average precision: **{real['average_precision']:.3f}** [{lo:.3f}, {hi:.3f}]",
+            f"- Recall at 95 % precision: {_pct(real['recall_at_precision_95'])} "
+            f"[{_pct(r_lo)}, {_pct(r_hi)}]",
+            f"- Real scams flagged `arnaque` or `suspect`: "
+            f"**{_pct(real['scams_flagged_arnaque_or_suspect'])}** [{_pct(a_lo)}, {_pct(a_hi)}]",
+            f"- Real scams flagged `arnaque`: {_pct(real['scams_flagged_arnaque'])} "
+            f"[{_pct(s_lo)}, {_pct(s_hi)}]",
+            f"- Real legitimate SMS flagged `arnaque`: {_pct(real['legit_flagged_arnaque'])}",
+        ]
+        if real["missed_scams"]:
+            lines += ["", "Real scams judged legitimate (first 15):", ""]
+            lines += [f"- {t}" for t in real["missed_scams"]]
     ext = m.get("external_real_sms")
     if ext:
         lo, hi = ext["false_positive_rate_ci95"]
@@ -519,7 +617,7 @@ def render_markdown(m: dict[str, Any], stats: dict[str, Any], training: dict[str
         "|---|---|---|---|",
     ]
     for key, o in m["objectives"].items():
-        sign = "≤" if key.endswith("rate") else "≥"
+        sign = "≤" if o.get("lower_is_better") else "≥"
         lines.append(
             f"| {key} | {sign} {o['target']} | {o['achieved']} | {'yes' if o['met'] else 'no'} |"
         )

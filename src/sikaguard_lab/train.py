@@ -28,7 +28,7 @@ from sikaguard import __version__
 from sikaguard.features import build_features
 from sikaguard.model import DEFAULT_MODEL_DIR, save_model
 from sikaguard_lab.build import DATASET_FILE, STATS_FILE
-from sikaguard_lab.schema import read_csv
+from sikaguard_lab.schema import WEST_AFRICA, read_csv
 
 C_GRID = (1.0, 4.0, 10.0, 30.0, 100.0)
 C_TOLERANCE = 0.001
@@ -76,7 +76,7 @@ def choose_thresholds(
     scores: np.ndarray[Any, Any],
     *,
     min_precision: float = 0.95,
-    min_recall: float = 0.98,
+    min_recall: float = 0.99,
 ) -> tuple[float, float]:
     """Return ``(threshold_high, threshold_low)``.
 
@@ -145,9 +145,15 @@ def train(data_dir: Path, out_dir: Path, reports_dir: Path) -> dict[str, Any]:
     category = build_category_pipeline(C=best_c).fit(
         [r["text"] for r in scam_rows], [r["category"] for r in scam_rows]
     )
-    # Production use requires real collected scams, not only reconstructions.
+    # Production use in West Africa requires real collected scams from West Africa,
+    # not only reconstructions or scams from other countries.
     real_scams = sum(
         1 for r in rows if r["label"] == "arnaque" and r["derive_de_modele"] == "false"
+    )
+    real_scams_west_africa = sum(
+        1
+        for r in rows
+        if r["label"] == "arnaque" and r["derive_de_modele"] == "false" and r["pays"] in WEST_AFRICA
     )
     sources = Counter(r["source_type"] for r in rows)
     manifest = save_model(
@@ -158,11 +164,11 @@ def train(data_dir: Path, out_dir: Path, reports_dir: Path) -> dict[str, Any]:
         dataset_version=str(stats["version"]),
         threshold_high=high,
         threshold_low=low,
-        not_for_production=real_scams == 0,
+        not_for_production=real_scams_west_africa == 0,
         training_data=(
             f"{len(rows)} SMS: "
             + ", ".join(f"{n} {source}" for source, n in sorted(sources.items()))
-            + f"; real collected scams: {real_scams}"
+            + f"; real collected scams: {real_scams} (West Africa: {real_scams_west_africa})"
         ),
     )
     report = {
