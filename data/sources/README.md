@@ -1,8 +1,26 @@
 # data/sources — real-world material
 
-Two kinds of public, citable material complement the hand-written seed set.
+Three kinds of public, citable material complement the hand-written seed set.
 
-## 1. `88milsms_sample.csv` — real legitimate SMS (150 rows)
+## 0. `imc25_french.csv` — real scam SMS (811 rows)
+
+French subset of the labeled smishing dataset released with:
+
+> Agarwal S., Papasavva A., Suarez-Tangil G., Vasek M. (2025). *Fishing for Smishing:
+> Understanding SMS Phishing Infrastructure and Strategies by Mining Public User
+> Reports.* Proceedings of the ACM Internet Measurement Conference (IMC '25).
+> https://doi.org/10.1145/3730567.3764431 — data: https://github.com/reportsmishing/Smishing-Dataset-IMC25
+> (commit `a6175560`), **CC BY 4.0**.
+
+These are SMS that victims reported publicly (France, Belgium, Canada). Changes made
+by sikaguard: French rows of the scam types banking, telecom, delivery, government,
+others and "hey mum/dad"; human review of the 890 unique texts (decisions and reasons
+in [`review/imc25_exclusions.csv`](review/imc25_exclusions.csv), one hand correction in
+[`review/imc25_overrides.csv`](review/imc25_overrides.csv)); anonymisation tags rewritten
+to sikaguard's placeholders; exact and normalised duplicates removed. Reproduce with
+`python -m sikaguard_lab.import_imc25`.
+
+## 1. `88milsms_sample.csv` — real legitimate SMS (800 rows)
 
 Random sample of the **88milSMS** corpus: authentic French SMS collected in 2011
 in the Montpellier area and anonymised by their authors.
@@ -18,10 +36,13 @@ Changes made by sikaguard: name tags (`[_forename_]`, `[_surname_]`,
 (address, location, brand, code, e-mail, URL), chain letters, links and
 messages shorter than 15 characters were left out. Imported reproducibly with
 `python -m sikaguard_lab.import_88milsms` (seed 2011). A disjoint sample of
-1 000 messages (`data/eval/88milsms_eval.csv`) is **never** used for training.
+1 000 messages (`data/eval/88milsms_eval.csv`) is **never** used for training; the
+training sample is drawn with `--exclude data/eval/88milsms_eval.csv` so the benchmark
+never changes.
 
-Known bias: France, 2011, mostly students. It is capped at 40 % of the
-legitimate class and its effect is measured separately in the evaluation.
+Known bias: France, 2011, mostly students. Since `0.1.0.dev2` the scam class also
+contains real French SMS (IMC'25), so the French-from-France style exists in both
+classes and the former 40 % cap was lifted; effects are measured per source.
 
 ## 2. `ci_campagnes_documentees.csv` — documented scam campaigns (45 rows)
 

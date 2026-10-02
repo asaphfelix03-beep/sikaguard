@@ -13,7 +13,9 @@ from sikaguard.result import LEGIT_CATEGORIES, SCAM_CATEGORIES
 LABELS = ("arnaque", "legitime")
 CATEGORIES_BY_LABEL = {"arnaque": SCAM_CATEGORIES, "legitime": LEGIT_CATEGORIES}
 OPERATORS = ("orange", "mtn", "moov", "wave", "banque", "autre", "aucun")
-COUNTRIES = ("CI", "SN", "BF", "ML", "BJ", "TG", "CM", "NE", "GN", "FR", "XX")
+COUNTRIES = ("CI", "SN", "BF", "ML", "BJ", "TG", "CM", "NE", "GN", "FR", "BE", "CA", "XX")
+#: Countries where sikaguard is meant to be used in production.
+WEST_AFRICA = frozenset({"CI", "SN", "BF", "ML", "BJ", "TG", "CM", "NE", "GN"})
 SOURCE_TYPES = (
     "operateur",
     "autorite",
@@ -67,8 +69,22 @@ def write_csv(path: Path, rows: Iterable[Mapping[str, object]], columns: Sequenc
             writer.writerow({c: row.get(c, "") for c in columns})
 
 
+_LIVE_SCHEME_RE = re.compile(r"https?://", re.IGNORECASE)
+_ANY_SCHEME_RE = re.compile(r"^h[tx]{2}ps?(?::|\[:\])//", re.IGNORECASE)
+
+
 def _url_not_defanged(text: str) -> bool:
-    return any("[.]" not in text[s:e] for s, e in url_spans(text))
+    """True if a link could still be clicked: a live scheme or a live dot in its host.
+
+    Dots in the path (``app.apk``) are harmless once the host is defanged, and
+    truncated fragments such as ``hxxps://orange`` carry nothing to defang.
+    """
+    for start, end in url_spans(text):
+        span = text[start:end]
+        host = re.split(r"[/?#]", _ANY_SCHEME_RE.sub("", span), maxsplit=1)[0]
+        if _LIVE_SCHEME_RE.search(span) or "." in host.replace("[.]", ""):
+            return True
+    return False
 
 
 def _check_row(row: Mapping[str, str], line: int, processed: bool) -> list[str]:

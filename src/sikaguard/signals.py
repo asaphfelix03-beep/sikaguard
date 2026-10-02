@@ -187,7 +187,8 @@ _CHECKS: dict[str, _Check] = {
     "gain_inattendu": lambda raw, norm, urls: bool(_PRIZE_RE.search(norm)),
     "promesse_gain_financier": lambda raw, norm, urls: bool(_EASY_MONEY_RE.search(norm)),
     "offre_emploi": lambda raw, norm, urls: bool(_JOB_RE.search(norm)),
-    "lien_present": lambda raw, norm, urls: bool(urls),
+    # "<url>" is a link already masked in an anonymised corpus.
+    "lien_present": lambda raw, norm, urls: bool(urls) or "<url>" in norm,
     "lien_raccourci": lambda raw, norm, urls: any(u.is_shortener for u in urls),
     "lien_suspect": lambda raw, norm, urls: any(u.is_suspect for u in urls),
     "mention_operateur": lambda raw, norm, urls: bool(_OPERATOR_RE.search(norm)),

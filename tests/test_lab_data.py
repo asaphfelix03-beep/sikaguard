@@ -265,3 +265,19 @@ def test_optional_columns_valid() -> None:
         source_type="autorite",
     )
     assert validate_rows([row]) == []
+
+
+@pytest.mark.parametrize(
+    ("text", "ok"),
+    [
+        ("Payez sur hxxps://orange", True),  # truncated, nothing to defang
+        ("Payez sur hxxps://faux[.]xyz/p", True),
+        ("Payez sur https://faux.xyz/p", False),
+        ("Payez sur hxxps://faux.xyz", False),  # live dot
+        ("Payez sur www.faux.com", False),
+        ("Installez hxxp://bonus[.]top/app.apk", True),  # dot in the path only
+    ],
+)
+def test_defanged_link_rule(text: str, ok: bool) -> None:
+    errors = validate_rows([raw_row(text=text)])
+    assert (not any("désamorcé" in e for e in errors)) is ok
