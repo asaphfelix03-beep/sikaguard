@@ -109,7 +109,10 @@ _CURRENCY_AFTER_RE = re.compile(
 )
 _THOUSANDS_RE = re.compile(r"[1-9]\d{0,2}(?:([ .])\d{3})(?:\1\d{3})*")
 _YEAR_RANGE_RE = re.compile(r"(?:19|20)\d{2}\s?[-/]\s?(?:19|20)\d{2}")
-_DATE_RE = re.compile(r"\d{1,2}([-./])\d{1,2}\1(?:19|20)\d{2}")
+_DATE_RE = re.compile(
+    r"(?:(?:19|20)\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])"
+    r"|\d{1,2}([-./])\d{1,2}\1(?:19|20)\d{2})(?!\d)"
+)
 
 
 def _is_phone(text: str, match: re.Match[str]) -> bool:
@@ -119,8 +122,12 @@ def _is_phone(text: str, match: re.Match[str]) -> bool:
         return False
     if _CURRENCY_AFTER_RE.match(text, match.end()):
         return False
-    # "2026-2027" (school year) and "30-09-2026" (date) are not phone numbers.
-    if _YEAR_RANGE_RE.fullmatch(candidate) or _DATE_RE.fullmatch(candidate):
+    # "2026-2027" (school year) is not a phone number, nor is a date such as
+    # "30-09-2026" or "2018-11-23", even followed by a time ("2018-11-23. 10 : 13").
+    if _YEAR_RANGE_RE.fullmatch(candidate):
+        return False
+    date = _DATE_RE.match(candidate)
+    if date and sum(ch.isdigit() for ch in candidate[date.end() :]) < 8:
         return False
     # "10 000 000" / "10.000.000" is an amount written with thousands separators.
     return not _THOUSANDS_RE.fullmatch(candidate)

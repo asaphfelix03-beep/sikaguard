@@ -48,10 +48,19 @@ def test_mask_phones_masks_west_african_numbers(text: str) -> None:
         "Annee scolaire 2025 / 2026",
         "Paiement du 30-09-2026 confirme",
         "Echeance au 30.09.2026",
+        # Real MTN notification format: ISO date followed by the time.
+        "recu le 2018-11-23. 10 : 13 :31. Transaction",
+        "Paiement du 30-09-2026 10 15",
     ],
 )
 def test_mask_phones_keeps_amounts_and_dates(text: str) -> None:
     assert mask_phones(text) == text
+
+
+def test_mask_phones_still_masks_a_number_written_after_a_date() -> None:
+    masked = mask_phones("Le 1-1-2020 07070707 appelle-moi")
+    assert "<TEL>" in masked
+    assert not has_phone_number(masked)
 
 
 _PREFIXES = st.sampled_from(["", "+225 ", "+225", "00225 ", "(+225) ", "+221 ", "00226", "+223 "])
