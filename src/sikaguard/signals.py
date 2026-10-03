@@ -32,7 +32,8 @@ SIGNAL_MESSAGES: dict[str, str] = {
     "lien_present": "Le message contient un lien.",
     "lien_raccourci": "Le lien est raccourci : sa vraie destination est cachée.",
     "lien_suspect": (
-        "Le lien est suspect (adresse IP, extension inhabituelle ou imitation d'une marque)."
+        "Le lien est suspect (adresse IP, extension inhabituelle, hébergement gratuit "
+        "ou imitation d'une marque)."
     ),
     "mention_operateur": "Le message mentionne un opérateur ou un service de Mobile Money.",
     "contact_numero": "Le message vous demande de contacter un numéro.",

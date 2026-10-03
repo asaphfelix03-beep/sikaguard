@@ -38,6 +38,45 @@ def test_inspect_url_plain_brand_domain_is_not_suspect() -> None:
     assert not info.is_shortener
 
 
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://flashwave.cloudaccess.host/",  # real Wave scam, Côte d'Ivoire, 2026-10
+        "hxxps://flashwave[.]cloudaccess[.]host/",
+        "https://orange.ci.secure-login.com/maxit",
+        "https://orange-money.github.io/cadeau",
+        "https://wave.cadeau.co.ci",
+    ],
+)
+def test_inspect_url_brand_in_subdomain_or_on_free_host(url: str) -> None:
+    info = inspect_url(url)
+    assert info.brand_lookalike
+    assert info.is_suspect
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://maxit.orange.ci",
+        "https://web.whatsapp.com",
+        "https://m.facebook.com/orange",
+        "https://dubai.example.com",  # "uba" is too short to be matched in a subdomain
+        "https://orange.co.ci",
+    ],
+)
+def test_inspect_url_official_subdomains_are_not_lookalikes(url: str) -> None:
+    info = inspect_url(url)
+    assert not info.brand_lookalike
+    assert not info.is_suspect
+
+
+def test_inspect_url_free_hosting_alone_is_suspect() -> None:
+    info = inspect_url("https://mon-projet.netlify.app")
+    assert info.free_hosting
+    assert not info.brand_lookalike
+    assert info.is_suspect
+
+
 POSITIVE = {
     "demande_code_secret": "Envoyez votre code secret au <TEL> pour valider",
     "demande_renvoi_argent": "je vous ai envoyé par erreur 25000F, renvoyez svp",
