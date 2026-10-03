@@ -48,7 +48,7 @@ sinon la catégorie la plus spécifique.
 |---|---|---|
 | `operateur_cible` | `orange`, `mtn`, `moov`, `wave`, `banque`, `autre`, `aucun` | Opérateur ou institution mentionné ou imité. |
 | `pays` | `CI`, `SN`, `BF`, `ML`, `BJ`, `TG`, `CM`, `NE`, `GN`, `FR`, `BE`, `CA`, `XX` | Pays de la source ; `XX` si inconnu. |
-| `source_type` | `operateur`, `autorite`, `presse`, `reseau_social`, `corpus_recherche`, `depot_open_source`, `amorcage` | Type de la source (voir §5). `depot_open_source` : message réel publié dans le code d'un projet open source (tests d'un analyseur de SMS, par exemple). |
+| `source_type` | `operateur`, `autorite`, `presse`, `reseau_social`, `corpus_recherche`, `depot_open_source`, `contribution`, `amorcage` | Type de la source (voir §5). `depot_open_source` : message réel publié dans le code d'un projet open source (tests d'un analyseur de SMS, par exemple). `contribution` : SMS réel reçu par une personne et donné au projet avec son accord. |
 | `date_observee` | `AAAA-MM` ou vide | Mois de publication de la source. |
 | `derive_de_modele` | `true` / `false` | `true` si le texte a été reconstitué d'après un modèle et n'est pas une copie d'un SMS réel. |
 | `confiance_annotation` | `haute` / `moyenne` | `moyenne` si l'étiquette a demandé une interprétation. |

@@ -13,6 +13,17 @@ versioning: [SemVer](https://semver.org/).
   Result with the unchanged `0.1.0.dev2` model: 73.7 % [52.6, 89.5] of scams flagged,
   2 of 4 real notifications flagged.
 - Source type `depot_open_source`.
+- **First real Ivorian SMS given to the project** (`data/sources/contributions_ci.csv`,
+  source type `contribution`): a fake 10 000 F CFA Wave gift. It enters training with the
+  next model version.
+
+### Changed
+- Link check: a brand name in a **subdomain** of another domain
+  (`flashwave.cloudaccess.host`, `orange.ci.secure-login.com`) or on a **free host or
+  website builder** (`github.io`, `netlify.app`, `cloudaccess.host`…) now makes the link
+  suspect. No training, test or benchmark text changes signals, so the bundled model and
+  the reported metrics are unchanged; the contributed Wave SMS now gets the "suspicious
+  link" explanation.
 
 ### Fixed
 - Phone masking no longer takes an ISO date followed by a time ("2018-11-23. 10 : 13")

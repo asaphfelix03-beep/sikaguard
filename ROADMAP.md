@@ -21,6 +21,8 @@
       every row): 73.7 % of scams flagged, 2 of 4 real notifications flagged. It is now
       opened: the next version may train on it only if a new, blind real benchmark
       replaces it.
+- [x] First real Ivorian SMS contributed (fake Wave gift on a free host) and a link check
+      that recognises brand names in subdomains and on free hosts.
 
 ## v0.1.0 — real West-African data (next)
 

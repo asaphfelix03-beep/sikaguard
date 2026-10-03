@@ -1,6 +1,6 @@
 # data/sources — real-world material
 
-Three kinds of public, citable material complement the hand-written seed set.
+Four kinds of real or citable material complement the hand-written seed set.
 
 ## 0. `imc25_french.csv` — real scam SMS (811 rows)
 
@@ -69,3 +69,13 @@ campaign share a `campagne` id and are never split between train and test.
 | `ci-officiel-*` (5 rows) | CI | **legitimate** official notices (Fonction publique, Eaux et Forêts, PLCC, Orange): hard negatives | same sources |
 
 Facts were extracted from the articles; no article text is reproduced.
+
+## 3. `contributions_ci.csv` — real SMS received in Côte d'Ivoire (1 row)
+
+Real SMS that people received and gave to the project, typed or copied word for word
+(`source_type=contribution`, `derive_de_modele=false`). Before a row is added: the
+contributor agrees, phone numbers, names, codes and references are masked, links are
+defanged, and nobody clicks the link. No `source_ref`: who sent the SMS is never
+recorded. First row (2026-10): a fake 10 000 F CFA Wave gift linking to a page on a
+free host (`flashwave[.]cloudaccess[.]host`). These rows enter training with the next
+model version, together with a new test split of real messages.
